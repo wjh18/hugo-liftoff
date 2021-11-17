@@ -7,7 +7,7 @@
   {{ if .IsHome }}
 	<title>{{ .Site.Title }} | Home</title>
 	{{ else }}
-	<title>{{ with .Params.seotitle }}{{ . }}{{ else }}{{ .Title }}{{ end -}} | {{ .Site.Title }}{{ if not .IsPage }}{{ end -}}</title>
+	<title>{{ with .Params.seotitle }}{{ . }}{{ else }}{{ .Title }}{{ end }} | {{ .Site.Title }}{{ if not .IsPage }}{{ end -}}</title>
 	{{ end }}
   <!-- Author from config -->
   {{ with $.Param "author" }}
