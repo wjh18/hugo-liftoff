@@ -4,5 +4,6 @@ date: {{ .Date }}
 draft: true
 related: false
 toc: false
+newsletter: false
 ---
 
