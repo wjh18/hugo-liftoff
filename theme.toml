@@ -3,16 +3,16 @@
 
 name = "Hugo Liftoff"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
+licenselink = "https://github.com/wjh18/hugo-liftoff/blob/master/LICENSE"
+description = "Hybrid blog and portfolio theme for Hugo."
+homepage = "https://github.com/wjh18/hugo-liftoff"
 tags = []
 features = []
-min_version = "0.41.0"
+min_version = "0.89.3"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "W.J. Holmes"
+  homepage = "https://www.wjholmes.com"
 
 # If porting an existing theme
 [original]
