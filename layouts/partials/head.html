@@ -36,6 +36,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css">
   <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/styles.css">
   <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/queries.css">
+  <!-- Google Tag Manager -->
+	{{ if .Site.Params.gtm_id }}
+  {{ partial "gtm.html" . }}
+  {{ end }}
   <!-- Netlify Identity -->
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>

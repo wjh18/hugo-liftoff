@@ -2,6 +2,13 @@
 <html lang="{{ .Site.LanguageCode | default "en-US" }}">
   {{- partial "head.html" . -}}
   <body>
+    {{ if not .Site.IsServer }}
+    <!-- Google Tag Manager (noscript) -->
+    {{ if .Site.Params.gtm_id}}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtm_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{ end }}
+    <!-- End Google Tag Manager (noscript) -->
+    {{ end }}
     {{- partial "header.html" . -}}
     <main>
     {{- block "main" . }}{{- end }}
