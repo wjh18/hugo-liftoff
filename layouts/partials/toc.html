@@ -1,6 +1,6 @@
 <!-- Reusable template for table of contents (i.e. start or sidebar of posts single pages) -->
 {{ if and (gt .WordCount 400 ) (.Params.toc) }}
-</side>
+<aside>
   {{.TableOfContents}}
 </aside>
 {{ end }}
