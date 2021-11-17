@@ -8,5 +8,13 @@
     </main>
     {{- partial "footer.html" . -}}
     <script async defer src="{{ .Site.BaseURL }}/js/main.js"></script>
+    <!-- Add Universal Analytics or Google Analytics v4 based on config -->
+    {{ if not .Site.IsServer }}
+    {{ if eq .Site.Params.googleAnalyticsv4 true }}
+    {{ template "_internal/google_analytics.html" . }}
+    {{ else }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+    {{ end }}
   </body>
 </html>
