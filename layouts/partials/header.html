@@ -1,0 +1,14 @@
+<header>
+  <nav class="navbar" id="js-navbar">
+    <span class="navbar-toggle" id="js-navbar-toggle">
+      <i class="fas fa-bars"></i>
+    </span>          
+    <a class="logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <ul class="main-nav" id="js-menu"> 
+      <li><a href="{{ .URL }}" class="nav-links{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" title="{{ .Title }}">{{ .Name }}</a></li>
+    </ul>
+    {{ end }}
+  </nav>
+</header>
