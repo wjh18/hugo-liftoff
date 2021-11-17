@@ -1,0 +1,7 @@
+# Hugo
+/public
+/themes
+.hugo_build.lock
+
+# System
+.DS_Store

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<html lang="{{ .Site.LanguageCode | default "en-US" }}">
+  {{- partial "head.html" . -}}
+  <body>
+    {{- partial "header.html" . -}}
+    <main>
+    {{- block "main" . }}{{- end }}
+    </main>
+    {{- partial "footer.html" . -}}
+    <script async defer src="{{ .Site.BaseURL }}/js/main.js"></script>
+  </body>
 </html>
