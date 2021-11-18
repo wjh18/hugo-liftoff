@@ -1,0 +1,180 @@
+/* --- Custom Properties --- */
+
+:root {    
+    --primary-color: #252c49;
+    --secondary-color: #4c7763;
+    --link-color: #835db7;
+    --dark-color: #141523;
+    --med-color: #484848;
+    --med-light-color: #858585;
+    --light-color: #cfcfcf;
+    --very-light-color: #eeeeee;
+    --base-font-light: 'Ubuntu Light';
+    --base-font-reg: 'Ubuntu Regular';
+    --base-font-med: 'Ubuntu Medium';
+    --base-font-bold: 'Ubuntu Bold';
+}
+
+
+/* --- Local Fonts --- */
+
+@font-face {
+    font-family: 'Ubuntu Light';
+    src: local('Ubuntu Light'),
+        url('/fonts/Ubuntu/Ubuntu-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Ubuntu Regular';
+    src: local('Ubuntu Regular'),
+        url('/fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Ubuntu Medium';
+    src: local('Ubuntu Medium'),
+        url('/fonts/Ubuntu/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Ubuntu Bold';
+    src: local('Ubuntu Bold'),
+        url('/fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+
+/* --- Elements --- */
+
+html, body {
+    font-family: var(--base-font-reg), Helvetica, sans-serif;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto; 
+    background-color: var(--very-light-color);
+}
+
+footer {
+    flex-shrink: 0;
+    text-align: center;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--base-font-med), Helvetica, sans-serif;   
+}
+
+h1 {
+    font-size: 2.3rem;
+    line-height: 3.2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    max-width: fit-content;
+}
+
+tr:nth-of-type(odd) { 
+    background: #eee; 
+}
+
+th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+}
+
+td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+}
+
+
+/* --- Navigation --- */
+
+.navbar {
+    box-shadow: 0 0 35px 0 rgb(0 0 0 / 50%);
+    background-color: var(--dark-color);
+    height: 60px;
+}
+
+.logo {
+    margin-top: 16px;
+    text-decoration: none;
+    color: var(--very-light-color);
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.logo:hover {
+    color: var(--link-color);
+}
+
+.navbar-toggle {
+    color: var(--link-color);
+    font-size: 1.6em;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer; 
+}
+
+.main-nav {
+    list-style-type: none;
+    display: none;   
+    padding-top: 25px;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: var(--very-light-color);
+    font-size: 1.1rem;
+}
+
+.nav-links:hover {
+    color: var(--link-color);    
+}
+
+.active-nav {
+    display: block;
+    height: auto;
+    padding-bottom: 10px;
+    margin-bottom: 0;    
+}
+
+.active-nav li {
+    margin-bottom: 15px;
+}
+
+#active-link {
+    color: var(--link-color);
+}
