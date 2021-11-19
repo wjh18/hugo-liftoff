@@ -1,4 +1,5 @@
 <!-- Reusable template for related posts (i.e. at the end of posts single pages) -->
+{{ if .Param "related" }}
 {{ $related := .Site.RegularPages.Related . | first 5 }}
 {{ with $related }}
 <h3>See Also</h3>
@@ -7,4 +8,5 @@
   <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
   {{ end }}
 </ul>
+{{ end }}
 {{ end }}
