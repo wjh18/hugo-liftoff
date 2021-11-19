@@ -1,14 +1,32 @@
 <!-- Reusable template for an email list capture -->
 {{- if .Param "newsletter" }}
     <section class="newsletter">
-        <h2 class="newsletter__header">Subscribe for Post Updates</h2>
-        <p class="newsletter__description">Enter your email below to get notified of new posts.</p>
+        <h2 class="newsletter__header">
+          {{ if .Site.Params.newsletter_header }}
+          {{ .Site.Params.newsletter_header }}
+          {{ else }}
+          Subscribe for Post Updates
+          {{ end }}
+        </h2>
+        <p class="newsletter__description">
+          {{ if .Site.Params.newsletter_description }}
+          {{ .Site.Params.newsletter_description }}
+          {{ else }}
+          Enter your email below to get notified of new posts.
+          {{ end }}
+        </p>
         <form id="newsletter-form" name="newsletter" method="POST" data-netlify="true">
           <span>
             <input type="email" id="form-input" name="email" placeholder="Your best email...">
           </span>
           <span>
-            <button type="submit" id="submit-button">Subscribe</button>
+            <button type="submit" id="submit-button">
+              {{ if .Site.Params.newsletter_submit }}
+              {{ .Site.Params.newsletter_submit }}
+              {{ else }}
+              Subscribe
+              {{ end }}
+            </button>
           </span>
         </form>
     </section>
