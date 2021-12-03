@@ -1,14 +1,18 @@
 <header>
   <nav class="navbar" id="js-navbar">
     <span class="navbar-toggle" id="js-navbar-toggle">
-      <i class="fas fa-bars"></i>
+      <img src="icons/menu-burger.svg"
+           alt="hamburger icon to toggle menu"
+           height="30"
+           width="50"/>
     </span>          
     <a class="logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
     <ul class="main-nav" id="js-menu"> 
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
       <li><a href="{{ .URL }}" class="nav-links{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" title="{{ .Title }}">{{ .Name }}</a></li>
+      {{ end }}
     </ul>
-    {{ end }}
+    
   </nav>
 </header>
