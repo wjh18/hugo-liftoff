@@ -1,21 +1,24 @@
 {{ define "main" }}
-  <section class="homepage-section">
-    <header class="homepage-header">
-      <h1>{{.Title}}</h1>
-      {{ with .Params.subtitle }}
-      <span class="subtitle">{{.}}</span>
-      {{ end }}
-      <span class="homepage-content">
-        <!-- Pulls from content/_index.md -->
-        {{ .Content }}
-      </span>
+  <section class="homepage__section">
+    <header class="homepage__hero">
+      <div class="homepage__hero--wrapper">
+        <h1 class="homepage__hero--title">{{.Title}}</h1>
+        {{ with .Params.subtitle }}
+        <p class="homepage__hero--subtitle">{{.}}</p>
+        {{ end }}
+        <hr>
+        <span class="homepage__hero--content">
+          <!-- Pulls from content/_index.md -->
+          {{ .Content }}
+        </span>
+      </div>
     </header>
-    <div>{{ partial "newsletter.html" . }}</div>    
+    <div>{{ partial "newsletter.html" . }}</div>   
+    <div>
+      <h2>Featured Posts</h2>
+      {{ range first 10 .Site.RegularPages }}
+          {{ .Title }}
+      {{ end }}
+    </div>
   </section>
-  <div>
-    <h2>Featured Posts</h2>
-    {{ range first 10 .Site.RegularPages }}
-        {{ .Title }}
-    {{ end }}
-  </div>
 {{ end }}

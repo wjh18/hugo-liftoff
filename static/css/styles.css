@@ -1,14 +1,12 @@
 /* --- Custom Properties --- */
 
-:root {    
-    --primary-color: #252c49;
-    --secondary-color: #4c7763;
-    --link-color: #835db7;
-    --dark-color: #141523;
-    --med-color: #484848;
-    --med-light-color: #858585;
-    --light-color: #cfcfcf;
-    --very-light-color: #eeeeee;
+:root {
+    --bg-color: #ffffff;
+    --link-color: #9a1f1f;
+    --alt-color: #EEA243;
+    --dark-txt-color: #353535;
+    --med-txt-color: #555555;
+    --light-txt-color: #767676;
     --base-font-light: 'Ubuntu Light';
     --base-font-reg: 'Ubuntu Regular';
     --base-font-med: 'Ubuntu Medium';
@@ -50,6 +48,7 @@
 /* --- Elements --- */
 
 html, body {
+    
     font-family: var(--base-font-reg), Helvetica, sans-serif;
     height: 100%;
 }
@@ -59,21 +58,18 @@ body {
     flex-direction: column;
 }
 
-main {
+main {   
     flex: 1 0 auto; 
-    margin: 0 auto;
 }
 
 footer {
     flex-shrink: 0;
     text-align: center;
-    background-color: var(--dark-color);
-    color: var(--light-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--base-font-med), Helvetica, sans-serif;   
-    color: var(--med-color);
+    color: var(--dark-txt-color);
+    font-family: var(--base-font-med), Helvetica, sans-serif;
 }
 
 h1 {
@@ -92,6 +88,7 @@ h3 {
 }
 
 p {
+    color: var(--dark-txt-color);
     font-size: 1.1rem;
     line-height: 1.8rem;
 }
@@ -122,22 +119,20 @@ td, th {
 /* --- Navigation --- */
 
 .navbar {
-    box-shadow: 0 0 35px 0 rgb(0 0 0 / 50%);
-    background-color: var(--dark-color);
     height: 60px;
 }
 
 .logo {
+    color: var(--link-color);
     margin-top: 16px;
     text-decoration: none;
-    color: var(--very-light-color);
     font-size: 1.5rem;
     display: inline-block;
     margin-left: 20px;
 }
 
 .logo:hover {
-    color: var(--link-color);
+    color: var(--dark-txt-color);
 }
 
 .navbar-toggle {
@@ -152,12 +147,12 @@ td, th {
 .main-nav {
     list-style-type: none;
     display: none;   
-    padding-top: 25px;
+    padding-top: 10px;
 }
 
 .nav-links {
+    color: var(--dark-txt-color);
     text-decoration: none;
-    color: var(--very-light-color);
     font-size: 1.1rem;
 }
 
@@ -183,8 +178,56 @@ td, th {
 
 /* --- Home page --- */
 
-.homepage-section {
+.homepage__section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.homepage__hero {
+    background-color: #333;
+    width: 100%;
+    padding: 50px;
+}
+
+.homepage__hero--wrapper {
+    margin: 0 auto;
+}
+
+.homepage__hero--title {
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+.homepage__hero--subtitle {
+    color: #cfcfcf;
+    font-size: 1.5em;
+    margin: 0 0 20px 0;
+}
+
+.homepage__hero--content p {
+    color: #cfcfcf;
+}
+
+/* --- Footer --- */
+
+footer p a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+footer p a:hover {
+    color: var(--dark-txt-color);
+}
+
+/* Section pages */
+
+.section__banner {
+    background-color: #333;
+    padding: 20px;
+}
+
+.section__header {
+    color: white;
+    text-align: center;
 }
