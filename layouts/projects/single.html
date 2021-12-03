@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  <article>
+      {{ .Content }}
+  </article>
+</section>
+<aside>
+  <div>
+    {{ with .Params.tags }}
+    <ul>
+      {{ range . }}
+        <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  <div>
+    {{ with .PrevInSection }}
+      <a class="previous" href="{{.Permalink}}"> {{ .Title }}</a>
+    {{ end }}
+    {{ with .NextInSection }}
+      <a class="next" href="{{.Permalink}}"> {{ .Title }}</a>
+    {{ end }}
+  </div>
+</aside>
+{{ end }}
