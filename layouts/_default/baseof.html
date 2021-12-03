@@ -23,5 +23,9 @@
     {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
     {{ end }}
+    <!-- Debug template lookup -->
+    {{ if eq .Site.Params.debug true }}
+    {{ partial "debug.html" . }}
+    {{ end }}
   </body>
 </html>
