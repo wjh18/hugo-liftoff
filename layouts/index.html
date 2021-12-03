@@ -1,19 +1,21 @@
 {{ define "main" }}
-  <header class="homepage-header">
-    <h1>{{.Title}}</h1>
-    {{ with .Params.subtitle }}
-    <span class="subtitle">{{.}}</span>
-    {{ end }}
-  </header>
-  <div class="homepage-content">
-    <!-- Pulls from content/_index.md -->
-    {{ .Content }}
-  </div>
+  <section class="homepage-section">
+    <header class="homepage-header">
+      <h1>{{.Title}}</h1>
+      {{ with .Params.subtitle }}
+      <span class="subtitle">{{.}}</span>
+      {{ end }}
+      <span class="homepage-content">
+        <!-- Pulls from content/_index.md -->
+        {{ .Content }}
+      </span>
+    </header>
+    <div>{{ partial "newsletter.html" . }}</div>    
+  </section>
   <div>
     <h2>Featured Posts</h2>
     {{ range first 10 .Site.RegularPages }}
         {{ .Title }}
     {{ end }}
-    {{ partial "newsletter.html" . }}
   </div>
 {{ end }}

@@ -61,7 +61,7 @@ body {
 
 main {
     flex: 1 0 auto; 
-    background-color: var(--very-light-color);
+    margin: 0 auto;
 }
 
 footer {
@@ -73,6 +73,7 @@ footer {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--base-font-med), Helvetica, sans-serif;   
+    color: var(--med-color);
 }
 
 h1 {
@@ -177,4 +178,13 @@ td, th {
 
 #active-link {
     color: var(--link-color);
+}
+
+
+/* --- Home page --- */
+
+.homepage-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
