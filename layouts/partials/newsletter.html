@@ -15,12 +15,12 @@
           Enter your email below to get notified of new posts.
           {{ end }}
         </p>
-        <form id="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+        <form id="newsletter__form" name="newsletter" method="POST" data-netlify="true">
           <span>
-            <input type="email" id="form-input" name="email" placeholder="Your best email...">
+            <input type="email" id="newsletter__form--input" name="email" placeholder="Your best email...">
           </span>
           <span>
-            <button type="submit" id="submit-button">
+            <button type="submit" id="newsletter__form--submit">
               {{ if .Site.Params.newsletter_submit }}
               {{ .Site.Params.newsletter_submit }}
               {{ else }}

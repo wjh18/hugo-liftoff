@@ -2,7 +2,9 @@
   <section class="homepage__hero">    
     <div class="homepage__hero--wrapper">
       <div class="homepage__hero--flex">
-        <img class="homepage__hero--pic" src="{{ .Site.BaseURL }}/img/rocket.png" width="100px" height="100px"/>
+        <img class="homepage__hero--pic"
+             src="{{ .Site.BaseURL }}/img/rocket.png"
+             width="100px" height="100px"/>
         <div>
           <h1 class="homepage__hero--title">{{.Title}}</h1>
           {{ with .Params.subtitle }}
