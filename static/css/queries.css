@@ -52,13 +52,18 @@
     .navbar-toggle {
         display: none;
     }    
+
+    .homepage__hero--flex {
+        flex-direction: row;
+    }
+
+    .homepage__hero--pic {
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-    .homepage__hero--wrapper {
-        width: 50%;
-        margin: 0 auto;
-    }
+    
 }
 
 @media screen and (min-width: 1400px) {

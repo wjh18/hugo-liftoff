@@ -1,19 +1,21 @@
 {{ define "main" }}
-  <section class="homepage__section">
-    <header class="homepage__hero">
-      <div class="homepage__hero--wrapper">
-        <h1 class="homepage__hero--title">{{.Title}}</h1>
-        {{ with .Params.subtitle }}
-        <p class="homepage__hero--subtitle">{{.}}</p>
-        {{ end }}
-        <hr>
-        <span class="homepage__hero--content">
-          <!-- Pulls from content/_index.md -->
-          {{ .Content }}
-        </span>
+  <section class="homepage__hero">    
+    <div class="homepage__hero--wrapper">
+      <div class="homepage__hero--flex">
+        <img class="homepage__hero--pic" src="{{ .Site.BaseURL }}/img/rocket.png" width="100px" height="100px"/>
+        <div>
+          <h1 class="homepage__hero--title">{{.Title}}</h1>
+          {{ with .Params.subtitle }}
+          <p class="homepage__hero--subtitle">{{.}}</p>
+          {{ end }}
+        </div>
       </div>
-    </header>
-    <div>{{ partial "newsletter.html" . }}</div>   
+    </div>
+  </section>
+  <section class="homepage__info">
+    <!-- Pulls from content/_index.md -->
+    {{ .Content }}
+    <div>{{ partial "newsletter.html" . }}</div> 
     <div>
       <h2>Featured Posts</h2>
       {{ range first 10 .Site.RegularPages }}

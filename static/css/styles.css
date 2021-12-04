@@ -178,7 +178,7 @@ td, th {
 
 /* --- Home page --- */
 
-.homepage__section {
+.homepage__info {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -186,11 +186,11 @@ td, th {
 
 .homepage__hero {
     background-color: #333;
-    width: 100%;
-    padding: 50px;
+    padding: 50px 30px;
 }
 
 .homepage__hero--wrapper {
+    max-width: 768px;
     margin: 0 auto;
 }
 
@@ -202,11 +202,20 @@ td, th {
 .homepage__hero--subtitle {
     color: #cfcfcf;
     font-size: 1.5em;
-    margin: 0 0 20px 0;
+    margin: 0;
 }
 
-.homepage__hero--content p {
-    color: #cfcfcf;
+.homepage__hero--pic {
+    border-radius: 50%;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    filter: grayscale(40%);
+}
+
+.homepage__hero--flex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- Footer --- */
@@ -224,7 +233,7 @@ footer p a:hover {
 
 .section__banner {
     background-color: #333;
-    padding: 20px;
+    padding: 10px;
 }
 
 .section__header {
