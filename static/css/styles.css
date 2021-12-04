@@ -198,7 +198,7 @@ footer p a:hover {
 
 .homepage__hero {
     background-color: #333;
-    padding: 50px 30px;
+    padding: 60px 30px;
 }
 
 .homepage__hero--wrapper {
@@ -218,15 +218,30 @@ footer p a:hover {
     margin: 0;
 }
 
+.homepage__hero--learn-more {
+    margin-top: 30px;
+}
+
+.homepage__hero--learn-more a {
+    background-color: var(--link-color);
+    padding: 12px;
+    text-decoration: none;
+    color: #eee;
+}
+
+.homepage__hero--learn-more a:hover {
+    color: var(--link-color);
+    background-color: #eee;
+}
+
 .homepage__hero--pic {
     border-radius: 50%;
     margin-right: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     filter: grayscale(40%);
 }
 
-.homepage__hero--flex {
-    align-items: center;
+.homepage__hero--flex {    
     display: flex;
     flex-direction: column;
 }

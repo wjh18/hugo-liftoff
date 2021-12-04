@@ -55,11 +55,13 @@
 
     .homepage__hero--flex {
         flex-direction: row;
+        align-items: center;
     }
 
     .homepage__hero--pic {
         margin-bottom: 0;
     }
+
 }
 
 @media screen and (min-width: 1024px) {
