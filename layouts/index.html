@@ -16,20 +16,64 @@
           {{ with .Params.subtitle }}
           <p class="homepage__hero--subtitle">{{.}}</p>
           {{ end }}
-          <div class="homepage__hero--learn-more"><a href="{{ .Site.BaseURL }}about">About me</a></div>
+          <div class="homepage__hero--learn-more"><a href="{{ .Site.BaseURL }}about/">About me</a></div>
         </div>        
       </div>      
     </div>
   </section>
-  <section class="homepage__info">
-    <!-- Pulls from content/_index.md -->
-    {{ .Content }}
-    <div>{{ partial "newsletter.html" . }}</div> 
-    <div>
-      <h2>Featured Posts</h2>
-      {{ range first 10 .Site.RegularPages }}
-          {{ .Title }}
-      {{ end }}
+  {{- if .Sections -}}
+  <section class="homepage__section homepage__section--sections">    
+    {{- range .Sections -}}
+    {{- range .Sections -}}
+    <div class="homepage__section--info">
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Description }}</p>
+      <p><a href="{{ .Site.BaseURL }}{{ .Section }}/{{ .Title | lower }}/">View {{ .Title | lower }}</a></p>
     </div>
+      <!-- <div class="homepage__section--recent">
+        {{- range ( .Data.Pages | first 3 ) }}
+            <div class="homepage__section--recent-post">              
+              <h3 class="homepage__section--recent-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+              <p class="homepage__section--recent-date">{{ .Date.Format "Jan 2, 2006" }}</p>
+              <p class="homepage__section--recent-description">{{ .Description }}</p>
+            </div>
+        {{ end }}
+      </div> -->
+    {{- end -}}
+    {{- end -}}
   </section>
+  {{- end -}}
+  <section class="homepage__section homepage__section--posts">
+    <div class="homepage__section--info homepage__section--info-no-border">      
+      <h2>Recent Posts</h2>
+      <p>This is a description of the section that's should be longer but this will do for now.</p>
+      <p><a href="{{ .Site.BaseURL }}posts/">View all</a></p>
+    </div>
+    <div class="homepage__section--recent">      
+      {{- range ( where site.RegularPages "Section" "posts" | last 3 ) }}
+          <div class="homepage__section--recent-post">            
+            <p class="homepage__section--recent-date">{{ .Date.Format "Jan 2, 2006" }}</p>
+            <h3 class="homepage__section--recent-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+            <p class="homepage__section--recent-description">{{ .Description }}</p>            
+          </div>
+      {{ end }}      
+    </div> 
+  </section>
+  <section class="homepage__section homepage__section--projects">
+    <div class="homepage__section--info homepage__section--info-no-border">      
+      <h2>Recent Projects</h2>
+      <p>This is a description of the section that's should be longer but this will do for now.</p>
+      <p><a href="{{ .Site.BaseURL }}projects/">View all</a></p>
+    </div>
+    <div class="homepage__section--recent">      
+      {{- range ( where site.RegularPages "Section" "projects" | last 3 ) }}
+          <div class="homepage__section--recent-post">            
+            <p class="homepage__section--recent-date">{{ .Date.Format "Jan 2, 2006" }}</p>
+            <h3 class="homepage__section--recent-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+            <p class="homepage__section--recent-description">{{ .Description }}</p>            
+          </div>
+      {{ end }}      
+    </div> 
+  </section>
+  {{ partial "newsletter.html" . }}
 {{ end }}

@@ -3,7 +3,7 @@
 :root {
     --bg-color: #ffffff;
     --link-color: #9a1f1f;
-    --alt-color: #EEA243;
+    --alt-color: #1f5a9a;
     --dark-txt-color: #353535;
     --med-txt-color: #555555;
     --light-txt-color: #767676;
@@ -11,6 +11,10 @@
     --base-font-reg: 'Ubuntu Regular';
     --base-font-med: 'Ubuntu Medium';
     --base-font-bold: 'Ubuntu Bold';
+    --serif-font-light: 'Merriweather Light';
+    --serif-font-reg: 'Merriweather Regular';
+    --serif-font-med: 'Merriweather Medium';
+    --serif-font-bold: 'Merriweather Bold';
 }
 
 
@@ -44,11 +48,38 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: 'Merriweather Light';
+    src: local('Merriweather Light'),
+        url('/fonts/Merriweather/Merriweather-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Merriweather Regular';
+    src: local('Merriweather Regular'),
+        url('/fonts/Merriweather/Merriweather-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Merriweather Medium';
+    src: local('Merriweather Medium'),
+        url('/fonts/Merriweather/Merriweather-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Merriweather Bold';
+    src: local('Merriweather Bold'),
+        url('/fonts/Merriweather/Merriweather-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
 
 /* --- Elements --- */
 
 html, body {
-    
     font-family: var(--base-font-reg), Helvetica, sans-serif;
     height: 100%;
 }
@@ -65,11 +96,12 @@ main {
 footer {
     flex-shrink: 0;
     text-align: center;
+    background-color: #eee;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--dark-txt-color);
-    font-family: var(--base-font-med), Helvetica, sans-serif;
+    font-family: var(--serif-font-reg), Georgia, serif;
 }
 
 h1 {
@@ -88,9 +120,19 @@ h3 {
 }
 
 p {
+    font-family: var(--base-font-light), Helvetica, sans-serif;
     color: var(--dark-txt-color);
     font-size: 1.1rem;
     line-height: 1.8rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-txt-color);
 }
 
 table { 
@@ -120,6 +162,7 @@ td, th {
 
 .navbar {
     height: 60px;
+    background-color: #eee;
 }
 
 .logo {
@@ -190,12 +233,6 @@ footer p a:hover {
 
 /* --- Home page --- */
 
-.homepage__info {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; */
-}
-
 .homepage__hero {
     background-color: #333;
     padding: 60px 30px;
@@ -246,6 +283,75 @@ footer p a:hover {
     flex-direction: column;
 }
 
+.homepage__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+    column-gap: 10%;
+}
+
+.homepage__section--sections {
+    column-gap: 0;
+    justify-content: space-evenly;
+}
+
+.homepage__section--posts {
+    background-color: #eeeeee;
+    padding: 50px 0;   
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.homepage__section--projects {
+    background-color: #fff;
+    flex-direction: row-reverse;
+    padding: 50px 0;
+}
+
+.homepage__section--info {
+    width: 400px;
+    /* border: 1px solid #b5b5b5; */
+    /* border-radius: 30px 10px 30px 10px; */
+    /* box-shadow: 0px 20px 25px -10px rgba(51, 51, 51, 0.297); */
+    padding: 30px;
+}
+
+.homepage__section--info-no-border {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.homepage__section--recent {
+    width: 600px;
+}
+
+.homepage__section--recent-post {
+    margin: 50px 0;
+}
+
+.homepage__section--recent-date {
+    margin: 0 0 5px 0;
+    color: var(--light-txt-color);
+    font-size: 1em;
+}
+
+.homepage__section--recent-title {
+    margin: 0;
+    
+}
+
+.homepage__section--recent-title a {
+    text-decoration: none;
+    color: var(--alt-color);
+}
+
+.homepage__section--recent-description {
+    margin: 5px 0 0 0;
+}
+
 
 /* Section pages */
 
@@ -263,17 +369,24 @@ footer p a:hover {
 /* Newsletter */
 
 .newsletter {
-    max-width: 500px;
     border: 1px solid #888888;
-    box-shadow: 0px 20px 25px -10px rgba(51,51,51,0.7);
-    margin: 0 auto;
     padding: 50px;
-    background-color: #eeeeee;
+    background-color: #333;
+}
+
+.newsletter__contents {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .newsletter__header {
     margin-top: 0;
     margin-bottom: 0;
+    color: white;
+}
+
+.newsletter__description {
+    color: #eee;
 }
 
 #newsletter__form {
@@ -289,14 +402,15 @@ footer p a:hover {
 #newsletter__form--submit {
     padding: 12px;    
     border-style: none;
-    color: var(--link-color);
-    border: 2px solid var(--link-color);
     box-sizing: border-box;
-}
-
-#newsletter__form--submit:hover {
     color: #eee;
     border: 2px solid var(--link-color);
     background-color: var(--link-color);
+}
+
+#newsletter__form--submit:hover {
+    color: var(--link-color);
+    border: 2px solid var(--link-color);
+    background-color: white;
     cursor: pointer;
 }
