@@ -2,4 +2,11 @@
 <section class="section__banner">
   <h1 class="section__header">{{ .Title }}</h1>
 </section>
+<section class="terms">
+  <div class="terms__wrapper">
+    {{ range .Data.Terms.Alphabetical }}
+            <span class="terms__term"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></span>
+    {{ end }}
+  </div>
+</section>
 {{ end }}

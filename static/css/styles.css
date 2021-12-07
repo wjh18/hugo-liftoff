@@ -368,6 +368,25 @@ td, th {
 }
 
 
+/* Taxonomy / terms pages */
+
+.terms {
+    margin-top: 50px;
+}
+
+.terms__wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: #eee;
+    padding: 30px;
+}
+
+.terms__term {
+    font-size: 1.3em;
+    margin: 5px;
+}
+
+
 /* Newsletter */
 
 .newsletter {
