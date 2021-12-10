@@ -21,19 +21,29 @@
       </div>      
     </div>
   </section>
-  {{- if .Sections -}}
+
+  <!-- Only show subsections under posts if there are at least 1 -->
+  {{ range (where .Sections "Section" "posts") }}
+    {{ if gt (len .Sections) 0 }}
+    {{ $.Scratch.Set "hasSubsections" true }}
+    {{ end }}
+  {{ end }}
+  {{ $hasSubsections := $.Scratch.Get "hasSubsections" }}
+
+  {{ if eq $hasSubsections true }}
   <section class="homepage__section homepage__section--sections">    
-    {{- range .Sections -}}
-    {{- range .Sections -}}
-    <div class="homepage__section--info">
-      <h2>{{ .Title }}</h2>
-      <p>{{ .Description }}</p>
-      <p><a href="{{ .Site.BaseURL }}{{ .Section }}/{{ .Title | lower }}/">View {{ .Title | lower }}</a></p>
-    </div>
-    {{- end -}}
-    {{- end -}}
+    {{ range (where .Sections "Section" "posts") }}
+      {{ range .Sections }}
+      <div class="homepage__section--info">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description }}</p>
+        <p><a href="{{ .Site.BaseURL }}{{ .Section }}/{{ .Title | lower }}/">View {{ .Title | lower }}</a></p>
+      </div>
+      {{ end }}
+    {{ end }}
   </section>
   {{- end -}}
+
   <section class="homepage__section homepage__section--posts">
     <div class="homepage__section--info homepage__section--info-no-border">      
       <h2>Recent Posts</h2>
