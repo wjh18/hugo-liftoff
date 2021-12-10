@@ -2,15 +2,17 @@
 <section class="section__banner">
   <h1 class="section__header">{{ .Title }}</h1>  
 </section>
-<div class="posts posts--center">
-  <p class="section__description">{{ .Description }}</p>
-  {{ range (.Paginate .RegularPagesRecursive).Pages }}
-    <div class="post">
-      <h2 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
-      <p class="post__description">{{ .Description }}</p>
-    </div>
-  {{ end }}
-  {{ template "_internal/pagination.html" . }}
-</div>
+<section class="section__wrapper">
+  <div class="posts posts--center">
+    <p class="section__description">{{ .Description }}</p>
+    {{ range (.Paginate .RegularPagesRecursive).Pages }}
+      <div class="post">
+        <h2 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
+        <p class="post__description">{{ .Description }}</p>
+      </div>
+    {{ end }}
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
 {{ end }}
