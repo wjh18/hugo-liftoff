@@ -40,13 +40,13 @@
       <p>This is a description of the section that's should be longer but this will do for now.</p>
       <p><a href="{{ .Site.BaseURL }}posts/">View all</a></p>
     </div>
-    <div class="homepage__section--recent">      
+    <div class="posts">      
       {{- range ( where site.RegularPages "Section" "posts" | last 3 ) }}
-          <div class="homepage__section--recent-post">                        
-            <h3 class="homepage__section--recent-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-            <p class="homepage__section--recent-date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
-            <p class="homepage__section--recent-description">{{ .Description }}</p>            
-          </div>
+        <div class="post">                        
+          <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+          <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
+          <p class="post__description">{{ .Description }}</p>            
+        </div>
       {{ end }}      
     </div> 
   </section>
@@ -56,12 +56,12 @@
       <p>This is a description of the section that's should be longer but this will do for now.</p>
       <p><a href="{{ .Site.BaseURL }}projects/">View all</a></p>
     </div>
-    <div class="homepage__section--recent">      
+    <div class="posts">           
       {{- range ( where site.RegularPages "Section" "projects" | last 3 ) }}
-          <div class="homepage__section--recent-post">            
-            <h3 class="homepage__section--recent-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-            <p class="homepage__section--recent-description">{{ .Description }}</p>            
-          </div>
+        <div class="post">                        
+          <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+          <p class="post__description">{{ .Description }}</p>            
+        </div>
       {{ end }}      
     </div> 
   </section>

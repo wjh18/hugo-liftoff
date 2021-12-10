@@ -4,9 +4,10 @@
 </section>
 <section class="terms">
   <div class="terms__wrapper">
-    {{ range .Data.Terms.Alphabetical }}
-            <span class="terms__term"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></span>
+    {{ range .Data.Terms.ByCount }}
+      <span class="terms__term"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></span>
     {{ end }}
   </div>
 </section>
+{{ partial "newsletter.html" . }}
 {{ end }}

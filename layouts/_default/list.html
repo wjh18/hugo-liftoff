@@ -3,14 +3,14 @@
   <h1 class="section__header">{{ .Title }}</h1>
 </section>
 {{ .Content }}
-      <ul class="contents">
-      {{ range .Paginator.Pages }}
-        <li>{{ .Title }}
-          <div>
-            {{ .Description }}
-          </div>
-        </li>
-      {{ end }}
-      </ul>
-    {{ template "_internal/pagination.html" . }}
+<div class="posts posts--center">
+  {{ range .Paginator.Pages }}
+    <div class="post">
+      <h2 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
+      <p class="post__description">{{ .Description }}</p>
+    </div>
+  {{ end }}
+</div>
+{{ template "_internal/pagination.html" . }}
 {{ end }}

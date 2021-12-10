@@ -325,35 +325,6 @@ td, th {
     box-shadow: none;
 }
 
-.homepage__section--recent {
-    width: 600px;
-    padding: 0 30px;
-}
-
-.homepage__section--recent-post {
-    margin: 50px 0;
-}
-
-.homepage__section--recent-date {
-    margin: 5px 0 10px 0;
-    color: var(--light-txt-color);
-    font-size: 1em;
-}
-
-.homepage__section--recent-title {
-    margin: 0;
-    
-}
-
-.homepage__section--recent-title a {
-    text-decoration: none;
-    color: var(--alt-color);
-}
-
-.homepage__section--recent-description {
-    margin: 5px 0 0 0;
-}
-
 
 /* Section pages */
 
@@ -384,6 +355,41 @@ td, th {
 .terms__term {
     font-size: 1.3em;
     margin: 5px;
+}
+
+
+/* Posts */
+
+.posts {
+    width: 600px;
+    padding: 0 30px;
+}
+
+.posts--center {
+    margin: 0 auto;
+}
+
+.post {
+    margin: 50px 0;
+}
+
+.post__date {
+    margin: 5px 0 10px 0;
+    color: var(--light-txt-color);
+    font-size: 1em;
+}
+
+.post__title {
+    margin: 0;
+}
+
+.post__title a {
+    text-decoration: none;
+    color: var(--alt-color);
+}
+
+.post__description {
+    margin: 5px 0 0 0;
 }
 
 
