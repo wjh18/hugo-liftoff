@@ -398,12 +398,13 @@ td, th {
 .newsletter {
     border: 1px solid #888888;
     padding: 50px 30px;
-    background-color: #333;
+    background-color: #333;    
 }
 
 .newsletter__contents {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
+    text-align: initial;
 }
 
 .newsletter__header {

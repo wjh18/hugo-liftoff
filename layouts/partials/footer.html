@@ -1,4 +1,11 @@
 <footer class="main-footer">
+  {{ if .Site.Params.global_newsletter }}
+    {{ partial "newsletter.html" . }}
+  {{ else }}
+    {{ if .Param "newsletter" }}
+      {{ partial "newsletter.html" . }}
+    {{ end }}
+  {{ end }}
   <p>
     &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     {{ if .Site.Params.footer_text }}

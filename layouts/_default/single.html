@@ -13,9 +13,6 @@
     </article>
     {{ partial "related.html" . }}
     {{ partial "share_icons.html" . }}
-    {{- if .Param "newsletter" }}
-    {{ partial "newsletter.html" . }}
-    {{ end }}
     {{ if .Site.DisqusShortname }}
     {{ template "_internal/disqus.html" . }}
     {{ end }}
