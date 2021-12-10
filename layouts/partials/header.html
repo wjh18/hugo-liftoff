@@ -10,7 +10,30 @@
     <ul class="main-nav" id="js-menu"> 
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL }}" class="nav-links{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" title="{{ .Title }}">{{ .Name }}</a></li>
+      {{ if .HasChildren }}
+        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+          <a href="{{ .URL }}" class="nav-links">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+            <label class="drop-icon" for="{{ .Name }}">▾</label>
+          </a>
+          <ul class="sub-menu">
+            {{ range .Children }}
+              <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                <a href="{{ .URL }}" class="nav-links">{{ .Name }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        </li>
+        
+      {{ else }}
+        <li>
+          <a href="{{ .URL }}" class="nav-links">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+          </a>
+        </li>
+      {{ end }}
       {{ end }}
     </ul>
     

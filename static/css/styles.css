@@ -219,6 +219,29 @@ td, th {
     color: var(--link-color);
 }
 
+.sub-menu {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #eee;
+    padding: 20px 30px 0 30px;
+    margin: 0;
+}
+
+.drop-icon {
+    cursor: pointer;
+}
+
+.main-nav li:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li a {
+    display: block;
+    margin: 20px 0 20px 0;
+}
+
 
 /* --- Footer --- */
 
