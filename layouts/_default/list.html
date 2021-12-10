@@ -1,9 +1,9 @@
 {{ define "main" -}}
 <section class="section__banner">
-  <h1 class="section__header">{{ .Title }}</h1>
+  <h1 class="section__header">{{ .Title }}</h1>  
 </section>
-{{ .Content }}
 <div class="posts posts--center">
+  <p class="section__description">{{ .Description }}</p>
   {{ range (.Paginate .RegularPagesRecursive).Pages }}
     <div class="post">
       <h2 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>

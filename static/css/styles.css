@@ -338,6 +338,15 @@ td, th {
     text-align: center;
 }
 
+.section__description {
+    color: var(--dark-txt-color);
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-top: 50px;
+    background-color: #eee;
+    padding: 30px;
+}
+
 
 /* Taxonomy / terms pages */
 
