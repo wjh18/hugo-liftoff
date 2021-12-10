@@ -443,3 +443,14 @@ td, th {
     background-color: white;
     cursor: pointer;
 }
+
+/* Pagination */
+
+.pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    margin: 0;
+    padding: 0;
+}

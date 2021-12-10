@@ -11,6 +11,6 @@
       <p class="post__description">{{ .Description }}</p>
     </div>
   {{ end }}
+  {{ template "_internal/pagination.html" . }}
 </div>
-{{ template "_internal/pagination.html" . }}
 {{ end }}
