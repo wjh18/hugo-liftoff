@@ -362,7 +362,7 @@ td, th {
 
 .posts {
     width: 600px;
-    padding: 0 30px;
+    padding: 0 30px 30px 0;
 }
 
 .posts--center {

@@ -4,13 +4,13 @@
 </section>
 {{ .Content }}
 <div class="posts posts--center">
-  {{ range .Paginator.Pages }}
+  {{ range (.Paginate .RegularPagesRecursive).Pages }}
     <div class="post">
       <h2 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
       <p class="post__description">{{ .Description }}</p>
     </div>
   {{ end }}
+  {{ template "_internal/pagination.html" . }}
 </div>
-{{ template "_internal/pagination.html" . }}
 {{ end }}
