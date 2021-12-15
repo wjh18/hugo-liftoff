@@ -7,6 +7,8 @@
     --dark-txt-color: #353535;
     --med-txt-color: #555555;
     --light-txt-color: #767676;
+    --section-bg-grad--1: rgb(34,34,34);
+    --section-bg-grad--2: linear-gradient(180deg, rgba(34,34,34,1) 30%, rgba(19,33,77,1) 100%);
     --base-font-light: 'Ubuntu Light';
     --base-font-reg: 'Ubuntu Regular';
     --base-font-med: 'Ubuntu Medium';
@@ -225,12 +227,13 @@ td, th {
     position: absolute;
     z-index: 1;
     background-color: #eee;
-    padding: 20px 30px 0 30px;
+    padding: 20px 30px 10px 30px;
     margin: 0;
 }
 
 .drop-icon {
     cursor: pointer;
+    margin-left: 5px;
 }
 
 .main-nav li:hover .sub-menu {
@@ -263,13 +266,15 @@ td, th {
 /* --- Home page --- */
 
 .homepage__hero {
-    background-color: #333;
-    padding: 60px 30px;
+    background: var(--section-bg-grad--1);
+    background: var(--section-bg-grad--2);
+    padding: 60px 30px;    
+    box-shadow: 5px 25px 39px -2px #000000;
 }
 
 .homepage__hero--wrapper {
     max-width: 768px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
 .homepage__hero--title {
@@ -323,16 +328,17 @@ td, th {
 }
 
 .homepage__section--sections {
+    background-color: #eee;
     column-gap: 0;
 }
 
 .homepage__section--posts {
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
     padding: 50px 0;   
 }
 
 .homepage__section--projects {
-    background-color: #fff;
+    background-color: #eeeeee;
     flex-direction: row-reverse;
     padding: 50px 0;
 }
@@ -352,7 +358,8 @@ td, th {
 /* Section pages */
 
 .section__banner {
-    background-color: #333;
+    background: var(--section-bg-grad--1);
+    background: var(--section-bg-grad--2);
     padding: 10px;
 }
 
@@ -434,7 +441,8 @@ td, th {
 .newsletter {
     border: 1px solid #888888;
     padding: 50px 30px;
-    background-color: #333;    
+    background: var(--section-bg-grad--1);
+    background: var(--section-bg-grad--2);
 }
 
 .newsletter__contents {
