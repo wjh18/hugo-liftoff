@@ -1,11 +1,10 @@
-// Test JavaScript
-console.log('JavaScript is loaded!')
+// Responsive mobile navbar
 
-let mainNav = document.getElementById('js-menu');
-let navBarToggle = document.getElementById('js-navbar-toggle');
 let navBar = document.getElementById('js-navbar');
+let mainMenu = document.getElementById('js-menu');
+let navBarToggle = document.getElementById('js-navbar__toggle');
 
 navBarToggle.addEventListener('click', function () {
-    mainNav.classList.toggle('active-nav');
-    navBar.classList.toggle('active-nav');
+    navBar.classList.toggle('navbar--active');
+    mainMenu.classList.toggle('navbar--active');    
 });

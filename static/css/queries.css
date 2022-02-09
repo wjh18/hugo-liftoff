@@ -8,45 +8,47 @@
 
 @media screen and (min-width: 768px) {
     
-    .navbar {
-        display: flex;
-        justify-content: space-around;
-        padding-bottom: 0;
+    .main-navigation {
+        flex-direction: row; /* Horizontal nav on desktop */
         align-items: center;
+        padding: 0;
+        /* padding-top: 20px;
+        padding-bottom: 20px; */
     }
 
-    .main-nav {
+    .menu {
         display: flex;
-        margin-right: 30px;
         flex-direction: row;
-        justify-content: flex-end;
-        padding-top: 0px;      
     }
 
-    .main-nav li {
-        margin: 0;
-    }
-
-    .nav-links {        
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .logo {
-        margin-top: 0;
-    }
-
-    .navbar-toggle {
+    .menu ul {
         display: none;
-    }    
-
-    .homepage__hero--flex {
-        flex-direction: row;
-        align-items: center;
+        position: absolute;
+        transition: all 0.5s ease-in;
     }
 
-    .homepage__hero--pic {
+    .menu li:hover > ul {
+        background-color: #e3e3e3;
+        padding-left: 0;        
+    }
+
+    .menu li:hover > ul a {
+        color: black;
+    }
+
+    .menu li > ul a:hover {
+        color: white;
+    }
+
+    /* .menu__cta-wrapper {
+        justify-content: center;
+        margin-left: 50px;
+        margin-top: 0;
         margin-bottom: 0;
+    } */
+
+    .navbar__toggle {
+        display: none; /* Hide nav toggle on desktop */
     }
 
 }

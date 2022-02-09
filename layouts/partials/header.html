@@ -1,41 +1,42 @@
 <header>
-  <nav class="navbar" id="js-navbar">
-    <span class="navbar-toggle" id="js-navbar-toggle">
+  <nav class="main-navigation" id="js-navbar">
+    <span class="navbar__toggle" id="js-navbar__toggle">
       <img src="{{ .Site.BaseURL }}icons/menu-burger.svg"
-           alt="hamburger icon to toggle menu"
-           height="25"
+           alt="Hamburger icon for mobile menu toggle"
+           height="30"
            width="auto"/>
-    </span>          
-    <a class="logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-    <ul class="main-nav" id="js-menu"> 
+    </span>
+    <a class="navbar__logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    <ul class="menu" id="js-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
       {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-          <a href="{{ .URL }}" class="nav-links">
+        <li>
+          <a href="{{ .URL }}">
             {{ .Pre }}
             <span>{{ .Name }}</span>
-            <label class="drop-icon" for="{{ .Name }}">▾</label>
+            <label class="menu__drop-icon" for="{{ .Name }}">▾</label>
           </a>
           <ul class="sub-menu">
             {{ range .Children }}
-              <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                <a href="{{ .URL }}" class="nav-links">{{ .Name }}</a>
+              <li>
+                <a href="{{ .URL }}">{{ .Name }}</a>
               </li>
             {{ end }}
           </ul>
         </li>
-        
       {{ else }}
         <li>
-          <a href="{{ .URL }}" class="nav-links">
+          <a href="{{ .URL }}">
             {{ .Pre }}
             <span>{{ .Name }}</span>
           </a>
         </li>
       {{ end }}
       {{ end }}
+      <!-- <div class="menu__cta-wrapper">
+        <a class="menu__cta" href="{{ .Site.BaseURL }}contact">Contact Us</a>
+      </div> -->
     </ul>
-    
   </nav>
 </header>
