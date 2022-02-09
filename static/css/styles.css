@@ -7,8 +7,9 @@
     --dark-txt-color: #353535;
     --med-txt-color: #555555;
     --light-txt-color: #767676;
-    --section-bg-grad--1: rgb(34,34,34);
-    --section-bg-grad--2: linear-gradient(180deg, rgba(34,34,34,1) 30%, rgba(19,33,77,1) 100%);
+    --section-bg-grad--1: rgb(255, 255, 255);
+    --section-bg-grad--2: linear-gradient(180deg, rgb(255, 255, 255) 10%, rgb(224, 230, 255) 100%);
+    --section-bg-grad--3: linear-gradient(0deg, rgb(255, 255, 255) 10%, rgb(224, 247, 255) 100%);
     --base-font-light: 'Ubuntu Light';
     --base-font-reg: 'Ubuntu Regular';
     --base-font-med: 'Ubuntu Medium';
@@ -98,7 +99,7 @@ main {
 footer {
     flex-shrink: 0;
     text-align: center;
-    background-color: #eee;
+    background-color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -163,13 +164,13 @@ td, th {
 /* --- Navigation --- */
 
 .main-navigation {
-    background-color: var(--dark-bg-color);
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;    
     padding: 20px;
     row-gap: 20px;   
-    border-bottom: 2px solid #343434;
+    /* border-bottom: 2px solid #333333; */
 }
 
 .navbar__logo {
@@ -266,10 +267,6 @@ td, th {
 
 /* --- Footer --- */
 
-.main-footer p {
-    font-size: 1em;
-}
-
 .main-footer p a {
     color: var(--link-color);
     text-decoration: none;
@@ -286,8 +283,7 @@ td, th {
 .homepage__hero {
     background: var(--section-bg-grad--1);
     background: var(--section-bg-grad--2);
-    padding: 60px 30px;    
-    box-shadow: 5px 25px 39px -2px #000000;
+    padding: 80px 30px;
 }
 
 .homepage__hero--wrapper {
@@ -296,12 +292,12 @@ td, th {
 }
 
 .homepage__hero--title {
-    color: white;
+    color: var(--dark-txt-color);
     margin: 0 0 10px 0;
 }
 
 .homepage__hero--subtitle {
-    color: #cfcfcf;
+    color: var(--med-txt-color);
     font-size: 1.3em;
     line-height: 1.5em;
     margin: 0;
@@ -312,15 +308,21 @@ td, th {
 }
 
 .homepage__hero--learn-more a {
-    background-color: var(--link-color);
-    padding: 12px;
-    text-decoration: none;
+    padding: 12px;    
+    border-style: none;
+    box-sizing: border-box;
     color: #eee;
+    border: 2px solid var(--link-color);
+    background-color: var(--link-color);
+    margin-top: 15px;
 }
 
 .homepage__hero--learn-more a:hover {
     color: var(--link-color);
-    background-color: #eee;
+    border: 2px solid var(--link-color);
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
 }
 
 .homepage__hero--pic {
@@ -346,7 +348,7 @@ td, th {
 }
 
 .homepage__section--sections {
-    background-color: #eee;
+    background-color: #f7f7f7;
     column-gap: 0;
 }
 
@@ -356,7 +358,7 @@ td, th {
 }
 
 .homepage__section--projects {
-    background-color: #eeeeee;
+    background-color: #f7f7f7;
     flex-direction: row-reverse;
     padding: 50px 0;
 }
@@ -370,6 +372,10 @@ td, th {
     border: none;
     border-radius: 0;
     box-shadow: none;
+}
+
+.homepage__section--info p a {
+    font-family: var(--base-font-med);
 }
 
 
@@ -386,7 +392,7 @@ td, th {
 }
 
 .section__header {
-    color: white;
+    color: #333;
     text-align: center;
 }
 
@@ -457,10 +463,9 @@ td, th {
 /* Newsletter */
 
 .newsletter {
-    border: 1px solid #888888;
     padding: 50px 30px;
     background: var(--section-bg-grad--1);
-    background: var(--section-bg-grad--2);
+    background: var(--section-bg-grad--3);
 }
 
 .newsletter__contents {
@@ -472,11 +477,12 @@ td, th {
 .newsletter__header {
     margin-top: 0;
     margin-bottom: 0;
-    color: white;
+    color: var(--dark-txt-color);
 }
 
 .newsletter__description {
-    color: #eee;
+    color: var(--med-txt-color);
+    font-size: 1.2rem;
 }
 
 #newsletter__form {
@@ -487,6 +493,9 @@ td, th {
     padding: 12px;
     margin-right: 10px;
     border: 1px solid #888888;
+    min-width: 200px;
+    min-height: 30px;
+    font-size: 1.1em;
 }
 
 #newsletter__form--submit {
@@ -504,6 +513,7 @@ td, th {
     border: 2px solid var(--link-color);
     background-color: white;
     cursor: pointer;
+    transition: all 0.2s ease-in;
 }
 
 /* Pagination */
