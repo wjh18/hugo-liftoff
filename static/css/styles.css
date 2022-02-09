@@ -227,8 +227,10 @@ td, th {
     position: absolute;
     z-index: 1;
     background-color: #eee;
-    padding: 20px 30px 10px 30px;
+    padding: 15px 40px 5px 40px;
     margin: 0;
+    border-radius: 10px;
+
 }
 
 .drop-icon {
