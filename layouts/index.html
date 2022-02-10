@@ -1,23 +1,23 @@
 {{ define "main" }}
-  <section class="homepage__hero">    
-    <div class="homepage__hero--wrapper">
-      <div class="homepage__hero--flex">
+  <section class="home-hero">    
+    <div class="home-hero__wrapper">
+      <div class="home-hero__flex">
         {{ if .Site.Params.avatar }}
-        <img class="homepage__hero--pic"
+        <img class="home-hero__pic"
              src="{{ .Site.BaseURL }}img/{{.Site.Params.avatar}}"
              width="100px" height="100px"/>
         {{ else }}
-        <img class="homepage__hero--pic"
+        <img class="home-hero__pic"
              src="{{ .Site.BaseURL }}img/rocket.png"
              width="100px" height="100px"/>
         {{ end }}
         <div>
-          <h1 class="homepage__hero--title">{{.Title}}</h1>
+          <h1 class="home-hero__title">{{.Title}}</h1>
           {{ with .Params.subtitle }}
-          <p class="homepage__hero--subtitle">{{.}}</p>
+          <p class="home-hero__subtitle">{{.}}</p>
           {{ end }}
-          <div class="homepage__hero--learn-more"><a href="{{ .Site.BaseURL }}about/">About me</a></div>
-        </div>        
+          <div><a class="cta-btn" href="{{ .Site.BaseURL }}about/">About me</a></div>
+        </div>
       </div>      
     </div>
   </section>
@@ -31,40 +31,40 @@
   {{ $hasSubsections := $.Scratch.Get "hasSubsections" }}
 
   {{ if eq $hasSubsections true }}
-  <section class="homepage__section homepage__section--sections">    
+  <section class="home-section home-section__sections">    
     {{ range (where .Sections "Section" "posts") }}
       {{ range .Sections }}
-      <div class="homepage__section--info">
-        <h2>{{ .Title }}</h2>
+      <div class="home-section__info">
+        <h2 class="header--md h-divider">{{ .Title }}</h2>
         <p>{{ .Description }}</p>
-        <p><a href="{{ .Site.BaseURL }}{{ .Section }}/{{ .Title | lower }}/">View {{ .Title | lower }}</a></p>
+        <p><a href="{{ .Site.BaseURL }}{{ .Section }}/{{ .Title | lower }}/">Read {{ .Title | lower }} &raquo;</a></p>
       </div>
       {{ end }}
     {{ end }}
   </section>
   {{- end -}}
 
-  <section class="homepage__section homepage__section--posts">
-    <div class="homepage__section--info homepage__section--info-no-border">      
-      <h2 class="header--light">Recent Posts</h2>
+  <section class="home-section home-section__posts">
+    <div class="home-section__info">      
+      <h2 class="header--light header--lg h-divider">Recent Posts</h2>
       <p class="description--light">This is a description of the section that's should be longer but this will do for now.</p>
-      <p><a href="{{ .Site.BaseURL }}posts/">View all</a></p>
+      <p><a href="{{ .Site.BaseURL }}posts/">See all posts &raquo;</a></p>
     </div>
     <div class="posts">      
       {{- range ( where site.RegularPages "Section" "posts" | last 3 ) }}
         <div class="post">                        
-          <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
           <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
-          <p class="post__description">{{ .Description }}</p>            
+          <h3 class="post__title post__title--light"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+          <p class="post__description description--light">{{ .Description }}</p>            
         </div>
       {{ end }}      
     </div> 
   </section>
-  <section class="homepage__section homepage__section--projects">
-    <div class="homepage__section--info homepage__section--info-no-border">      
-      <h2>Featured Projects</h2>
+  <section class="home-section home-section__projects">
+    <div class="home-section__info">      
+      <h2 class="header--lg h-divider">Featured Projects</h2>
       <p>This is a description of the section that's should be longer but this will do for now.</p>
-      <p><a href="{{ .Site.BaseURL }}projects/">View all</a></p>
+      <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
     </div>
     <div class="posts">           
       {{- range ( where site.RegularPages "Section" "projects" | last 3 ) }}
@@ -72,7 +72,7 @@
           <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
           <p class="post__description">{{ .Description }}</p>            
         </div>
-      {{ end }}      
+      {{ end }}
     </div> 
   </section>
 {{ end }}

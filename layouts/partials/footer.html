@@ -1,4 +1,4 @@
-<footer class="main-footer">
+<footer class="footer">
   {{ if .Site.Params.global_newsletter }}
     {{ partial "newsletter.html" . }}
   {{ else }}
@@ -6,10 +6,12 @@
       {{ partial "newsletter.html" . }}
     {{ end }}
   {{ end }}
-  <p class="footer__copyright">
-    &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-    {{ if .Site.Params.footer_text }}
-    &middot; {{ .Site.Params.footer_text }}
-    {{ end }}
-  </p>
+  <section class="footer__details">
+    <p class="footer__copyright">
+      &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      {{ if .Site.Params.footer_text }}
+      &middot; {{ .Site.Params.footer_text }}
+      {{ end }}
+    </p>
+  </section>
 </footer>

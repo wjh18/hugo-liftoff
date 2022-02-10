@@ -1,12 +1,12 @@
 <header>
-  <nav class="main-navigation" id="js-navbar">
-    <span class="navbar__toggle" id="js-navbar__toggle">
+  <nav class="main-nav" id="js-navbar">
+    <span class="main-nav__toggle" id="js-navbar__toggle">
       <img src="{{ .Site.BaseURL }}icons/menu-burger.svg"
            alt="Hamburger icon for mobile menu toggle"
            height="30"
            width="auto"/>
     </span>
-    <a class="navbar__logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    <a class="main-nav__logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     <ul class="menu" id="js-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}

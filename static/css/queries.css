@@ -8,25 +8,23 @@
 
 @media screen and (min-width: 768px) {
     
-    .main-navigation {
+    .main-nav {
         flex-direction: row; /* Horizontal nav on desktop */
         align-items: center;
         padding: 0;
-        /* padding-top: 20px;
-        padding-bottom: 20px; */
-        transition: all 0.6s ease-in-out;
+        transition: var(--trans-ease-med);
     }
 
-    .navbar__logo {
-        transition: all 0.6s ease-in-out;
+    .main-nav__logo {
+        transition: var(--trans-ease-med);
     }
 
-    .main-navigation:hover .navbar__logo {
-        color: #cfcfcf;
+    .main-nav:hover .main-nav__logo {
+        color: var(--txt-color-light-2);
     }
 
-    .main-navigation:hover {
-        border-color: #808080;
+    .main-nav:hover {
+        border-color: var(--border-color-med);
     }
 
     .menu {
@@ -37,35 +35,27 @@
     .menu ul {
         display: none;
         position: absolute;
-        transition: all 0.2s ease-in-out;
+        transition: var(--trans-ease-short);
     }
 
     .menu li:hover > ul {
-        background-color: #cfcfcf;
-        box-shadow: 0px 30px 60px -40px black;
+        background-color: var(--bg-color-light);
         padding-left: 0;
     }
 
     .menu li:hover > ul a {
-        color: black;
+        color: var(--txt-color-dark-1);
     }
 
     .menu li > ul a:hover {
-        color: black;
+        color: var(--txt-color-light-1);
     }
 
-    /* .menu__cta-wrapper {
-        justify-content: center;
-        margin-left: 50px;
-        margin-top: 0;
-        margin-bottom: 0;
-    } */
-
-    .navbar__toggle {
+    .main-nav__toggle {
         display: none; /* Hide nav toggle on desktop */
     }
 
-    .homepage__hero--flex {    
+    .home-hero__flex {    
         flex-direction: row;
         justify-content: center;
         align-items: center;

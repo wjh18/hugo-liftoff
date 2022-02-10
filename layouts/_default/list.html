@@ -1,10 +1,10 @@
 {{ define "main" -}}
-<section class="section__banner">
-  <h1 class="section__header">{{ .Title }}</h1>  
+<section class="banner">
+  <h1 class="banner__header">{{ .Title }}</h1>  
 </section>
-<section class="section__wrapper">
+<section class="list__wrapper">
   <div class="posts posts--center">
-    <p class="section__description">{{ .Description }}</p>
+    <p class="list__description">{{ .Description }}</p>
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
       <div class="post">
         <h2 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
