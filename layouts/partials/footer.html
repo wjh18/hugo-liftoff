@@ -6,7 +6,7 @@
       {{ partial "newsletter.html" . }}
     {{ end }}
   {{ end }}
-  <p>
+  <p class="footer__copyright">
     &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     {{ if .Site.Params.footer_text }}
     &middot; {{ .Site.Params.footer_text }}
