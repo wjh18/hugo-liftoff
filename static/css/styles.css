@@ -493,11 +493,12 @@ a:hover {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.4rem;
+    font-family: var(--serif-font-light), 'Georgia', 'serif';
 }
 
 .post__title a {
     text-decoration: none;
-    color: var(--txt-color-dark-2);
+    color: #3273dc;
     transition: var(--trans-ease-short);
 }
 
@@ -508,7 +509,7 @@ a:hover {
 
 .post__title--light a {
     text-decoration: none;
-    color: var(--txt-color-light-3);
+    color: #98b0d4;
 }
 
 .post__title--light a:hover {
