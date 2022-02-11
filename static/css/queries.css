@@ -20,7 +20,7 @@
     }
 
     .main-nav:hover .main-nav__logo {
-        color: var(--txt-color-light-2);
+        color: var(--txt-color-light-4);
     }
 
     .main-nav:hover {

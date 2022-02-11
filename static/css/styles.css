@@ -22,8 +22,10 @@
     --txt-color-dark-2: #353535;
     --txt-color-dark-3: #555555;
     --txt-color-light-1: white;
-    --txt-color-light-2: #cfcfcf;
-    --txt-color-light-3: #a4a4a4;
+    --txt-color-light-2: #eeeeee;
+    --txt-color-light-3: #e3e3e3;
+    --txt-color-light-4: #cfcfcf;
+    --txt-color-light-5: #a4a4a4;
 
     /* Border colors and trasitions */
     --border-color-med: #808080;
@@ -174,16 +176,8 @@ a:hover {
 }
 
 .description--light {
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
 }
-
-/* .header--dark {
-    color: var(--txt-color-light-2);
-}
-
-.description--dark {
-    color: var(--txt-color-light-3);
-} */
 
 .cta-btn {
     padding: 12px;    
@@ -225,7 +219,7 @@ a:hover {
 }
 
 .main-nav__logo {
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
     font-family: var(--serif-font-bold), Georgia, serif;
     font-size: 1.8rem;
     text-decoration: none;
@@ -233,7 +227,7 @@ a:hover {
 }
 
 .main-nav__logo:hover {
-    color: var(--txt-color-light-2);
+    color: var(--txt-color-light-4);
 }
 
 .menu {
@@ -250,7 +244,7 @@ a:hover {
     
 .menu__link {
     display: flex;
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
     text-align: center;
     text-decoration: none;
     padding: 1.6rem;
@@ -312,7 +306,7 @@ a:hover {
 }
 
 .footer p a {    
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
     text-decoration: none;
     font-family: var(--serif-font-light), Georgia, serif;
 }
@@ -326,7 +320,7 @@ a:hover {
 }
 
 .footer__copyright {
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
     font-size: 1rem;
 }
 
@@ -340,17 +334,18 @@ a:hover {
 }
 
 .home-hero__wrapper {
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto;    
 }
 
 .home-hero__title {
-    color: white;
-    margin: 0 0 5px 0;
+    color: var(--txt-color-light-2);
+    line-height: 1.3em;
+    margin: 0 0 15px 0;
 }
 
 .home-hero__subtitle {
-    color: #dadada;
+    color: var(--txt-color-light-4);
     font-size: 1.3em;
     line-height: 1.5em;
     margin-top: 0;
@@ -417,7 +412,7 @@ a:hover {
 }
 
 .banner__header {
-    color: white;
+    color: var(--txt-color-light-2);
     text-align: center;
 }
 
@@ -477,7 +472,7 @@ a:hover {
 .post__date {
     margin: 0;
     margin-bottom: 5px;
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
     font-size: 0.9rem;
 }
 
@@ -500,12 +495,12 @@ a:hover {
 
 .post__title--light a {
     text-decoration: none;
-    color: var(--txt-color-light-2);
+    color: var(--txt-color-light-3);
 }
 
 .post__title--light a:hover {
     text-decoration: none;
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
 }
 
 .post__description {
@@ -531,11 +526,11 @@ a:hover {
 .newsletter__header {
     margin-top: 0;
     margin-bottom: 0;
-    color: white;
+    color: var(--txt-color-light-2);
 }
 
 .newsletter__description {
-    color: #dadada;
+    color: var(--txt-color-light-4);
     font-size: 1.2rem;
 }
 
@@ -580,7 +575,7 @@ a:hover {
 }
 
 .page-item.disabled > a {
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-light-5);
     cursor:unset;
 }
 
