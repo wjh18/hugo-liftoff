@@ -32,22 +32,40 @@
         flex-direction: row;
     }
 
-    .menu ul {
+    .sub-menu {
         display: none;
         position: absolute;
         transition: var(--trans-ease-short);
     }
 
-    .menu li:hover > ul {
+    .menu__item:hover > .sub-menu {
         background-color: var(--bg-color-light);
         padding-left: 0;
     }
 
-    .menu li:hover > ul a {
+    .menu__item:hover > .sub-menu {
+        display: block;
+        z-index: 1;
+    }
+
+    .menu__link--desktop {
+        display: flex;
+    }
+
+    .menu__link--mobile {
+        display: none;
+    }
+
+    .sub-menu--active {
+        display: none;
+        z-index: 1;
+    }
+
+    .menu__item:hover > .menu__item {
         color: var(--txt-color-dark-1);
     }
 
-    .menu li > ul a:hover {
+    .menu__item > .menu__item:hover {
         color: var(--txt-color-light-1);
     }
 

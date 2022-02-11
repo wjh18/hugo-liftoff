@@ -243,12 +243,12 @@ a:hover {
     padding: 0;    
 }
     
-.menu li {
+.menu__item {
     display: block;
     list-style-type: none;
 }
     
-.menu li a {
+.menu__link {
     display: flex;
     color: var(--txt-color-light-3);
     text-align: center;
@@ -256,19 +256,36 @@ a:hover {
     padding: 1.6rem;
 }
     
-.menu li a:hover {
+.menu__link:hover {
     background-color: var(--link-color-light);
     color: var(--txt-color-light-1);
     transition: var(--trans-ease-short);
 }
 
-.menu ul {
+.sub-menu {
     display: none;
 }
 
-.menu li:hover > ul {
+.sub-menu--active {
     display: block;
     z-index: 1;
+}
+
+.menu__link--desktop {
+    display: none;
+}
+
+.menu__link--mobile {
+    display: flex;
+    cursor: pointer;
+}
+
+.sub-menu .menu__link--desktop {
+    color: var(--txt-color-dark-2);
+}
+
+.sub-menu .menu__link--desktop:hover {
+    color: var(--txt-color-light-1);
 }
 
 .menu__drop-icon {

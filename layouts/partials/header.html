@@ -11,16 +11,22 @@
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
       {{ if .HasChildren }}
-        <li>
-          <a href="{{ .URL }}">
+        <li class="menu__item">
+          <a href="{{ .URL }}" class="menu__link menu__link--desktop">
             {{ .Pre }}
             <span>{{ .Name }}</span>
             <label class="menu__drop-icon" for="{{ .Name }}">▾</label>
           </a>
+          <span class="menu__link menu__link--mobile">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+            <label class="menu__drop-icon" for="{{ .Name }}">▾</label>
+          </span>
           <ul class="sub-menu">
             {{ range .Children }}
-              <li>
-                <a href="{{ .URL }}">{{ .Name }}</a>
+              <li class="menu__item">
+                <a href="{{ .URL }}" class="menu__link menu__link--desktop">{{ .Name }}</a>
+                <a href="{{ .URL }}" class="menu__link menu__link--mobile">{{ .Name }}</a>
               </li>
             {{ end }}
           </ul>
