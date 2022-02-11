@@ -205,6 +205,19 @@ a:hover {
     margin-top: 20px;
 }
 
+.triangle-divider {
+    height: 100px;
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* z-index: -1; */
+    background-color: yellow;
+    border-radius: 40px;
+    background-color: var(--bg-color-light);
+}
+
 
 /* --- Navigation --- */
 
@@ -382,7 +395,7 @@ a:hover {
 
 .home-section__posts {
     background-color: var(--bg-color-dark);
-    padding: 50px 0;   
+    padding: 150px 0;
 }
 
 .home-section__projects {
