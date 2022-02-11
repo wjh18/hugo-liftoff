@@ -2,8 +2,9 @@
 
 :root {
     /* Background colors */
-    --bg-color-dark: #151515;
+    --bg-color-dark: #151515;    
     --bg-color-light: #f7f7f7;
+    --bg-color-light-2: #e3e3e3;
     --bg-color-blue: #050c2d;
     --bg-color-grad: linear-gradient(180deg, var(--bg-color-dark) 25%, var(--bg-color-blue) 100%);
 
@@ -18,6 +19,8 @@
     --med-txt-color: #555555;
 
     --txt-color-dark-1: black;
+    --txt-color-dark-2: #353535;
+    --txt-color-dark-3: #555555;
     --txt-color-light-1: white;
     --txt-color-light-2: #cfcfcf;
     --txt-color-light-3: #a4a4a4;
@@ -407,11 +410,11 @@ a:hover {
 }
 
 .list__description {
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-dark-3);
     font-size: 1.1em;
     line-height: 1.6em;
     margin-top: 50px;
-    background-color: #333;
+    background-color: var(--bg-color-light-2);
     padding: 30px;
 }
 
@@ -425,13 +428,17 @@ a:hover {
 .terms__wrapper {
     max-width: 768px;
     margin: 0 auto;
-    background-color: #eee;
+    background-color: var(--bg-color-light-2);
     padding: 30px;
 }
 
 .terms__term {
     font-size: 1.3em;
     margin: 5px;
+}
+
+.terms__term sup {
+    color: var(--txt-color-dark-3);
 }
 
 
@@ -447,7 +454,7 @@ a:hover {
 }
 
 .post {
-    margin: 70px 0;
+    margin: 50px 0;
 }
 
 .post__date {
@@ -460,16 +467,18 @@ a:hover {
 .post__title {
     margin: 0;
     margin-bottom: 10px;
+    font-size: 1.4rem;
 }
 
 .post__title a {
     text-decoration: none;
-    color: var(--alt-color-dark);
+    color: var(--txt-color-dark-2);
+    transition: var(--trans-ease-short);
 }
 
 .post__title a:hover {
     text-decoration: none;
-    color: var(--alt-color-light);
+    color: var(--txt-color-dark-3);
 }
 
 .post__title--light a {
@@ -479,7 +488,7 @@ a:hover {
 
 .post__title--light a:hover {
     text-decoration: none;
-    color: var(--alt-color-dark);
+    color: var(--txt-color-light-3);
 }
 
 .post__description {
@@ -548,13 +557,13 @@ a:hover {
 }
 
 .page-link {
-    color: var(--txt-color-light-3);
+    color: var(--txt-color-dark-3);
     padding: 10px;
-    background-color: #333;
+    background-color: var(--bg-color-light-2);
 }
 
 .page-item.disabled > a {
-    color: var(--med-txt-color);
+    color: var(--txt-color-light-3);
     cursor:unset;
 }
 
