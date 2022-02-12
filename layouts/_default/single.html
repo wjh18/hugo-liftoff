@@ -2,20 +2,22 @@
 <section class="banner">
   <div class="single__container single__banner-wrapper">
     <h1 class="banner__header single__post-header">{{ .Title }}</h1>
-    <p class="single__post-meta">
-      <span> {{ .Date.Format "Mon Jan 2, 2006" }} </span>&middot;
+    <div class="single__post-meta">
+      <span> {{ .Date.Format "Jan 2, 2006" }} </span>&middot;
       <span> {{ .WordCount }} words </span>&middot;
-      <span> {{ .ReadingTime }} min. read </span>
-    </p>
-    <div class="single__banner-tags">
-      {{ with .Params.tags }}
-      <ul>
-        {{ range . }}
-          <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+      <span> {{ .ReadingTime }} min. read </span>&middot;
+      <div class="single__banner-tags">
+        {{ with .Params.tags }}
+        <ul>
+          {{ range . }}
+            <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
         {{ end }}
-      </ul>
-      {{ end }}
+      </div>
     </div>
+    
+    <p class="single__post-description">{{ .Description }}</p>
   </div>
 </section>
 <section class="single__container">
