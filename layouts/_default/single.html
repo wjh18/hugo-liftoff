@@ -28,36 +28,38 @@
     <p class="single__post-description">{{ .Description }}</p>
   </div>
 </section>
-<section class="single__container single__container-bg">
-  <div>
-    {{ partial "toc.html" . }}
-    <article>
-        {{ .Content }}
-    </article>
-  </div>
-</section>
-<aside class="single__container single__container-bg">
-  <div class="single__banner-tags">
-    {{ with .Params.tags }}
-    <ul>
-      {{ range . }}
-        <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+<div class="single__container single__container-bg">
+  <section>
+    <div>
+      {{ partial "toc.html" . }}
+      <article class="single__post-content">
+          {{ .Content }}
+      </article>
+    </div>
+  </section>
+  <aside>
+    <div class="single__banner-tags">
+      {{ with .Params.tags }}
+      <ul>
+        {{ range . }}
+          <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+      </ul>
       {{ end }}
-    </ul>
+    </div>
+    {{ partial "share_icons.html" . }}
+    {{ partial "related.html" . }}
+    {{ if .Site.DisqusShortname }}
+    {{ template "_internal/disqus.html" . }}
     {{ end }}
-  </div>
-  {{ partial "share_icons.html" . }}
-  {{ partial "related.html" . }}  
-  {{ if .Site.DisqusShortname }}
-  {{ template "_internal/disqus.html" . }}
-  {{ end }}
-  <div>
-    {{ with .PrevInSection }}
-      <a class="previous" href="{{.Permalink}}"> {{ .Title }}</a>
-    {{ end }}
-    {{ with .NextInSection }}
-      <a class="next" href="{{.Permalink}}"> {{ .Title }}</a>
-    {{ end }}
-  </div>
-</aside>
+    <div>
+      {{ with .PrevInSection }}
+        <a class="previous" href="{{.Permalink}}"> {{ .Title }}</a>
+      {{ end }}
+      {{ with .NextInSection }}
+        <a class="next" href="{{.Permalink}}"> {{ .Title }}</a>
+      {{ end }}
+    </div>
+  </aside>
+</div>
 {{ end }}

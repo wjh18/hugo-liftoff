@@ -24,6 +24,8 @@ menuItems.forEach(function(item) {
 });
 
 // Show or hide toc on click of toggle
-tocToggle.addEventListener('click', function () {
-    tocContents.classList.toggle('single__toc-contents--active');
-});
+if (tocToggle) {
+    tocToggle.addEventListener('click', function () {
+        tocContents.classList.toggle('single__toc-contents--active');
+    });
+}

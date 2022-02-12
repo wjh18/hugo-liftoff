@@ -9,15 +9,12 @@
     --bg-color-grad: linear-gradient(180deg, var(--bg-color-dark) 25%, var(--bg-color-blue) 100%);
 
     /* Links and alt colors */
-    --link-color-light: #bd2121;
-    --link-color-dark: #871818;
+    --link-color-light: #bd7221;
+    --link-color-dark: #9a5c1a;
     --alt-color-light: #3273dc;
     --alt-color-dark: #3273dc;
 
     /* Contrasting text colors */
-    --dark-txt-color: #353535;
-    --med-txt-color: #555555;
-
     --txt-color-dark-1: black;
     --txt-color-dark-2: #353535;
     --txt-color-dark-3: #555555;
@@ -146,18 +143,13 @@ h3 {
 
 p {
     font-family: var(--base-font-light), Helvetica, sans-serif;
-    color: var(--dark-txt-color);
+    color: var(--txt-color-dark-2);
     font-size: 1.1rem;
-    line-height: 1.8rem;
+    line-height: 1.7rem;
 }
 
 a {
-    color: var(--link-color-light);
     text-decoration: none;
-}
-
-a:hover {
-    color: var(--link-color-dark);
 }
 
 
@@ -206,16 +198,12 @@ a:hover {
 }
 
 .triangle-divider {
-    height: 100px;
-    width: 80%;
-    margin: 0 auto;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
-    /* z-index: -1; */
-    background-color: yellow;
-    border-radius: 40px;
-    background-color: var(--bg-color-light);
+    transform: translate(-50%, 0%);
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-top: 50px solid var(--bg-color-dark);
 }
 
 
@@ -315,11 +303,11 @@ a:hover {
 /* --- Footer --- */
 
 .footer {
-    background-color: var(--bg-color-blue);    
+    background-color: var(--bg-color-dark);    
 }
 
 .footer p a {    
-    color: var(--txt-color-light-5);
+    color: var(--link-color-dark);
     text-decoration: none;
     font-family: var(--serif-font-light), Georgia, serif;
 }
@@ -398,13 +386,13 @@ a:hover {
 
 .home-section__posts {
     background-color: var(--bg-color-dark);
-    padding: 150px 0;
+    padding: 100px 0;
 }
 
 .home-section__projects {
     background-color: var(--bg-color-light);
     flex-direction: row-reverse;
-    padding: 50px 0;
+    padding: 80px 0;
 }
 
 .home-section__info {
@@ -416,6 +404,7 @@ a:hover {
     font-family: var(--base-font-med);
     font-size: 1rem;
     text-transform: uppercase;
+    color: var(--link-color-dark);
 }
 
 
@@ -496,18 +485,15 @@ a:hover {
     list-style-type: none;
     column-gap: 15px;
     margin-bottom: 10px;
-    font-size: 1.3rem;
-    opacity: 0.8;
-    text-shadow: -2px -2px 2px var(--link-color-dark);
+    font-size: 1.1rem;    
 }
 
 .single__banner-categories li {
-    color: var(--txt-color-light-5);
-    opacity: 1;
+    color: var(--link-color-light);
 }
 
 .single__banner-categories li:hover {
-    color: var(--link-color-light);
+    color: var(--link-color-dark);
 }
 
 .single__banner-tags ul {
@@ -522,15 +508,31 @@ a:hover {
 
 .single__banner-tags ul li {
     background-color: transparent;
-    opacity: 0.8;
     padding: 6px 12px;
     border-radius: 10px;
     border: 2px solid var(--link-color-light);
+    color: var(--link-color-light);
+}
+
+.single__banner-tags ul li:hover {
+    border-color: var(--link-color-dark);
+    color: var(--link-color-dark);
 }
 
 .single__toc {
     font-size: 1rem;
     margin-bottom: 30px;
+}
+
+.single__post-content p {
+    font-family: var(--base-font-light), "Helvetica", "sans-serif";
+    color: var(--txt-color-dark-2);
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+}
+
+.single__post-content strong {
+    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
 }
 
 #js-toc__toggle {
@@ -594,7 +596,15 @@ a:hover {
 }
 
 .post {
-    margin: 50px 0;
+    margin: 30px 0;
+}
+
+.post:not(:last-child):after {
+    content:' ';
+    display: block;
+    border: 1px solid var(--border-color-dark);
+    width: 100%;
+    margin-top: 30px;
 }
 
 .post__date {
@@ -613,7 +623,6 @@ a:hover {
 
 .post__title a {
     text-decoration: none;
-    color: #3273dc;
     transition: var(--trans-ease-short);
 }
 
@@ -624,12 +633,12 @@ a:hover {
 
 .post__title--light a {
     text-decoration: none;
-    color: #98b0d4;
+    color: var(--txt-color-light-2);
 }
 
 .post__title--light a:hover {
     text-decoration: none;
-    color: var(--txt-color-light-5);
+    color: var(--txt-color-light-4);
 }
 
 .post__description {
@@ -641,7 +650,7 @@ a:hover {
 /* Newsletter */
 
 .newsletter {
-    padding: 50px 30px;
+    padding: 80px 30px;
     background: var(--bg-color-dark);
     background: var(--bg-color-grad);
 }

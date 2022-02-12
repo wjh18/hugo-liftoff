@@ -52,23 +52,25 @@
       <p class="description--light">This is a description of the section that's should be longer but this will do for now.</p>
       <p><a href="{{ .Site.BaseURL }}posts/">See all posts &raquo;</a></p>
     </div>
-    <div class="posts">      
+    <div class="posts">    
       {{- range ( where site.RegularPages "Section" "posts" | last 3 ) }}
-        <div class="post">                        
-          <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>
-          <h3 class="post__title post__title--light"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+        <div class="post">                                  
+          <div class="single__banner-categories">
+            {{ with .Params.categories }}
+            {{ range . }}
+              <a href="{{ "categories" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
+            {{ end }}
+            {{ end }}
+          </div>
+          <h3 class="post__title post__title--light"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>  
+          <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>       
           <p class="post__description description--light">{{ .Description }}</p>            
         </div>
       {{ end }}      
     </div> 
-  </section>  
+  </section>
   <div class="triangle-divider"></div>
   <section class="home-section home-section__projects">
-    <div class="home-section__info">      
-      <h2 class="header--lg h-divider">Featured Project</h2>
-      <p>This is a description of the section that's should be longer but this will do for now.</p>
-      <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
-    </div>
     <div class="posts">
       {{ if .Site.Params.featured_project }}
         {{ $related := .Site.Params.featured_project }}
@@ -89,5 +91,11 @@
       {{ end }}
       {{ end }}
     </div> 
+    <div class="home-section__info">      
+      <h2 class="header--lg h-divider">Featured Project</h2>
+      <p>This is a description of the section that's should be longer but this will do for now.</p>
+      <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
+    </div>
+    
   </section>
 {{ end }}
