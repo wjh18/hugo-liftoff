@@ -447,6 +447,43 @@ a:hover {
 }
 
 
+/* Single pages */
+
+.single__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.single__banner-wrapper {
+    padding: 20px;
+}
+
+.single__post-header {    
+    text-align: left;
+    margin: 0 auto;
+}
+
+.single__post-meta {
+    color: var(--txt-color-light-4);
+    text-align: left;
+    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+}
+
+.single__banner-tags ul {
+    display: flex;
+    list-style-type: none;
+    column-gap: 20px;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.single__banner-tags ul li {
+    background-color: var(--bg-color-light-2);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
 /* Taxonomy / terms pages */
 
 .terms {
