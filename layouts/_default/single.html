@@ -1,26 +1,34 @@
 {{ define "main" }}
 <section class="banner">
   <div class="single__container single__banner-wrapper">
+    <div class="single__banner-categories">
+      {{ with .Params.categories }}
+      {{ range . }}
+        <a href="{{ "categories" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
+      {{ end }}
+      {{ end }}
+    </div>
     <h1 class="banner__header single__post-header">{{ .Title }}</h1>
     <div class="single__post-meta">
-      <span> {{ .Date.Format "Jan 2, 2006" }} </span>&middot;
-      <span> {{ .WordCount }} words </span>&middot;
-      <span> {{ .ReadingTime }} min. read </span>&middot;
+      <div class="single__post-meta-stats">
+        <span> {{ .Date.Format "Jan 2, 2006" }} </span>&middot;
+        <span> {{ .WordCount }} words </span>&middot;
+        <span> {{ .ReadingTime }} min. read </span>
+      </div>
       <div class="single__banner-tags">
         {{ with .Params.tags }}
         <ul>
           {{ range . }}
-            <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+            <a href="{{ "tags" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
           {{ end }}
         </ul>
         {{ end }}
       </div>
     </div>
-    
     <p class="single__post-description">{{ .Description }}</p>
   </div>
 </section>
-<section class="single__container">
+<section class="single__container single__container-bg">
   <div>
     {{ partial "toc.html" . }}
     <article>
@@ -28,7 +36,7 @@
     </article>
   </div>
 </section>
-<aside class="single__container">
+<aside class="single__container single__container-bg">
   <div class="single__banner-tags">
     {{ with .Params.tags }}
     <ul>

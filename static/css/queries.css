@@ -15,6 +15,9 @@
         font-size: 1.3rem;
         line-height: 1.7rem;
     }
+
+    
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -94,6 +97,10 @@
         font-size: 2.1rem;
     }
 
+    .single__container {
+        padding: 50px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -103,5 +110,5 @@
 }
 
 @media screen and (min-width: 1400px) {
-
+    
 }
