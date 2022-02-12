@@ -355,12 +355,13 @@ a:hover {
     color: var(--txt-color-light-2);
     line-height: 1.3em;
     margin: 0 0 15px 0;
+    font-size: 1.7rem;
 }
 
 .home-hero__subtitle {
     color: var(--txt-color-light-4);
-    font-size: 1.3em;
-    line-height: 1.5em;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
     margin-top: 0;
     margin-bottom: 40px;
 }
@@ -371,6 +372,8 @@ a:hover {
     margin-bottom: 20px;
     filter:contrast(70%);
     border: 3px solid var(--bg-color-light);
+    width: 75px;
+    height: auto;
 }
 
 .home-hero__flex {    

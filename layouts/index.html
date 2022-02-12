@@ -5,11 +5,12 @@
         {{ if .Site.Params.avatar }}
         <img class="home-hero__pic"
              src="{{ .Site.BaseURL }}img/{{.Site.Params.avatar}}"
-             width="100px" height="100px"/>
+             width="100px" height="100px"
+             alt="Headshot or avatar belonging to the website owner"/>
         {{ else }}
         <img class="home-hero__pic"
-             src="{{ .Site.BaseURL }}img/rocket.png"
-             width="100px" height="100px"/>
+             src="{{ .Site.BaseURL }}img/rocket.png"             
+             alt="Cartoon rocket blasting off to space"/>
         {{ end }}
         <div>
           <h1 class="home-hero__title">{{.Title}}</h1>

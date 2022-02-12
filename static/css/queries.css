@@ -3,7 +3,18 @@
 }
 
 @media screen and (min-width: 480px) {
-    
+    .home-hero__pic {
+        width: 100px;
+    }
+
+    .home-hero__title {
+        font-size: 1.9rem;
+    }
+
+    .home-hero__subtitle {
+        font-size: 1.3rem;
+        line-height: 1.7rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -79,10 +90,16 @@
         align-items: center;
     }
 
+    .home-hero__title {
+        font-size: 2.1rem;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
-    
+    .home-hero__title {
+        font-size: 2.3rem;
+    }
 }
 
 @media screen and (min-width: 1400px) {
