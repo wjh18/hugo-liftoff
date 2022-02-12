@@ -452,6 +452,7 @@ a:hover {
 .single__container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .single__banner-wrapper {
@@ -481,6 +482,30 @@ a:hover {
     background-color: var(--bg-color-light-2);
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+.single__toc {
+}
+
+#js-toc__toggle {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    background-color: var(--bg-color-light-2);
+    padding: 0 20px;
+}
+
+#js-toc__toggle:hover {
+    cursor: pointer;
+}
+
+.single__toc-contents {
+    display: none;
+}
+
+.single__toc-contents--active {
+    display: block;
+    
 }
 
 
