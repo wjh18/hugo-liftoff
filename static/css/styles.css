@@ -5,14 +5,14 @@
     --bg-color-dark: #151515;    
     --bg-color-light: #f7f7f7;
     --bg-color-light-2: #e3e3e3;
-    --bg-color-blue: #050c2d;
+    --bg-color-blue: #18191c;
     --bg-color-grad: linear-gradient(180deg, var(--bg-color-dark) 25%, var(--bg-color-blue) 100%);
 
     /* Links and alt colors */
     --link-color-light: #bd7221;
     --link-color-dark: #9a5c1a;
-    --alt-color-light: #3273dc;
-    --alt-color-dark: #3273dc;
+    --alt-color-light: #32d1dc;
+    --alt-color-dark: #24959d;
 
     /* Contrasting text colors */
     --txt-color-dark-1: black;
@@ -25,6 +25,7 @@
     --txt-color-light-5: #a4a4a4;
 
     /* Border colors and trasitions */
+    --border-color-light: #a9a9a9;
     --border-color-med: #808080;
     --border-color-dark: #333333;
     --trans-ease-short: all 0.2s ease-in-out;
@@ -335,7 +336,7 @@ a {
 }
 
 .home-hero__wrapper {
-    max-width: 750px;
+    max-width: 850px;
     margin: 0 auto;    
 }
 
@@ -424,6 +425,7 @@ a {
 .list__wrapper {
     display: flex;
     background-color: var(--bg-color-light);
+    height: 100%;
 }
 
 .list__description {
@@ -484,16 +486,17 @@ a {
     display: flex;
     list-style-type: none;
     column-gap: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1rem;    
+    margin-bottom: 15px;
+    font-size: 1rem;   
+    text-transform: uppercase; 
 }
 
 .single__banner-categories li {
-    color: var(--link-color-light);
+    color: var(--alt-color-dark);
 }
 
 .single__banner-categories li:hover {
-    color: var(--link-color-dark);
+    color: var(--alt-color-light);
 }
 
 .single__banner-tags ul {
@@ -510,13 +513,13 @@ a {
     background-color: transparent;
     padding: 6px 12px;
     border-radius: 10px;
-    border: 2px solid var(--link-color-light);
-    color: var(--link-color-light);
+    border: 2px solid var(--alt-color-dark);
+    color: var(--alt-color-dark);
 }
 
 .single__banner-tags ul li:hover {
-    border-color: var(--link-color-dark);
-    color: var(--link-color-dark);
+    border-color: var(--alt-color-light);
+    color: var(--alt-color-light);
 }
 
 .single__toc {
@@ -564,7 +567,7 @@ a {
 /* Taxonomy / terms pages */
 
 .terms {
-    margin-top: 50px;
+    padding: 50px 20px;
 }
 
 .terms__wrapper {
@@ -576,7 +579,16 @@ a {
 
 .terms__term {
     font-size: 1.3em;
-    margin: 5px;
+    line-height: 2em;
+    margin: 5px;    
+}
+
+.terms__term a {
+    color: var(--alt-color-dark);
+}
+
+.terms__term a:hover {
+    color: var(--alt-color-light);
 }
 
 .terms__term sup {
@@ -605,6 +617,10 @@ a {
     border: 1px solid var(--border-color-dark);
     width: 100%;
     margin-top: 30px;
+}
+
+.post--light:not(:last-child):after {
+    border: 1px solid var(--bg-color-light-2);
 }
 
 .post__date {
@@ -644,6 +660,13 @@ a {
 .post__description {
     margin: 15px 0 0 0;
     font-size: 1.1rem;
+}
+
+
+/* Projects */
+
+.project {
+
 }
 
 

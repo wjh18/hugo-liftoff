@@ -71,31 +71,29 @@
   </section>
   <div class="triangle-divider"></div>
   <section class="home-section home-section__projects">
-    <div class="posts">
+    
       {{ if .Site.Params.featured_project }}
-        {{ $related := .Site.Params.featured_project }}
+        {{ $featured := .Site.Params.featured_project }}
         {{ with .Site.GetPage "/projects" }}
-        {{ with .GetPage $related }}
-        <div class="post">
-          <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-          <p class="post__description">{{ .Description }}</p>            
+        {{ with .GetPage $featured }}
+        <div class="project">
+          <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+          <p class="project__description">{{ .Description }}</p>            
         </div>
         {{ end }}
         {{ end }}
       {{ else }}     
       {{- range ( where site.RegularPages "Section" "projects" | last 1 ) }}
-        <div class="post">                        
-          <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-          <p class="post__description">{{ .Description }}</p>            
+        <div class="project">                        
+          <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+          <p class="project__description">{{ .Description }}</p>            
         </div>
       {{ end }}
       {{ end }}
-    </div> 
-    <div class="home-section__info">      
-      <h2 class="header--lg h-divider">Featured Project</h2>
-      <p>This is a description of the section that's should be longer but this will do for now.</p>
-      <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
-    </div>
-    
+      <div class="home-section__info">      
+        <h2 class="header--lg h-divider">Featured Project</h2>
+        <p>This is a description of the section that's should be longer but this will do for now.</p>
+        <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
+      </div>
   </section>
 {{ end }}
