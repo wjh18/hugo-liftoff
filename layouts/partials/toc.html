@@ -1,10 +1,10 @@
 <!-- Reusable template for table of contents (i.e. start or sidebar of posts single pages) -->
 {{ if .Param "toc" }}
-<aside class="single__toc">
-  <div id="js-toc__toggle">
-    <h2 class="single__toc-header">Table of Contents</h2>
-    <label class="single__toc-drop-icon" for="Table of Contents">▾</label>
-  </div>
-  <div id="js-toc__contents" class="single__toc-contents">{{.TableOfContents}}</div>
-</aside>
+  <aside class="toc">
+    <div id="js-toc__toggle">
+      <h2 class="toc__header">Table of Contents</h2>
+      <label class="toc__drop-icon" for="Table of Contents">▾</label>
+    </div>
+    <div id="js-toc__contents" class="toc__contents">{{ .TableOfContents }}</div>
+  </aside>
 {{ end }}
