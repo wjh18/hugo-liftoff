@@ -4,7 +4,13 @@
 </section>
 <section class="list__wrapper">
   <div class="posts posts--center">
-    <p class="list__description">{{ .Description }}</p>
+    <p class="list__description">
+      {{ with .Description }}
+        {{ . }}
+      {{ else }}
+        Posts about {{ .Title }}.
+      {{ end }}
+    </p>
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
     <div class="post post--light">                                  
       <div class="single__banner-categories">

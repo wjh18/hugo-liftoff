@@ -384,6 +384,8 @@ a {
 .home-section__sections {
     background-color: var(--bg-color-light);
     column-gap: 0;
+    border-top: 5px solid var(--link-color-dark);
+    border-bottom: 5px solid var(--link-color-dark);
 }
 
 .home-section__posts {
@@ -580,13 +582,13 @@ a {
 .terms__wrapper {
     max-width: 768px;
     margin: 0 auto;
-    background-color: var(--bg-color-light-2);
+    background-color: var(--bg-color-light);
     padding: 30px;
 }
 
 .terms__term {
     font-size: 1.3em;
-    line-height: 2em;
+    line-height: 1.8em;
     margin: 5px;    
 }
 
@@ -683,6 +685,7 @@ a {
     padding: 60px 30px;
     background: var(--bg-color-dark);
     background: var(--bg-color-grad);
+    border-top: 5px solid var(--alt-color-dark);
 }
 
 .newsletter__contents {
