@@ -825,3 +825,24 @@ a {
 
 /* Make svg fill white for contrast */
 .icon { filter: invert(100%) sepia(0%) saturate(455%) hue-rotate(92deg) brightness(117%) contrast(94%); }
+
+
+/* Misc */
+
+.error-404 {
+    
+}
+
+.error-404__wrapper {
+    margin-top: 30px;    
+    width: fit-content;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--bg-color-light-2);
+    border: 1px solid var(--border-color-light);
+    border-radius: 5px;
+}
+
+.error-404__wrapper h1 {
+    margin: 0;
+}
