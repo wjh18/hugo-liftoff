@@ -5,32 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- SEO title from config or front matter -->
   {{ if .IsHome }}
-	<title>{{ .Site.Title }} | Home</title>
+	  <title>{{ .Site.Title }} | Home</title>
 	{{ else }}
-	<title>{{ with .Params.seotitle }}{{ . }}{{ else }}{{ .Title }}{{ end }} | {{ .Site.Title }}{{ if not .IsPage }}{{ end -}}</title>
+	  <title>
+      {{- with .Params.seotitle -}}
+        {{- . -}}
+      {{ else }}
+        {{- .Title -}}
+      {{ end }} | {{ .Site.Title -}}{{ if not .IsPage }}{{ end -}}
+    </title>
 	{{ end }}
   <!-- Author from config -->
-  {{ with $.Param "author" }}
-	<meta name="author" content="{{ . }}">
-	{{ end }}
+	<meta name="author" content="{{- with .Params.author }}
+                                 {{- . -}}
+                               {{- else }}
+                                 {{- with .Site.Params.author }}
+                                   {{- . -}}
+                                 {{- end }}
+                               {{- end }}">
   <!-- Description from config or front matter  -->
-	{{- if or .Description $.Site.Params.description -}}
-  <meta name="description" content="{{ if isset .Params "description" }}{{ .Description }}{{ else }}{{ $.Site.Params.description }}{{ end }}">
-  {{- end -}}
+  <meta name="description" content="{{- with .Description }}
+                                      {{- . -}}
+                                    {{- else }}
+                                      {{- with .Site.Params.description }}
+                                        {{- . -}}
+                                      {{- end }}
+                                    {{- end }}">
   <!-- Open Graph, Twitter Cards and Schema.org -->
   {{ template "_internal/opengraph.html" . }}
 	{{ template "_internal/twitter_cards.html" . }}
   {{ template "_internal/schema.html" . }}
   <!-- Favicon -->
   {{ if eq .Site.Params.favicon true }}
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
   {{ end }}
   <!-- Add rss+xml functionality -->
 	{{- with .OutputFormats.Get "rss" -}}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	  {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{- end -}}
   <!-- Local stylesheets -->
   <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css">
@@ -38,8 +52,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/queries.css">
   <!-- Google Tag Manager -->
 	{{ if .Site.Params.gtm_id }}
-  {{ partial "gtm.html" . }}
+    {{ partial "gtm.html" . }}
   {{ end }}
   <!-- Netlify Identity -->
-	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {{ if .Site.Params.netlify_cms }}
+	  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {{ end }}
 </head>
