@@ -153,7 +153,7 @@ a {
 }
 
 
-/* Reusable components */
+/* Reusable styles / components */
 
 .header--light {
     color: var(--txt-color-light-2);
@@ -386,6 +386,10 @@ a {
     column-gap: 0;
     border-top: 5px solid var(--link-color-dark);
     border-bottom: 5px solid var(--link-color-dark);
+    display: flex;
+    column-gap: 30px;
+    row-gap: 30px;
+    padding: 100px 20px;
 }
 
 .home-section__posts {
@@ -409,6 +413,12 @@ a {
     font-size: 1rem;
     text-transform: uppercase;
     color: var(--link-color-dark);
+}
+
+.home-section__sections .home-section__info {
+    box-shadow: 0 5px 25px -18px var(--bg-color-dark);
+    border: 1px solid var(--border-color-light);
+    /* border-radius: 10px; */
 }
 
 
