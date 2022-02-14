@@ -10,39 +10,33 @@
     <ul class="menu" id="js-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-      {{ if .HasChildren }}
-        <li class="menu__item">
-          <a href="{{ .URL }}" class="menu__link menu__link--desktop">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-            <label class="menu__drop-icon" for="{{ .Name }}">▾</label>
-          </a>
-          <span class="menu__link menu__link--mobile">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-            <label class="menu__drop-icon" for="{{ .Name }}">▾</label>
-          </span>
-          <ul class="sub-menu">
-            {{ range .Children }}
-              <li class="menu__item">
-                <a href="{{ .URL }}" class="menu__link menu__link--desktop">{{ .Name }}</a>
-                <a href="{{ .URL }}" class="menu__link menu__link--mobile">{{ .Name }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        </li>
-      {{ else }}
-        <li>
-          <a href="{{ .URL }}">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-          </a>
-        </li>
+        {{ if .HasChildren }}
+          <li class="menu__item">
+            <a href="{{ .URL }}" class="menu__link menu__link--desktop">
+              {{ .Name }}
+              <label class="menu__drop-icon" for="{{ .Name }}">▾</label>
+            </a>
+            <span class="menu__link menu__link--mobile">
+              {{ .Name }}
+              <label class="menu__drop-icon" for="{{ .Name }}">▾</label>
+            </span>
+            <ul class="sub-menu">
+              {{ range .Children }}
+                <li class="menu__item">
+                  <a href="{{ .URL }}" class="menu__link menu__link--desktop">{{ .Name }}</a>
+                  <a href="{{ .URL }}" class="menu__link menu__link--mobile">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ else }}
+          <li>
+            <a href="{{ .URL }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
       {{ end }}
-      {{ end }}
-      <!-- <div class="menu__cta-wrapper">
-        <a class="menu__cta" href="{{ .Site.BaseURL }}contact">Contact Us</a>
-      </div> -->
     </ul>
   </nav>
 </header>
