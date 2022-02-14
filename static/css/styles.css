@@ -715,6 +715,22 @@ a {
 }
 
 
+/* Related posts */
+
+.related {
+    padding: 20px 0;
+}
+
+.related__header {
+    font-size: 1.5rem;
+}
+
+.related__posts {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+
 /* Pagination */
 
 .pagination {

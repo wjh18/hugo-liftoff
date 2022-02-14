@@ -1,12 +1,14 @@
 <!-- Reusable template for related posts (i.e. at the end of posts single pages) -->
 {{ if .Param "related" }}
-{{ $related := .Site.RegularPages.Related . | first 5 }}
-{{ with $related }}
-<h3>See Also</h3>
-<ul>
-  {{ range . }}
-  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+    <section class="related">
+      <h2 class="related__header">See Also</h2>
+      <ul class="related__posts">
+        {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
   {{ end }}
-</ul>
-{{ end }}
 {{ end }}
