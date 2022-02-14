@@ -8,7 +8,7 @@ categories:
 tags:
 toc: true
 related: true
-share icons: true
+socialshare: true
 newsletter: true
 ---
 

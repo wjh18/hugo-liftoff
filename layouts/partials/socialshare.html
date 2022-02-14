@@ -1,0 +1,61 @@
+<!-- Social Share Button HTML -->
+{{- if .Param "socialshare" }}
+  {{ $title := .Title }}
+  {{ $url := printf "%s" .Permalink }}
+  {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+
+  <section class="social-share">
+    <h2 class="social-share__header">Share</h2>
+    <ul class="social-share__icons">
+      <!-- Twitter -->
+      {{ if .Site.Params.social.share.twitter }}
+      <li>
+        <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          {{ partial "svg/twitter.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Twitter</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- Reddit -->
+      {{ if .Site.Params.social.share.reddit }}
+      <li>
+        <a href="https://www.reddit.com/submit?url={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on Reddit" class="share-btn reddit">
+          {{ partial "svg/reddit.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Reddit</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- Facebook -->
+      {{ if .Site.Params.social.share.facebook }}
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u={{ $url }}" target="_blank" rel="noopener" aria-label="Share on Facebook" class="share-btn facebook">
+          {{ partial "svg/facebook.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Facebook</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- LinkedIn -->
+      {{ if .Site.Params.social.share.linkedin }}
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ $url }}&amp;title={{ $title }}&amp;summary={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="share-btn linkedin">
+          {{ partial "svg/linkedin.svg" (dict "class" "widget-social__link-icon") }}
+            <p>LinkedIn</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- Email -->
+      {{ if .Site.Params.social.share.email }}
+      <li>
+        <a href="mailto:?subject={{ .Site.Title }} - {{ $title }}.&amp;body={{ $body }}" target="_blank" class="share-btn email">
+          {{ partial "svg/email.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Email</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+  {{ end }}
+{{- end }}

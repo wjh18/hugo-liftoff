@@ -770,3 +770,58 @@ a {
 .page-link:hover {
     color: var(--link-color-light);
 }
+
+
+/* Social share icons */
+
+.social-share {
+    padding: 20px 0;
+}
+
+.social-share__header {
+    font-size: 1.5rem;
+}
+ 
+.social-share ul {
+	display: flex;
+    column-gap: 5px;
+    flex-wrap: wrap;
+}
+ 
+.social-share ul li p {
+	display: none;
+}
+ 
+.social-share .share-btn {
+	padding: 10px;
+	width: 50px;
+    height: auto;
+}
+
+.social-share__icons {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+}
+ 
+.share-btn {
+	display: inline-block;
+	border: none;
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+	text-align: center;
+}
+ 
+.share-btn.twitter     { background: #55acee; }
+.share-btn.facebook    { background: #3B5998; }
+.share-btn.linkedin    { background: #4875B4; }
+.share-btn.reddit      { background: #ff5700; }
+.share-btn.email       { background: #444444; }
+
+.share-btn.twitter:hover     { background: #4c9ad6; }
+.share-btn.facebook:hover    { background: #2f4779; }
+.share-btn.linkedin:hover    { background: #4069a2; }
+.share-btn.reddit:hover      { background: #e54e00; }
+.share-btn.email:hover       { background: #363636; }
+
+/* Make svg fill white for contrast */
+.icon { filter: invert(100%) sepia(0%) saturate(455%) hue-rotate(92deg) brightness(117%) contrast(94%); }

@@ -47,7 +47,7 @@
       </ul>
       {{ end }}
     </div>
-    {{ partial "share_icons.html" . }}
+    {{ partial "socialshare.html" . }}
     {{ partial "related.html" . }}
     {{ if and (.Site.DisqusShortname) (not .Site.IsServer) }}
       {{ template "_internal/disqus.html" . }}
