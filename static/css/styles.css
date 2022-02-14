@@ -119,8 +119,7 @@ main {
 }
 
 footer {
-    flex-shrink: 0;
-    text-align: center;    
+    flex-shrink: 0;    
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -304,26 +303,28 @@ a {
 /* --- Footer --- */
 
 .footer {
-    background-color: var(--bg-color-dark);    
+    background-color: var(--bg-color-dark);        
 }
 
-.footer p a {    
+.footer__details {
+    padding: 10px 20px;
+}
+
+.footer__copyright {
+    text-align: center;
+    color: var(--txt-color-light-5);
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.footer__copyright a {    
     color: var(--link-color-dark);
     text-decoration: none;
     font-family: var(--serif-font-light), Georgia, serif;
 }
 
-.footer p a:hover {
+.footer__copyright a:hover {
     color: var(--link-color-light);
-}
-
-.footer__details {
-    
-}
-
-.footer__copyright {
-    color: var(--txt-color-light-5);
-    font-size: 1rem;
 }
 
 
