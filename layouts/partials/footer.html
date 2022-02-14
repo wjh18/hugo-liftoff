@@ -1,16 +1,14 @@
 <footer class="footer">
-  {{ if .Site.Params.global_newsletter }}
+  {{ if .Param "newsletter" }}
     {{ partial "newsletter.html" . }}
-  {{ else }}
-    {{ if .Param "newsletter" }}
-      {{ partial "newsletter.html" . }}
-    {{ end }}
+  {{ else if (and (.Site.Params.global_newsletter) (.Param "newsletter")) }}
+    {{ partial "newsletter.html" . }}
   {{ end }}
   <section class="footer__details">
     <p class="footer__copyright">
       &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-      {{ if .Site.Params.footer_text }}
-      &middot; {{ .Site.Params.footer_text }}
+      {{ with .Site.Params.footer_text }}
+      &middot; {{ . }}
       {{ end }}
     </p>
   </section>
