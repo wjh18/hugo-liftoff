@@ -49,8 +49,8 @@
     </div>
     {{ partial "share_icons.html" . }}
     {{ partial "related.html" . }}
-    {{ if .Site.DisqusShortname }}
-    {{ template "_internal/disqus.html" . }}
+    {{ if and (.Site.DisqusShortname) (not .Site.IsServer) }}
+      {{ template "_internal/disqus.html" . }}
     {{ end }}
     <div>
       {{ with .PrevInSection }}
