@@ -425,8 +425,9 @@ a {
 
 .list__wrapper {
     display: flex;
+    background-color: green;
     background-color: var(--bg-color-light);
-    height: 100%;
+    min-height: 80vh;
 }
 
 .list__description {
@@ -836,9 +837,9 @@ a {
 .error-404__wrapper {
     margin-top: 30px;    
     width: fit-content;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: var(--bg-color-light-2);
+    margin: 50px auto;
+    padding: 50px;
+    background-color: var(--bg-color-light);
     border: 1px solid var(--border-color-light);
     border-radius: 5px;
 }
