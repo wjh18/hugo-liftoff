@@ -25,6 +25,7 @@
     --txt-color-light-5: #a4a4a4;
 
     /* Border colors and trasitions */
+    --border-color-very-light: #c4c4c4;
     --border-color-light: #a9a9a9;
     --border-color-med: #808080;
     --border-color-dark: #333333;
@@ -417,7 +418,7 @@ a {
 
 .home-section__sections .home-section__info {
     box-shadow: 0 5px 25px -18px var(--bg-color-dark);
-    border: 1px solid var(--border-color-light);
+    border: 1px solid var(--border-color-very-light);
     /* border-radius: 10px; */
 }
 
@@ -597,8 +598,8 @@ a {
 }
 
 .terms__term {
-    font-size: 1.3em;
-    line-height: 1.8em;
+    font-size: 1.2em;
+    line-height: 1.7em;
     margin: 5px;    
 }
 
@@ -760,6 +761,7 @@ a {
     margin: 60px 0;
     padding: 0;
     font-size: 1.2em;
+    font-family: var(--base-font-light), "Helvetica", "sans-serif";
 }
 
 .page-item {
