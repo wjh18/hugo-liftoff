@@ -32,6 +32,23 @@
   <section>
     <div>
       {{ partial "toc.html" . }}
+      {{- if .Params.series }}
+        {{- $name := index .Params.series 0 }}
+        <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}">{{$name}}</a> series:</p>
+        {{- $name := $name | urlize }}
+        {{- $series := index .Site.Taxonomies.series $name }}
+        {{ $curtitle := .Title }}
+        <ol class="series">
+          {{- range $series.Pages.Reverse }}
+            <li>
+              <a href="{{.Permalink}}">{{ .Title }}</a>
+              {{ if eq .Title $curtitle }}
+                <span class="series__this-post">(this post!)</span>
+              {{ end }}
+            </li>
+          {{- end }}
+        </ol>
+      {{ end }}
       <article class="single__post-content">
           {{ .Content }}
       </article>
@@ -48,24 +65,43 @@
       {{ end }}
     </div>
     {{ partial "socialshare.html" . }}
-    {{ partial "related.html" . }}
+    {{- if .Params.series }}
+      {{- $name := index .Params.series 0 }}
+      <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}">{{$name}}</a> series:</p>
+      {{- $name := $name | urlize }}
+      {{- $series := index .Site.Taxonomies.series $name }}
+      {{ $curtitle := .Title }}
+      <ol class="series">
+        {{- range $series.Pages.Reverse }}
+          <li>
+            <a href="{{.Permalink}}">{{ .Title }}</a>
+            {{ if eq .Title $curtitle }}
+              <span class="series__this-post">(this post!)</span>
+            {{ end }}
+          </li>
+        {{- end }}
+      </ol>
+    {{ else }}
+      {{ partial "related.html" . }}
+      <div class="single__next-previous">
+        {{ with .PrevInSection }}
+          <div>
+            &laquo;
+            <a class="previous" href="{{.Permalink}}">{{ .Title }}</a>
+          </div>
+        {{ end }}
+        {{ with .NextInSection }}
+          <div>
+            <a class="next" href="{{.Permalink}}">{{ .Title }}</a>
+            &raquo;
+          </div>
+        {{ end }}
+      </div>
+    {{- end }}
     {{ if and (.Site.DisqusShortname) (not .Site.IsServer) }}
       {{ template "_internal/disqus.html" . }}
     {{ end }}
-    <div class="single__next-previous">
-      {{ with .PrevInSection }}
-        <div>
-          &laquo;
-          <a class="previous" href="{{.Permalink}}">{{ .Title }}</a>
-        </div>
-      {{ end }}
-      {{ with .NextInSection }}
-        <div>
-          <a class="next" href="{{.Permalink}}">{{ .Title }}</a>
-          &raquo;
-        </div>
-      {{ end }}
-    </div>
+
   </aside>
 </div>
 {{ end }}

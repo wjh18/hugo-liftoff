@@ -564,6 +564,21 @@ a {
     padding: 10px;
 }
 
+.series {
+    line-height: 2rem;
+    color: var(--txt-color-dark-2);
+    margin-bottom: 30px;
+}
+
+.series li {
+    line-height: 1.4rem;
+    margin-top: 5px;
+}
+
+.series__this-post {
+    color: var(--alt-color-dark);
+}
+
 
 /* Table of contents */
 
