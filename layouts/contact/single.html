@@ -2,9 +2,15 @@
 <section class="banner">
   <h1 class="banner__header">{{ .Title }}</h1>
 </section>
-<section>
-  <article>
-      {{ .Content }}
-  </article>
+<section class="contact">
+  <div class="contact__description">{{ .Content }}</div>
+  <form id="contact__form" name="contact" method="POST" data-netlify="true">
+    <input type="name" id="contact__form--input" name="name" placeholder="Your name...">
+    <input type="email" id="contact__form--input" name="email" placeholder="Your best email...">
+    <textarea type="message" id="contact__form--textarea" name="message" placeholder="Your message..."></textarea>
+    <button type="submit" id="contact__form--submit" class="cta-btn">
+      Send
+    </button>
+  </form>
 </section>
 {{ end }}

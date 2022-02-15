@@ -738,7 +738,8 @@ a {
     align-items: center;
     column-gap: 50px;
     row-gap: 50px;
-    padding: 80px;
+    padding-top: 30px;
+    padding-bottom: 100px;
 }
 
 .project {
@@ -784,7 +785,7 @@ a {
 }
 
 
-/* Newsletter */
+/* Newsletter / Contact form */
 
 .newsletter {
     padding: 60px 30px;
@@ -826,6 +827,51 @@ a {
 
 #newsletter__form--submit {
     margin-top: 15px;
+}
+
+.contact {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 30px 80px 30px;
+}
+
+.contact__description {
+    margin: 0;
+}
+
+#contact__form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact__form--input {
+    padding: 12px;
+    margin-right: 10px; 
+    margin-top: 10px;   
+    min-width: 200px;
+    min-height: 30px;
+    border: 1px solid var(--border-color-light);
+    font-size: 1rem;
+    color: var(--txt-color-dark-2);
+    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+}
+
+#contact__form--textarea {
+    padding: 12px;
+    margin-right: 10px; 
+    margin-top: 10px;   
+    min-width: 200px;
+    min-height: 80px;
+    border: 1px solid var(--border-color-light);
+    font-size: 1rem;
+    color: var(--txt-color-dark-2);
+    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+}
+
+
+#contact__form--submit {
+    margin-top: 15px;
+    max-width: 100px;
 }
 
 
