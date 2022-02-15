@@ -113,6 +113,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-color-light);
 }
 
 main {   
@@ -418,7 +419,7 @@ a {
 
 .home-section__sections .home-section__info {
     box-shadow: 0 5px 25px -18px var(--bg-color-dark);
-    border: 1px solid var(--border-color-very-light);
+    background-color: white;
 }
 
 
@@ -460,7 +461,7 @@ a {
 }
 
 .single__container-bg {
-    background-color: var(--bg-color-light);
+    background-color: white;
 }
 
 .single__banner-wrapper {
@@ -577,12 +578,12 @@ a {
 
 .series__this-post {
     color: var(--alt-color-dark);
-    background-color: white;
+    /* background-color: white; */
     padding: 5px 5px;
     margin-left: 5px;
     font-size: 0.8em;
     border-radius: 5px;
-    border: 1px solid var(--border-color-very-light);
+    border: 2px solid var(--alt-color-dark);
     font-family: var(--base-font-bold), "Helvetica", "sans-serif";
 }
 
@@ -631,7 +632,7 @@ a {
 .terms__wrapper {
     max-width: 768px;
     margin: 0 auto;
-    background-color: var(--bg-color-light);
+    background-color: var(--bg-color-light-2);
     padding: 30px;
 }
 
@@ -744,8 +745,9 @@ a {
 
 .project {
     box-shadow: 0 5px 25px -18px var(--bg-color-dark);
-    border: 1px solid var(--border-color-very-light);
     padding: 50px;
+    background-color: var(--bg-color-light);
+    background-color: white;
     /* max-width: 200px; */
 }
 
