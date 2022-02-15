@@ -577,6 +577,13 @@ a {
 
 .series__this-post {
     color: var(--alt-color-dark);
+    background-color: white;
+    padding: 5px 5px;
+    margin-left: 5px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    border: 1px solid var(--border-color-very-light);
+    font-family: var(--base-font-bold), "Helvetica", "sans-serif";
 }
 
 

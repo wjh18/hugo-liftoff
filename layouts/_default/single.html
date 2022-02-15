@@ -43,7 +43,7 @@
             <li>
               <a href="{{.Permalink}}">{{ .Title }}</a>
               {{ if eq .Title $curtitle }}
-                <span class="series__this-post">(this post!)</span>
+                <span class="series__this-post">This post!</span>
               {{ end }}
             </li>
           {{- end }}
@@ -76,7 +76,7 @@
           <li>
             <a href="{{.Permalink}}">{{ .Title }}</a>
             {{ if eq .Title $curtitle }}
-              <span class="series__this-post">(this post!)</span>
+              <span class="series__this-post">This post!</span>
             {{ end }}
           </li>
         {{- end }}
