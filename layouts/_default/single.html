@@ -42,7 +42,7 @@
       {{ with .Params.tags }}
       <ul>
         {{ range . }}
-          <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+        <a href="{{ "tags" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
         {{ end }}
       </ul>
       {{ end }}
@@ -52,12 +52,18 @@
     {{ if and (.Site.DisqusShortname) (not .Site.IsServer) }}
       {{ template "_internal/disqus.html" . }}
     {{ end }}
-    <div>
+    <div class="single__next-previous">
       {{ with .PrevInSection }}
-        <a class="previous" href="{{.Permalink}}"> {{ .Title }}</a>
+        <div>
+          &laquo;
+          <a class="previous" href="{{.Permalink}}">{{ .Title }}</a>
+        </div>
       {{ end }}
       {{ with .NextInSection }}
-        <a class="next" href="{{.Permalink}}"> {{ .Title }}</a>
+        <div>
+          <a class="next" href="{{.Permalink}}">{{ .Title }}</a>
+          &raquo;
+        </div>
       {{ end }}
     </div>
   </aside>
