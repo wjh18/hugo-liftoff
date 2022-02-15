@@ -77,16 +77,46 @@
         {{ with .Site.GetPage "/projects" }}
         {{ with .GetPage $featured }}
         <div class="project">
+          <div class="single__banner-categories">
+            {{ with .Params.techstack }}
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+            {{ end }}
+          </div> 
           <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-          <p class="project__description">{{ .Description }}</p>            
+          <p class="project__description">{{ .Description }}</p>    
+          <div class="project__links">
+            {{ with .Params.live_url }}
+              <a class="project__live-url" href="{{ . }}">Live</a>
+            {{ end }}
+            {{ with .Params.source_url }}
+              <a class="project__source-url" href="{{ . }}">Source Code</a>
+            {{ end }}
+          </div>        
         </div>
         {{ end }}
         {{ end }}
       {{ else }}     
       {{- range ( where site.RegularPages "Section" "projects" | last 1 ) }}
-        <div class="project">                        
+        <div class="project"> 
+          <div class="single__banner-categories">
+            {{ with .Params.techstack }}
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+            {{ end }}
+          </div>                       
           <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-          <p class="project__description">{{ .Description }}</p>            
+          <p class="project__description">{{ .Description }}</p>  
+          <div class="project__links">
+            {{ with .Params.live_url }}
+              <a class="project__live-url" href="{{ . }}">Live</a>
+            {{ end }}
+            {{ with .Params.source_url }}
+              <a class="project__source-url" href="{{ . }}">Source Code</a>
+            {{ end }}
+          </div>          
         </div>
       {{ end }}
       {{ end }}

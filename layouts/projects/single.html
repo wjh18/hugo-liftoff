@@ -7,10 +7,10 @@
 </section>
 <aside>
   <div>
-    {{ with .Params.tags }}
+    {{ with .Params.techstack }}
     <ul>
       {{ range . }}
-        <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+        <li>{{ . }}</li>
       {{ end }}
     </ul>
     {{ end }}
