@@ -185,11 +185,32 @@ tr:nth-child(odd) td {
     background-color: var(--bg-color-light-2);
 }
 
-caption {
-    margin-bottom: 15px;
-    text-align: left;
-    font-size: 0.9rem;
-    color: var(--placeholder-text-color);
+blockquote {
+    background: var(--bg-color-light);
+    border-left: 10px solid var(--border-color-light);
+    margin: 1.5em 10px;
+    padding: 0.7em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+    color: var(--border-color-light);
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+pre {
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    overflow: scroll;
 }
 
 
