@@ -196,12 +196,25 @@ a {
 .cta-btn--light {
     background-color: transparent;
     border-color: var(--link-color-dark);
+    color: var(--link-color-dark);
 }
 
 .cta-btn--light:hover {
     background-color: var(--link-color-dark);
     color: var(--txt-color-light-2);
     border-color: var(--link-color-dark);
+}
+
+.cta-btn--very-light {
+    background-color: transparent;
+    border-color: var(--link-color-light);
+    color: var(--link-color-light);
+}
+
+.cta-btn--very-light:hover {
+    background-color: var(--link-color-light);
+    color: var(--txt-color-light-2);
+    border-color: var(--link-color-light);
 }
 
 .h-divider::after {
@@ -784,8 +797,8 @@ a {
     margin-top: 30px;
 }
 
-.project__links a {
-    color: var(--link-color-dark);
+.project__links--single {
+    margin-top: 0;
 }
 
 .project__live-url {

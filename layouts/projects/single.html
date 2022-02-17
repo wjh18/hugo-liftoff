@@ -1,27 +1,28 @@
 {{ define "main" }}
-<section>
-  <h1>{{ .Title }}</h1>
-  <article>
-      {{ .Content }}
-  </article>
-</section>
-<aside>
-  <div>
-    {{ with .Params.techstack }}
-    <ul>
+<section class="banner">
+  <div class="single__container single__banner-wrapper">
+    <div class="single__banner-categories">
+      {{ with .Params.techstack }}
       {{ range . }}
         <li>{{ . }}</li>
       {{ end }}
-    </ul>
-    {{ end }}
+      {{ end }}
+    </div>
+    <h1 class="banner__header single__post-header">{{ .Title }}</h1>
+    <div class="single__post-meta">
+      <div class="project__links project__links--single">
+        {{ with .Params.live_url }}
+          <a class="project__live-url cta-btn cta-btn--very-light" href="{{ . }}">Live</a>
+        {{ end }}
+        {{ with .Params.source_url }}
+          <a class="project__source-url cta-btn cta-btn--very-light" href="{{ . }}">Source Code</a>
+        {{ end }}
+      </div>
+    </div>
+    <p class="single__post-description">{{ .Description }}</p>
   </div>
-  <div>
-    {{ with .PrevInSection }}
-      <a class="previous" href="{{.Permalink}}"> {{ .Title }}</a>
-    {{ end }}
-    {{ with .NextInSection }}
-      <a class="next" href="{{.Permalink}}"> {{ .Title }}</a>
-    {{ end }}
-  </div>
-</aside>
+</section>
+<div class="single__container single__container-bg">
+  {{ .Content }}
+</div>
 {{ end }}
