@@ -8,7 +8,7 @@
 	  <title>{{ .Site.Title }} | Home</title>
 	{{ else }}
 	  <title>
-      {{- with .Params.seotitle -}}
+      {{- with .Params.seo_title -}}
         {{- . -}}
       {{ else }}
         {{- .Title -}}

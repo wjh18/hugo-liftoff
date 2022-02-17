@@ -1,6 +1,6 @@
 ---
 title: {{ replace .Name "-" " " | title }}
-seotitle: {{ replace .Name "-" " " | title }}
+seo_title: {{ replace .Name "-" " " | title }}
 description: 
 slug: {{ .Name }}
 date: {{ .Date }}
@@ -14,6 +14,6 @@ source_url:
 
 toc: true
 related: true
-socialshare: true
+social_share: true
 newsletter: true
 ---

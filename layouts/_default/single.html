@@ -64,7 +64,7 @@
       </ul>
       {{ end }}
     </div>
-    {{ partial "socialshare.html" . }}
+    {{ partial "social_share.html" . }}
     {{- if .Params.series }}
       {{- $name := index .Params.series 0 }}
       <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}">{{$name}}</a> series:</p>

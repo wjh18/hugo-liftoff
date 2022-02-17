@@ -1,5 +1,5 @@
 <!-- Social Share Button HTML -->
-{{- if .Param "socialshare" }}
+{{- if .Param "social_share" }}
   {{ $title := .Title }}
   {{ $url := printf "%s" .Permalink }}
   {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}

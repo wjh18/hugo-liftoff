@@ -48,7 +48,7 @@ You can also add `newletter: true` to your frontmatter to add a newsletter opt-i
 
 ## About Page
 
-Create an `index.md` file (no leading underscore) under `your-project/content/about`. If you add an underscore, the about page will become a section which is not what you want. You can add a custom `<title>` and meta description in the frontmatter of this file with `seotitle` and `description`, respectively. In order for this to work, you should also add `type: about` as a frontmatter parameter.
+Create an `index.md` file (no leading underscore) under `your-project/content/about`. If you add an underscore, the about page will become a section which is not what you want. You can add a custom `<title>` and meta description in the frontmatter of this file with `seo_title` and `description`, respectively. In order for this to work, you should also add `type: about` as a frontmatter parameter.
 
 ## Posts
 

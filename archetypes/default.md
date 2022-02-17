@@ -1,6 +1,6 @@
 ---
 title: {{ replace .Name "-" " " | title }}
-seotitle: {{ replace .Name "-" " " | title }}
+seo_title: {{ replace .Name "-" " " | title }}
 description: 
 slug: {{ .Name }}
 date: {{ .Date }}
