@@ -468,7 +468,7 @@ a {
 /* Single pages */
 
 .single__container {
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 30px;
 }
@@ -889,6 +889,18 @@ a {
 #contact__form--submit {
     margin-top: 15px;
     max-width: 100px;
+}
+
+
+/* About page */
+
+.about {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about__content {
+    margin: 50px 20px;
 }
 
 
