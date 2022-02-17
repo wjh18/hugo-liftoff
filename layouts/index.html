@@ -76,7 +76,7 @@
         {{ $featured := .Site.Params.featured_project }}
         {{ with .Site.GetPage "/projects" }}
         {{ with .GetPage $featured }}
-        <div class="project">
+        <div class="project project--home">
           <div class="single__banner-categories">
             {{ with .Params.techstack }}
             {{ range . }}
@@ -88,10 +88,10 @@
           <p class="project__description">{{ .Description }}</p>    
           <div class="project__links">
             {{ with .Params.live_url }}
-              <a class="project__live-url" href="{{ . }}">Live</a>
+              <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
             {{ end }}
             {{ with .Params.source_url }}
-              <a class="project__source-url" href="{{ . }}">Source Code</a>
+              <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
             {{ end }}
           </div>        
         </div>
