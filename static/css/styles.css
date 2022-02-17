@@ -539,6 +539,10 @@ a {
     color: var(--alt-color-light);
 }
 
+.single__banner-tags--bottom {
+    margin-top: 30px;
+}
+
 .single__banner-tags ul {
     /* margin-left: 10px; */
     display: flex;
@@ -564,9 +568,12 @@ a {
     color: var(--alt-color-light);
 }
 
+.single__post-content {
+    color: var(--txt-color-dark-2);
+}
+
 .single__post-content p {
     font-family: var(--base-font-light), Helvetica, sans-serif;
-    color: var(--txt-color-dark-2);
     font-size: 1.2rem;
     line-height: 1.9rem;
 }
@@ -914,6 +921,7 @@ a {
 
 .about__content {
     margin: 50px 20px;
+    color: var(--txt-color-dark-2);
 }
 
 

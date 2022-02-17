@@ -9,16 +9,18 @@
       {{ end }}
     </div>
     <h1 class="banner__header single__post-header">{{ .Title }}</h1>
-    <div class="single__post-meta">
-      <div class="project__links project__links--single">
-        {{ with .Params.live_url }}
-          <a class="project__live-url cta-btn cta-btn--very-light" href="{{ . }}">Live</a>
-        {{ end }}
-        {{ with .Params.source_url }}
-          <a class="project__source-url cta-btn cta-btn--very-light" href="{{ . }}">Source Code</a>
-        {{ end }}
+    {{ if or (.Params.live_url) (.Params.source_url) }}
+      <div class="single__post-meta">
+        <div class="project__links project__links--single">
+          {{ with .Params.live_url }}
+            <a class="project__live-url cta-btn cta-btn--very-light" href="{{ . }}">Live</a>
+          {{ end }}
+          {{ with .Params.source_url }}
+            <a class="project__source-url cta-btn cta-btn--very-light" href="{{ . }}">Source Code</a>
+          {{ end }}
+        </div>
       </div>
-    </div>
+    {{ end }}
     <p class="single__post-description">{{ .Description }}</p>
   </div>
 </section>
