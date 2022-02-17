@@ -24,14 +24,16 @@
       </div>
       <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <p class="project__description">{{ .Description }}</p>
-      <div class="project__links">
-        {{ with .Params.live_url }}
-          <a class="project__live-url" href="{{ . }}">Live</a>
-        {{ end }}
-        {{ with .Params.source_url }}
-          <a class="project__source-url" href="{{ . }}">Source Code</a>
-        {{ end }}
-      </div>
+      {{ if or (.Params.live_url) (.Params.source_url) }}
+        <div class="project__links">
+          {{ with .Params.live_url }}
+            <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
+          {{ end }}
+          {{ with .Params.source_url }}
+            <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
     {{ end }}
   </div>

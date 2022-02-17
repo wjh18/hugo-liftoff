@@ -111,6 +111,8 @@ html, body {
 }
 
 body {
+    /* Flex properties on body/main/footer are for floating footer
+    to bottom of page if main content doesn't fill viewport vertically */
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color-light);
@@ -189,6 +191,17 @@ a {
     background-color: var(--bg-color-light);
     color: var(--link-color-light);
     cursor: pointer;
+}
+
+.cta-btn--light {
+    background-color: transparent;
+    border-color: var(--link-color-dark);
+}
+
+.cta-btn--light:hover {
+    background-color: var(--link-color-dark);
+    color: var(--txt-color-light-2);
+    border-color: var(--link-color-dark);
 }
 
 .h-divider::after {
@@ -493,7 +506,7 @@ a {
 .single__post-meta-stats {
     display: flex;
     column-gap: 10px;
-    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+    font-family: var(--base-font-reg), Helvetica, sans-serif;
 }
 
 .single__banner-categories {
@@ -539,14 +552,14 @@ a {
 }
 
 .single__post-content p {
-    font-family: var(--base-font-light), "Helvetica", "sans-serif";
+    font-family: var(--base-font-light), Helvetica, sans-serif;
     color: var(--txt-color-dark-2);
     font-size: 1.2rem;
     line-height: 1.9rem;
 }
 
 .single__post-content strong {
-    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+    font-family: var(--base-font-reg), Helvetica, sans-serif;
 }
 
 .single__next-previous {
@@ -584,7 +597,7 @@ a {
     font-size: 0.8em;
     border-radius: 5px;
     border: 2px solid var(--alt-color-dark);
-    font-family: var(--base-font-bold), "Helvetica", "sans-serif";
+    font-family: var(--base-font-bold), Helvetica, sans-serif;
 }
 
 
@@ -693,7 +706,7 @@ a {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.4rem;
-    font-family: var(--serif-font-light), 'Georgia', 'serif';
+    font-family: var(--serif-font-light), Georgia, serif;
 }
 
 .post__title a {
@@ -725,7 +738,7 @@ a {
 /* Projects */
 
 .description__wrapper {
-    width: 600px;
+    max-width: 600px;
     padding: 0 30px 0 30px;
     margin: 0 auto;
     display: block;
@@ -733,29 +746,26 @@ a {
 
 .projects {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    column-gap: 50px;
-    row-gap: 50px;
-    padding-top: 30px;
-    padding-bottom: 100px;
+    gap: 30px 50px;
+    padding: 30px 50px 100px 50px;
 }
 
 .project {
     box-shadow: 0 5px 25px -18px var(--bg-color-dark);
-    padding: 50px;
+    padding: 40px;
     background-color: var(--bg-color-light);
     background-color: white;
-    /* max-width: 200px; */
+    flex: 1 1 20%;
 }
 
 .project__title {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.4rem;
-    font-family: var(--serif-font-light), 'Georgia', 'serif';
+    font-family: var(--serif-font-light), Georgia, serif;
 }
 
 .project__description {
@@ -824,7 +834,7 @@ a {
     border: 1px solid var(--border-color-light);
     font-size: 1rem;
     color: var(--txt-color-dark-2);
-    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+    font-family: var(--base-font-reg), Helvetica, sans-serif;
 }
 
 #newsletter__form--submit {
@@ -855,7 +865,7 @@ a {
     border: 1px solid var(--border-color-light);
     font-size: 1rem;
     color: var(--txt-color-dark-2);
-    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+    font-family: var(--base-font-reg), Helvetica, sans-serif;
 }
 
 #contact__form--textarea {
@@ -867,7 +877,7 @@ a {
     border: 1px solid var(--border-color-light);
     font-size: 1rem;
     color: var(--txt-color-dark-2);
-    font-family: var(--base-font-reg), "Helvetica", "sans-serif";
+    font-family: var(--base-font-reg), Helvetica, sans-serif;
 }
 
 
@@ -903,7 +913,7 @@ a {
     margin: 60px 0;
     padding: 0;
     font-size: 1.2em;
-    font-family: var(--base-font-light), "Helvetica", "sans-serif";
+    font-family: var(--base-font-light), Helvetica, sans-serif;
 }
 
 .page-item {
