@@ -156,6 +156,42 @@ a {
     text-decoration: none;
 }
 
+table {
+    border-collapse: collapse;    
+    overflow: scroll;
+}
+
+td, th {
+    border: 1px solid var(--border-color-light);
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: var(--bg-color-dark);
+    color: var(--txt-color-light-2);
+    font-size: 1rem;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) td {
+    background-color: var(--bg-color-light);
+}
+
+tr:nth-child(odd) td {
+    background-color: var(--bg-color-light-2);
+}
+
+caption {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--placeholder-text-color);
+}
+
 
 /* Reusable styles / components */
 
