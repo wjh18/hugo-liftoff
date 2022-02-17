@@ -570,9 +570,6 @@ a {
 
 .single__post-content {
     color: var(--txt-color-dark-2);
-}
-
-.single__post-content p {
     font-family: var(--base-font-light), Helvetica, sans-serif;
     font-size: 1.2rem;
     line-height: 1.9rem;
