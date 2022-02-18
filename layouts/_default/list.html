@@ -11,7 +11,11 @@
         {{ with .Description }}
           {{ . }}
         {{ else }}
-          {{ .Title }} I've worked on.
+          {{ if eq .Data.Plural "series" }}
+            Posts in the {{ .Title }} series.
+          {{ else }}
+            Posts about {{ .Title }}.
+          {{ end }}
         {{ end }}
       {{ end }}
     </p>
