@@ -24,7 +24,10 @@
         {{ end }}
         {{ end }}
       </div>
-      <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>  
+      <h3 class="post__title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ partial "label_drafts.html" . }}
+      </h3>  
       <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>       
       <p class="post__description">
         {{ with .Params.Summary }}

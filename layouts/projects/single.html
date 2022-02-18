@@ -8,7 +8,10 @@
       {{ end }}
       {{ end }}
     </div>
-    <h1 class="banner__header single__post-header">{{ .Title }}</h1>
+    <h1 class="banner__header single__post-header">
+      {{ .Title }}
+      {{ partial "label_drafts.html" . }}
+    </h1>
     {{ if or (.Params.live_url) (.Params.source_url) }}
       <div class="single__post-meta">
         <div class="project__links project__links--single">

@@ -291,6 +291,15 @@ pre {
     border-top: 50px solid var(--bg-color-dark);
 }
 
+.draft::after {
+    content: 'Draft';
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+}
+
 
 /* --- Navigation --- */
 

@@ -68,7 +68,10 @@
             {{ end }}
             {{ end }}
           </div>
-          <h3 class="post__title post__title--light"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>  
+          <h3 class="post__title post__title--light">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ partial "label_drafts.html" . }}
+          </h3>  
           <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>       
           <p class="post__description description--light">
             {{ with .Params.Summary }}
@@ -96,7 +99,10 @@
             {{ end }}
             {{ end }}
           </div> 
-          <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+          <h3 class="project__title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ partial "label_drafts.html" . }}
+          </h3>            
           <p class="project__description">
             {{ with .Params.Summary }}
               {{ . }}
@@ -125,7 +131,10 @@
             {{ end }}
             {{ end }}
           </div>                       
-          <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
+          <h3 class="project__title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ partial "label_drafts.html" . }}
+          </h3>            
           <p class="project__description">
             {{ with .Params.Summary }}
               {{ . }}

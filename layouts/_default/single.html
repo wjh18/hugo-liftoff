@@ -8,7 +8,10 @@
       {{ end }}
       {{ end }}
     </div>
-    <h1 class="banner__header single__post-header">{{ .Title }}</h1>
+    <h1 class="banner__header single__post-header">
+      {{ .Title }}
+      {{ partial "label_drafts.html" . }}
+    </h1>
     <div class="single__post-meta">
       <div class="single__post-meta-stats">
         <span> {{ .Date.Format "Jan 2, 2006" }} </span>&middot;

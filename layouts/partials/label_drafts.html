@@ -1,0 +1,3 @@
+{{ if and (eq .Params.draft true) (eq .Site.Params.label_drafts true) (.Site.IsServer) }}
+  <sup class="draft"></sup>
+{{ end }}

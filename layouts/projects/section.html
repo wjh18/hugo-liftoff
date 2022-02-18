@@ -26,7 +26,10 @@
         {{ end }}
         {{ end }}
       </div>
-      <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <h3 class="project__title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ partial "label_drafts.html" . }}
+      </h3>
       <p class="project__description">
         {{ with .Params.Summary }}
           {{ . }}
