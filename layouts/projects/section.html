@@ -5,10 +5,14 @@
 <section>
   <div class="description__wrapper">
     <p class="list__description">
-      {{ with .Description }}
+      {{ with .Params.Summary }}
         {{ . }}
       {{ else }}
-        {{ .Title }} I've worked on.
+        {{ with .Description }}
+          {{ . }}
+        {{ else }}
+          {{ .Title }} I've worked on.
+        {{ end }}
       {{ end }}
     </p>
   </div>
@@ -23,7 +27,13 @@
         {{ end }}
       </div>
       <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      <p class="project__description">{{ .Description }}</p>
+      <p class="project__description">
+        {{ with .Params.Summary }}
+          {{ . }}
+        {{ else }}
+          {{ .Description }}
+        {{ end }}
+      </p>
       {{ if or (.Params.live_url) (.Params.source_url) }}
         <div class="project__links">
           {{ with .Params.live_url }}

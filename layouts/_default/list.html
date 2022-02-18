@@ -5,10 +5,14 @@
 <section class="list__wrapper">
   <div class="posts posts--center">
     <p class="list__description">
-      {{ with .Description }}
+      {{ with .Params.Summary }}
         {{ . }}
       {{ else }}
-        Posts about {{ .Title }}.
+        {{ with .Description }}
+          {{ . }}
+        {{ else }}
+          {{ .Title }} I've worked on.
+        {{ end }}
       {{ end }}
     </p>
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
@@ -22,7 +26,13 @@
       </div>
       <h3 class="post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>  
       <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>       
-      <p class="post__description">{{ .Description }}</p>            
+      <p class="post__description">
+        {{ with .Params.Summary }}
+          {{ . }}
+        {{ else }}
+          {{ .Description }}
+        {{ end }}
+      </p>            
     </div>
     {{ end }}
     {{ template "_internal/pagination.html" . }}

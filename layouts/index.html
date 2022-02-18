@@ -37,7 +37,13 @@
       {{ range .Sections }}
       <div class="home-section__info">
         <h2 class="header--md h-divider">{{ .Title }}</h2>
-        <p>{{ .Description }}</p>
+        <p>
+          {{ with .Params.Summary }}
+            {{ . }}
+          {{ else }}
+            {{ .Description }}
+          {{ end }}
+        </p>
         <p><a href="{{ .Site.BaseURL }}{{ .Section }}/{{ .Title | lower }}/">Read {{ .Title | lower }} &raquo;</a></p>
       </div>
       {{ end }}
@@ -64,7 +70,13 @@
           </div>
           <h3 class="post__title post__title--light"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>  
           <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>       
-          <p class="post__description description--light">{{ .Description }}</p>            
+          <p class="post__description description--light">
+            {{ with .Params.Summary }}
+              {{ . }}
+            {{ else }}
+              {{ .Description }}
+            {{ end }}
+          </p>            
         </div>
       {{ end }}      
     </div> 
@@ -85,7 +97,13 @@
             {{ end }}
           </div> 
           <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-          <p class="project__description">{{ .Description }}</p>    
+          <p class="project__description">
+            {{ with .Params.Summary }}
+              {{ . }}
+            {{ else }}
+              {{ .Description }}
+            {{ end }}
+          </p>    
           <div class="project__links">
             {{ with .Params.live_url }}
               <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
@@ -108,7 +126,13 @@
             {{ end }}
           </div>                       
           <h3 class="project__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>            
-          <p class="project__description">{{ .Description }}</p>  
+          <p class="project__description">
+            {{ with .Params.Summary }}
+              {{ . }}
+            {{ else }}
+              {{ .Description }}
+            {{ end }}
+          </p>  
           <div class="project__links">
             {{ with .Params.live_url }}
               <a class="project__live-url" href="{{ . }}">Live</a>

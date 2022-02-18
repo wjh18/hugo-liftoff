@@ -2,14 +2,16 @@
 title: {{ replace .Name "-" " " | title }}
 seo_title: {{ replace .Name "-" " " | title }}
 description: 
-meta_description: 
+summary: 
 slug: {{ .Name }}
 date: {{ .Date }}
 author: {{ .Site.Params.author }}
+draft: true
+
 categories:
 tags:
 series:
-draft: true
+
 toc: true
 related: true
 social_share: true

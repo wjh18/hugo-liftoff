@@ -2,15 +2,16 @@
 title: {{ replace .Name "-" " " | title }}
 seo_title: {{ replace .Name "-" " " | title }}
 description: 
+summary: 
 slug: {{ .Name }}
 date: {{ .Date }}
 author: {{ .Site.Params.author }}
 draft: true
 
 techstack:
-personal: true
 live_url: 
 source_url: 
+personal: true
 
 toc: true
 related: true
