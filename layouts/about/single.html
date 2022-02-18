@@ -4,6 +4,9 @@
 </section>
 <section class="about">
   <article class="about__content">
+    {{ if eq .Site.Params.about_page_socials true }}
+    <div class="about__social-links">{{ partial "social_links.html" . }}</div>
+  {{ end }}
       {{ .Content }}
   </article>
 </section>

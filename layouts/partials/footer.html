@@ -3,6 +3,11 @@
     {{ partial "newsletter.html" . }}
   {{ end }}
   <section class="footer__details">
+    {{ if eq .Site.Params.footer_socials true }}
+      <div class="footer__social-links">
+        {{ partial "social_links.html" . }}
+      </div>
+    {{ end }}
     <p class="footer__copyright">
       &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       {{ with .Site.Params.footer_text }}

@@ -17,7 +17,12 @@
           {{ with .Params.subtitle }}
           <p class="home-hero__subtitle">{{.}}</p>
           {{ end }}
-          <div><a class="cta-btn" href="{{ .Site.BaseURL }}about/">About me</a></div>
+          <div class="home-hero__links">
+            <a class="cta-btn" href="{{ .Site.BaseURL }}about/">About me</a>
+            {{ if eq .Site.Params.home_hero_socials true }}
+              {{ partial "social_links.html" . }}
+            {{ end }}
+          </div>
         </div>
       </div>      
     </div>

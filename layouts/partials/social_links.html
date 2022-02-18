@@ -1,0 +1,54 @@
+<!-- Social Share Button HTML -->
+  <div class="social-links social-links--no-share">
+    <ul class="social-links__icons">
+      <!-- Twitter -->
+      {{ with .Site.Params.social.links.twitter }}
+      <li>
+        <a href="https://twitter.com/{{ . }}" target="_blank" rel="noopener" aria-label="Visit Twitter profile" class="social-btn twitter">
+          {{ partial "svg/twitter.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Twitter</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- Github -->
+      {{ with .Site.Params.social.links.github }}
+      <li>
+        <a href="https://github.com/{{ . }}" target="_blank" rel="noopener" aria-label="Visit Github profile" class="social-btn github">
+          {{ partial "svg/github.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Github</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- Stack Overflow -->
+      {{ with .Site.Params.social.links.stack_overflow }}
+      <li>
+        <a href="https://stackoverflow.com/users/{{ . }}" target="_blank" rel="noopener" aria-label="Visit Stack Overflow profile" class="social-btn stack-overflow">
+          {{ partial "svg/stack-overflow.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Stack Overflow</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- LinkedIn -->
+      {{ with .Site.Params.social.links.linkedin }}
+      <li>
+        <a href="https://www.linkedin.com/in/{{ . }}" target="_blank" rel="noopener" aria-label="Visit LinkedIn profile" class="social-btn linkedin">
+          {{ partial "svg/linkedin.svg" (dict "class" "widget-social__link-icon") }}
+            <p>LinkedIn</p>
+          </a>
+      </li>
+      {{ end }}
+
+      <!-- Email -->
+      {{ with .Site.Params.social.links.email }}
+      <li>
+        <a href="mailto:?to={{ . }}" target="_blank" class="social-btn email">
+          {{ partial "svg/email.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Email</p>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
