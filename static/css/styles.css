@@ -1130,10 +1130,17 @@ pre {
 	padding: 10px;
     border-radius: 30px;
 	width: 30px;
+	box-shadow: none;
+    background: none;
 }
-.social-links--no-share ul {
-    column-gap: 10px;
-    row-gap: 10px;
+.social-links--no-share .social-btn:hover {
+    background: none;
+}
+.social-links--no-share .icon {
+    filter: invert(34%) sepia(94%) saturate(427%) hue-rotate(350deg) brightness(93%) contrast(91%);
+}
+.social-links--no-share .icon:hover {
+    filter: invert(48%) sepia(80%) saturate(459%) hue-rotate(351deg) brightness(86%) contrast(93%);
 }
 
 
