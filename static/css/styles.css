@@ -741,12 +741,14 @@ pre {
     margin: 0 auto;
     background-color: var(--bg-color-light-2);
     padding: 30px;
+    text-align: center;
 }
 
 .terms__term {
+    display: inline-block;
     font-size: 1.2em;
     line-height: 1.7em;
-    margin: 5px;    
+    margin: 0 5px;    
 }
 
 .terms__term a {
