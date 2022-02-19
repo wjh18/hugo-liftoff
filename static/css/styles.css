@@ -473,7 +473,7 @@ pre {
 .home-hero__links {
     display: flex;
     flex-flow: row wrap;
-    gap: 30px 50px;
+    gap: 30px;
 }
 
 .home-section {
@@ -643,6 +643,10 @@ pre {
 .single__banner-tags ul li:hover {
     border-color: var(--alt-color-light);
     color: var(--alt-color-light);
+}
+
+.single__post-image {
+    padding: 20px 0;
 }
 
 .single__post-content {

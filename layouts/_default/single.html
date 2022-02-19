@@ -58,6 +58,13 @@
           {{- end }}
         </ol>
       {{ end }}
+      {{ if .Params.cover_image }}
+        <img class="single__post-image" 
+             srcset="{{ .Site.BaseURL }}img/{{ .Params.cover_image }} 480w, {{ .Site.BaseURL }}img/{{ .Params.cover_image }} 800w"
+             sizes="(max-width: 600px) 480px, 800px"
+            src="{{ .Site.BaseURL }}img/{{ .Params.cover_image }}"
+            {{ with .Params.cover_image_alt }}alt="{{ . }}"{{ end }}/>
+      {{ end }}
       <article class="single__post-content">
           {{ .Content }}
       </article>

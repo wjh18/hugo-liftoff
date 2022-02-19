@@ -1,11 +1,13 @@
 ---
 title: {{ replace .Name "-" " " | title }}
 seo_title: {{ replace .Name "-" " " | title }}
-description: 
 summary: 
+description: 
 slug: {{ .Name }}
 date: {{ .Date }}
 author: {{ .Site.Params.author }}
+cover_image: 
+cover_image_alt: 
 draft: true
 
 techstack:
