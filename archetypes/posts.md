@@ -8,6 +8,7 @@ date: {{ .Date }}
 author: {{ .Site.Params.author }}
 cover_image: 
 cover_image_alt: 
+cover_image_from_bundle: true
 draft: true
 
 categories:
