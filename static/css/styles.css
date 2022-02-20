@@ -867,11 +867,11 @@ code {
     padding: 50px;
     background-color: var(--bg-color-light);
     background-color: white;
-    flex: 1 1 20%;
+    flex: 1 1 30vw;
 }
 
 .project--home {
-    flex: 0 1;
+    flex: 0 1 auto;
     margin: 30px;
 }
 
