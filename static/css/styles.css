@@ -646,10 +646,9 @@ pre {
 }
 
 .single__post-image {
-    padding: 20px 0;
+    margin: 20px 0;
     width: 100%;
     height: auto;
-    max-width: 30vw;
 }
 
 .single__post-content {
