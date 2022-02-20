@@ -39,7 +39,6 @@
 </section>
 <div class="single__container single__container-bg">
   <section>
-    <div>
       {{ partial "toc.html" . }}
       {{- if .Params.series }}
         {{- $name := index .Params.series 0 }}
@@ -62,7 +61,6 @@
       <article class="single__post-content">
           {{ .Content }}
       </article>
-    </div>
   </section>
   <aside>
     <div class="single__banner-tags single__banner-tags--bottom">
@@ -111,7 +109,6 @@
     {{ if and (.Site.DisqusShortname) (not .Site.IsServer) }}
       {{ template "_internal/disqus.html" . }}
     {{ end }}
-
   </aside>
 </div>
 {{ end }}

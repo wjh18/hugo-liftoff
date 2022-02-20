@@ -158,7 +158,8 @@ a {
 
 table {
     border-collapse: collapse;    
-    overflow: scroll;
+    display: block;
+    overflow-x: auto;
 }
 
 td, th {
