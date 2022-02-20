@@ -64,7 +64,7 @@
       <p><a href="{{ .Site.BaseURL }}posts/">See all posts &raquo;</a></p>
     </div>
     <div class="posts">    
-      {{- range ( where site.RegularPages "Section" "posts" | last 3 ) }}
+      {{- range ( where site.RegularPages "Section" "posts" | first 3 ) }}
         <div class="post">                                  
           <div class="single__banner-categories">
             {{ with .Params.categories }}
