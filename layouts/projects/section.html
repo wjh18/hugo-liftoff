@@ -26,6 +26,7 @@
         {{ end }}
         {{ end }}
       </div>
+      {{ partial "cover-image.html" . }}
       <h3 class="project__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ partial "label_drafts.html" . }}

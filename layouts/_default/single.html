@@ -58,19 +58,7 @@
           {{- end }}
         </ol>
       {{ end }}
-      {{ if .Params.cover_image }}
-        {{ if eq .Params.cover_image_from_bundle true }}
-          {{ .Scratch.Set "link" .Permalink }}
-        {{ else }}
-          {{ .Scratch.Set "link" .Site.BaseURL }}
-          {{ .Scratch.Add "link" "img/" }}
-        {{ end }}
-        <img class="single__post-image" 
-             srcset="{{ .Scratch.Get "link" }}{{ .Params.cover_image }} 480w, {{ .Scratch.Get "link" }}{{ .Params.cover_image }} 800w"
-             sizes="(max-width: 600px) 480px, 800px"
-            src="{{ .Scratch.Get "link" }}{{ .Params.cover_image }}"
-            {{ with .Params.cover_image_alt }}alt="{{ . }}"{{ end }}/>
-      {{ end }}
+      {{ partial "cover-image.html" . }}
       <article class="single__post-content">
           {{ .Content }}
       </article>
