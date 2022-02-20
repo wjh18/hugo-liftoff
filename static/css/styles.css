@@ -242,7 +242,7 @@ code {
     padding: 12px;    
     border-style: none;
     box-sizing: border-box;
-    color: var(--txt-color-light-1);
+    color: var(--txt-color-dark-1);
     border: 2px solid var(--link-color-light);
     background-color: var(--link-color-light);
     font-family: var(--base-font-reg);
@@ -612,7 +612,16 @@ code {
     gap: 5px 15px;
     margin-bottom: 15px;
     font-size: 1rem;   
-    text-transform: uppercase; 
+    text-transform: uppercase;
+    padding-inline-start: 0;
+}
+
+.single__banner-categories li a {
+    color: var(--alt-color-dark);
+}
+
+.single__banner-categories li a:hover {
+    color: var(--alt-color-light);
 }
 
 .single__banner-categories li {

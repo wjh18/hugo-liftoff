@@ -21,13 +21,13 @@
     </p>
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
     <div class="post post--light">                                  
-      <div class="single__banner-categories">
+      <ul class="single__banner-categories">
         {{ with .Params.categories }}
         {{ range . }}
-          <a href="{{ "categories" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
+          <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
         {{ end }}
         {{ end }}
-      </div>
+      </ul>
       <h3 class="post__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ partial "label_drafts.html" . }}

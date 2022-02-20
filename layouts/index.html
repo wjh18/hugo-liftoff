@@ -66,13 +66,13 @@
     <div class="posts">    
       {{- range ( where site.RegularPages "Section" "posts" | first 3 ) }}
         <div class="post">                                  
-          <div class="single__banner-categories">
+          <ul class="single__banner-categories">
             {{ with .Params.categories }}
             {{ range . }}
-              <a href="{{ "categories" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
+              <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
             {{ end }}
             {{ end }}
-          </div>
+          </ul>
           <h3 class="post__title post__title--light">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
             {{ partial "label_drafts.html" . }}
@@ -97,13 +97,13 @@
         {{ with .Site.GetPage "/projects" }}
         {{ with .GetPage $featured }}
         <div class="project project--home">
-          <div class="single__banner-categories">
+          <ul class="single__banner-categories">
             {{ with .Params.techstack }}
             {{ range . }}
               <li>{{ . }}</li>
             {{ end }}
             {{ end }}
-          </div> 
+          </ul> 
           <h3 class="project__title">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
             {{ partial "label_drafts.html" . }}
@@ -129,13 +129,13 @@
       {{ else }}     
       {{- range ( where site.RegularPages "Section" "projects" | last 1 ) }}
         <div class="project"> 
-          <div class="single__banner-categories">
+          <ul class="single__banner-categories">
             {{ with .Params.techstack }}
             {{ range . }}
               <li>{{ . }}</li>
             {{ end }}
             {{ end }}
-          </div>                       
+          </ul>                       
           <h3 class="project__title">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
             {{ partial "label_drafts.html" . }}

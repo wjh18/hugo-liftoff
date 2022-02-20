@@ -19,13 +19,13 @@
   <div class="projects">
     {{ range .RegularPagesRecursive }}
     <div class="project">
-      <div class="single__banner-categories">
+      <ul class="single__banner-categories">
         {{ with .Params.techstack }}
         {{ range . }}
           <li>{{ . }}</li>
         {{ end }}
         {{ end }}
-      </div>
+      </ul>
       {{ partial "cover-image.html" . }}
       <h3 class="project__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
