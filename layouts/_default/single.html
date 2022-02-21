@@ -74,7 +74,9 @@
       </ul>
       {{ end }}
     </div>
-    {{ partial "social_share.html" . }}
+    <div class="single__social-links">
+      {{ partial "social_share.html" . }}
+    </div>
     {{- if .Params.series }}
       <div class="series">
         {{- $name := index .Params.series 0 }}

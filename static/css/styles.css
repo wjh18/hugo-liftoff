@@ -1096,6 +1096,10 @@ code {
 /* Social link and share icons */
 
 .social-links {
+    
+}
+
+.single__social-links .social-links {
     margin: 50px 0;
 }
 
