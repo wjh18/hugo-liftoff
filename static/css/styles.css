@@ -245,15 +245,17 @@ code {
     color: var(--txt-color-dark-1);
     border: 2px solid var(--link-color-light);
     background-color: var(--link-color-light);
-    font-family: var(--base-font-reg);
+    font-family: var(--base-font-med), Helvetica, sans-serif;
     transition: var(--trans-ease-short);
+    border-bottom: 2px solid var(--alt-color-dark);
 }
 
 .cta-btn:hover {
-    border: 2px solid var(--link-color-light);
+    border: 2px solid var(--link-color-dark);
     background-color: var(--bg-color-light);
-    color: var(--link-color-light);
+    color: var(--link-color-dark);
     cursor: pointer;
+    border-bottom: 2px solid var(--alt-color-light);
 }
 
 .cta-btn--light {
@@ -479,6 +481,7 @@ code {
 .home-hero__links {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     gap: 30px;
 }
 
