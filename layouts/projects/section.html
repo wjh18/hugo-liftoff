@@ -26,7 +26,7 @@
         {{ end }}
         {{ end }}
       </ul>
-      {{ partial "cover-image.html" . }}
+      <div class="project__image">{{ partial "cover-image.html" . }}</div>
       <h3 class="project__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ partial "label_drafts.html" . }}

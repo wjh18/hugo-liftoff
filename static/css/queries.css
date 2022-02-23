@@ -1,7 +1,3 @@
-@media screen and (max-width: 480px) {
-    
-}
-
 @media screen and (min-width: 480px) {
     .home-hero__pic {
         width: 100px;
@@ -12,11 +8,55 @@
     }
 
     .home-hero__subtitle {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+
+    .banner__header {
+        font-size: 1.9rem;
+        line-height: 2.6rem;
+    }
+
+    .newsletter__header {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+
+    .newsletter__description {
+        font-size: 1.2rem;
         line-height: 1.7rem;
     }
 
-    
+    #newsletter__form--input {
+        min-width: 200px;
+        min-height: 30px;
+    }
+
+    .projects {
+        padding: 30px 30px 100px 30px;
+    }
+
+    .project {
+        min-width: 300px;
+        padding: 30px;
+    }
+
+    .project__title {
+        font-size: 1.4rem;
+    }
+
+    .project__description {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+
+    .single__banner-categories {
+        font-size: 1rem;
+    }
+
+    .project__links {
+        margin-top: 30px;
+    }
     
 }
 
@@ -87,6 +127,10 @@
         display: none; /* Hide nav toggle on desktop */
     }
 
+    .home-hero {
+        padding: 80px 30px;
+    }
+
     .home-hero__flex {    
         flex-direction: row;
         justify-content: center;
@@ -101,11 +145,52 @@
         padding: 50px;
     }
 
+    .banner__header {
+        font-size: 2.1rem;
+        line-height: 3rem;
+    }
+
+    .single__post-description {
+        margin-top: 50px;
+        font-size: 1.2rem;
+    }
+
+    .single__banner-tags ul li {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+
+    .single__post-meta-stats {
+        font-size: 1rem;
+    }
+
+    .projects {
+        padding: 30px 50px 100px 50px;
+    }
+
+    .project {
+        padding: 50px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
     .home-hero__title {
         font-size: 2.3rem;
+    }
+
+    .home-hero__subtitle {
+        font-size: 1.3rem;
+        line-height: 1.7rem;
+    }
+
+    .banner__header {
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+    }
+
+    .home-section__sections {
+        padding: 80px 20px;
     }
 }
 

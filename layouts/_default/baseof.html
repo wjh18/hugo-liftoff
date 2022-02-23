@@ -22,7 +22,7 @@
       {{ end }}
     {{ end }}
     <!-- Debug template lookup -->
-    {{ if eq .Site.Params.debug true }}
+    {{ if and (eq .Site.Params.debug true) (.Site.IsServer) }}
       {{ partial "debug.html" . }}
     {{ end }}
   </body>

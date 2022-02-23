@@ -438,7 +438,7 @@ code {
 .home-hero {
     background: var(--bg-color-dark);
     background: var(--bg-color-grad);
-    padding: 60px 30px 90px 30px;
+    padding: 50px 30px;
 }
 
 .home-hero__wrapper {
@@ -455,7 +455,7 @@ code {
 
 .home-hero__subtitle {
     color: var(--txt-color-light-4);
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.5rem;
     margin-top: 0;
     margin-bottom: 30px;
@@ -543,6 +543,8 @@ code {
 .banner__header {
     color: var(--txt-color-light-2);
     text-align: center;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
 }
 
 .list__wrapper {
@@ -566,7 +568,7 @@ code {
 .single__container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
 }
 
 .single__container-bg {
@@ -584,8 +586,9 @@ code {
 
 .single__post-description {
     color: var(--txt-color-light-3);
-    margin-top: 50px;
-    font-size: 1.2rem;
+    margin-top: 30px;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 .single__post-meta {    
@@ -603,6 +606,7 @@ code {
     display: flex;
     column-gap: 10px;
     font-family: var(--base-font-reg), Helvetica, sans-serif;
+    font-size: 0.9rem;
 }
 
 .single__banner-categories {
@@ -611,7 +615,7 @@ code {
     list-style-type: none;
     gap: 5px 15px;
     margin-bottom: 15px;
-    font-size: 1rem;   
+    font-size: 0.8rem;
     text-transform: uppercase;
     padding-inline-start: 0;
 }
@@ -650,10 +654,11 @@ code {
 
 .single__banner-tags ul li {
     background-color: transparent;
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 10px;
     border: 2px solid var(--alt-color-dark);
     color: var(--alt-color-dark);
+    font-size: 0.8rem;
 }
 
 .single__banner-tags ul li:hover {
@@ -663,8 +668,6 @@ code {
 
 .single__post-image {
     margin: 20px 0;
-    width: 100%;
-    height: auto;
 }
 
 .single__post-content {
@@ -880,12 +883,12 @@ code {
     justify-content: center;
     align-items: center;
     gap: 30px 50px;
-    padding: 30px 50px 100px 50px;
+    padding: 30px 15px 100px 15px;
 }
 
 .project {
     box-shadow: 0 5px 25px -18px var(--bg-color-dark);
-    padding: 50px;
+    padding: 30px;
     background-color: var(--bg-color-light);
     background-color: white;
     flex: 1 1 30vw;
@@ -899,19 +902,20 @@ code {
 .project__title {
     margin: 0;
     margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-family: var(--serif-font-light), Georgia, serif;
 }
 
 .project__description {
     margin: 15px 0 0 0;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
 }
 
 .project__links {
     display: flex;
     column-gap: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .project__links--single {
@@ -929,6 +933,11 @@ code {
 .projects__pagination {
     display: flex;
     justify-content: center;
+}
+
+.project__image img {
+    max-width: 800px;
+    width: 80%;
 }
 
 
@@ -950,11 +959,14 @@ code {
     margin-top: 0;
     margin-bottom: 0;
     color: var(--txt-color-light-3);
+    font-size: 1.5rem;
+    line-height: 2.1rem;
 }
 
 .newsletter__description {
     color: var(--txt-color-light-5);
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 #newsletter__form {
@@ -964,8 +976,8 @@ code {
 #newsletter__form--input {
     padding: 12px;
     margin-right: 10px;    
-    min-width: 200px;
-    min-height: 30px;
+    min-width: 170px;
+    min-height: 25px;
     border: 1px solid var(--border-color-light);
     font-size: 1rem;
     color: var(--txt-color-dark-2);
@@ -973,7 +985,7 @@ code {
 }
 
 #newsletter__form--submit {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .contact {
@@ -1134,6 +1146,7 @@ code {
 	border: none;
 	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
 	text-align: center;
+    margin-top: 5px;
 }
  
 .social-btn.twitter     { background: #55acee; }
