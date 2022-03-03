@@ -3,10 +3,16 @@
   <h1 class="banner__header">{{ .Title }}</h1>
 </section>
 <section class="terms">
+  
   <div class="terms__wrapper">
-    {{ range .Data.Terms.ByCount }}
-      <span class="terms__term"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></span>
+    {{ with .Data.Terms.ByCount }}
+    
+      {{ range . }}
+        <span class="terms__term"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></span>
+      {{ end }}    
+    {{ else }}
+      <span class="terms__none">No content available yet. Coming soon.</span>
     {{ end }}
-  </div>
+  </div>  
 </section>
 {{ end }}

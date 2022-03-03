@@ -784,6 +784,11 @@ code {
     text-align: center;
 }
 
+.terms__none {
+    color: var(--txt-color-dark-3);
+    font-family: var(--base-font-light), Helvetica, sans-serif;
+}
+
 .terms__term {
     display: inline-block;
     font-size: 1.2em;
