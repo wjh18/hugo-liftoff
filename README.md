@@ -86,23 +86,23 @@ Please open an issue on Github if you come across anything that needs fixing.
 
 Copy the contents of `{your-project}/themes/hugo-liftoff/exampleSite` into the root directory of your own project. The most important files are `config.toml` and anything in the `content` directory.
 
-Available site-wide customizations are included in the example site's `config.toml`. Frontmatter customization options can be found in `{your-project}/themes/hugo-liftoff/exampleSite/archetypes/` or by creating content with `hugo new <section>/<content>.md` and inspecting the generated content file.
+Available site-wide customizations are included in the example site's `config.toml`. Frontmatter customization options can be found in `{your-project}/themes/hugo-liftoff/archetypes/` or by creating content with `hugo new <section>/<content>.md` and inspecting the generated content file.
 
 # Manual Setup
 
 This section will walk you through how to get started if you're not working off of the example site for whatever reason.
 
-Once installation is complete, create `about`, `contact`, `posts` and `projects` directories and an `_index.md` file under `{your-project}/content`.
+Once installation is complete, create `about`, `contact`, `posts` and `projects` directories and an `_index.md` file under `{your-project}/content/`.
 
 ## Homepage
 
-Create an `_index.md` file under `{your-project}/content` if you haven't already. This is where you can customize the text of the hero section.
+Create an `_index.md` file under `{your-project}/content/` if you haven't already. This is where you can customize the text of the hero section.
 
 In the frontmatter, add a `title` and `subtitle` which will be displayed in the hero section of the page.
 
 ## About Page
 
-Create an `index.md` file (no leading underscore) under `{your-project}/content/about`. If you add an underscore, the about page will become a section which is not what you want.
+Create an `index.md` file (no leading underscore) under `{your-project}/content/about/`. If you add an underscore, the about page will become a section which is not what you want.
 
 You can add a custom `<title>` and meta description in the frontmatter of this file with `seo_title` and `description`, respectively. Otherwise, it will pull these from your global `config.toml`. To customize the `<h1>`, add a `title` frontmatter parameter.
 
@@ -116,7 +116,7 @@ The same instructions for the about page apply to the contact page, except you s
 
 ## Posts
 
-Your blog post content will live under `{your-project}/content/posts`. The directory is not customizable at this time unfortunately as it will break parts of the homepage, RSS feed and a few other features. However, you can take advantage of nested subsections and custom permalinks to work around this somewhat (see below).
+Your blog post content will live under `{your-project}/content/posts/`. The directory name is not customizable at this time unfortunately as it will break parts of the homepage, RSS feed and a few other features. However, you can take advantage of nested subsections and custom permalinks to work around this somewhat (see below).
 
 Create an `_index.md` file in this directory and add a custom `title` and `description` as frontmatter variables if desired.
 
@@ -138,6 +138,8 @@ This will change the format of the permalink to `/<section>/<post>` instead of `
 ### Creating posts
 
 It's recommended to create your posts with the command `hugo new posts/post-name.md`. This will provide you with all the frontmatter options via archetypes automatically.
+
+To create posts in nested subsections, you need to add the subsection: `hugo new posts/<section>/post-name.md`.
 
 ### Post frontmatter
 
@@ -176,12 +178,12 @@ To customize the newsletter, add the fields `newsletter_header`, `newsletter_des
 
 ## Custom Avatar Image and Favicon
 
-To add a custom avatar image, add your image to `{your-project}/static/img/` with the `avatar` config param set to the filename.
+To add a custom avatar image, add your image to `{your-project}/static/img/` with the `avatar` param in `config.toml` set to the filename.
 
-To add a facivon, set `favicon` to `true` in your config params and add your icon files to `{your-project}/static/`
+To add a facivon, set `favicon` to `true` in your `config.toml` params and add your icon files to `{your-project}/static/`
 
 ## Global site config
 
-Please see the example `config.toml` in `{your-project}/themes/hugo-liftoff/exampleSite` for all other config options. This README will be updated in the future with more detailed info on each setting.
+Please see the example `config.toml` in `{your-project}/themes/hugo-liftoff/exampleSite/` for all other config options. This README will be updated in the future with more detailed info on each setting.
 
 For now, you can get an idea of the available customizations by referencing the config file and feature list.
