@@ -78,15 +78,15 @@ Then commit the changes.
 
 Otherwise, you'll need to download the latest version of the theme and update your `themes` directory manually.
 
-As always, please take caution with updates as not all configurations can be accounted for and small bugs are a possibility.
+As always, please take caution with updates as it's impossible to account for every custom configuration and small bugs are a possibility.
 
-Please open an issue if anything catches your eye.
+Please open an issue on Github if you come across anything that needs fixing.
 
 # Quickstart
 
 Copy the contents of `{your-project}/themes/hugo-liftoff/exampleSite` into the root directory of your own project. The most important files are `config.toml` and anything in the `content` directory.
 
-Available site-wide customizations are included in the example site's `config.toml`. Frontmatter customization options can be found in `{your-project}/themes/hugo-liftoff/exampleSite/archetypes/*` or by creating content with `hugo new <section>/<content>.md` and inspecting the generated content file.
+Available site-wide customizations are included in the example site's `config.toml`. Frontmatter customization options can be found in `{your-project}/themes/hugo-liftoff/exampleSite/archetypes/` or by creating content with `hugo new <section>/<content>.md` and inspecting the generated content file.
 
 # Manual Setup
 
@@ -116,7 +116,7 @@ The same instructions for the about page apply to the contact page, except you s
 
 ## Posts
 
-Your blog post content will live under `{your-project}/content/posts`. This is not customizable at this time unfortunately as it will break parts of the homepage, RSS feed and a few other features. However, you can take advantage of nested subsections and custom permalinks to work around this somewhat (see below).
+Your blog post content will live under `{your-project}/content/posts`. The directory is not customizable at this time unfortunately as it will break parts of the homepage, RSS feed and a few other features. However, you can take advantage of nested subsections and custom permalinks to work around this somewhat (see below).
 
 Create an `_index.md` file in this directory and add a custom `title` and `description` as frontmatter variables if desired.
 
@@ -150,7 +150,7 @@ It's recommended to create your posts with the command `hugo new posts/post-name
 - `author` - Override the global author from config.
 - `cover_image` - A relative path to the cover image for this post. If not set, the post won't use a cover image.
 - `cover_image_alt` - The alt text for the cover image.
-- `cover_image_from_bundle` - Boolean if set to true, the cover image will be taken from the page bundle instead of `static/img/*`.
+- `cover_image_from_bundle` - Boolean if set to true, the cover image will be taken from the page bundle instead of `static/img/`.
 - `draft` - Boolean, set to true if you don't want your post build in production.
 - `categories` - Adds post to the category taxonomy
 - `tag` - Adds post to the tag taxonomy
@@ -170,8 +170,18 @@ Much of the projects frontmatter options are the same as posts. The following ar
 
 ## Newsletter
 
-You can also add `newletter: true` to your frontmatter to add a newsletter opt-in below the main content. To customize the newsletter, add the fields `newsletter_header`, `newsletter_description` and `newsletter_submit` under `[params]` in your `config.toml`.
+You can also add `newletter: true` to your frontmatter to add a newsletter opt-in below the main content. This is not necessary if global newsletter is set to true in your config. If global newsletter is set to false in your config, setting it to true in frontmatter will override the global setting.
+
+To customize the newsletter, add the fields `newsletter_header`, `newsletter_description` and `newsletter_submit` under `[params]` in your `config.toml`.
+
+## Custom Avatar Image and Favicon
+
+To add a custom avatar image, add your image to `{your-project}/static/img/` with the `avatar` config param set to the filename.
+
+To add a facivon, set `favicon` to `true` in your config params and add your icon files to `{your-project}/static/`
 
 ## Global site config
 
-Please see the example `config.toml` in `{your-project}/themes/hugo-liftoff/exampleSite` for all other config options.
+Please see the example `config.toml` in `{your-project}/themes/hugo-liftoff/exampleSite` for all other config options. This README will be updated in the future with more detailed info on each setting.
+
+For now, you can get an idea of the available customizations by referencing the config file and feature list.
