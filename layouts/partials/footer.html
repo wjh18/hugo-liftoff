@@ -10,7 +10,7 @@
     {{ end }}
     <p class="footer__copyright">
       &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-      {{ with .Site.Params.footer_text }}
+      {{ with .Site.Params.footer_text | markdownify }}
         &middot; {{ . }}
       {{ end }}
     </p>
