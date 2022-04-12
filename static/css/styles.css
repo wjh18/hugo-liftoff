@@ -191,11 +191,11 @@ blockquote {
     border-left: 10px solid var(--border-color-light);
     margin: 1.5em 10px;
     padding: 0.7em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
+    quotes: "\201C" "\201D";
     overflow-x: auto;
 }
 
-blockquote:before {
+blockquote::before {
     color: var(--border-color-light);
     content: open-quote;
     font-size: 4em;
