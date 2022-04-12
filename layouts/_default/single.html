@@ -37,33 +37,31 @@
     </p>
   </div>
 </section>
-<div class="single__container single__container-bg">
-  <section>
-      {{ partial "toc.html" . }}
-      {{- if .Params.series }}
-        <div class="series">
-          {{- $name := index .Params.series 0 }}
-          <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}">{{$name}}</a> series:</p>
-          {{- $name := $name | urlize }}
-          {{- $series := index .Site.Taxonomies.series $name }}
-          {{ $curtitle := .Title }}
-          <ol class="series__list">
-            {{- range $series.Pages.Reverse }}
-              <li>
-                <a href="{{.Permalink}}">{{ .Title }}</a>
-                {{ if eq .Title $curtitle }}
-                  <span class="series__this-post">This post!</span>
-                {{ end }}
-              </li>
-            {{- end }}
-          </ol>
-        </div>
-      {{ end }}
-      {{ partial "cover-image.html" . }}
-      <article class="single__post-content">
-          {{ .Content }}
-      </article>
-  </section>
+<section class="single__container single__container-bg">
+  {{ partial "toc.html" . }}
+  {{- if .Params.series }}
+    <div class="series">
+      {{- $name := index .Params.series 0 }}
+      <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}">{{$name}}</a> series:</p>
+      {{- $name := $name | urlize }}
+      {{- $series := index .Site.Taxonomies.series $name }}
+      {{ $curtitle := .Title }}
+      <ol class="series__list">
+        {{- range $series.Pages.Reverse }}
+          <li>
+            <a href="{{.Permalink}}">{{ .Title }}</a>
+            {{ if eq .Title $curtitle }}
+              <span class="series__this-post">This post!</span>
+            {{ end }}
+          </li>
+        {{- end }}
+      </ol>
+    </div>
+  {{ end }}
+  <div class="post__image">{{ partial "cover-image.html" . }}</div>
+  <article class="single__post-content">
+      {{ .Content }}
+  </article>
   <aside>
     <div class="single__banner-tags single__banner-tags--bottom">
       {{ with .Params.tags }}
