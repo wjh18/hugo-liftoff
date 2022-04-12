@@ -182,6 +182,14 @@ To add a custom avatar image, add your image to `{your-project}/static/img/` wit
 
 To add a facivon, set `favicon` to `true` in your `config.toml` params and add your icon files to `{your-project}/static/`
 
+## Adding Images to Post Content
+
+Adding a cover image is straightforward, you can include it in frontmatter. If you want to add posts to your markdown content, use Hugo's built-in `<figure>` shortcode with a path to the image location.
+
+`{{< figure src="/posts/example-post/example-image.png" class="post__image" alt="Example image alt" >}}`
+
+To make the image responsive, add the CSS class `post__image` to the shortcode.
+
 ## Global site config
 
 Please see the example `config.toml` in `{your-project}/themes/hugo-liftoff/exampleSite/` for all other config options. This README will be updated in the future with more detailed info on each setting.
