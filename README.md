@@ -98,7 +98,7 @@ Once installation is complete, create `about`, `contact`, `posts` and `projects`
 
 Create an `_index.md` file under `{your-project}/content/` if you haven't already. This is where you can customize the text of the hero section.
 
-In the frontmatter, add a `title` and `subtitle` which will be displayed in the hero section of the page.
+In the frontmatter, add a `title` and `subtitle` which will be displayed in the hero section of the page. Optionally, add a `seo_title` to override `title` as the title tag.
 
 ## About Page
 
