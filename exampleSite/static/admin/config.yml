@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   # branch: main # Defaults to master
 
-# site_url: https://example.com
+# site_url: https://www.example.com
 media_folder: static/img
 public_folder: /img
 
@@ -15,29 +15,89 @@ collections:
     label: 'Post' # Used in the UI, ie: "New Post"
     folder: 'content/posts'
     create: true
+    slug: '{{slug}}'
+    path: '{{slug}}/index' # Needed to show posts if using page bundles
+    media_folder: '' # Saves images in page bundle instead of default
+    public_folder: ''
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'SEO Title', name: 'seo_title', widget: 'string' }
+      - { label: 'Summary', name: 'summary', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Cover Image Filename', name: 'cover_image', widget: 'string' }
+      - { label: 'Cover Image Alt Text', name: 'cover_image', widget: 'string' }
+      - { label: "Cover Image From Bundle", name: "cover_image_from_bundle", widget: "boolean", default: true }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Categories", name: "categories", widget: "list"}
+      - { label: "Tags", name: "tags", widget: "list"}
+      - { label: "Series", name: "series", widget: "list"}
+      - { label: "Table of Contents", name: "toc", widget: "boolean", default: true }
+      - { label: "Related Posts", name: "related", widget: "boolean", default: true }
+      - { label: "Social Share", name: "social_share", widget: "boolean", default: true }
+      - { label: "Newsletter", name: "newsletter", widget: "boolean", default: true }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+
   # # Enable the following if you have subsections under posts (optional):
   # - name: 'guide'
   #   label: 'Guide' # Used in the UI, ie: "New Guide"
   #   folder: 'content/posts/guides'
   #   create: true
+  #   slug: '{{slug}}'
+  #   path: '{{slug}}/index' # Needed for page bundles
+  #   media_folder: '' # Saves images in page bundle instead of default
+  #   public_folder: ''
   #   fields:
   #     - { label: 'Title', name: 'title', widget: 'string' }
-  #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+  #     - { label: 'SEO Title', name: 'seo_title', widget: 'string' }
+  #     - { label: 'Summary', name: 'summary', widget: 'string' }
   #     - { label: 'Description', name: 'description', widget: 'string' }
+  #     - { label: 'Slug', name: 'slug', widget: 'string' }
+  #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+  #     - { label: 'Author', name: 'author', widget: 'string' }
+  #     - { label: 'Cover Image Filename', name: 'cover_image', widget: 'string' }
+  #     - { label: 'Cover Image Alt Text', name: 'cover_image', widget: 'string' }
+  #     - { label: "Cover Image From Bundle", name: "cover_image_from_bundle", widget: "boolean", default: true }
+  #     - { label: "Draft", name: "draft", widget: "boolean", default: true }
+  #     - { label: "Categories", name: "categories", widget: "list"}
+  #     - { label: "Tags", name: "tags", widget: "list"}
+  #     - { label: "Series", name: "series", widget: "list"}
+  #     - { label: "Table of Contents", name: "toc", widget: "boolean", default: true }
+  #     - { label: "Related Posts", name: "related", widget: "boolean", default: true }
+  #     - { label: "Social Share", name: "social_share", widget: "boolean", default: true }
+  #     - { label: "Newsletter", name: "newsletter", widget: "boolean", default: true }
   #     - { label: 'Body', name: 'body', widget: 'markdown' }
+  
   - name: 'project'
     label: 'Project' # Used in the UI, ie: "New Project"
     folder: 'content/projects'
     create: true
+    slug: '{{slug}}'
+    path: '{{slug}}/index' # Needed for page bundles
+    media_folder: '' # Saves images in page bundle instead of default
+    public_folder: ''
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'SEO Title', name: 'seo_title', widget: 'string' }
+      - { label: 'Summary', name: 'summary', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Cover Image Filename', name: 'cover_image', widget: 'string' }
+      - { label: 'Cover Image Alt Text', name: 'cover_image', widget: 'string' }
+      - { label: "Cover Image From Bundle", name: "cover_image_from_bundle", widget: "boolean", default: true }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Tech Stack", name: "techstack", widget: "list"}
+      - { label: 'Live URL', name: 'live_url', widget: 'string' }
+      - { label: 'Source URL', name: 'source_url', widget: 'string' }
+      - { label: "Personal", name: "personal", widget: "boolean", default: true }
+      - { label: "Table of Contents", name: "toc", widget: "boolean", default: true }
+      - { label: "Related Posts", name: "related", widget: "boolean", default: true }
+      - { label: "Social Share", name: "social_share", widget: "boolean", default: true }
+      - { label: "Newsletter", name: "newsletter", widget: "boolean", default: true }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: "pages"
     label: "Pages"
@@ -73,6 +133,7 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
+
       # # Enable the following if you have subsections under posts (optional):
       # - file: "content/posts/guides/_index.md"
       #   label: "Guides Section"
@@ -80,6 +141,7 @@ collections:
       #   fields:
       #     - { label: Title, name: title, widget: string }
       #     - { label: Description, name: description, widget: string }
+
       - file: "content/projects/_index.md"
         label: "Projects Section"
         name: "projects"
