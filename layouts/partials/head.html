@@ -4,21 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- SEO title from config or front matter -->
-  {{ if .IsHome }}
-	  <title>{{ .Site.Title }} | Home</title>
-	{{ else }}
-	  <title>
-      {{- with .Params.seo_title -}}
-        {{- . -}}
-      {{ else }}
-        {{- .Title -}}
-      {{ end }}
-      <!-- Add site title to the end of everything by default EXCEPT single post and project pages -->
-      {{ if (or (and (ne .Type "posts") (ne .Type "projects")) (not .IsPage)) }}
-       | {{ .Site.Title -}}
-      {{ end -}}      
-    </title>
-	{{ end }}
+  <!-- Add site title to the end of everything by default EXCEPT single post and project pages -->
+  <title>
+    {{- with .Params.seo_title -}}
+      {{- . -}}
+    {{ else }}
+      {{- .Title -}}
+    {{ end }}    
+    {{ if (or (and (ne .Type "posts") (ne .Type "projects")) (not .IsPage)) }}
+      | {{ .Site.Title -}}
+    {{ end -}}      
+  </title>
   <!-- Author from config -->
 	<meta name="author" content="{{- with .Params.author }}
                                  {{- . -}}
