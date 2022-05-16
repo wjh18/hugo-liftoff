@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  # branch: main # Defaults to master
+
+# site_url: https://example.com
+media_folder: static/img
+public_folder: /img
+
+editor:
+  preview: true # Enables editor previews globally
+# publish_mode: editorial_workflow
+
+collections:
+  - name: 'post'
+    label: 'Post' # Used in the UI, ie: "New Post"
+    folder: 'content/posts'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  # # Enable the following if you have subsections under posts (optional):
+  # - name: 'guide'
+  #   label: 'Guide' # Used in the UI, ie: "New Guide"
+  #   folder: 'content/posts/guides'
+  #   create: true
+  #   fields:
+  #     - { label: 'Title', name: 'title', widget: 'string' }
+  #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+  #     - { label: 'Description', name: 'description', widget: 'string' }
+  #     - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'project'
+    label: 'Project' # Used in the UI, ie: "New Project"
+    folder: 'content/projects'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/_index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - { label: SEO Title, name: seo_title, widget: string }
+      - file: "content/about/index.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - { label: Type, name: type, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: SEO Title, name: seo_title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: "content/contact/index.md"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - { label: Type, name: type, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: SEO Title, name: seo_title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: "content/posts/_index.md"
+        label: "Posts Section"
+        name: "posts"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+      # # Enable the following if you have subsections under posts (optional):
+      # - file: "content/posts/guides/_index.md"
+      #   label: "Guides Section"
+      #   name: "guides"
+      #   fields:
+      #     - { label: Title, name: title, widget: string }
+      #     - { label: Description, name: description, widget: string }
+      - file: "content/projects/_index.md"
+        label: "Projects Section"
+        name: "projects"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
