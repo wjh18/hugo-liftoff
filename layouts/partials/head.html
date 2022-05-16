@@ -12,7 +12,11 @@
         {{- . -}}
       {{ else }}
         {{- .Title -}}
-      {{ end }} | {{ .Site.Title -}}{{ if not .IsPage }}{{ end -}}
+      {{ end }}
+      <!-- Add site title to the end of everything by default EXCEPT single post and project pages -->
+      {{ if (or (and (ne .Type "posts") (ne .Type "projects")) (not .IsPage)) }}
+       | {{ .Site.Title -}}
+      {{ end -}}      
     </title>
 	{{ end }}
   <!-- Author from config -->
