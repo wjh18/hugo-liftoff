@@ -28,7 +28,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Cover Image Filename', name: 'cover_image', widget: 'string' }
-      - { label: 'Cover Image Alt Text', name: 'cover_image', widget: 'string' }
+      - { label: 'Cover Image Alt Text', name: 'cover_image_alt', widget: 'string' }
       - { label: "Cover Image From Bundle", name: "cover_image_from_bundle", widget: "boolean", default: true }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Categories", name: "categories", widget: "list"}
@@ -58,7 +58,7 @@ collections:
   #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
   #     - { label: 'Author', name: 'author', widget: 'string' }
   #     - { label: 'Cover Image Filename', name: 'cover_image', widget: 'string' }
-  #     - { label: 'Cover Image Alt Text', name: 'cover_image', widget: 'string' }
+  #     - { label: 'Cover Image Alt Text', name: 'cover_image_alt', widget: 'string' }
   #     - { label: "Cover Image From Bundle", name: "cover_image_from_bundle", widget: "boolean", default: true }
   #     - { label: "Draft", name: "draft", widget: "boolean", default: true }
   #     - { label: "Categories", name: "categories", widget: "list"}
@@ -87,7 +87,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Cover Image Filename', name: 'cover_image', widget: 'string' }
-      - { label: 'Cover Image Alt Text', name: 'cover_image', widget: 'string' }
+      - { label: 'Cover Image Alt Text', name: 'cover_image_alt', widget: 'string' }
       - { label: "Cover Image From Bundle", name: "cover_image_from_bundle", widget: "boolean", default: true }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Tech Stack", name: "techstack", widget: "list"}
