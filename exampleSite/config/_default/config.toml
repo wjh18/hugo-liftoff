@@ -1,0 +1,151 @@
+### General
+baseURL = 'https://www.example.com/' # Enter your full production URL
+languageCode = 'en-us' # Default
+timeZone = 'America/New_York' # IANA timezone https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+title = 'Example Site' # Site title used throughout site
+theme = 'hugo-liftoff' # Use this theme
+
+### SEO, Analytics & 3rd-party
+enableRobotsTXT = true # To overwrite the theme's robots.txt, add your own in the /layouts/ directory
+rssLimit = -1 # -1 is unlimited RSS entries
+# googleAnalytics = '' # Enter GA tracking ID to enable UA
+# disqusShortname = '' # Enter Disqus shortname to enable comments
+
+### Content & Publishing
+# Please see https://gohugo.io/getting-started/configuration/ for detailed explanations
+buildDrafts = false # Default
+buildExpired = false # Default 
+buildFuture = false # Default
+canonifyURLs = false # Default
+defaultContentLanguage = 'en' # Default
+disableAliases = true # Set to true if using server (Netlify, .htaccess) for redirects instead of Hugo
+disableKinds = [] # Default
+enableEmoji = true # Use Emojis in content
+enableGitInfo = false # Default
+enableInlineShortcodes = false # Default, false is more security-friendly
+ignoreFiles = [] # Default
+# newContentEditor = 'code' # Set VS Code as default editor
+paginate = 10 # Default
+paginatePath = 'page' # Default
+pluralizeListTitles = true # Default
+publishDir = 'public' # Default
+relativeURLs = false # Default
+summaryLength = 70 # Default
+titleCaseStyle = 'AP' # Default, other options: Chicago (slightly different) or Go (all first letters capitalized)
+
+### Other
+archetypeDir = 'archetypes' # Default
+# assetDir = 'assets' # Default
+contentDir = 'content' # Default
+dataDir = 'data' # Default
+disableHugoGeneratorInject = false # Default
+disableLiveReload = false # Default
+
+
+[taxonomies]
+    tag = 'tags'
+    category = 'categories'    
+    series = 'series' # Allows you to create an organized series of posts (e.g. multi-part tutorial)
+
+[permalinks]    
+    posts = '/:sections[last]/:slug/' # Removes 'posts' from the permalink structure for posts created under nested sub-sections
+    # e.g. /sub-section/example-post instead of /posts/sub-section/example-post
+    # Currently only works for single posts, the section list page will remain at /posts/subsection/
+
+[markup]
+  defaultMarkdownHandler = 'goldmark' # Default (everything under [markup] is unless otherwise specified)
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = true # Not the default
+    lineNumbersInTable = false # Not the default
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+[related]
+  # Default related posts settings
+  includeNewer = false
+  threshold = 80
+  toLower = false
+[[related.indices]]
+  name = 'keywords'
+  weight = 100
+[[related.indices]]
+  name = 'date'
+  weight = 10
+# Remove if not using tags taxonomy
+[[related.indices]]
+  name = 'tags'
+  weight = 80
+
+[sitemap]
+  # Default sitemap settings
+  changefreq = 'monthly'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[frontmatter]
+  # Default frontmatter date settings
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+
+[caches]
+  # Default cache settings
+  [caches.assets]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
+  [caches.getcsv]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.getjson]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.getresource]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.images]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
+  [caches.modules]
+    dir = ':cacheDir/modules'
+    maxAge = -1
+
+[imaging]
+  # Default image processing settings
+  anchor = 'Smart'
+  bgColor = '#ffffff'
+  hint = 'photo'
+  quality = 75
+  resampleFilter = 'Box'

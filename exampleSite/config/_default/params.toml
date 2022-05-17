@@ -1,0 +1,44 @@
+### SEO, Analytics & 3rd-party
+googleAnalyticsv4 = false # false for Universal Analytics, true for GA v4
+netlify_cms = false # true adds Netlify Identity JS to head for NetlifyCMS auth using git-gateway
+# gtm_id = '' # GTM tracking (leave blank to use GA)
+# disallow_search_engines = false # Disallow search engine crawling in robots.txt
+
+### Content
+favicon = true # Enable favicon, add your favicon files to /static/ directory
+author = 'John Doe' # Default author for <head> meta
+description = "Personal blog and portfolio site of John Joe." # Add a global meta description to <head>
+footer_text = "Built with [Hugo Liftoff](https://github.com/wjh18/hugo-liftoff) theme." # Customize footer text
+
+# Customize newsletter text
+newsletter_header = "This is my custom newsletter header with a captivating title."
+newsletter_description = "This is my custom newsletter description that tells you why you should sign up."
+newsletter_submit = "Join now"
+global_newsletter = true # Enable newsletter site-wide
+
+debug = true # Debug template lookup in development with .Kind
+label_drafts = true # Add a label indicator next to the title of any built drafts (dev only)
+
+# Show a custom featured project on homepage instead of latest project
+# featured_project = 'this-is-my-project' # Enter the filename for .md file or directory name for page bundles
+# avatar = 'avatar.png' # Custom avatar image in /static/img/
+
+### Social
+# Show social links in footer, home hero section, or about page
+footer_socials = true
+home_hero_socials = true
+about_page_socials = true
+
+# Enable or disable individual social icons
+social.links.twitter = "username"
+social.links.github = "username"
+social.links.stack_overflow = "userid/username" # include user id
+# social.links.linkedin = "username"
+# social.links.email = "user@example.com"
+
+# Enable or disable individual social share icons in posts
+social.share.facebook = true
+social.share.linkedin = true
+social.share.twitter = true
+social.share.reddit = true
+social.share.email = true

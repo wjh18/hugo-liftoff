@@ -1,0 +1,76 @@
+[[main]]
+    # Top-level menu entry
+    identifier = "work"
+    name = "Work"
+    url = "/projects"
+    weight = 1
+
+[[main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects"
+    parent = "work"
+    weight = 1
+
+[[main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    parent = "work"
+    weight = 2
+
+[[main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact"
+    parent = "work"
+    weight = 3
+
+[[main]]
+    # Top-level menu entry
+    identifier = "writing"
+    name = "Writing"
+    url = "/posts"
+    weight = 4
+
+[[main]]
+    identifier = "posts"
+    name = "All Posts"
+    url = "/posts"
+    parent = "writing"
+    weight = 5
+
+[[main]]
+    identifier = "subsection"
+    name = "Subsection"
+    url = "/posts/subsection"
+    parent = "writing"
+    weight = 6
+
+[[main]]
+    # Top-level menu entry
+    identifier = "explore"
+    name = "Explore"
+    url = "/categories"
+    weight = 7
+
+[[main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories"
+    parent = "explore"
+    weight = 8
+
+[[main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    parent = "explore"
+    weight = 9
+
+[[main]]
+    identifier = "series"
+    name = "Series"
+    url = "/series"
+    parent = "explore"
+    weight = 10
