@@ -29,6 +29,9 @@ paginate = 5
     # false for Universal Analytics, true for GA v4
     googleAnalyticsv4 = false
 
+    # Disallows search engine crawling in robots.txt
+    # disallow_search_engines = false
+
     # Default author for head meta
     author = 'John Doe'
 
