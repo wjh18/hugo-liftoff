@@ -55,7 +55,7 @@
     {{ partial "gtm.html" . }}
   {{ end }}
   <!-- Netlify Identity -->
-  {{ if .Site.Params.netlify_cms }}
+  {{ if eq .Site.Params.netlify_cms true }}
 	  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {{ end }}
 </head>
