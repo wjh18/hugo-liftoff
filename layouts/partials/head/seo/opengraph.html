@@ -1,1 +1,69 @@
-{{ template "_internal/opengraph.html" . }}
+{{- with .Params.locale }}<meta property="og:locale" content="{{ . }}">{{ end }}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (ne .Type "projects")) (not .IsPage)) }} | {{ .Site.Title -}}{{ end -}}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+{{ if $.Scratch.Get "paginator" -}}
+  {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "posts" ) -}}
+  <meta property="og:url" content="{{ .Paginator.URL | absURL }}">
+{{ else -}}
+  <meta property="og:url" content="{{ .Permalink }}">
+{{ end -}}
+{{ with .Site.Params.title -}}
+  <meta property="og:site_name" content="{{ . }}">
+{{ end -}}
+
+{{ $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{ if .IsPage -}}
+  {{ if not .PublishDate.IsZero -}}
+    <meta property="article:published_time" {{ .PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+  {{ else if not .Date.IsZero -}}
+    <meta property="article:published_time" {{ .Date.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+  {{ end -}}
+  {{ if not .Lastmod.IsZero -}}
+    <meta property="article:modified_time" {{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+  {{ end -}}
+{{ else -}}
+  {{ if not .Date.IsZero -}}
+    <meta property="og:updated_time" {{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+  {{ end -}}
+{{ end -}}
+
+{{ with $.Params.images -}}
+  {{ range first 6 . -}}
+  <meta property="og:image" content="{{ $.Permalink }}{{ . | absURL }}">
+  {{ end -}}
+{{ else -}}
+  {{ $images := $.Resources.ByType "image" -}}
+  {{ $featured := $images.GetMatch "*feature*" -}}
+  {{ if not $featured -}}
+    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}
+  {{ end -}}
+  {{ with $featured -}}
+    <meta property="og:image" content="{{ $featured.Permalink }}"/>
+  {{ else -}}
+    {{ with $.Site.Params.images -}}
+      <meta property="og:image" content="{{ index . 0 | absURL }}"/>
+      <meta property="og:image:alt" content="{{ $.Site.Params.title }}">
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
+
+{{ with .Params.audio -}}
+  <meta property="og:audio" content="{{ . | absURL }}">
+{{ end -}}
+
+{{ with .Params.videos -}}
+  {{ range . -}}
+    <meta property="og:video" content="{{ . | absURL }}">
+  {{ end -}}
+{{ end -}}
+
+{{- /* If it is part of a series, link to related articles */}}
+{{- $permalink := .Permalink }}
+{{- $siteSeries := .Site.Taxonomies.series }}
+{{ with .Params.series }}{{- range $name := . }}
+  {{- $series := index $siteSeries ($name | urlize) }}
+  {{- range $page := first 6 $series.Pages }}
+    {{- if ne $page.Permalink $permalink }}<meta property="og:see_also" content="{{ $page.Permalink }}" />{{ end }}
+  {{- end }}
+{{ end }}{{ end }}
