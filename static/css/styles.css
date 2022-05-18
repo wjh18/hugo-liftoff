@@ -827,7 +827,7 @@ code {
 
 .posts {
     width: 600px;
-    padding: 0 30px 0 30px;
+    padding: 0 30px 30px 30px;
 }
 
 .posts--center {
