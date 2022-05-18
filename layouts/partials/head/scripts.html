@@ -1,0 +1,8 @@
+<!-- Google Tag Manager -->
+{{ if .Site.Params.gtm_id }}
+  {{ partial "head/gtm.html" . }}
+{{ end }}
+<!-- Netlify Identity -->
+{{ if eq .Site.Params.netlify_cms true }}
+  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+{{ end }}

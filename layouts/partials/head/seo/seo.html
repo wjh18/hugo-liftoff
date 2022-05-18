@@ -1,0 +1,61 @@
+<!-- Robots meta -->
+{{ if eq .Kind "404" -}}
+  <meta name="robots" content="noindex, follow">
+{{ else -}}
+  {{ with .Params.robots -}}
+    <meta name="robots" content="{{ . }}">
+  {{ else -}}
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  {{ end -}}
+{{ end -}}
+
+<!-- SEO title from config or front matter -->
+<!-- Site title gets added EXCEPT on single post and project pages -->
+<title>
+  {{- with .Params.seo_title -}}
+    {{- . -}}
+  {{ else }}
+    {{- .Title -}}
+  {{ end }}    
+  {{ if (or (and (ne .Type "posts") (ne .Type "projects")) (not .IsPage)) }}
+    | {{ .Site.Title -}}
+  {{ end -}}      
+</title>
+
+<!-- Author from config -->
+{{ with .Params.author -}}
+  <meta name="author" content="{{ . }}">
+{{ else -}}
+  <meta name="author" content="{{ .Site.Params.author }}">
+{{ end -}}
+
+<!-- Description from config or front matter  -->
+{{ with .Description -}}
+  <meta name="description" content="{{ . }}">
+{{ else -}}
+  <meta name="description" content="{{ .Site.Params.description }}">
+{{ end -}}
+
+{{ if $.Scratch.Get "paginator" }}
+  <link rel="canonical" href="{{ .Paginator.URL | absURL }}">
+  {{ if .Paginator.HasPrev -}}
+    <link rel="prev" href="{{ .Paginator.Prev.URL | absURL }}">
+  {{ end -}}
+  {{ if .Paginator.HasNext -}}
+    <link rel="next" href="{{ .Paginator.Next.URL | absURL }}">
+  {{ end -}}
+{{ else  -}}
+  <link rel="canonical" href="{{ .Permalink }}">
+{{ end -}}
+
+{{ partial "head/seo/opengraph.html" . }}
+{{ partial "head/seo/twitter-cards.html" . }}
+
+<!-- Add rss+xml functionality -->
+{{- with .OutputFormats.Get "rss" -}}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{- end -}}
+
+{{ partial "head/seo/structured-data.html" . }}
