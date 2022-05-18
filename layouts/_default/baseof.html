@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en-US" }}">
-  {{- partial "head.html" . -}}
+  {{- partial "head/head.html" . -}}
   <body>
     {{ if and (not .Site.IsServer) (.Site.Params.gtm_id) }}
       <!-- Google Tag Manager (noscript) -->
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtm_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
     {{ end }}
-    {{- partial "header.html" . -}}
+    {{- partial "header/header.html" . -}}
     <main>
     {{- block "main" . }}{{- end }}
     </main>
-    {{- partial "footer.html" . -}}
+    {{- partial "footer/footer.html" . -}}
     <script async defer src="{{ .Site.BaseURL }}js/main.js"></script>
     <!-- Add Universal Analytics or Google Analytics v4 based on config if not using GTM -->
     {{ if and (not .Site.IsServer) (not .Site.Params.gtm_id) }}
@@ -23,7 +23,7 @@
     {{ end }}
     <!-- Debug template lookup -->
     {{ if and (eq .Site.Params.debug true) (.Site.IsServer) }}
-      {{ partial "debug.html" . }}
+      {{ partial "general/debug.html" . }}
     {{ end }}
   </body>
 </html>

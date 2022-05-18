@@ -26,10 +26,10 @@
         {{ end }}
         {{ end }}
       </ul>
-      <div class="project__image">{{ partial "cover-image.html" . }}</div>
+      <div class="project__image">{{ partial "general/cover-image.html" . }}</div>
       <h3 class="project__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
-        {{ partial "label_drafts.html" . }}
+        {{ partial "general/label-drafts.html" . }}
       </h3>
       <p class="project__description">
         {{ with .Params.Summary }}

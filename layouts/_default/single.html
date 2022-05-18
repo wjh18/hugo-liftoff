@@ -10,7 +10,7 @@
     </ul>
     <h1 class="banner__header single__post-header">
       {{ .Title }}
-      {{ partial "label_drafts.html" . }}
+      {{ partial "general/label-drafts.html" . }}
     </h1>
     <div class="single__post-meta">
       <div class="single__post-meta-stats">
@@ -38,7 +38,7 @@
   </div>
 </section>
 <section class="single__container single__container-bg">
-  {{ partial "toc.html" . }}
+  {{ partial "posts/toc.html" . }}
   {{- if .Params.series }}
     <div class="series">
       {{- $name := index .Params.series 0 }}
@@ -58,7 +58,7 @@
       </ol>
     </div>
   {{ end }}
-  <div class="post__image">{{ partial "cover-image.html" . }}</div>
+  <div class="post__image">{{ partial "general/cover-image.html" . }}</div>
   <article class="single__post-content">
       {{ .Content }}
   </article>
@@ -73,7 +73,7 @@
       {{ end }}
     </div>
     <div class="single__social-links">
-      {{ partial "social_share.html" . }}
+      {{ partial "posts/social-share.html" . }}
     </div>
     {{- if .Params.series }}
       <div class="series">
@@ -94,7 +94,7 @@
         </ol>
       </div>
     {{ else }}
-      {{ partial "related.html" . }}
+      {{ partial "posts/related.html" . }}
       <div class="single__next-previous">
         {{ with .PrevInSection }}
           <div>

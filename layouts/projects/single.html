@@ -10,7 +10,7 @@
     </ul>
     <h1 class="banner__header single__post-header">
       {{ .Title }}
-      {{ partial "label_drafts.html" . }}
+      {{ partial "general/label-drafts.html" . }}
     </h1>
     {{ if or (.Params.live_url) (.Params.source_url) }}
       <div class="single__post-meta">
@@ -34,7 +34,7 @@
   </div>
 </section>
 <div class="single__container single__container-bg">
-  <div class="project__image">{{ partial "cover-image.html" . }}</div>
+  <div class="project__image">{{ partial "general/cover-image.html" . }}</div>
   {{ .Content }}
 </div>
 {{ end }}

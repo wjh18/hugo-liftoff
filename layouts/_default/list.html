@@ -30,7 +30,7 @@
       </ul>
       <h3 class="post__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
-        {{ partial "label_drafts.html" . }}
+        {{ partial "general/label-drafts.html" . }}
       </h3>  
       <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>       
       <p class="post__description">

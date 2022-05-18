@@ -20,7 +20,7 @@
           <div class="home-hero__links">
             <a class="cta-btn" href="{{ .Site.BaseURL }}about/">About me</a>
             {{ if eq .Site.Params.home_hero_socials true }}
-              {{ partial "social_links.html" . }}
+              {{ partial "general/social-links.html" . }}
             {{ end }}
           </div>
         </div>
@@ -75,7 +75,7 @@
           </ul>
           <h3 class="post__title post__title--light">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ partial "label_drafts.html" . }}
+            {{ partial "general/label-drafts.html" . }}
           </h3>  
           <p class="post__date">{{ .Date.Format "Jan 2, 2006" }}&nbsp;&middot;&nbsp;{{ .ReadingTime }} min.</p>       
           <p class="post__description description--light">
@@ -106,7 +106,7 @@
           </ul> 
           <h3 class="project__title">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ partial "label_drafts.html" . }}
+            {{ partial "general/label-drafts.html" . }}
           </h3>            
           <p class="project__description">
             {{ with .Params.Summary }}
@@ -138,7 +138,7 @@
           </ul>                       
           <h3 class="project__title">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ partial "label_drafts.html" . }}
+            {{ partial "general/label-drafts.html" . }}
           </h3>            
           <p class="project__description">
             {{ with .Params.Summary }}
