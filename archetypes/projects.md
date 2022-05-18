@@ -15,9 +15,4 @@ techstack:
 live_url: 
 source_url: 
 personal: true
-
-toc: true
-related: true
-social_share: true
-newsletter: true
 ---

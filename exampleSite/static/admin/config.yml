@@ -38,6 +38,7 @@ collections:
       - { label: "Related Posts", name: "related", widget: "boolean", default: true }
       - { label: "Social Share", name: "social_share", widget: "boolean", default: true }
       - { label: "Newsletter", name: "newsletter", widget: "boolean", default: true }
+      - { label: "Disable Comments", name: "disable_comments", widget: "boolean", default: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
   # # Enable the following if you have subsections under posts (optional):
@@ -68,6 +69,7 @@ collections:
   #     - { label: "Related Posts", name: "related", widget: "boolean", default: true }
   #     - { label: "Social Share", name: "social_share", widget: "boolean", default: true }
   #     - { label: "Newsletter", name: "newsletter", widget: "boolean", default: true }
+  #     - { label: "Disable Comments", name: "disable_comments", widget: "boolean", default: false }
   #     - { label: 'Body', name: 'body', widget: 'markdown' }
   
   - name: 'project'
@@ -94,10 +96,6 @@ collections:
       - { label: 'Live URL', name: 'live_url', widget: 'string' }
       - { label: 'Source URL', name: 'source_url', widget: 'string' }
       - { label: "Personal", name: "personal", widget: "boolean", default: true }
-      - { label: "Table of Contents", name: "toc", widget: "boolean", default: true }
-      - { label: "Related Posts", name: "related", widget: "boolean", default: true }
-      - { label: "Social Share", name: "social_share", widget: "boolean", default: true }
-      - { label: "Newsletter", name: "newsletter", widget: "boolean", default: true }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: "pages"
     label: "Pages"
