@@ -12,18 +12,6 @@
     {{- block "main" . }}{{- end }}
     </main>
     {{- partial "footer/footer.html" . -}}
-    <script async defer src="{{ .Site.BaseURL }}js/main.js"></script>
-    <!-- Add Universal Analytics or Google Analytics v4 based on config if not using GTM -->
-    {{ if and (not .Site.IsServer) (not .Site.Params.gtm_id) }}
-      {{ if eq .Site.Params.googleAnalyticsv4 true }}
-        {{ template "_internal/google_analytics.html" . }}
-      {{ else }}
-        {{ template "_internal/google_analytics_async.html" . }}
-      {{ end }}
-    {{ end }}
-    <!-- Debug template lookup -->
-    {{ if and (eq .Site.Params.debug true) (.Site.IsServer) }}
-      {{ partial "general/debug.html" . }}
-    {{ end }}
+    {{- partial "footer/scripts.html" . -}}
   </body>
 </html>
