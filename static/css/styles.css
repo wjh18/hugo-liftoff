@@ -39,7 +39,6 @@
     --base-font-bold: 'Ubuntu Bold';
     --serif-font-light: 'Merriweather Light';
     --serif-font-reg: 'Merriweather Regular';
-    --serif-font-med: 'Merriweather Medium';
     --serif-font-bold: 'Merriweather Bold';
 }
 
@@ -51,6 +50,8 @@
     src: local('Ubuntu Light'),
         url('/fonts/Ubuntu/Ubuntu-Light.ttf') format('truetype');
     font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -58,6 +59,8 @@
     src: local('Ubuntu Regular'),
         url('/fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -65,6 +68,8 @@
     src: local('Ubuntu Medium'),
         url('/fonts/Ubuntu/Ubuntu-Medium.ttf') format('truetype');
     font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -72,6 +77,8 @@
     src: local('Ubuntu Bold'),
         url('/fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
     font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -79,6 +86,8 @@
     src: local('Merriweather Light'),
         url('/fonts/Merriweather/Merriweather-Light.ttf') format('truetype');
     font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -86,13 +95,8 @@
     src: local('Merriweather Regular'),
         url('/fonts/Merriweather/Merriweather-Regular.ttf') format('truetype');
     font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Merriweather Medium';
-    src: local('Merriweather Medium'),
-        url('/fonts/Merriweather/Merriweather-Medium.ttf') format('truetype');
-    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -100,6 +104,8 @@
     src: local('Merriweather Bold'),
         url('/fonts/Merriweather/Merriweather-Bold.ttf') format('truetype');
     font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 
