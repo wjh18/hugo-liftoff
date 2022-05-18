@@ -314,6 +314,14 @@ code {
     padding: 2px 5px;
 }
 
+.code-language {
+    position: absolute;
+    padding: 5px 15px;    
+    border-radius: 5px;
+    background-color: #272822;
+    color: #7f7f7f;
+}
+
 
 /* --- Navigation --- */
 
