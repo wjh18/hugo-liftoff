@@ -1,7 +1,8 @@
 <header>
   <nav class="main-nav" id="js-navbar">
     <span class="main-nav__toggle" id="js-navbar__toggle">
-      <img src="{{ .Site.BaseURL }}icons/menu-burger.svg"
+      {{ $icon := resources.Get "icons/menu-burger.svg" }}
+      <img src="{{ $icon.RelPermalink }}"
            alt="Hamburger icon for mobile menu toggle"
            height="30"
            width="30"/>

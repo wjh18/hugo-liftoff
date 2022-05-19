@@ -1,4 +1,10 @@
-<!-- Local stylesheets -->
-<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css">
-<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/styles.css">
-<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/queries.css">
+{{ $sass := resources.Get "scss/main.scss" }}
+{{ $style := $sass | resources.ToCSS }}
+
+{{ if eq .Site.Params.enable_postcss true }}
+  {{ $final := $style | postCSS (dict "config" "postcss.config.js") | minify }}
+  <link rel="stylesheet" href="{{ $final.Permalink }}" />
+{{ else }}
+  {{ $final := $style | minify }}
+  <link rel="stylesheet" href="{{ $final.Permalink }}" />
+{{ end }}

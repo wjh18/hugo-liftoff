@@ -1,3 +1,8 @@
+// // Example imports
+// import button from './components/button';
+// import header from './layouts/header';
+// import home from './pages/home';
+
 // Show or hide nav on click of menu burger
 let navBar = document.getElementById('js-navbar');
 let mainMenu = document.getElementById('js-menu');

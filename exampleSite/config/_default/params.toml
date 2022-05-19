@@ -17,6 +17,7 @@ newsletter_submit = "Join now"
 global_newsletter = true # Enable newsletter site-wide
 
 debug = true # Debug template lookup in development with .Kind
+enable_postcss = false # Enable if you're using npm and want to utilize PostCSS processing
 label_drafts = true # Add a label indicator next to the title of any built drafts (dev only)
 
 # Show a custom featured project on homepage instead of latest project

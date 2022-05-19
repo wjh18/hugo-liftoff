@@ -1,0 +1,19 @@
+{
+    "name": "hugo-liftoff",
+    "private": true,
+    "scripts": {
+      "start": "hugo server",
+      "build": "hugo && npm run build:functions",
+      "build:functions": "netlify-lambda build assets/lambda",
+      "server": "hugo server"
+    },
+    "dependencies": {
+      "autoprefixer": "^9.7.6",
+      "netlify-lambda": "^1.6.3",
+      "postcss-cli": "^7.1.1"
+    },
+    "browserlists": [
+      "ie >= 8",
+      "last 3 versions"
+    ]
+}

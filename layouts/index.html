@@ -8,8 +8,9 @@
              width="100px" height="100px"
              alt="Headshot or avatar belonging to the website owner"/>
         {{ else }}
+        {{ $image := resources.Get "images/rocket.png" }}
         <img class="home-hero__pic"
-             src="{{ .Site.BaseURL }}img/rocket.png"             
+             src="{{ $image.RelPermalink }}"             
              alt="Cartoon rocket blasting off to space"/>
         {{ end }}
         <div>
