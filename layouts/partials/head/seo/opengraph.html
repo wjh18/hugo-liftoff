@@ -28,25 +28,17 @@
   {{ end -}}
 {{ end -}}
 
-{{ with $.Params.images -}}
-  {{ range first 6 . -}}
-  <meta property="og:image" content="{{ $.Permalink }}{{ . }}">
-  {{ end -}}
+{{ $images := $.Resources.ByType "image" -}}
+{{ $feature := $images.GetMatch "*feature*" -}}
+{{ $feature_param := $.Params.feature_image  }}
+{{ $feature_frontmatter := $images.GetMatch $feature_param }}
+{{ with $feature_frontmatter -}}
+  <meta property="og:image" content="{{ .Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
 {{ else -}}
-  {{ $images := $.Resources.ByType "image" -}}
-  {{ $featured := $images.GetMatch "*feature*" -}}
-  {{ if not $featured -}}
-    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}
+  {{ with $feature -}}
+    <meta property="og:image" content="{{ .Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
   {{ end -}}
-  {{ with $featured -}}
-    <meta property="og:image" content="{{ $featured.Permalink }}"/>
-  {{ else -}}
-    {{ with $.Site.Params.images -}}
-      <meta property="og:image" content="{{ index . 0 | absURL }}"/>
-      <meta property="og:image:alt" content="{{ $.Site.Params.title }}">
-    {{ end -}}
-  {{ end -}}
-{{ end -}}
+{{ end }}
 
 {{ with .Params.audio -}}
   <meta property="og:audio" content="{{ . | absURL }}">

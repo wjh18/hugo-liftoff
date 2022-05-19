@@ -3,22 +3,17 @@
 <meta name="twitter:creator" content="{{ .Site.Params.twitterCreator }}">
 <meta name="twitter:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (ne .Type "projects") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }} | {{ .Site.Title -}}{{ end -}}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
-{{ with $.Params.images -}}
-  <meta name="twitter:image" content="{{ $.Permalink }}{{ index . 0 }}">
+
+{{ $images := $.Resources.ByType "image" -}}
+{{ $feature := $images.GetMatch "*feature*" -}}
+{{ $feature_param := $.Params.feature_image  }}
+{{ $feature_frontmatter := $images.GetMatch $feature_param }}
+{{ with $feature_frontmatter -}}
+  <meta property="twitter:image" content="{{ .Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
 {{ else -}}
-  {{ $images := $.Resources.ByType "image" -}}
-  {{ $featured := $images.GetMatch "*feature*" -}}
-  {{ if not $featured -}}
-    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" -}}
-  {{ end -}}
-  {{ with $featured -}}
-    <meta name="twitter:image" content="{{ $featured.Permalink }}">
+  {{ with $feature -}}
+    <meta property="twitter:image" content="{{ .Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
   {{ else -}}
-    {{ with $.Site.Params.images -}}
-      <meta name="twitter:image" content="{{ index . 0 | absURL }}">
-    {{ else -}}
-      <meta name="twitter:card" content="summary">
-    {{ end -}}
-  {{ end -}}
-{{ end -}}
-<meta name="twitter:image:alt" content="{{ .Title }}">
+    <meta name="twitter:card" content="summary">
+  {{ end }}
+{{ end }}
