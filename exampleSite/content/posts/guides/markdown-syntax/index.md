@@ -6,9 +6,8 @@ description: Sample article showcasing basic Markdown syntax and formatting for 
 slug: markdown-syntax
 date: 2020-11-17T21:21:46-05:00
 author: John Doe
-cover_image: 
-cover_image_alt: 
-cover_image_from_bundle: true
+feature_image: 
+feature_image_alt: 
 draft: false
 
 categories:

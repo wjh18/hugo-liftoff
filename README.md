@@ -39,7 +39,7 @@ Below are the current and planned features for this theme. Features labeled *opt
 - RSS feed that excludes any pages outside of posts section
 - Customizable post title and SEO title tags or use post title for both (frontmatter)
 - Customizable post summary and meta description or use description for both (frontmatter)
-- Cover images for posts and projects from `static/img` or page bundle (frontmatter)
+- Feature Images for posts and projects from `static/img` or page bundle (frontmatter)
 - Toggle-able table of contents for posts (frontmatter)
 - Related posts (frontmatter)
 - Social share icons for posts (frontmatter)
@@ -150,9 +150,8 @@ To create posts in nested subsections, you need to add the subsection: `hugo new
 - `slug` - Customize the slug of the post, defaults to the file name.
 - `date` - Date posted, generated automatically.
 - `author` - Override the global author from config.
-- `cover_image` - A relative path to the cover image for this post. If not set, the post won't use a cover image.
-- `cover_image_alt` - The alt text for the cover image.
-- `cover_image_from_bundle` - Boolean if set to true, the cover image will be taken from the page bundle instead of `static/img/`.
+- `feature_image` - The filename of the feature image for this post. If not set, the post will look for an image named `feature.*` in your post's page bundle.
+- `feature_image_alt` - The alt text for the feature image.
 - `draft` - Boolean, set to true if you don't want your post build in production.
 - `categories` - Adds post to the category taxonomy
 - `tag` - Adds post to the tag taxonomy
@@ -184,7 +183,7 @@ To add a facivon, set `favicon` to `true` in your `config.toml` params and add y
 
 ## Adding Images to Post Content
 
-Adding a cover image is straightforward, you can include it in frontmatter. If you want to add posts to your markdown content, use Hugo's built-in `<figure>` shortcode with a path to the image location.
+Adding a Feature Image is straightforward, you can include it in frontmatter. If you want to add posts to your markdown content, use Hugo's built-in `<figure>` shortcode with a path to the image location.
 
 `{{< figure src="/posts/example-post/example-image.png" class="post__image" alt="Example image alt" >}}`
 

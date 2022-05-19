@@ -1,0 +1,21 @@
+{{ $images := $.Resources.ByType "image" -}}
+{{ $custom_file := .Params.feature_image }}
+{{ $custom_image := $images.GetMatch $custom_file }}
+{{ $feature_image := $images.GetMatch "*feature*" -}}
+{{ with $custom_image }}
+  <img class="single__post-image" 
+       srcset="{{ .RelPermalink }} 480w, {{ .RelPermalink }} 800w"
+       sizes="(max-width: 600px) 480px, 800px"
+       src="{{ .RelPermalink }}"
+       {{ with $.Params.feature_image_alt }}alt="{{ . }}"{{ end }}>
+{{ else }}
+  {{ with $feature_image }}
+  <img class="single__post-image" 
+       srcset="{{ .RelPermalink }} 480w, {{ .RelPermalink }} 800w"
+       sizes="(max-width: 600px) 480px, 800px"
+       src="{{ .RelPermalink }}"
+       {{ with $.Params.feature_image_alt }}alt="{{ . }}"{{ else }}alt="Feature image"{{ end }}>
+  {{ end }}
+{{ end }}
+
+

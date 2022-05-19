@@ -6,9 +6,8 @@ description: Customizable, SEO-optimized blog and portfolio theme for Hugo with 
 slug: hugo-liftoff
 date: 2022-02-20T03:52:30-05:00
 author: John Doe
-cover_image: hugo-liftoff.png
-cover_image_alt: Homepage hero section of Hugo Liftoff theme
-cover_image_from_bundle: true
+feature_image: hugo-liftoff.png
+feature_image_alt: Homepage hero section of Hugo Liftoff theme
 draft: false
 
 techstack:

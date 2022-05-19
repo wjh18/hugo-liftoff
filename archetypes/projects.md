@@ -6,9 +6,8 @@ description:
 slug: {{ .Name }}
 date: {{ .Date }}
 author: {{ .Site.Params.author }}
-cover_image: 
-cover_image_alt: 
-cover_image_from_bundle: true
+feature_image: 
+feature_image_alt: 
 draft: true
 
 techstack:
