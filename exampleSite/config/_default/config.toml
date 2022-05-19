@@ -21,7 +21,7 @@ defaultContentLanguage = 'en' # Default
 disableAliases = true # Set to true if using server (Netlify, .htaccess) for redirects instead of Hugo
 disableKinds = [] # Default
 enableEmoji = true # Use Emojis in content
-enableGitInfo = false # Default
+enableGitInfo = false # Default, enable to use git for lastmod (can be overwritten in frontmatter)
 enableInlineShortcodes = false # Default, false is more security-friendly
 ignoreFiles = [] # Default
 # newContentEditor = 'code' # Set VS Code as default editor
@@ -118,7 +118,7 @@ disableLiveReload = false # Default
   # Default frontmatter date settings
   date = ['date', 'publishDate', 'lastmod']
   expiryDate = ['expiryDate']
-  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  lastmod = ['lastmod', ':git', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
 
 [caches]

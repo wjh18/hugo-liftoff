@@ -4,14 +4,18 @@ seo_title: {{ replace .Name "-" " " | title }}
 summary: 
 description: 
 slug: {{ .Name }}
-date: {{ .Date }}
 author: {{ .Site.Params.author }}
+
+draft: true
+date: {{ .Date }}
+lastmod: 
+expiryDate: 
+publishDate: 
+
 feature_image: 
 feature_image_alt: 
-draft: true
 
 techstack:
 live_url: 
 source_url: 
-personal: true
 ---
