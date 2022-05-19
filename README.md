@@ -24,7 +24,6 @@ Below are the current and planned features for this theme. Features labeled *opt
 - Override global newsletter on a per-page basis (optional) (frontmatter)
 - Custom featured project on homepage (optional)
 - Additional footer text (optional)
-- Debug template lookup via JS console in development (optional)
 - Custom homepage hero avatar image (optional)
 - Enable or disable social links in footer, homepage hero, and about page (optional)
 - Netlify Identity script in head for Netlify CMS (optional)

@@ -8,7 +8,3 @@
     {{ template "_internal/google_analytics_async.html" . }}
   {{ end }}
 {{ end }}
-<!-- Debug template lookup -->
-{{ if and (eq .Site.Params.debug true) (.Site.IsServer) }}
-  {{ partial "general/debug.html" . }}
-{{ end }}
