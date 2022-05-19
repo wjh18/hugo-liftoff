@@ -42,3 +42,22 @@ social.share.linkedin = true
 social.share.twitter = true
 social.share.reddit = true
 social.share.email = true
+
+### Web schemas
+# Open Graph
+images = []
+ogLocale = "en_US"
+
+# Twitter Cards
+twitterSite = "" # Enter your twitter handle without the @
+twitterCreator = "" # Enter your twitter handle without the @
+
+# JSON-LD structured data schemas
+schemaName = "" # Enter your name
+schemaLocale = "en-US"
+schemaLogo = ""
+schemaLogoWidth = 512
+schemaLogoHeight = 512
+schemaImage = ""
+schemaImageWidth = 1280
+schemaImageHeight = 640

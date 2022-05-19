@@ -1,10 +1,10 @@
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@{{ .Site.Params.social.links.twitter }}">
-<meta name="twitter:creator" content="@{{ .Site.Params.social.links.twitter }}">
-<meta name="twitter:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (ne .Type "projects")) (not .IsPage)) }} | {{ .Site.Title -}}{{ end -}}">
+<meta name="twitter:site" content="{{ .Site.Params.twitterSite }}">
+<meta name="twitter:creator" content="{{ .Site.Params.twitterCreator }}">
+<meta name="twitter:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (ne .Type "projects") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }} | {{ .Site.Title -}}{{ end -}}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 {{ with $.Params.images -}}
-  <meta name="twitter:image" content="{{ index . 0 | absURL }}">
+  <meta name="twitter:image" content="{{ $.Permalink }}{{ index . 0 }}">
 {{ else -}}
   {{ $images := $.Resources.ByType "image" -}}
   {{ $featured := $images.GetMatch "*feature*" -}}

@@ -1,6 +1,6 @@
-{{- with .Params.locale }}<meta property="og:locale" content="{{ . }}">{{ end }}
+<meta property="og:locale" content="{{ .Site.Params.ogLocale }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-<meta property="og:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (ne .Type "projects")) (not .IsPage)) }} | {{ .Site.Title -}}{{ end -}}">
+<meta property="og:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (ne .Type "projects") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }} | {{ .Site.Title -}}{{ end -}}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 {{ if $.Scratch.Get "paginator" -}}
   {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "posts" ) -}}
@@ -30,7 +30,7 @@
 
 {{ with $.Params.images -}}
   {{ range first 6 . -}}
-  <meta property="og:image" content="{{ $.Permalink }}{{ . | absURL }}">
+  <meta property="og:image" content="{{ $.Permalink }}{{ . }}">
   {{ end -}}
 {{ else -}}
   {{ $images := $.Resources.ByType "image" -}}
