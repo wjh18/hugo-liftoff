@@ -2,9 +2,11 @@
   <section class="home-hero">    
     <div class="home-hero__wrapper">
       <div class="home-hero__flex">
-        {{ if .Site.Params.avatar }}
+        {{ $avatar := .Site.Params.avatar }}
+        {{ with $avatar }}
+        {{ $image := resources.Get $avatar }}
         <img class="home-hero__pic"
-             src="{{ .Site.BaseURL }}img/{{.Site.Params.avatar}}"
+             src="{{ $image.RelPermalink }}"
              width="100px" height="100px"
              alt="Headshot or avatar belonging to the website owner"/>
         {{ else }}

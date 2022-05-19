@@ -178,7 +178,7 @@ To customize the newsletter, add the fields `newsletter_header`, `newsletter_des
 
 ## Custom Avatar Image and Favicon
 
-To add a custom avatar image, add your image to `{your-project}/static/img/` with the `avatar` param in `config.toml` set to the filename.
+To add a custom avatar image, add your image to `{your-project}/assets/` with the `avatar` param in `config.toml` set to the filename.
 
 To add a facivon, set `favicon` to `true` in your `config.toml` params and add your icon files to `{your-project}/static/`
 
