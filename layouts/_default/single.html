@@ -4,7 +4,7 @@
     <ul class="single__banner-categories">
       {{ with .Params.categories }}
       {{ range . }}
-        <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+        <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
       {{ end }}
       {{ end }}
     </ul>
@@ -22,7 +22,7 @@
         {{ with .Params.tags }}
         <ul>
           {{ range . }}
-            <a href="{{ "tags" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
+            <a href="{{ "tags" | absURL }}/{{ . | urlize }}/"><li>{{ . }}</li></a>
           {{ end }}
         </ul>
         {{ end }}
@@ -42,7 +42,7 @@
   {{- if .Params.series }}
     <div class="series">
       {{- $name := index .Params.series 0 }}
-      <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}">{{$name}}</a> series:</p>
+      <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:</p>
       {{- $name := $name | urlize }}
       {{- $series := index .Site.Taxonomies.series $name }}
       {{ $curtitle := .Title }}
@@ -67,7 +67,7 @@
       {{ with .Params.tags }}
       <ul>
         {{ range . }}
-        <a href="{{ "tags" | absURL }}/{{ . | urlize }}"><li>{{ . }}</li></a>
+        <a href="{{ "tags" | absURL }}/{{ . | urlize }}/"><li>{{ . }}</li></a>
         {{ end }}
       </ul>
       {{ end }}
@@ -78,7 +78,7 @@
     {{- if .Params.series }}
       <div class="series">
         {{- $name := index .Params.series 0 }}
-        <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}">{{$name}}</a> series:</p>
+        <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:</p>
         {{- $name := $name | urlize }}
         {{- $series := index .Site.Taxonomies.series $name }}
         {{ $curtitle := .Title }}

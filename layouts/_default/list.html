@@ -24,7 +24,7 @@
       <ul class="single__banner-categories">
         {{ with .Params.categories }}
         {{ range . }}
-          <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+          <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
         {{ end }}
         {{ end }}
       </ul>
