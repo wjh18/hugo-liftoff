@@ -1,7 +1,7 @@
 <section class="banner">
   <h1 class="banner__header">
     {{ if eq .Kind "term" }}
-      {{ .Title | pluralize }}
+      {{ .Title }} Projects
     {{ else }}
       {{ .Title }}
     {{ end }}
@@ -17,7 +17,7 @@
           {{ . }}
         {{ else }}
           {{ if eq .Kind "term" }}
-            {{ .Title | pluralize | humanize }}
+            {{ .Title }} projects
           {{ else }}
             {{ .Title }}
           {{ end }}
