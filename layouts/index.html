@@ -62,8 +62,20 @@
 
   <section class="home-section home-section__posts">
     <div class="home-section__info">      
-      <h2 class="header--light header--lg h-divider">Recent Posts</h2>
-      <p class="description--light">Explore the 3 most recent posts or view a collection of all posts from newest to oldest.</p>
+      <h2 class="header--light header--lg h-divider">
+        {{ with .Params.posts_section_title }}
+          {{ . }}
+        {{ else }}
+          Recent Posts
+        {{ end }}
+      </h2>
+      <p class="description--light">
+        {{ with .Params.posts_section_description }}
+          {{ . }}
+        {{ else }}
+          Explore the 3 most recent posts or view a collection of all posts from newest to oldest.
+        {{ end }}        
+      </p>
       <p><a href="{{ .Site.BaseURL }}posts/">See all posts &raquo;</a></p>
     </div>
     <div class="posts">    
@@ -109,12 +121,62 @@
   </section>
   <div class="triangle-divider"></div>
   <section class="home-section home-section__projects">
-    
-      {{ if .Site.Params.featured_project }}
-        {{ $featured := .Site.Params.featured_project }}
-        {{ with .Site.GetPage "/projects" }}
+    <div class="home-section__info">      
+      <h2 class="header--lg h-divider">
+        {{ with .Params.projects_section_title }}
+          {{ . }}
+        {{ else }}
+          My Projects
+        {{ end }}
+      </h2>
+      <p>
+        {{ with .Params.projects_section_description }}
+          {{ . }}
+        {{ else }}
+          A collection of the projects I'm working on or have released in the past.
+        {{ end }}        
+      </p>
+      <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
+    </div>
+    {{ if .Site.Params.featured_project }}
+      {{ $featured := .Site.Params.featured_project }}
+      {{ with .Site.GetPage "/projects" }}
         {{ with .GetPage $featured }}
+          <div class="project project--home">
+            <span class="project__latest-featured">Featured</span>
+            <ul class="single__banner-categories">
+              {{ with .Params.techstack }}
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+              {{ end }}
+            </ul> 
+            <h3 class="project__title">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              {{ partial "general/label-drafts.html" . }}
+            </h3>            
+            <p class="project__description">
+              {{ with .Params.Summary }}
+                {{ . }}
+              {{ else }}
+                {{ .Description }}
+              {{ end }}
+            </p>    
+            <div class="project__links">
+              {{ with .Params.live_url }}
+                <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
+              {{ end }}
+              {{ with .Params.source_url }}
+                <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
+              {{ end }}
+            </div>        
+          </div>
+        {{ end }}
+      {{ end }}
+    {{ else }}     
+      {{- range ( where site.RegularPages "Section" "projects" | last 1 ) }}
         <div class="project project--home">
+          <span class="project__latest-featured">Latest</span>
           <ul class="single__banner-categories">
             {{ with .Params.techstack }}
             {{ range . }}
@@ -142,44 +204,7 @@
             {{ end }}
           </div>        
         </div>
-        {{ end }}
-        {{ end }}
-      {{ else }}     
-      {{- range ( where site.RegularPages "Section" "projects" | last 1 ) }}
-        <div class="project"> 
-          <ul class="single__banner-categories">
-            {{ with .Params.techstack }}
-            {{ range . }}
-              <li>{{ . }}</li>
-            {{ end }}
-            {{ end }}
-          </ul>                       
-          <h3 class="project__title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ partial "general/label-drafts.html" . }}
-          </h3>            
-          <p class="project__description">
-            {{ with .Params.Summary }}
-              {{ . }}
-            {{ else }}
-              {{ .Description }}
-            {{ end }}
-          </p>  
-          <div class="project__links">
-            {{ with .Params.live_url }}
-              <a class="project__live-url" href="{{ . }}">Live</a>
-            {{ end }}
-            {{ with .Params.source_url }}
-              <a class="project__source-url" href="{{ . }}">Source Code</a>
-            {{ end }}
-          </div>          
-        </div>
       {{ end }}
-      {{ end }}
-      <div class="home-section__info">      
-        <h2 class="header--lg h-divider">My Projects</h2>
-        <p>A collection of the projects I'm working on or have released in the past.</p>
-        <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
-      </div>
+    {{ end }}
   </section>
 {{ end }}

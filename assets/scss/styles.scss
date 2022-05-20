@@ -981,6 +981,15 @@ code {
     max-width: 100%;
 }
 
+.project__latest-featured {
+    float: right;
+    margin-left: 20px;
+    color: var(--txt-color-light-4);
+    font-family: var(--base-font-med), Helvetica, sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
 
 /* Newsletter / Contact form */
 
