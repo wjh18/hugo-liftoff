@@ -637,7 +637,7 @@ code {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    gap: 5px 15px;
+    gap: 8px 15px;
     margin-bottom: 15px;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -936,11 +936,10 @@ code {
     padding: 30px;
     background-color: var(--bg-color-light);
     background-color: white;
-    flex: 1 1 30vw;
+    flex-basis: 500px;
 }
 
 .project--home {
-    flex: 0 1 auto;
     margin: 30px;
 }
 
