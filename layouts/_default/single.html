@@ -14,9 +14,22 @@
     </h1>
     <div class="single__post-meta">
       <div class="single__post-meta-stats">
-        <span> {{ .Date.Format "Jan 2, 2006" }} </span>&middot;
-        <span> {{ .WordCount }} words </span>&middot;
-        <span> {{ .ReadingTime }} min. read </span>
+        <span>          
+          {{ if not (eq .Lastmod .Date) }}
+            Posted:
+          {{ end }}
+          {{ if not .PublishDate.IsZero -}}
+            {{ .PublishDate.Format "Jan 2, 2006" }}
+          {{ else }}
+            {{ .Date.Format "Jan 2, 2006" }}
+          {{ end }}
+          {{ if not (eq .Lastmod .Date) }}
+            &nbsp;&middot;&nbsp;
+            Updated: {{ .Lastmod.Format "Jan 2, 2006" }}
+          {{ end }}          
+        </span>&middot;
+        <span>{{ .ReadingTime }} min. read</span>&middot;
+        <span>{{ .WordCount }} words </span>        
       </div>
       <div class="single__banner-tags">
         {{ with .Params.tags }}

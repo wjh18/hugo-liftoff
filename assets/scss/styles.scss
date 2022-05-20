@@ -622,7 +622,9 @@ code {
 
 .single__post-meta-stats {
     display: flex;
+    flex-wrap: wrap;
     column-gap: 10px;
+    row-gap: 6px;
     font-family: var(--base-font-reg), Helvetica, sans-serif;
     font-size: 0.9rem;
 }
