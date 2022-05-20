@@ -1,6 +1,13 @@
 {{ define "main" }}
 <section class="banner">
   <div class="single__container single__banner-wrapper">
+    <span class="project__type">
+      {{ with .Param "project types" }}
+        {{ range first 1 . }}
+          <a href="{{ "project-types" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+        {{ end }}
+      {{ end }}
+    </span>
     <ul class="single__banner-categories">
       {{ with .Params.techstack }}
       {{ range . }}
