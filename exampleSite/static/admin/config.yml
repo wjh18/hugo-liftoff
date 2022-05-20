@@ -112,6 +112,10 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string }
           - { label: SEO Title, name: seo_title, widget: string }
+          - { label: Posts Section Title, name: posts_section_title, widget: string, required: false }
+          - { label: Posts Section Description, name: posts_section_description, widget: string, required: false }
+          - { label: Projects Section Title, name: projects_section_title, widget: string, required: false }
+          - { label: Projects Section Description, name: projects_section_description, widget: string, required: false }
       - file: "content/about/index.md"
         label: "About Page"
         name: "about"
