@@ -2,7 +2,7 @@
 [[headers]]
 for = '/**'
 [headers.values]
-  Content-Security-Policy = 'script-src localhost:1313'
+  # Content-Security-Policy = 'script-src localhost:1313'
   Referrer-Policy = 'strict-origin-when-cross-origin'
   X-Content-Type-Options = 'nosniff'
   X-Frame-Options = 'DENY'
