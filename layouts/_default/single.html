@@ -95,20 +95,7 @@
       </div>
     {{ else }}
       {{ partial "posts/related.html" . }}
-      <div class="single__next-previous">
-        {{ with .PrevInSection }}
-          <div>
-            &laquo;
-            <a class="previous" href="{{.Permalink}}">{{ .Title }}</a>
-          </div>
-        {{ end }}
-        {{ with .NextInSection }}
-          <div>
-            <a class="next" href="{{.Permalink}}">{{ .Title }}</a>
-            &raquo;
-          </div>
-        {{ end }}
-      </div>
+      {{ partial "posts/next-previous.html" . }}
     {{- end }}
     {{ if and (.Site.DisqusShortname) (not .Site.IsServer) (ne .Params.disable_comments true) }}
       <div class="comments">
