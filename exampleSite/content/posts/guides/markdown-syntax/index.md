@@ -4,22 +4,29 @@ seo_title: Markdown Syntax Guide
 summary: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
 description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
 slug: markdown-syntax
-date: 2020-11-17T21:21:46-05:00
 author: John Doe
+
+draft: false
+date: 2020-11-17T21:21:46-05:00
+lastmod: 
+expiryDate: 
+publishDate: 
+
 feature_image: 
 feature_image_alt: 
-draft: false
 
 categories:
   - Web Development
 tags:
   - Markdown
   - HTML
+series: 
 
 toc: true
 related: true
 social_share: true
 newsletter: true
+disable_comments: false
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
