@@ -98,6 +98,7 @@ collections:
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Feature Image Filename', name: 'feature_image', widget: 'string', required: false }
       - { label: 'Feature Image Alt Text', name: 'feature_image_alt', widget: 'string', required: false }      
+      - { label: "Project Type", name: "project type", widget: "list", required: false}
       - { label: "Tech Stack", name: "techstack", widget: "list", required: false }
       - { label: 'Live URL', name: 'live_url', widget: 'string', required: false }
       - { label: 'Source URL', name: 'source_url', widget: 'string', required: false }

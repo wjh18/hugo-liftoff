@@ -3,10 +3,8 @@
   <h1 class="banner__header">{{ .Title }}</h1>
 </section>
 <section class="terms">
-  
   <div class="terms__wrapper">
     {{ with .Data.Terms.ByCount }}
-    
       {{ range . }}
         <span class="terms__term"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></span>
       {{ end }}    

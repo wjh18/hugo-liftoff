@@ -15,6 +15,8 @@ publishDate:
 feature_image: 
 feature_image_alt: 
 
+project types: 
+
 techstack:
 live_url: 
 source_url: 

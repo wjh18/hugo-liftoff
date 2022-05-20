@@ -74,3 +74,10 @@
     url = "/series/"
     parent = "explore"
     weight = 8
+
+[[main]]
+    identifier = "project-type"
+    name = "Project Types"
+    url = "/project-types/"
+    parent = "explore"
+    weight = 9

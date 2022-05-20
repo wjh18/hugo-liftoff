@@ -1,0 +1,64 @@
+<section class="banner">
+  <h1 class="banner__header">
+    {{ if eq .Kind "term" }}
+      {{ .Title | pluralize }}
+    {{ else }}
+      {{ .Title }}
+    {{ end }}
+  </h1>
+</section>
+<section>
+  <div class="description__wrapper">
+    <p class="list__description">
+      {{ with .Params.Summary }}
+        {{ . }}
+      {{ else }}
+        {{ with .Description }}
+          {{ . }}
+        {{ else }}
+          {{ if eq .Kind "term" }}
+            {{ .Title | pluralize | humanize }}
+          {{ else }}
+            {{ .Title }}
+          {{ end }}
+            I've worked on.
+        {{ end }}
+      {{ end }}
+    </p>
+  </div>
+  <div class="projects">
+    {{ range .RegularPagesRecursive }}
+    <div class="project">
+      <ul class="single__banner-categories">
+        {{ with .Params.techstack }}
+        {{ range . }}
+          <li>{{ . }}</li>
+        {{ end }}
+        {{ end }}
+      </ul>
+      <div class="project__image">{{ partial "general/feature-image.html" . }}</div>
+      <h3 class="project__title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ partial "general/label-drafts.html" . }}
+      </h3>
+      <p class="project__description">
+        {{ with .Params.Summary }}
+          {{ . }}
+        {{ else }}
+          {{ .Description }}
+        {{ end }}
+      </p>
+      {{ if or (.Params.live_url) (.Params.source_url) }}
+        <div class="project__links">
+          {{ with .Params.live_url }}
+            <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
+          {{ end }}
+          {{ with .Params.source_url }}
+            <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
