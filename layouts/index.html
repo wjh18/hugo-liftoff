@@ -143,7 +143,7 @@
       {{ with .Site.GetPage "/projects" }}
         {{ with .GetPage $featured }}
           <div class="project project--home">
-            <span class="project__latest-featured">Featured</span>
+            <span class="project__type">Featured</span>
             <ul class="single__banner-categories">
               {{ with .Params.techstack }}
               {{ range . }}
@@ -176,7 +176,7 @@
     {{ else }}     
       {{- range ( where site.RegularPages "Section" "projects" | last 1 ) }}
         <div class="project project--home">
-          <span class="project__latest-featured">Latest</span>
+          <span class="project__type">Latest</span>
           <ul class="single__banner-categories">
             {{ with .Params.techstack }}
             {{ range . }}

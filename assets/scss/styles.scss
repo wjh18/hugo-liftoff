@@ -985,13 +985,21 @@ code {
     max-width: 100%;
 }
 
-.project__latest-featured {
+.project__type {
     float: right;
     margin-left: 20px;
-    color: var(--txt-color-light-4);
+    color: var(--txt-color-light-5);
     font-family: var(--base-font-med), Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
+}
+
+.project__type > a {
+    color: var(--txt-color-light-5);
+}
+
+.project__type > a:hover {
+    color: var(--txt-color-light-4);
 }
 
 
