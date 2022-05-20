@@ -215,7 +215,7 @@ blockquote p {
 }
 
 pre {
-    padding: 20px;
+    // padding: 20px;
     font-size: 1rem;
     line-height: 1.6rem;
     overflow-x: auto;
@@ -321,6 +321,10 @@ code {
     background-color: #272822;
     color: #7f7f7f;
     z-index: 1000;
+}
+
+.highlight > pre {
+    padding: 20px;
 }
 
 
@@ -455,7 +459,7 @@ code {
 .home-hero {
     background: var(--bg-color-dark);
     background: var(--bg-color-grad);
-    padding: 50px 30px;
+    padding: 30px 20px;
 }
 
 .home-hero__wrapper {
@@ -586,7 +590,7 @@ code {
 .single__container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
 }
 
 .single__container-bg {
@@ -594,7 +598,7 @@ code {
 }
 
 .single__banner-wrapper {
-    padding: 20px;
+    padding: 15px;
 }
 
 .single__post-header {    
