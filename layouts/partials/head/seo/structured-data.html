@@ -38,7 +38,7 @@
       "@type": "WebSite",
       "@id": {{ print $baseURL "#/schema/website/1" }},
       "url": {{ print $baseURL }},
-      "name": "{{ .Site.Params.title }}",
+      "name": "{{ .Site.Title }}",
       "description": "{{ .Site.Params.description }}",
       "publisher": {
         "@id": {{ print $baseURL "#/schema/person/1" }}

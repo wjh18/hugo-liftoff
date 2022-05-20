@@ -29,22 +29,6 @@ footer_socials = true
 home_hero_socials = true
 about_page_socials = true
 
-# Enable or disable individual social icons
-[social.links]
-  twitter = "username"
-  github = "username"
-  stack_overflow = "userid/username" # include user id
-  email = "user@example.com"
-  # linkedin = "username"
-
-# Enable or disable individual social share icons in posts
-[social.share]
-  facebook = true
-  linkedin = true
-  twitter = true
-  reddit = true
-  email = true
-
 ### Web schemas
 # Open Graph
 images = []
@@ -63,3 +47,19 @@ schemaLogoHeight = 512
 schemaImage = ""
 schemaImageWidth = 1280
 schemaImageHeight = 640
+
+# Enable or disable individual social icons
+[social.links]
+  twitter = "username"
+  github = "username"
+  stack_overflow = "userid/username" # include user id
+  email = "user@example.com"
+  # linkedin = "username"
+
+# Enable or disable individual social share icons in posts
+[social.share]
+  facebook = true
+  linkedin = true
+  twitter = true
+  reddit = true
+  email = true
