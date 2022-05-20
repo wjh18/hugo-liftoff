@@ -3,8 +3,8 @@ CMS.registerEditorComponent({
   id: "figure",
   label: "Figure",
   fields: [{
-          name: "title",
-          label: "Figure Title",
+          name: "alt",
+          label: "Figure Alt Text",
           widget: "string"
       },
       {
@@ -12,19 +12,25 @@ CMS.registerEditorComponent({
           label: "Figure SRC",
           widget: "string"
       },
+      {
+          name: "class",
+          label: "Figure CSS Class",
+          widget: "string"
+      },
   ],
-  pattern: /{{< figure src="([a-zA-Z0-9-_ ]+)" title="([a-zA-Z0-9-_ ]+)" >}}/,
+  pattern: /{{< figure src="([a-zA-Z0-9-_ ]+)" class="([a-zA-Z0-9-_ ]+)" alt="([a-zA-Z0-9-_ ]+)" >}}/,
   fromBlock: function(match) {
       return {
-          title: match[1],
+          alt: match[1],
           src: match[2],
+          class: match[3],
       };
   },
   toBlock: function(obj) {
-      return `{{< figure src="${obj.src}" title="${obj.title}" >}}`;
+      return `{{< figure src="${obj.src}" class="${obj.class}" alt="${obj.alt}" >}}`;
   },
   toPreview: function(obj) {
-      return `<figure><img src=${obj.src} alt=${obj.title}><figcaption>${obj.title}</figcaption></figure>`;
+      return `<figure><img src=${obj.src} class="${obj.class}" alt=${obj.alt}></figure>`;
   },
 });
 CMS.registerEditorComponent({
@@ -92,21 +98,27 @@ CMS.registerEditorComponent({
   id: "twitter",
   label: "Twitter",
   fields: [{
+      name: "username",
+      label: "Twitter Username",
+      widget: "string"
+  },
+  {
       name: "tid",
       label: "Tweet id",
       widget: "string"
   }],
-  pattern: /{{< tweet ([a-zA-Z0-9]+) >}}/,
+  pattern: /{{< tweet ([a-zA-Z0-9]+) ([a-zA-Z0-9]+) >}}/,
   fromBlock: function(match) {
       return {
-          tid: match[1]
+          username: match[1],
+          tid: match[2],
       };
   },
   toBlock: function(obj) {
-      return `{{< tweet ${obj.tid} >}}`;
+      return `{{< tweet user="${obj.username}" id="${obj.tid}" >}}`;
   },
   toPreview: function(obj) {
-      return `{{< tweet ${obj.tid} >}}`;
+      return `{{< tweet user="${obj.username}" id="${obj.tid}" >}}`;
   },
 });
 CMS.registerEditorComponent({
