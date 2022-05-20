@@ -2,6 +2,12 @@
 // import button from './components/button';
 // import header from './layouts/header';
 // import home from './pages/home';
+import { addCopyButtons } from './components/clipboard';
+
+// Codeblock copy button
+if (navigator && navigator.clipboard) {
+    addCopyButtons(navigator.clipboard);
+}
 
 // Show or hide nav on click of menu burger
 let navBar = document.getElementById('js-navbar');
