@@ -19,8 +19,8 @@ global_newsletter = true # Enable newsletter site-wide
 
 # CSS / JavaScript
 enable_postcss = false # Enable if you're using npm and want to utilize PostCSS processing
-custom_css = 'custom.css' # Add this file to assets to add custom CSS
-custom_js = 'custom.js' # Add this file to assets to add custom JS
+# custom_css = 'custom.css' # Add the specified file to assets before setting this param
+custom_js = 'custom.js' # Add the specified file to assets before setting this param
 
 # Show a custom featured project on homepage instead of latest project
 # featured_project = 'this-is-my-project' # Enter the filename for .md file or directory name for page bundles
