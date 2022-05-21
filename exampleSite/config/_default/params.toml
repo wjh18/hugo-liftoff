@@ -24,7 +24,7 @@ enable_postcss = false # Enable if you're using npm and want to utilize PostCSS 
 
 # Show a custom featured project on homepage instead of latest project
 # featured_project = 'this-is-my-project' # Enter the filename for .md file or directory name for page bundles
-# avatar = 'avatar.png' # Custom avatar image in /static/img/
+# avatar = 'avatar.png' # Custom avatar image, add file to assets directory
 
 ### Web schemas
 # Open Graph
