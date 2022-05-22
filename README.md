@@ -127,7 +127,7 @@ The following features are planned for a future release.
 
 ## Getting Help
 
-To submit a bug report, feature request, or usage questions, please open an [issue](https://github.com/wjh18/hugo-liftoff/issues) on Github.
+To submit a bug report, feature request, or usage questions, please open an [issue](https://github.com/wjh18/hugo-liftoff/issues) on Github using one of the issue templates.
 
 ## Contributing
 
