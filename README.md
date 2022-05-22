@@ -131,4 +131,4 @@ To submit a bug report, feature request, or usage questions, please open an [iss
 
 ## Contributing
 
-If you'd like to contribute to the project, fork the project and submit a pull request with your changes. A `CONTRIBUTING.md` and pull request template will be added soon with more detailed instructions.
+If you'd like to contribute to the project, fork it and submit a pull request with your changes using the [pull request template](https://github.com/wjh18/hugo-liftoff/blob/master/.github/pull_request_template.md). Please see the [Contribution Guidelines](https://github.com/wjh18/hugo-liftoff/blob/master/CONTRIBUTING.md) for more details.
