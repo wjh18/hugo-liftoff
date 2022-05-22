@@ -2,7 +2,7 @@
 
 For any proposed changes or bug reports, please [open an issue](https://github.com/wjh18/hugo-liftoff/issues) first using one of the issue templates. Then feel free to work on it. You're also welcome to tackle any existing issues.
 
-How to contribute:
+## How to contribute
 
 * Fork the project on Github
 * Clone the fork to your local machine
