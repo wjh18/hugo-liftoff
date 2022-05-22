@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/wjh18/hugo-liftoff/blob/master/LICENSE"
 description = "Customizable, SEO-optimized blog and portfolio theme for Hugo with a modern design."
 homepage = "https://github.com/wjh18/hugo-liftoff"
-demosite = "https://www.wjholmes.com"
+demosite = "https://hugo-liftoff.netlify.app"
 tags = ["blog", "portfolio", "personal", "responsive", "newsletter", "hero", "contact"]
 features = []
 [author]
