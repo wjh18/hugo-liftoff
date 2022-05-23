@@ -162,6 +162,10 @@ a {
     text-decoration: none;
 }
 
+strong {
+    font-family: var(--base-font-med), Helvetica, sans-serif;
+}
+
 table {
     border-collapse: collapse;    
     display: block;
@@ -223,6 +227,12 @@ pre {
 
 code {
     overflow-x: scroll;
+}
+
+p > code {
+    background-color: var(--bg-color-light-2);
+    padding: 2px 5px;
+    border-radius: 5px;
 }
 
 
@@ -701,10 +711,6 @@ code {
     line-height: 1.9rem;
 }
 
-.single__post-content strong {
-    font-family: var(--base-font-reg), Helvetica, sans-serif;
-}
-
 .single__next-previous {
     width: 100%;
     display: flex;
@@ -1053,6 +1059,9 @@ code {
     max-width: 500px;
     margin: 0 auto;
     padding: 40px 30px 80px 30px;
+    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.9rem;
 }
 
 .contact__description {
@@ -1105,6 +1114,9 @@ code {
 .about__content {
     margin: 50px 20px;
     color: var(--txt-color-dark-2);
+    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.9rem;
 }
 
 .about__social-links {
