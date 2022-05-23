@@ -537,13 +537,13 @@ p > code {
 
 .home-section__posts {
     background-color: var(--bg-color-dark);
-    padding: 100px 0;
+    padding: 30px 0;
 }
 
 .home-section__projects {
     background-color: var(--bg-color-light);
     flex-direction: row-reverse;
-    padding: 80px 0;
+    padding: 60px 0 20px 0;
 }
 
 .home-section__info {
@@ -556,6 +556,10 @@ p > code {
     font-size: 1rem;
     text-transform: uppercase;
     color: var(--link-color-dark);
+}
+
+.home-section__posts p a {
+    color: var(--link-color-light);
 }
 
 .home-section__sections .home-section__info {
