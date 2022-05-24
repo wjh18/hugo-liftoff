@@ -15,7 +15,7 @@
         Enter your email below to get notified of new posts.
       {{ end }}
     </p>
-    <form id="newsletter__form" name="newsletter" method="POST" data-netlify="true">
+    <form id="newsletter__form" name="newsletter" method="POST" {{ with .Site.Params.netlify_forms }}data-netlify="{{ . }}"{{ end }}>
       <input type="email" id="newsletter__form--input" name="email" placeholder="Your best email...">
       <button type="submit" id="newsletter__form--submit" class="cta-btn">
         {{ with .Site.Params.newsletter_submit }}

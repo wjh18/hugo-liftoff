@@ -1,6 +1,7 @@
 ### SEO, Analytics & 3rd-party
 googleAnalyticsv4 = false # false for Universal Analytics, true for GA v4
 netlify_cms = false # true adds Netlify Identity JS to head for NetlifyCMS auth using git-gateway
+netlify_forms = true # add data-netlify attribute to contact and newsletter forms, false to disable Netlify forms
 # gtm_id = '' # GTM tracking (leave blank to use GA)
 # disallow_search_engines = false # Disallow search engine crawling in robots.txt
 
@@ -28,7 +29,6 @@ enable_postcss = false # Enable if you're using npm and want to utilize PostCSS 
 
 ### Web schemas
 # Open Graph
-images = []
 ogLocale = "en_US"
 
 # Twitter Cards
@@ -38,9 +38,6 @@ twitterCreator = "" # Enter your twitter handle without the @
 # JSON-LD structured data schemas
 schemaName = "" # Enter your name
 schemaLocale = "en-US"
-schemaLogo = ""
-schemaLogoWidth = 512
-schemaLogoHeight = 512
 schemaImage = ""
 schemaImageWidth = 1280
 schemaImageHeight = 640
