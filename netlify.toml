@@ -1,7 +1,7 @@
 [build]
-  command = "hugo"
+  command = "hugo && npm run build:functions"
   publish = "public"
-  functions = "functions"
+  functions = "netlify/functions"
 
 [build.environment]
   HUGO_VERSION = "0.99.0"
