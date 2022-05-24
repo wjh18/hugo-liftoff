@@ -29,6 +29,7 @@ enable_postcss = false # Enable if you're using npm and want to utilize PostCSS 
 
 ### Web schemas
 # Open Graph
+images = [] # Fallback for Open Graph and Twitter Cards images if none are present in front matter. Enter path to the image.
 ogLocale = "en_US"
 
 # Twitter Cards

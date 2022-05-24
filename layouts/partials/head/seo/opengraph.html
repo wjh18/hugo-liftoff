@@ -32,12 +32,14 @@
 {{ $feature := $images.GetMatch "*feature*" -}}
 {{ $feature_param := $.Params.feature_image  }}
 {{ $feature_frontmatter := $images.GetMatch $feature_param }}
-{{ with $feature_frontmatter -}}
-  <meta property="og:image" content="{{ .Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
-{{ else -}}
-  {{ with $feature -}}
-    <meta property="og:image" content="{{ .Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
-  {{ end -}}
+{{ if $feature_frontmatter -}}
+  <meta property="og:image" content="{{ $feature_frontmatter.Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
+{{ else if $feature -}}
+  <meta property="og:image" content="{{ $feature.Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
+{{ else if $.Params.images }}
+  <meta name="og:image" content="{{ index $.Params.images 0 | absURL }}"/>
+{{ else if $.Site.Params.images }}
+  <meta name="og:image" content="{{ index $.Site.Params.images 0 | absURL }}"/>
 {{ end }}
 
 {{ with .Params.audio -}}
