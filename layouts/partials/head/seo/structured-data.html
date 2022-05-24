@@ -16,6 +16,26 @@
   {{ end -}}
 {{ end -}}
 
+{{ $images := $.Resources.ByType "image" -}}
+{{ $feature := $images.GetMatch "*feature*" -}}
+{{ $feature_param := $.Params.feature_image  }}
+{{ $feature_frontmatter := $images.GetMatch $feature_param }}
+{{ if $feature_frontmatter -}}
+  {{ $.Scratch.Set "primaryImage" $feature_frontmatter.Permalink }}
+  {{ with $.Params.feature_image_alt }}
+    {{ $.Scratch.Set "primaryImageAlt" . }}
+  {{ end }}
+{{ else if $feature -}}
+  {{ $.Scratch.Set "primaryImage" $feature.Permalink }}
+  {{ with $.Params.feature_image_alt }}
+    {{ $.Scratch.Set "primaryImageAlt" . }}
+  {{ end }}
+{{ else if $.Params.images }}
+  {{ $.Scratch.Set "primaryImage" ( index $.Params.images 0 | absURL ) }}
+{{ else if $.Site.Params.images }}
+  {{ $.Scratch.Set "primaryImage" ( index $.Site.Params.images 0 | absURL ) }}
+{{ end }}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,15 +43,15 @@
     {
       "@type": "Person",
       "@id": {{ print $baseURL "#/schema/person/1" }},
-      "name": "{{ .Site.Params.schemaName }}",
+      "name": {{ .Site.Params.schemaName }},
       "url": {{ print $baseURL }},
       "image": {
         "@type": "ImageObject",
         "@id": {{ print $baseURL "#/schema/image/1"}},
         "url": {{ print $baseURL .Site.Params.schemaImage }},
-        "width": {{ .Site.Params.schemaImageWidth }},
-        "height": {{ .Site.Params.schemaImageHeight }},
-        "caption": "{{ .Site.Params.schemaName }}"
+        "width": {{- .Site.Params.schemaImageWidth -}},
+        "height": {{- .Site.Params.schemaImageHeight -}},
+        "caption": {{ .Site.Params.schemaName }}
       }
     },
     {
@@ -92,7 +112,6 @@
         }
         }{{ end }}]
     },
-
     {{ if and (eq .Kind "page") (eq .Section "posts") -}}
     {
       "@context": "https://schema.org",
@@ -122,7 +141,7 @@
         }
       ]
     },
-    {{ end -}}
+    {{- end -}}
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -131,11 +150,10 @@
           "@id": {{ print .Permalink "#/schema/image/2" }},
           "url": {{ $.Scratch.Get "primaryImage" }},
           "contentUrl": {{ $.Scratch.Get "primaryImage" }},
-          "caption": {{ .Title }}
+          "caption": {{ with $.Scratch.Get "primaryImageAlt" }}{{ . }}{{ else }}{{ .Title }}{{ end }}
         }
       ]
     }
-
   ]
 }
 </script>
