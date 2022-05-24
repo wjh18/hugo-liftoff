@@ -70,11 +70,11 @@
         flex-direction: row; /* Horizontal nav on desktop */
         align-items: center;
         padding: 0;
-        transition: var(--trans-ease-med);
+        // transition: var(--trans-ease-med);
     }
 
     .main-nav__logo {
-        transition: var(--trans-ease-med);
+        // transition: var(--trans-ease-med);
     }
 
     .main-nav:hover .main-nav__logo {
