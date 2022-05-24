@@ -1,5 +1,6 @@
 [build]
-  command = "hugo && npm run build:functions"
+  # command = "hugo && npm run build:functions" # Enable if using Netlify functions
+  command = "hugo" # Disable if using the other command
   publish = "public"
   functions = "netlify/functions"
 
