@@ -690,7 +690,7 @@ p > code {
     flex-wrap: wrap;
 }
 
-.single__banner-tags ul li {
+.single__banner-tags ul li a {
     background-color: transparent;
     padding: 5px 10px;
     border-radius: 10px;
@@ -699,7 +699,7 @@ p > code {
     font-size: 0.8rem;
 }
 
-.single__banner-tags ul li:hover {
+.single__banner-tags ul li a:hover {
     border-color: var(--alt-color-light);
     color: var(--alt-color-light);
 }

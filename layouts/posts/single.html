@@ -35,7 +35,7 @@
         {{ with .Params.tags }}
         <ul>
           {{ range . }}
-            <a href="{{ "tags" | absURL }}/{{ . | urlize }}/"><li>{{ . }}</li></a>
+          <li><a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
           {{ end }}
         </ul>
         {{ end }}
@@ -80,7 +80,7 @@
       {{ with .Params.tags }}
       <ul>
         {{ range . }}
-        <a href="{{ "tags" | absURL }}/{{ . | urlize }}/"><li>{{ . }}</li></a>
+        <li><a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
         {{ end }}
       </ul>
       {{ end }}
