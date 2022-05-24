@@ -100,6 +100,7 @@ Below are the current features of this theme. Features labeled *optional* can be
 
 ### Other Content
 
+* Create generic single pages quickly with the default single template (optional)
 * Additional markdown footer text (optional)
 * Add a label to drafts in development (optional)
 * Responsive support for common markdown styles like tables
