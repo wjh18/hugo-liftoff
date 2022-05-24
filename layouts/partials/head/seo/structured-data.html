@@ -60,8 +60,8 @@
       "about": {
         "@id": {{ print $baseURL "#/schema/person/1" }}
       },
-      "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05CET" }}",
-      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05CET" }}",
+      "datePublished": {{ with .PublishDate}}{{ .Format "2006-01-02T15:04:05-07:00" }}{{ else }}{{ .Date.Format "2006-01-02T15:04:05-07:00" }}{{ end }},
+      "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }},
       "breadcrumb": {
         "@id": {{ print .Permalink "#/schema/breadcrumb/1" }}
       },
@@ -108,8 +108,8 @@
           "mainEntityOfPage": {
             "@id": {{ .Permalink }}
           },
-          "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05CET" }}",
-          "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05CET" }}",
+          "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }},
+          "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }},
           "author": {
             "@id": {{ print $baseURL "#/schema/person/1" }}
           },          
