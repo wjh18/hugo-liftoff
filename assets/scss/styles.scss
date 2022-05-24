@@ -1012,6 +1012,22 @@ p > code {
 }
 
 
+/* Generic single pages */
+
+.generic-single {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 30px 80px 30px;
+    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.9rem;
+}
+
+.generic-single__content {
+    color: var(--txt-color-dark-2);
+}
+
+
 /* Newsletter / Contact form */
 
 .newsletter {
