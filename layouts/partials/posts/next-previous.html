@@ -1,17 +1,19 @@
 {{ if or (.PrevInSection) (.NextInSection) }}
-  <h2 class="next-previous__header">Read Next</h2>
-  <div class="single__next-previous">
-    {{ with .PrevInSection }}
-      <a class="previous" href="{{.Permalink}}">          
-        &laquo;
-        {{ .Title }}          
-      </a>          
-    {{ end }}
-    {{ with .NextInSection }}
-      <a class="next" href="{{.Permalink}}">                      
-        {{ .Title }} 
-        &raquo;         
-      </a>
-    {{ end }}
-  </div>
+  <section class="single__next-previous-container">
+    <h2 class="next-previous__header">Read Next</h2>
+    <div class="single__next-previous">
+      {{ with .PrevInSection }}
+        <a class="previous" href="{{.Permalink}}">
+          &laquo;
+          {{ .Title }}
+        </a>
+      {{ end }}
+      {{ with .NextInSection }}
+        <a class="next" href="{{.Permalink}}">
+          {{ .Title }}
+          &raquo;
+        </a>
+      {{ end }}
+    </div>
+  </section>
 {{ end }}

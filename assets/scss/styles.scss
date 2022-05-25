@@ -715,6 +715,10 @@ p > code {
     line-height: 1.9rem;
 }
 
+.single__next-previous-container {
+    margin: 50px 0;
+}
+
 .single__next-previous {
     width: 100%;
     display: flex;
@@ -751,6 +755,7 @@ p > code {
     line-height: 2rem;
     color: var(--txt-color-dark-2);
     margin-bottom: 30px;
+    font-family: var(--base-font-light), Helvetica, sans-serif;
 }
 
 .series__list li {
@@ -1148,7 +1153,7 @@ p > code {
 /* Related posts */
 
 .related {
-    padding: 20px 0;
+    margin: 50px 0;
 }
 
 .related__header {
@@ -1158,6 +1163,7 @@ p > code {
 .related__posts {
     font-size: 1.1rem;
     line-height: 1.5rem;
+    font-family: var(--base-font-light), Helvetica, sans-serif;
 }
 
 

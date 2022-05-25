@@ -61,10 +61,12 @@
       {{ $curtitle := .Title }}
       <ol class="series__list">
         {{- range $series.Pages.Reverse }}
-          <li>
-            <a href="{{.Permalink}}">{{ .Title }}</a>
+          <li>            
             {{ if eq .Title $curtitle }}
+              {{ .Title }}
               <span class="series__this-post">This post!</span>
+            {{ else }}
+              <a href="{{.Permalink}}">{{ .Title }}</a>
             {{ end }}
           </li>
         {{- end }}
@@ -97,10 +99,12 @@
         {{ $curtitle := .Title }}
         <ol class="series__list">
           {{- range $series.Pages.Reverse }}
-            <li>
-              <a href="{{.Permalink}}">{{ .Title }}</a>
+            <li>            
               {{ if eq .Title $curtitle }}
+                {{ .Title }}
                 <span class="series__this-post">This post!</span>
+              {{ else }}
+                <a href="{{.Permalink}}">{{ .Title }}</a>
               {{ end }}
             </li>
           {{- end }}
