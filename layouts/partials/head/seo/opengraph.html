@@ -33,9 +33,15 @@
 {{ $feature_param := $.Params.feature_image  }}
 {{ $feature_frontmatter := $images.GetMatch $feature_param }}
 {{ if $feature_frontmatter -}}
-  <meta property="og:image" content="{{ $feature_frontmatter.Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
+  <meta property="og:image" content="{{ $feature_frontmatter.Permalink }}"/>
+  {{ with $.Params.feature_image_alt }}
+    <meta property="og:image:alt" content="{{ . }}" />
+  {{ end }}
 {{ else if $feature -}}
-  <meta property="og:image" content="{{ $feature.Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
+  <meta property="og:image" content="{{ $feature.Permalink }}"/>
+  {{ with $.Params.feature_image_alt }}
+    <meta property="og:image:alt" content="{{ . }}" />
+  {{ end }}
 {{ else if $.Params.images }}
   <meta name="og:image" content="{{ index $.Params.images 0 | absURL }}"/>
 {{ else if $.Site.Params.images }}
