@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="banner">
   <div class="single__container single__banner-wrapper">
-    <span class="project__type">
+    <span class="project__type project__type--light">
       {{ with .Param "project types" }}
         {{ range first 1 . }}
           <a href="{{ "project-types" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
