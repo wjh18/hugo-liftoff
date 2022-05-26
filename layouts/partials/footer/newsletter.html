@@ -16,7 +16,7 @@
       {{ end }}
     </p>
     <form id="newsletter__form" name="newsletter" method="POST" {{ with .Site.Params.netlify_forms }}data-netlify="{{ . }}"{{ end }}>
-      <input type="email" id="newsletter__form--input" name="email" placeholder="Your best email...">
+      <input type="email" id="newsletter__form--input" name="email" placeholder="Your best email..." title="Enter your best email">
       <button type="submit" id="newsletter__form--submit" class="cta-btn">
         {{ with .Site.Params.newsletter_submit }}
           {{ . }}
