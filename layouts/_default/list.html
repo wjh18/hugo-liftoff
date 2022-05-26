@@ -28,10 +28,10 @@
         {{ end }}
         {{ end }}
       </ul>
-      <h3 class="post__title">
+      <h2 class="post__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ partial "general/label-drafts.html" . }}
-      </h3>  
+      </h2>  
       <p class="post__date">
         {{ if not (eq .Lastmod .Date) }}
           Posted:
