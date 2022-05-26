@@ -114,6 +114,18 @@
         display: none;
     }
 
+    .sub-menu {
+        box-shadow: 0 5px 20px -15px var(--bg-color-dark);
+    }
+
+    .sub-menu .menu__link {
+        color: var(--txt-color-dark-2);
+    }
+
+    .sub-menu .menu__link:hover {
+        color: var(--txt-color-light-1);
+    }
+
     .sub-menu--active {
         display: none;
         z-index: 1;

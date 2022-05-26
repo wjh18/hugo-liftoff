@@ -24,8 +24,7 @@
             <ul class="sub-menu">
               {{ range .Children }}
                 <li class="menu__item">
-                  <a href="{{ .URL }}" class="menu__link menu__link--desktop">{{ .Name }}</a>
-                  <a href="{{ .URL }}" class="menu__link menu__link--mobile">{{ .Name }}</a>
+                  <a href="{{ .URL }}" class="menu__link">{{ .Name }}</a>                  
                 </li>
               {{ end }}
             </ul>
