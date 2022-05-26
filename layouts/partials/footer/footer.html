@@ -2,7 +2,7 @@
   {{ if (or (.Param "newsletter") (and (.Site.Params.global_newsletter) (not (isset .Params "newsletter")))) }}
     {{ partial "footer/newsletter.html" . }}
   {{ end }}
-  <section class="footer__details">
+  <div class="footer__details">
     {{ if eq .Site.Params.footer_socials true }}
       <div class="footer__social-links">
         {{ partial "general/social-links.html" . }}
@@ -14,5 +14,5 @@
         &middot; {{ . }}
       {{ end }}
     </p>
-  </section>
+  </div>
 </footer>

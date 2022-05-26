@@ -1,9 +1,9 @@
 <!-- Reusable template for table of contents (i.e. start or sidebar of posts single pages) -->
-{{ if .Param "toc" }}
+{{ if .Params.toc }}
   <aside class="toc">
     <div id="js-toc__toggle">
       <h2 class="toc__header">Table of Contents</h2>
-      <label class="toc__drop-icon" for="Table of Contents">▾</label>
+      <span class="toc__drop-icon">▾</span>
     </div>
     <div id="js-toc__contents" class="toc__contents">{{ .TableOfContents }}</div>
   </aside>

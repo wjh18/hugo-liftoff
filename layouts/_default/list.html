@@ -28,11 +28,11 @@
         {{ end }}
         {{ end }}
       </ul>
-      <h3 class="post__title">
+      <h2 class="post__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ partial "general/label-drafts.html" . }}
-      </h3>  
-      <p class="post__date">
+      </h2>  
+      <p class="post__date post__date--dark">
         {{ if not (eq .Lastmod .Date) }}
           Posted:
         {{ end }}

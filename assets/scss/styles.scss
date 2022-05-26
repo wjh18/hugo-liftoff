@@ -406,14 +406,6 @@ p > code {
     cursor: pointer;
 }
 
-.sub-menu .menu__link--desktop {
-    color: var(--txt-color-dark-2);
-}
-
-.sub-menu .menu__link--desktop:hover {
-    color: var(--txt-color-light-1);
-}
-
 .menu__drop-icon {
     cursor: pointer;
     margin-left: 10px;
@@ -454,7 +446,7 @@ p > code {
 }
 
 .footer__copyright a {    
-    color: var(--link-color-dark);
+    color: var(--link-color-light);
     text-decoration: none;
     font-family: var(--serif-font-light), Georgia, serif;
 }
@@ -890,11 +882,17 @@ p > code {
     font-size: 0.9rem;
 }
 
+.post__date--dark {
+    color: var(--txt-color-dark-3);
+    opacity: 0.8;
+}
+
 .post__title {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.4rem;
     font-family: var(--serif-font-light), Georgia, serif;
+    line-height: 2rem;
 }
 
 .post__title a {
@@ -963,6 +961,7 @@ p > code {
     margin-bottom: 10px;
     font-size: 1.2rem;
     font-family: var(--serif-font-light), Georgia, serif;
+    line-height: 2rem;
 }
 
 .project__description {
@@ -1002,18 +1001,27 @@ p > code {
 .project__type {
     float: right;
     margin-left: 20px;
-    color: var(--txt-color-light-5);
+    color: var(--txt-color-dark-3);
+    opacity: 0.6;
     font-family: var(--base-font-med), Helvetica, sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
 }
 
 .project__type > a {
-    color: var(--txt-color-light-5);
+    color: var(--txt-color-dark-3);
 }
 
 .project__type > a:hover {
-    color: var(--txt-color-light-4);
+    color: var(--txt-color-light-5);
+}
+
+.project__type--light a {
+    color: var(--txt-color-light-3);
+}
+
+.project__type--light > a:hover {
+    color: var(--txt-color-light-5);
 }
 
 
@@ -1098,7 +1106,7 @@ p > code {
     flex-direction: column;
 }
 
-#contact__form--input {
+.contact__form--input {
     padding: 12px;
     margin-right: 10px; 
     margin-top: 10px;   
@@ -1110,7 +1118,7 @@ p > code {
     font-family: var(--base-font-reg), Helvetica, sans-serif;
 }
 
-#contact__form--textarea {
+.contact__form--textarea {
     padding: 12px;
     margin-right: 10px; 
     margin-top: 10px;   

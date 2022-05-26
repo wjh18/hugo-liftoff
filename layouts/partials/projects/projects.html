@@ -44,10 +44,10 @@
         {{ end }}
       </ul>
       <div class="project__image">{{ partial "general/feature-image.html" . }}</div>
-      <h3 class="project__title">
+      <h2 class="project__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ partial "general/label-drafts.html" . }}
-      </h3>
+      </h2>
       <p class="project__description">
         {{ with .Params.Summary }}
           {{ . }}

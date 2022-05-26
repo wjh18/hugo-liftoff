@@ -12,10 +12,16 @@
 {{ $feature_frontmatter := $images.GetMatch $feature_param }}
 {{ if $feature_frontmatter -}}
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:image" content="{{ $feature_frontmatter.Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
+  <meta property="twitter:image" content="{{ $feature_frontmatter.Permalink }}"/>
+  {{ with $.Params.feature_image_alt }}
+    <meta name="twitter:image:alt" content="{{ . }}">
+  {{ end }}
 {{ else if $feature -}}
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:image" content="{{ $feature.Permalink }}" alt="{{ with $.Params.feature_image_alt }}{{ . }}{{ end }}"/>
+    <meta property="twitter:image" content="{{ $feature.Permalink }}"/>
+    {{ with $.Params.feature_image_alt }}
+      <meta name="twitter:image:alt" content="{{ . }}">
+    {{ end }}
 {{ else if $.Params.images }}
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:image" content="{{ index $.Params.images 0 | absURL }}"/>
