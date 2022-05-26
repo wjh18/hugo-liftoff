@@ -2,12 +2,12 @@
 <section class="banner">
   <h1 class="banner__header">{{ .Title }}</h1>
 </section>
-<section class="about">
+<div class="about">
   <article class="about__content">
     {{ if eq .Site.Params.about_page_socials true }}
       <div class="about__social-links">{{ partial "general/social-links.html" . }}</div>
     {{ end }}
     {{ .Content }}
   </article>
-</section>
+</div>
 {{ end }}
