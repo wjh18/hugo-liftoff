@@ -7,7 +7,7 @@
         {{ $image := resources.Get $avatar }}
         <img class="home-hero__pic"
              src="{{ $image.RelPermalink }}"
-             width="100px" height="100px"
+             width="100" height="100"
              alt="Headshot or avatar belonging to the website owner"/>
         {{ else }}
         {{ $image := resources.Get "images/rocket.png" }}
