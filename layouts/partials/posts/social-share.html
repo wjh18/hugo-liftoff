@@ -50,7 +50,7 @@
       <!-- Email -->
       {{ if .Site.Params.social.share.email }}
       <li>
-        <a href="mailto:?subject={{ .Site.Title }} - {{ $title }}.&amp;body={{ $body }}" target="_blank" class="social-btn email">
+        <a href="mailto:?subject={{ .Site.Title }}%20-%20{{ $title }}.&amp;body={{ $body }}" target="_blank" class="social-btn email">
           {{ partial "svg/email.svg" (dict "class" "widget-social__link-icon") }}
           <p>Email</p>
         </a>

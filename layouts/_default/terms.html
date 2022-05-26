@@ -2,7 +2,7 @@
 <section class="banner">
   <h1 class="banner__header">{{ .Title }}</h1>
 </section>
-<section class="terms">
+<div class="terms">
   <div class="terms__wrapper">
     {{ with .Data.Terms.ByCount }}
       {{ range . }}
@@ -12,5 +12,5 @@
       <span class="terms__none">No content available yet. Coming soon.</span>
     {{ end }}
   </div>  
-</section>
+</div>
 {{ end }}
