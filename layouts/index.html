@@ -90,7 +90,6 @@
           </ul>
           <h3 class="post__title post__title--light">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ partial "general/label-drafts.html" . }}
           </h3>  
           <p class="post__date">
             {{ if not (eq .Lastmod .Date) }}
@@ -107,6 +106,7 @@
             {{ end }}
             &nbsp;&middot;&nbsp;
             {{ .ReadingTime }} min.
+            {{ partial "general/label-drafts.html" . }}
           </p>
           <p class="post__description home-subtext">
             {{ with .Params.Summary }}
@@ -153,7 +153,7 @@
             </ul> 
             <h3 class="project__title">
               <a href="{{ .Permalink }}">{{ .Title }}</a>
-              {{ partial "general/label-drafts.html" . }}
+              <sup>{{ partial "general/label-drafts.html" . }}</sup>
             </h3>            
             <p class="project__description">
               {{ with .Params.Summary }}
@@ -168,7 +168,7 @@
               {{ end }}
               {{ with .Params.source_url }}
                 <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
-              {{ end }}
+              {{ end }}              
             </div>        
           </div>
         {{ end }}
@@ -186,7 +186,7 @@
           </ul> 
           <h3 class="project__title">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ partial "general/label-drafts.html" . }}
+            <sup>{{ partial "general/label-drafts.html" . }}</sup>
           </h3>            
           <p class="project__description">
             {{ with .Params.Summary }}
@@ -201,7 +201,7 @@
             {{ end }}
             {{ with .Params.source_url }}
               <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
-            {{ end }}
+            {{ end }}            
           </div>        
         </div>
       {{ end }}

@@ -30,7 +30,6 @@
       </ul>
       <h2 class="post__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
-        {{ partial "general/label-drafts.html" . }}
       </h2>  
       <p class="post__date post__date--dark">
         {{ if not (eq .Lastmod .Date) }}
@@ -47,6 +46,7 @@
         {{ end }}
         &nbsp;&middot;&nbsp;
         {{ .ReadingTime }} min.
+        {{ partial "general/label-drafts.html" . }}
       </p>      
       <p class="post__description">
         {{ with .Params.Summary }}

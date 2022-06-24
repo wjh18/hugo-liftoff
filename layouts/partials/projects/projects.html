@@ -46,7 +46,7 @@
       <div class="project__image">{{ partial "general/feature-image.html" . }}</div>
       <h2 class="project__title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
-        {{ partial "general/label-drafts.html" . }}
+        <sup>{{ partial "general/label-drafts.html" . }}</sup>
       </h2>
       <p class="project__description">
         {{ with .Params.Summary }}

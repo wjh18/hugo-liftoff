@@ -1,0 +1,10 @@
+.draft::after {
+  content: 'Draft';
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-family: $serif-font-light;
+}

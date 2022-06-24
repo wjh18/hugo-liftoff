@@ -17,7 +17,7 @@
     </ul>
     <h1 class="banner__header single__post-header">
       {{ .Title }}
-      {{ partial "general/label-drafts.html" . }}
+      <sup>{{ partial "general/label-drafts.html" . }}</sup>
     </h1>
     {{ if or (.Params.live_url) (.Params.source_url) }}
       <div class="single__post-meta">
