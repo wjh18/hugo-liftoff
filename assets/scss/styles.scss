@@ -1,130 +1,3 @@
-/* --- Elements --- */
-
-html, body {
-    font-family: $base-font-reg, Helvetica, sans-serif;
-    height: 100%;
-}
-
-body {
-    /* Flex properties on body/main/footer are for floating footer
-    to bottom of page if main content doesn't fill viewport vertically */
-    display: flex;
-    flex-direction: column;
-    background-color: $bg-color-light;
-}
-
-main {   
-    flex: 1 0 auto; 
-}
-
-footer {
-    flex-shrink: 0;    
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: $serif-font-reg, Georgia, serif;
-}
-
-h1 {
-    font-size: 2.3rem;
-    line-height: 3.2rem;
-}
-
-h2 {
-    font-size: 1.7rem;
-    line-height: 2.2rem;
-}
-
-h3 {
-    font-size: 1.4rem;
-    line-height: 2rem;
-}
-
-p {
-    font-family: $base-font-light, Helvetica, sans-serif;
-    color: $txt-color-dark-2;
-    font-size: 1.1rem;
-    line-height: 1.7rem;
-}
-
-a {
-    text-decoration: none;
-}
-
-strong {
-    font-family: $base-font-med, Helvetica, sans-serif;
-}
-
-table {
-    border-collapse: collapse;    
-    display: block;
-    overflow-x: auto;
-}
-
-td, th {
-    border: 1px solid $border-color-light;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-}
-
-th {
-    background-color: $bg-color-dark;
-    color: $txt-color-light-2;
-    font-size: 1rem;
-}
-
-td {
-    text-align: center;
-}
-
-tr:nth-child(even) td {
-    background-color: $bg-color-light;
-}
-
-tr:nth-child(odd) td {
-    background-color: $bg-color-light-2;
-}
-
-blockquote {
-    background: $bg-color-light;
-    border-left: 10px solid $border-color-light;
-    margin: 1.5em 10px;
-    padding: 0.7em 10px;
-    quotes: "\201C" "\201D";
-    overflow-x: auto;
-}
-
-blockquote::before {
-    color: $border-color-light;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
-
-blockquote p {
-    display: inline;
-}
-
-pre {
-    // padding: 20px;
-    font-size: 1rem;
-    line-height: 1.6rem;
-    overflow-x: auto;
-}
-
-code {
-    overflow-x: scroll;
-}
-
-p > code {
-    background-color: $bg-color-light-2;
-    padding: 2px 5px;
-    border-radius: 5px;
-}
-
-
 /* Reusable styles / components */
 
 .header--light {
@@ -150,7 +23,7 @@ p > code {
     color: $txt-color-dark-1;
     border: 2px solid $link-color-light;
     background-color: $link-color-light;
-    font-family: $base-font-med, Helvetica, sans-serif;
+    font-family: $base-font-med;
     transition: $trans-ease-short;
     border-bottom: 2px solid $alt-color-dark;
 }
@@ -241,7 +114,7 @@ p > code {
 
 .main-nav__logo {
     color: $txt-color-light-5;
-    font-family: $serif-font-bold, Georgia, serif;
+    font-family: $serif-font-bold;
     font-size: 1.8rem;
     text-decoration: none;
     width: fit-content;
@@ -337,7 +210,7 @@ p > code {
 .footer__copyright a {    
     color: $link-color-light;
     text-decoration: none;
-    font-family: $serif-font-light, Georgia, serif;
+    font-family: $serif-font-light;
 }
 
 .footer__copyright a:hover {
@@ -524,7 +397,7 @@ p > code {
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 6px;
-    font-family: $base-font-reg, Helvetica, sans-serif;
+    font-family: $base-font-reg;
     font-size: 0.9rem;
 }
 
@@ -591,7 +464,7 @@ p > code {
 
 .single__post-content {
     color: $txt-color-dark-2;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
@@ -616,7 +489,7 @@ p > code {
     border: 1px solid $border-color-very-light;
     box-shadow: 0 5px 25px -20px $bg-color-dark;
     padding: 10px;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
     line-height: 1.4rem;
 }
 
@@ -636,7 +509,7 @@ p > code {
     line-height: 2rem;
     color: $txt-color-dark-2;
     margin-bottom: 30px;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
 }
 
 .series__list li {
@@ -652,7 +525,7 @@ p > code {
     font-size: 0.8em;
     border-radius: 5px;
     border: 1px solid $alt-color-dark;
-    font-family: $base-font-med, Helvetica, sans-serif;
+    font-family: $base-font-med;
 }
 
 
@@ -714,7 +587,7 @@ p > code {
 
 .terms__none {
     color: $txt-color-dark-3;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
 }
 
 .terms__term {
@@ -780,7 +653,7 @@ p > code {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.4rem;
-    font-family: $serif-font-light, Georgia, serif;
+    font-family: $serif-font-light;
     line-height: 2rem;
 }
 
@@ -849,7 +722,7 @@ p > code {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.2rem;
-    font-family: $serif-font-light, Georgia, serif;
+    font-family: $serif-font-light;
     line-height: 2rem;
 }
 
@@ -892,7 +765,7 @@ p > code {
     margin-left: 20px;
     color: $txt-color-dark-3;
     opacity: 0.6;
-    font-family: $base-font-med, Helvetica, sans-serif;
+    font-family: $base-font-med;
     font-size: 1rem;
     text-transform: uppercase;
 }
@@ -920,7 +793,7 @@ p > code {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px 80px 20px;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
@@ -970,7 +843,7 @@ p > code {
     border: 1px solid $border-color-light;
     font-size: 1rem;
     color: $txt-color-dark-2;
-    font-family: $base-font-reg, Helvetica, sans-serif;
+    font-family: $base-font-reg;
 }
 
 #newsletter__form--submit {
@@ -981,7 +854,7 @@ p > code {
     max-width: 500px;
     margin: 0 auto;
     padding: 40px 20px 80px 20px;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
@@ -1004,7 +877,7 @@ p > code {
     border: 1px solid $border-color-light;
     font-size: 1rem;
     color: $txt-color-dark-2;
-    font-family: $base-font-reg, Helvetica, sans-serif;
+    font-family: $base-font-reg;
 }
 
 .contact__form--textarea {
@@ -1016,7 +889,7 @@ p > code {
     border: 1px solid $border-color-light;
     font-size: 1rem;
     color: $txt-color-dark-2;
-    font-family: $base-font-reg, Helvetica, sans-serif;
+    font-family: $base-font-reg;
 }
 
 
@@ -1036,7 +909,7 @@ p > code {
 .about__content {
     padding: 50px 20px;
     color: $txt-color-dark-2;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
@@ -1060,7 +933,7 @@ p > code {
 .related__posts {
     font-size: 1.1rem;
     line-height: 1.5rem;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
 }
 
 
@@ -1074,7 +947,7 @@ p > code {
     margin: 60px 0;
     padding: 0;
     font-size: 1.2em;
-    font-family: $base-font-light, Helvetica, sans-serif;
+    font-family: $base-font-light;
 }
 
 .page-item {

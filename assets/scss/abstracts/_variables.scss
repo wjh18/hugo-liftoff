@@ -34,10 +34,10 @@ $trans-ease-short: all 0.2s ease-in-out;
 $trans-ease-med: all 0.6s ease-in-out;
 
 /* Font families */
-$base-font-light: 'Ubuntu Light';
-$base-font-reg: 'Ubuntu Regular';
-$base-font-med: 'Ubuntu Medium';
-$base-font-bold: 'Ubuntu Bold';
-$serif-font-light: 'Merriweather Light';
-$serif-font-reg: 'Merriweather Regular';
-$serif-font-bold: 'Merriweather Bold';
+$base-font-light: 'Ubuntu Light', Helvetica, Arial, sans-serif;
+$base-font-reg: 'Ubuntu Regular', Helvetica, Arial, sans-serif;
+$base-font-med: 'Ubuntu Medium', Helvetica, Arial, sans-serif;
+$base-font-bold: 'Ubuntu Bold', Helvetica, Arial, sans-serif;
+$serif-font-light: 'Merriweather Light', Georgia, 'Times New Roman', serif;
+$serif-font-reg: 'Merriweather Regular', Georgia, 'Times New Roman', serif;
+$serif-font-bold: 'Merriweather Bold', Georgia, 'Times New Roman', serif;

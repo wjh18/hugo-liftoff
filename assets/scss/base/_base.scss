@@ -1,3 +1,127 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
+
+html, body {
+  font-family: $base-font-reg;
+  height: 100%;
+}
+
+body {
+  /* Flex properties on body/main/footer are for floating footer
+  to bottom of page if main content doesn't fill viewport vertically */
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-color-light;
+}
+
+main {   
+  flex: 1 0 auto; 
+}
+
+footer {
+  flex-shrink: 0;    
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif-font-reg;
+}
+
+h1 {
+  font-size: 2.3rem;
+  line-height: 3.2rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 2.2rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+p {
+  font-family: $base-font-light;
+  color: $txt-color-dark-2;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-family: $base-font-med;
+}
+
+table {
+  border-collapse: collapse;    
+  display: block;
+  overflow-x: auto;
+}
+
+td, th {
+  border: 1px solid $border-color-light;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+th {
+  background-color: $bg-color-dark;
+  color: $txt-color-light-2;
+  font-size: 1rem;
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: $bg-color-light;
+}
+
+tr:nth-child(odd) td {
+  background-color: $bg-color-light-2;
+}
+
+blockquote {
+  background: $bg-color-light;
+  border-left: 10px solid $border-color-light;
+  margin: 1.5em 10px;
+  padding: 0.7em 10px;
+  quotes: "\201C" "\201D";
+  overflow-x: auto;
+
+  p {
+    display: inline;
+  }
+
+  &::before {
+    color: $border-color-light;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+}
+
+pre {
+  // padding: 20px;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  overflow-x: auto;
+}
+
+code {
+  overflow-x: scroll;
+}
+
+p > code {
+  background-color: $bg-color-light-2;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
