@@ -65,83 +65,6 @@
 }
 
 @media screen and (min-width: 768px) {
-    
-    .main-nav {
-        flex-direction: row; /* Horizontal nav on desktop */
-        align-items: center;
-        padding: 0;
-        // transition: $trans-ease-med;
-    }
-
-    .main-nav__logo {
-        // transition: $trans-ease-med;
-    }
-
-    .main-nav:hover .main-nav__logo {
-        color: $txt-color-light-4;
-    }
-
-    .main-nav:hover {
-        border-color: $border-color-med;
-    }
-
-    .menu {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .sub-menu {
-        display: none;
-        position: absolute;
-        transition: $trans-ease-short;
-    }
-
-    .menu__item:hover > .sub-menu {
-        background-color: $bg-color-light;
-        padding-left: 0;
-    }
-
-    .menu__item:hover > .sub-menu {
-        display: block;
-        z-index: 1;
-    }
-
-    .menu__link--desktop {
-        display: flex;
-    }
-
-    .menu__link--mobile {
-        display: none;
-    }
-
-    .sub-menu {
-        box-shadow: 0 5px 20px -15px $bg-color-dark;
-    }
-
-    .sub-menu .menu__link {
-        color: $txt-color-dark-2;
-    }
-
-    .sub-menu .menu__link:hover {
-        color: $txt-color-light-1;
-    }
-
-    .sub-menu--active {
-        display: none;
-        z-index: 1;
-    }
-
-    .menu__item:hover > .menu__item {
-        color: $txt-color-dark-1;
-    }
-
-    .menu__item > .menu__item:hover {
-        color: $txt-color-light-1;
-    }
-
-    .main-nav__toggle {
-        display: none; /* Hide nav toggle on desktop */
-    }
 
     .home-hero {
         padding: 80px 30px;
@@ -209,8 +132,4 @@
     .home-section__sections {
         padding: 80px 20px;
     }
-}
-
-@media screen and (min-width: 1400px) {
-
 }

@@ -11,31 +11,27 @@
     <ul class="menu" id="js-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-        {{ if .HasChildren }}
-          <li class="menu__item">
-            <a href="{{ .URL }}" class="menu__link menu__link--desktop">
-              {{ .Name }}
-              <span class="menu__drop-icon">▾</span>
-            </a>
-            <span class="menu__link menu__link--mobile">
-              {{ .Name }}
-              <span class="menu__drop-icon">▾</span>
-            </span>
-            <ul class="sub-menu">
-              {{ range .Children }}
-                <li class="menu__item">
-                  <a href="{{ .URL }}" class="menu__link">{{ .Name }}</a>                  
-                </li>
-              {{ end }}
-            </ul>
-          </li>
-        {{ else }}
-          <li class="menu__item">
-            <a href="{{ .URL }}" class="menu__link">
-              {{ .Name }}              
-            </a>
-          </li>
-        {{ end }}
+      {{ if .HasChildren }}
+      <li class="menu__item">
+        <span class="menu__link">
+          {{ .Name }}
+          <span class="menu__drop-icon">▾</span>
+        </span>
+        <ul class="sub-menu">
+          {{ range .Children }}
+            <li class="menu__item">
+              <a href="{{ .URL }}" class="menu__link">{{ .Name }}</a>                  
+            </li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ else }}
+      <li class="menu__item">
+        <a href="{{ .URL }}" class="menu__link">
+          {{ .Name }}              
+        </a>
+      </li>
+    {{ end }}
       {{ end }}
     </ul>
   </nav>

@@ -41,3 +41,17 @@ $base-font-bold: 'Ubuntu Bold', Helvetica, Arial, sans-serif;
 $serif-font-light: 'Merriweather Light', Georgia, 'Times New Roman', serif;
 $serif-font-reg: 'Merriweather Regular', Georgia, 'Times New Roman', serif;
 $serif-font-bold: 'Merriweather Bold', Georgia, 'Times New Roman', serif;
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'x-small': 320px,
+  'small': 576px,
+  'medium': 768px,
+  'm-large': 900px,
+  'large': 1024px,
+  'x-large': 1200px,
+) !default;

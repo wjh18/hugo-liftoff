@@ -1,3 +1,123 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
+// This file contains all styles related to the header of the site.
 // -----------------------------------------------------------------------------
+
+.main-nav {
+  background-color: $bg-color-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  row-gap: 20px;
+  border-bottom: 2px solid $border-color-dark;
+
+  &:hover {
+    border-color: $border-color-med;
+
+    .main-nav__logo {
+      color: $txt-color-light-4;
+    }
+  }
+
+  &__logo {
+    color: $txt-color-light-5;
+    font-family: $serif-font-bold;
+    font-size: 1.8rem;
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  @include respond-to('m-large') {
+    flex-direction: row; /* Horizontal nav on desktop */
+    align-items: center;
+    padding: 0;
+
+    &__toggle {
+      display: none; /* Hide nav toggle on desktop */
+    }
+  }
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  &--active {
+    display: flex; /* Display mobile menu on click */
+  }
+
+  &__item {
+    display: block;
+    list-style-type: none;
+  }
+
+  &__link {
+    display: flex;
+    color: $txt-color-light-5;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 2rem 1.6rem;
+
+    &:hover {
+      background-color: $link-color-dark;
+      color: $txt-color-light-1;
+    }
+  }
+
+  &__drop-icon {
+    margin-left: 10px;
+  }
+
+  @include respond-to('m-large') {
+    display: flex;
+    flex-direction: row;
+
+    &__item:hover {
+      .sub-menu {        
+        background-color: $bg-color-light;
+        padding-left: 0;
+        display: block;
+        z-index: 1;        
+      }
+    }
+  }
+}
+
+.sub-menu {
+  display: none;
+  transition: $trans-ease-short;
+
+  &--active {
+    display: block;
+    z-index: 1;
+  }
+
+  @include respond-to('m-large') {
+    display: none;
+    position: absolute;
+    box-shadow: rgba(66, 39, 9, 0.25) 0px 4px 8px -2px, rgba(66, 45, 9, 0.08) 0px 0px 0px 1px;
+
+    &--active {
+      display: none;
+    }
+
+    .menu__link {
+      color: $txt-color-dark-2;
+
+      &:hover {
+        color: $txt-color-light-1;
+      }
+    }
+  }
+}
