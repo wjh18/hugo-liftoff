@@ -1,21 +1,5 @@
 @media screen and (min-width: 480px) {
-    .home-hero {
-        padding: 50px 30px;
-    }
-
-    .home-hero__pic {
-        width: 100px;
-    }
-
-    .home-hero__title {
-        font-size: 1.9rem;
-    }
-
-    .home-hero__subtitle {
-        font-size: 1.1rem;
-        line-height: 1.5rem;
-    }
-
+  
     .banner__header {
         font-size: 1.9rem;
         line-height: 2.6rem;
@@ -66,20 +50,6 @@
 
 @media screen and (min-width: 768px) {
 
-    .home-hero {
-        padding: 80px 30px;
-    }
-
-    .home-hero__flex {    
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .home-hero__title {
-        font-size: 2.1rem;
-    }
-
     .single__container {
         padding: 50px;
     }
@@ -115,21 +85,10 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .home-hero__title {
-        font-size: 2.3rem;
-    }
-
-    .home-hero__subtitle {
-        font-size: 1.3rem;
-        line-height: 1.7rem;
-    }
 
     .banner__header {
         font-size: 2.3rem;
         line-height: 3.2rem;
     }
-
-    .home-section__sections {
-        padding: 80px 20px;
-    }
+    
 }

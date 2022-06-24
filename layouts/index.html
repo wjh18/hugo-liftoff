@@ -44,7 +44,7 @@
     {{ range (where .Sections "Section" "posts") }}
       {{ range .Sections }}
       <div class="home-section__info">
-        <h2 class="header--md h-divider">{{ .Title }}</h2>
+        <h2 class="home-heading--md h-divider">{{ .Title }}</h2>
         <p>
           {{ with .Params.Summary }}
             {{ . }}
@@ -62,14 +62,14 @@
 
   <section class="home-section home-section__posts">
     <div class="home-section__info">      
-      <h2 class="header--light header--lg h-divider">
+      <h2 class="home-heading--light home-heading--lg h-divider">
         {{ with .Params.posts_section_title }}
           {{ . }}
         {{ else }}
           Recent Posts
         {{ end }}
       </h2>
-      <p class="description--light">
+      <p class="home-subtext">
         {{ with .Params.posts_section_description }}
           {{ . }}
         {{ else }}
@@ -108,7 +108,7 @@
             &nbsp;&middot;&nbsp;
             {{ .ReadingTime }} min.
           </p>
-          <p class="post__description description--light">
+          <p class="post__description home-subtext">
             {{ with .Params.Summary }}
               {{ . }}
             {{ else }}
@@ -122,7 +122,7 @@
   <div class="triangle-divider"></div>
   <section class="home-section home-section__projects">
     <div class="home-section__info">      
-      <h2 class="header--lg h-divider">
+      <h2 class="home-heading--lg h-divider">
         {{ with .Params.projects_section_title }}
           {{ . }}
         {{ else }}
