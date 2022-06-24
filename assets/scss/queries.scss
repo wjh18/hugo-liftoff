@@ -70,19 +70,19 @@
         flex-direction: row; /* Horizontal nav on desktop */
         align-items: center;
         padding: 0;
-        // transition: var(--trans-ease-med);
+        // transition: $trans-ease-med;
     }
 
     .main-nav__logo {
-        // transition: var(--trans-ease-med);
+        // transition: $trans-ease-med;
     }
 
     .main-nav:hover .main-nav__logo {
-        color: var(--txt-color-light-4);
+        color: $txt-color-light-4;
     }
 
     .main-nav:hover {
-        border-color: var(--border-color-med);
+        border-color: $border-color-med;
     }
 
     .menu {
@@ -93,11 +93,11 @@
     .sub-menu {
         display: none;
         position: absolute;
-        transition: var(--trans-ease-short);
+        transition: $trans-ease-short;
     }
 
     .menu__item:hover > .sub-menu {
-        background-color: var(--bg-color-light);
+        background-color: $bg-color-light;
         padding-left: 0;
     }
 
@@ -115,15 +115,15 @@
     }
 
     .sub-menu {
-        box-shadow: 0 5px 20px -15px var(--bg-color-dark);
+        box-shadow: 0 5px 20px -15px $bg-color-dark;
     }
 
     .sub-menu .menu__link {
-        color: var(--txt-color-dark-2);
+        color: $txt-color-dark-2;
     }
 
     .sub-menu .menu__link:hover {
-        color: var(--txt-color-light-1);
+        color: $txt-color-light-1;
     }
 
     .sub-menu--active {
@@ -132,11 +132,11 @@
     }
 
     .menu__item:hover > .menu__item {
-        color: var(--txt-color-dark-1);
+        color: $txt-color-dark-1;
     }
 
     .menu__item > .menu__item:hover {
-        color: var(--txt-color-light-1);
+        color: $txt-color-light-1;
     }
 
     .main-nav__toggle {

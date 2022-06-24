@@ -1,52 +1,7 @@
-/* --- Custom Properties --- */
-
-:root {
-    /* Background colors */
-    --bg-color-dark: #151515;    
-    --bg-color-light: #f7f7f7;
-    --bg-color-light-2: #e3e3e3;
-    --bg-color-blue: #18191c;
-    --bg-color-grad: linear-gradient(180deg, var(--bg-color-dark) 25%, var(--bg-color-blue) 100%);
-
-    /* Links and alt colors */
-    --link-color-light: #bd7221;
-    --link-color-dark: #9a5c1a;
-    --alt-color-light: #32d1dc;
-    --alt-color-dark: #24959d;
-
-    /* Contrasting text colors */
-    --txt-color-dark-1: black;
-    --txt-color-dark-2: #353535;
-    --txt-color-dark-3: #555555;
-    --txt-color-light-1: white;
-    --txt-color-light-2: #eeeeee;
-    --txt-color-light-3: #e3e3e3;
-    --txt-color-light-4: #cfcfcf;
-    --txt-color-light-5: #a4a4a4;
-
-    /* Border colors and trasitions */
-    --border-color-very-light: #c4c4c4;
-    --border-color-light: #a9a9a9;
-    --border-color-med: #808080;
-    --border-color-dark: #333333;
-    --trans-ease-short: all 0.2s ease-in-out;
-    --trans-ease-med: all 0.6s ease-in-out;
-    
-    /* Font families */
-    --base-font-light: 'Ubuntu Light';
-    --base-font-reg: 'Ubuntu Regular';
-    --base-font-med: 'Ubuntu Medium';
-    --base-font-bold: 'Ubuntu Bold';
-    --serif-font-light: 'Merriweather Light';
-    --serif-font-reg: 'Merriweather Regular';
-    --serif-font-bold: 'Merriweather Bold';
-}
-
-
 /* --- Elements --- */
 
 html, body {
-    font-family: var(--base-font-reg), Helvetica, sans-serif;
+    font-family: $base-font-reg, Helvetica, sans-serif;
     height: 100%;
 }
 
@@ -55,7 +10,7 @@ body {
     to bottom of page if main content doesn't fill viewport vertically */
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-color-light);
+    background-color: $bg-color-light;
 }
 
 main {   
@@ -67,7 +22,7 @@ footer {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--serif-font-reg), Georgia, serif;
+    font-family: $serif-font-reg, Georgia, serif;
 }
 
 h1 {
@@ -86,8 +41,8 @@ h3 {
 }
 
 p {
-    font-family: var(--base-font-light), Helvetica, sans-serif;
-    color: var(--txt-color-dark-2);
+    font-family: $base-font-light, Helvetica, sans-serif;
+    color: $txt-color-dark-2;
     font-size: 1.1rem;
     line-height: 1.7rem;
 }
@@ -97,7 +52,7 @@ a {
 }
 
 strong {
-    font-family: var(--base-font-med), Helvetica, sans-serif;
+    font-family: $base-font-med, Helvetica, sans-serif;
 }
 
 table {
@@ -107,14 +62,14 @@ table {
 }
 
 td, th {
-    border: 1px solid var(--border-color-light);
+    border: 1px solid $border-color-light;
     padding: 10px 20px;
     font-size: 0.9rem;
 }
 
 th {
-    background-color: var(--bg-color-dark);
-    color: var(--txt-color-light-2);
+    background-color: $bg-color-dark;
+    color: $txt-color-light-2;
     font-size: 1rem;
 }
 
@@ -123,16 +78,16 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: var(--bg-color-light);
+    background-color: $bg-color-light;
 }
 
 tr:nth-child(odd) td {
-    background-color: var(--bg-color-light-2);
+    background-color: $bg-color-light-2;
 }
 
 blockquote {
-    background: var(--bg-color-light);
-    border-left: 10px solid var(--border-color-light);
+    background: $bg-color-light;
+    border-left: 10px solid $border-color-light;
     margin: 1.5em 10px;
     padding: 0.7em 10px;
     quotes: "\201C" "\201D";
@@ -140,7 +95,7 @@ blockquote {
 }
 
 blockquote::before {
-    color: var(--border-color-light);
+    color: $border-color-light;
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
@@ -164,7 +119,7 @@ code {
 }
 
 p > code {
-    background-color: var(--bg-color-light-2);
+    background-color: $bg-color-light-2;
     padding: 2px 5px;
     border-radius: 5px;
 }
@@ -173,7 +128,7 @@ p > code {
 /* Reusable styles / components */
 
 .header--light {
-    color: var(--txt-color-light-2);
+    color: $txt-color-light-2;
 }
 
 .header--md {
@@ -185,57 +140,57 @@ p > code {
 }
 
 .description--light {
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
 }
 
 .cta-btn {
     padding: 12px;    
     border-style: none;
     box-sizing: border-box;
-    color: var(--txt-color-dark-1);
-    border: 2px solid var(--link-color-light);
-    background-color: var(--link-color-light);
-    font-family: var(--base-font-med), Helvetica, sans-serif;
-    transition: var(--trans-ease-short);
-    border-bottom: 2px solid var(--alt-color-dark);
+    color: $txt-color-dark-1;
+    border: 2px solid $link-color-light;
+    background-color: $link-color-light;
+    font-family: $base-font-med, Helvetica, sans-serif;
+    transition: $trans-ease-short;
+    border-bottom: 2px solid $alt-color-dark;
 }
 
 .cta-btn:hover {
-    border: 2px solid var(--link-color-dark);
-    background-color: var(--bg-color-light);
-    color: var(--link-color-dark);
+    border: 2px solid $link-color-dark;
+    background-color: $bg-color-light;
+    color: $link-color-dark;
     cursor: pointer;
-    border-bottom: 2px solid var(--alt-color-light);
+    border-bottom: 2px solid $alt-color-light;
 }
 
 .cta-btn--light {
     background-color: transparent;
-    border-color: var(--link-color-dark);
-    color: var(--link-color-dark);
+    border-color: $link-color-dark;
+    color: $link-color-dark;
 }
 
 .cta-btn--light:hover {
-    background-color: var(--link-color-dark);
-    color: var(--txt-color-light-2);
-    border-color: var(--link-color-dark);
+    background-color: $link-color-dark;
+    color: $txt-color-light-2;
+    border-color: $link-color-dark;
 }
 
 .cta-btn--very-light {
     background-color: transparent;
-    border-color: var(--link-color-light);
-    color: var(--link-color-light);
+    border-color: $link-color-light;
+    color: $link-color-light;
 }
 
 .cta-btn--very-light:hover {
-    background-color: var(--link-color-light);
-    color: var(--txt-color-light-2);
-    border-color: var(--link-color-light);
+    background-color: $link-color-light;
+    color: $txt-color-light-2;
+    border-color: $link-color-light;
 }
 
 .h-divider::after {
     content:' ';
     display:block;
-    border: 1px solid var(--border-color-med);
+    border: 1px solid $border-color-med;
     width: 70px;
     margin-top: 20px;
 }
@@ -246,7 +201,7 @@ p > code {
     transform: translate(-50%, 0%);
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
-    border-top: 50px solid var(--bg-color-dark);
+    border-top: 50px solid $bg-color-dark;
 }
 
 .draft::after {
@@ -275,25 +230,25 @@ p > code {
 /* --- Navigation --- */
 
 .main-nav {
-    background-color: var(--bg-color-dark);
+    background-color: $bg-color-dark;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;    
     padding: 20px;
     row-gap: 20px;   
-    border-bottom: 2px solid var(--border-color-dark);
+    border-bottom: 2px solid $border-color-dark;
 }
 
 .main-nav__logo {
-    color: var(--txt-color-light-5);
-    font-family: var(--serif-font-bold), Georgia, serif;
+    color: $txt-color-light-5;
+    font-family: $serif-font-bold, Georgia, serif;
     font-size: 1.8rem;
     text-decoration: none;
     width: fit-content;
 }
 
 .main-nav__logo:hover {
-    color: var(--txt-color-light-4);
+    color: $txt-color-light-4;
 }
 
 .menu {
@@ -310,16 +265,16 @@ p > code {
     
 .menu__link {
     display: flex;
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
     text-align: center;
     text-decoration: none;
     padding: 1.6rem;
 }
     
 .menu__link:hover {
-    background-color: var(--link-color-light);
-    color: var(--txt-color-light-1);
-    transition: var(--trans-ease-short);
+    background-color: $link-color-light;
+    color: $txt-color-light-1;
+    transition: $trans-ease-short;
 }
 
 .sub-menu {
@@ -360,7 +315,7 @@ p > code {
 /* --- Footer --- */
 
 .footer {
-    background-color: var(--bg-color-dark);        
+    background-color: $bg-color-dark;        
 }
 
 .footer__details {
@@ -374,27 +329,27 @@ p > code {
 
 .footer__copyright {
     text-align: center;
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
     font-size: 1rem;
     line-height: 1.5rem;
 }
 
 .footer__copyright a {    
-    color: var(--link-color-light);
+    color: $link-color-light;
     text-decoration: none;
-    font-family: var(--serif-font-light), Georgia, serif;
+    font-family: $serif-font-light, Georgia, serif;
 }
 
 .footer__copyright a:hover {
-    color: var(--link-color-light);
+    color: $link-color-light;
 }
 
 
 /* --- Home page --- */
 
 .home-hero {
-    background: var(--bg-color-dark);
-    background: var(--bg-color-grad);
+    background: $bg-color-dark;
+    background: $bg-color-grad;
     padding: 30px 20px;
 }
 
@@ -404,14 +359,14 @@ p > code {
 }
 
 .home-hero__title {
-    color: var(--txt-color-light-2);
+    color: $txt-color-light-2;
     line-height: 1.3em;
     margin: 0 0 15px 0;
     font-size: 1.7rem;
 }
 
 .home-hero__subtitle {
-    color: var(--txt-color-light-4);
+    color: $txt-color-light-4;
     font-size: 1rem;
     line-height: 1.5rem;
     margin-top: 0;
@@ -423,7 +378,7 @@ p > code {
     margin-right: 30px;
     margin-bottom: 20px;
     filter:contrast(70%);
-    border: 3px solid var(--bg-color-light);
+    border: 3px solid $bg-color-light;
     width: 75px;
     height: auto;
 }
@@ -451,10 +406,10 @@ p > code {
 }
 
 .home-section__sections {
-    background-color: var(--bg-color-light);
+    background-color: $bg-color-light;
     column-gap: 0;
-    border-top: 5px solid var(--link-color-dark);
-    border-bottom: 5px solid var(--link-color-dark);
+    border-top: 5px solid $link-color-dark;
+    border-bottom: 5px solid $link-color-dark;
     display: flex;
     column-gap: 30px;
     row-gap: 30px;
@@ -462,12 +417,12 @@ p > code {
 }
 
 .home-section__posts {
-    background-color: var(--bg-color-dark);
+    background-color: $bg-color-dark;
     padding: 30px 0;
 }
 
 .home-section__projects {
-    background-color: var(--bg-color-light);
+    background-color: $bg-color-light;
     flex-direction: row-reverse;
     padding: 60px 0 20px 0;
 }
@@ -478,18 +433,18 @@ p > code {
 }
 
 .home-section__info p a {
-    font-family: var(--base-font-med);
+    font-family: $base-font-med;
     font-size: 1rem;
     text-transform: uppercase;
-    color: var(--link-color-dark);
+    color: $link-color-dark;
 }
 
 .home-section__posts p a {
-    color: var(--link-color-light);
+    color: $link-color-light;
 }
 
 .home-section__sections .home-section__info {
-    box-shadow: 0 5px 25px -18px var(--bg-color-dark);
+    box-shadow: 0 5px 25px -18px $bg-color-dark;
     background-color: white;
 }
 
@@ -497,13 +452,13 @@ p > code {
 /* List pages */
 
 .banner {
-    background: var(--bg-color-dark);
-    background: var(--bg-color-grad);
+    background: $bg-color-dark;
+    background: $bg-color-grad;
     padding: 10px;
 }
 
 .banner__header {
-    color: var(--txt-color-light-2);
+    color: $txt-color-light-2;
     text-align: center;
     font-size: 1.6rem;
     line-height: 2.3rem;
@@ -511,16 +466,16 @@ p > code {
 
 .list__wrapper {
     display: flex;
-    background-color: var(--bg-color-light);
+    background-color: $bg-color-light;
     min-height: 80vh;
 }
 
 .list__description {
-    color: var(--txt-color-dark-3);
+    color: $txt-color-dark-3;
     font-size: 1.1em;
     line-height: 1.6em;
     margin-top: 50px;
-    background-color: var(--bg-color-light-2);
+    background-color: $bg-color-light-2;
     padding: 30px;
 }
 
@@ -547,7 +502,7 @@ p > code {
 }
 
 .single__post-description {
-    color: var(--txt-color-light-3);
+    color: $txt-color-light-3;
     margin-top: 30px;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -560,7 +515,7 @@ p > code {
     column-gap: 30px;
     row-gap: 20px;
     margin-top: 20px;
-    color: var(--txt-color-light-4);
+    color: $txt-color-light-4;
     text-align: left;
 }
 
@@ -569,7 +524,7 @@ p > code {
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 6px;
-    font-family: var(--base-font-reg), Helvetica, sans-serif;
+    font-family: $base-font-reg, Helvetica, sans-serif;
     font-size: 0.9rem;
 }
 
@@ -585,19 +540,19 @@ p > code {
 }
 
 .single__banner-categories li a {
-    color: var(--alt-color-dark);
+    color: $alt-color-dark;
 }
 
 .single__banner-categories li a:hover {
-    color: var(--alt-color-light);
+    color: $alt-color-light;
 }
 
 .single__banner-categories li {
-    color: var(--alt-color-dark);
+    color: $alt-color-dark;
 }
 
 .single__banner-categories li:hover {
-    color: var(--alt-color-light);
+    color: $alt-color-light;
 }
 
 .single__banner-tags--bottom {
@@ -620,14 +575,14 @@ p > code {
     background-color: transparent;
     padding: 5px 10px;
     border-radius: 10px;
-    border: 2px solid var(--alt-color-dark);
-    color: var(--alt-color-dark);
+    border: 2px solid $alt-color-dark;
+    color: $alt-color-dark;
     font-size: 0.8rem;
 }
 
 .single__banner-tags ul li a:hover {
-    border-color: var(--alt-color-light);
-    color: var(--alt-color-light);
+    border-color: $alt-color-light;
+    color: $alt-color-light;
 }
 
 .single__post-image {
@@ -635,8 +590,8 @@ p > code {
 }
 
 .single__post-content {
-    color: var(--txt-color-dark-2);
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    color: $txt-color-dark-2;
+    font-family: $base-font-light, Helvetica, sans-serif;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
@@ -658,15 +613,15 @@ p > code {
 .single__next-previous a {
     max-width: 230px;
     background-color: white;
-    border: 1px solid var(--border-color-very-light);
-    box-shadow: 0 5px 25px -20px var(--bg-color-dark);
+    border: 1px solid $border-color-very-light;
+    box-shadow: 0 5px 25px -20px $bg-color-dark;
     padding: 10px;
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-family: $base-font-light, Helvetica, sans-serif;
     line-height: 1.4rem;
 }
 
 .single__next-previous a:hover {
-    background-color: var(--bg-color-light);
+    background-color: $bg-color-light;
 }
 
 .next-previous__header {
@@ -679,9 +634,9 @@ p > code {
 
 .series__list {
     line-height: 2rem;
-    color: var(--txt-color-dark-2);
+    color: $txt-color-dark-2;
     margin-bottom: 30px;
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-family: $base-font-light, Helvetica, sans-serif;
 }
 
 .series__list li {
@@ -690,14 +645,14 @@ p > code {
 }
 
 .series__this-post {
-    color: var(--alt-color-dark);
+    color: $alt-color-dark;
     /* background-color: white; */
     padding: 5px 5px;
     margin-left: 5px;
     font-size: 0.8em;
     border-radius: 5px;
-    border: 1px solid var(--alt-color-dark);
-    font-family: var(--base-font-med), Helvetica, sans-serif;
+    border: 1px solid $alt-color-dark;
+    font-family: $base-font-med, Helvetica, sans-serif;
 }
 
 
@@ -715,8 +670,8 @@ p > code {
     display: none;
     font-size: 1rem;
     line-height: 1.6rem;
-    color: var(--txt-color-dark-2);    
-    font-family: var(--base-font-light);
+    color: $txt-color-dark-2;    
+    font-family: $base-font-light;
 }
 
 .toc__contents--active {
@@ -727,7 +682,7 @@ p > code {
     display: inline-flex;
     align-items: center;
     column-gap: 10px;
-    background-color: var(--bg-color-light-2);
+    background-color: $bg-color-light-2;
     padding: 0 20px;    
 }
 
@@ -752,14 +707,14 @@ p > code {
 .terms__wrapper {
     max-width: 768px;
     margin: 0 auto;
-    background-color: var(--bg-color-light-2);
+    background-color: $bg-color-light-2;
     padding: 30px;
     text-align: center;
 }
 
 .terms__none {
-    color: var(--txt-color-dark-3);
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    color: $txt-color-dark-3;
+    font-family: $base-font-light, Helvetica, sans-serif;
 }
 
 .terms__term {
@@ -770,15 +725,15 @@ p > code {
 }
 
 .terms__term a {
-    color: var(--alt-color-dark);
+    color: $alt-color-dark;
 }
 
 .terms__term a:hover {
-    color: var(--alt-color-light);
+    color: $alt-color-light;
 }
 
 .terms__term sup {
-    color: var(--txt-color-dark-3);
+    color: $txt-color-dark-3;
 }
 
 
@@ -800,24 +755,24 @@ p > code {
 .post:not(:last-child):after {
     content:' ';
     display: block;
-    border: 1px solid var(--border-color-dark);
+    border: 1px solid $border-color-dark;
     width: 100%;
     margin-top: 30px;
 }
 
 .post--light:not(:last-child):after {
-    border: 1px solid var(--bg-color-light-2);
+    border: 1px solid $bg-color-light-2;
 }
 
 .post__date {
     margin: 0;
     margin-bottom: 5px;
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
     font-size: 0.9rem;
 }
 
 .post__date--dark {
-    color: var(--txt-color-dark-3);
+    color: $txt-color-dark-3;
     opacity: 0.8;
 }
 
@@ -825,28 +780,28 @@ p > code {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.4rem;
-    font-family: var(--serif-font-light), Georgia, serif;
+    font-family: $serif-font-light, Georgia, serif;
     line-height: 2rem;
 }
 
 .post__title a {
     text-decoration: none;
-    transition: var(--trans-ease-short);
+    transition: $trans-ease-short;
 }
 
 .post__title a:hover {
     text-decoration: none;
-    color: var(--txt-color-dark-3);
+    color: $txt-color-dark-3;
 }
 
 .post__title--light a {
     text-decoration: none;
-    color: var(--txt-color-light-2);
+    color: $txt-color-light-2;
 }
 
 .post__title--light a:hover {
     text-decoration: none;
-    color: var(--txt-color-light-4);
+    color: $txt-color-light-4;
 }
 
 .post__description {
@@ -879,9 +834,9 @@ p > code {
 }
 
 .project {
-    box-shadow: 0 5px 25px -18px var(--bg-color-dark);
+    box-shadow: 0 5px 25px -18px $bg-color-dark;
     padding: 30px;
-    background-color: var(--bg-color-light);
+    background-color: $bg-color-light;
     background-color: white;
     flex-basis: 500px;
 }
@@ -894,7 +849,7 @@ p > code {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.2rem;
-    font-family: var(--serif-font-light), Georgia, serif;
+    font-family: $serif-font-light, Georgia, serif;
     line-height: 2rem;
 }
 
@@ -935,27 +890,27 @@ p > code {
 .project__type {
     float: right;
     margin-left: 20px;
-    color: var(--txt-color-dark-3);
+    color: $txt-color-dark-3;
     opacity: 0.6;
-    font-family: var(--base-font-med), Helvetica, sans-serif;
+    font-family: $base-font-med, Helvetica, sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
 }
 
 .project__type > a {
-    color: var(--txt-color-dark-3);
+    color: $txt-color-dark-3;
 }
 
 .project__type > a:hover {
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
 }
 
 .project__type--light a {
-    color: var(--txt-color-light-3);
+    color: $txt-color-light-3;
 }
 
 .project__type--light > a:hover {
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
 }
 
 
@@ -965,13 +920,13 @@ p > code {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px 80px 20px;
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-family: $base-font-light, Helvetica, sans-serif;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
 
 .generic-single__content {
-    color: var(--txt-color-dark-2);
+    color: $txt-color-dark-2;
 }
 
 
@@ -979,9 +934,9 @@ p > code {
 
 .newsletter {
     padding: 60px 30px;
-    background: var(--bg-color-dark);
-    background: var(--bg-color-grad);
-    border-top: 5px solid var(--alt-color-dark);
+    background: $bg-color-dark;
+    background: $bg-color-grad;
+    border-top: 5px solid $alt-color-dark;
 }
 
 .newsletter__contents {
@@ -992,13 +947,13 @@ p > code {
 .newsletter__header {
     margin-top: 0;
     margin-bottom: 0;
-    color: var(--txt-color-light-3);
+    color: $txt-color-light-3;
     font-size: 1.5rem;
     line-height: 2.1rem;
 }
 
 .newsletter__description {
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
     font-size: 1rem;
     line-height: 1.5rem;
 }
@@ -1012,10 +967,10 @@ p > code {
     margin-right: 10px;    
     min-width: 170px;
     min-height: 25px;
-    border: 1px solid var(--border-color-light);
+    border: 1px solid $border-color-light;
     font-size: 1rem;
-    color: var(--txt-color-dark-2);
-    font-family: var(--base-font-reg), Helvetica, sans-serif;
+    color: $txt-color-dark-2;
+    font-family: $base-font-reg, Helvetica, sans-serif;
 }
 
 #newsletter__form--submit {
@@ -1026,7 +981,7 @@ p > code {
     max-width: 500px;
     margin: 0 auto;
     padding: 40px 20px 80px 20px;
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-family: $base-font-light, Helvetica, sans-serif;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
@@ -1046,10 +1001,10 @@ p > code {
     margin-top: 10px;   
     min-width: 200px;
     min-height: 30px;
-    border: 1px solid var(--border-color-light);
+    border: 1px solid $border-color-light;
     font-size: 1rem;
-    color: var(--txt-color-dark-2);
-    font-family: var(--base-font-reg), Helvetica, sans-serif;
+    color: $txt-color-dark-2;
+    font-family: $base-font-reg, Helvetica, sans-serif;
 }
 
 .contact__form--textarea {
@@ -1058,10 +1013,10 @@ p > code {
     margin-top: 10px;   
     min-width: 200px;
     min-height: 80px;
-    border: 1px solid var(--border-color-light);
+    border: 1px solid $border-color-light;
     font-size: 1rem;
-    color: var(--txt-color-dark-2);
-    font-family: var(--base-font-reg), Helvetica, sans-serif;
+    color: $txt-color-dark-2;
+    font-family: $base-font-reg, Helvetica, sans-serif;
 }
 
 
@@ -1080,8 +1035,8 @@ p > code {
 
 .about__content {
     padding: 50px 20px;
-    color: var(--txt-color-dark-2);
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    color: $txt-color-dark-2;
+    font-family: $base-font-light, Helvetica, sans-serif;
     font-size: 1.1rem;
     line-height: 1.9rem;
 }
@@ -1105,7 +1060,7 @@ p > code {
 .related__posts {
     font-size: 1.1rem;
     line-height: 1.5rem;
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-family: $base-font-light, Helvetica, sans-serif;
 }
 
 
@@ -1119,7 +1074,7 @@ p > code {
     margin: 60px 0;
     padding: 0;
     font-size: 1.2em;
-    font-family: var(--base-font-light), Helvetica, sans-serif;
+    font-family: $base-font-light, Helvetica, sans-serif;
 }
 
 .page-item {
@@ -1127,22 +1082,22 @@ p > code {
 }
 
 .page-link {
-    color: var(--txt-color-dark-3);
+    color: $txt-color-dark-3;
     padding: 10px;
-    background-color: var(--bg-color-light-2);
+    background-color: $bg-color-light-2;
 }
 
 .page-item.disabled > a {
-    color: var(--txt-color-light-5);
+    color: $txt-color-light-5;
     cursor:unset;
 }
 
 .page-item.active > a {
-    color: var(--link-color-light);
+    color: $link-color-light;
 }
 
 .page-link:hover {
-    color: var(--link-color-light);
+    color: $link-color-light;
 }
 
 
@@ -1247,8 +1202,8 @@ p > code {
     width: fit-content;
     margin: 50px auto;
     padding: 50px;
-    background-color: var(--bg-color-light);
-    border: 1px solid var(--border-color-light);
+    background-color: $bg-color-light;
+    border: 1px solid $border-color-light;
     border-radius: 5px;
 }
 

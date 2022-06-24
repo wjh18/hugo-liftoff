@@ -1,3 +1,43 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
+
+/* Background colors */
+$bg-color-dark: #151515;
+$bg-color-light: #f7f7f7;
+$bg-color-light-2: #e3e3e3;
+$bg-color-blue: #18191c;
+$bg-color-grad: linear-gradient(180deg, $bg-color-dark 25%, $bg-color-blue 100%);
+
+/* Links and alt colors */
+$link-color-light: #bd7221;
+$link-color-dark: #9a5c1a;
+$alt-color-light: #32d1dc;
+$alt-color-dark: #24959d;
+
+/* Contrasting text colors */
+$txt-color-dark-1: black;
+$txt-color-dark-2: #353535;
+$txt-color-dark-3: #555555;
+$txt-color-light-1: white;
+$txt-color-light-2: #eeeeee;
+$txt-color-light-3: #e3e3e3;
+$txt-color-light-4: #cfcfcf;
+$txt-color-light-5: #a4a4a4;
+
+/* Border colors and trasitions */
+$border-color-very-light: #c4c4c4;
+$border-color-light: #a9a9a9;
+$border-color-med: #808080;
+$border-color-dark: #333333;
+$trans-ease-short: all 0.2s ease-in-out;
+$trans-ease-med: all 0.6s ease-in-out;
+
+/* Font families */
+$base-font-light: 'Ubuntu Light';
+$base-font-reg: 'Ubuntu Regular';
+$base-font-med: 'Ubuntu Medium';
+$base-font-bold: 'Ubuntu Bold';
+$serif-font-light: 'Merriweather Light';
+$serif-font-reg: 'Merriweather Regular';
+$serif-font-bold: 'Merriweather Bold';

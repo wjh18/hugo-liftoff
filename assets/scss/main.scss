@@ -1,14 +1,10 @@
 @charset "UTF-8";
 
+// 1. Configuration and helpers
 @import
-  'styles',
-  'queries';
-
-// // 1. Configuration and helpers
-// @import
-//   'abstracts/variables',
-//   'abstracts/functions',
-//   'abstracts/mixins';
+  'abstracts/variables';
+  // 'abstracts/functions',
+  // 'abstracts/mixins';
 
 // 2. Vendors
 @import
@@ -34,6 +30,6 @@
 // @import
 //   'pages/home';
 
-// // 7. Themes
-// @import
-//   'themes/default';
+@import
+  'styles',
+  'queries';
