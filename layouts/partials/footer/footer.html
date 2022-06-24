@@ -9,9 +9,9 @@
       </div>
     {{ end }}
     <p class="footer__copyright">
-      &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      &copy; {{ now.Format "2006" }} &middot; <a class="footer__site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       {{ with .Site.Params.footer_text | markdownify }}
-        &middot; {{ . }}
+        <span class="footer__extra">&middot; {{ . }}</span>
       {{ end }}
     </p>
   </div>

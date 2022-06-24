@@ -1,3 +1,33 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+.footer {
+  background-color: $bg-color-dark;
+
+  &__details {
+    padding: 10px 20px;
+  }
+
+  &__social-links {
+    text-align: center;
+    padding: 30px 20px 10px 20px;
+  }
+
+  &__copyright {
+    text-align: center;
+    color: $txt-color-light-5;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  &__site-title, &__extra a {
+    color: $link-color-light;
+    text-decoration: none;
+    font-family: $serif-font-light;
+  
+    &:hover {
+      color: $link-color-dark;
+    }
+  }
+}

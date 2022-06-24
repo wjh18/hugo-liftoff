@@ -100,39 +100,6 @@
 }
 
 
-/* --- Footer --- */
-
-.footer {
-    background-color: $bg-color-dark;        
-}
-
-.footer__details {
-    padding: 10px 20px;
-}
-
-.footer__social-links {
-    text-align: center;
-    padding: 30px 20px 10px 20px;
-}
-
-.footer__copyright {
-    text-align: center;
-    color: $txt-color-light-5;
-    font-size: 1rem;
-    line-height: 1.5rem;
-}
-
-.footer__copyright a {    
-    color: $link-color-light;
-    text-decoration: none;
-    font-family: $serif-font-light;
-}
-
-.footer__copyright a:hover {
-    color: $link-color-light;
-}
-
-
 /* --- Home page --- */
 
 .home-hero {
