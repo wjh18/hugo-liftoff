@@ -1,0 +1,35 @@
+.terms {
+  padding: 50px 20px;
+
+  &__wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: $bg-color-light-2;
+    padding: 30px;
+    text-align: center;
+  }
+
+  &__none {
+    color: $txt-color-dark-3;
+    font-family: $base-font-light;
+  }
+
+  &__term {
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 1.7em;
+    margin: 0 5px;    
+
+    a {
+      color: $alt-color-dark;
+    }
+
+    a:hover {
+      color: $alt-color-light;
+    }
+
+    sup {
+      color: $txt-color-dark-3;
+    }
+  }
+}

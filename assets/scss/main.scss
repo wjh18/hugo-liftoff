@@ -3,7 +3,7 @@
 // 1. Configuration and helpers
 @import
   'abstracts/variables',
-  // 'abstracts/functions',
+  'abstracts/functions',
   'abstracts/mixins';
 
 // 2. Vendors
@@ -13,14 +13,15 @@
 // 3. Base stuff
 @import
   'base/base',
-  'base/fonts';
-  // 'base/typography',
-  // 'base/helpers';
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
 
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer';
+  'layout/footer',
+  'layout/forms';
 
 // 5. Components
 @import
@@ -30,13 +31,21 @@
   'components/toc',
   'components/related',
   'components/pagination',
-  'components/socials';
+  'components/socials',
+  'components/code-highlight',
+  'components/comments',
+  'components/newsletter',
+  'components/top-banner';
 
 // 6. Page-specific styles
 @import
   'pages/home',
-  'pages/errors';
-
-@import
-  'styles',
-  'queries';
+  'pages/errors',
+  'pages/about',
+  'pages/generic-single',
+  'pages/contact',
+  'pages/lists',
+  'pages/singles',
+  'pages/terms',
+  'pages/posts',
+  'pages/projects';

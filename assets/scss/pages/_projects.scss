@@ -1,0 +1,110 @@
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px 50px;
+  padding: 30px 15px 100px 15px;
+
+  @include respond-to('small') {
+    padding: 30px 30px 100px 30px;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 50px 100px 50px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.project {
+  box-shadow: 0 5px 25px -18px $bg-color-dark;
+  padding: 30px;
+  background-color: $bg-color-light;
+  background-color: white;
+  flex-basis: 500px;
+
+  @include respond-to('small') {
+    min-width: 300px;
+    padding: 30px;
+  }
+
+  @include respond-to('medium') {
+    padding: 50px;
+  }
+
+  &--home {
+    margin: 30px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-family: $serif-font-light;
+    line-height: 2rem;
+
+    @include respond-to('small') {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__description {
+    margin: 15px 0 0 0;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+
+    @include respond-to('small') {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    column-gap: 15px;
+    margin-top: 20px;
+
+    @include respond-to('small') {
+      margin-top: 30px;
+    }
+
+    &--single {
+      margin-top: 0;
+    }
+  }
+
+  &__image img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  &__type {
+    float: right;
+    margin-left: 20px;
+    color: $txt-color-dark-3;
+    opacity: 0.6;
+    font-family: $base-font-med;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__type > a {
+    color: $txt-color-dark-3;
+
+    &:hover {
+      color: $txt-color-light-5;
+    }
+
+    &--light a {
+      color: $txt-color-light-3;
+    }
+
+    &--light > a:hover {
+      color: $txt-color-light-5;
+    }
+  }
+}

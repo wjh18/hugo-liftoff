@@ -1,0 +1,35 @@
+.newsletter {
+  padding: 60px 30px;
+  background: $bg-color-dark;
+  background: $bg-color-grad;
+  border-top: 5px solid $alt-color-dark;
+
+  &__contents {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $txt-color-light-3;
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+
+    @include respond-to('small') {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+    }
+  }
+
+  &__description {
+    color: $txt-color-light-5;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    @include respond-to('small') {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
+  }
+}
