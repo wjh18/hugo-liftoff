@@ -1,0 +1,20 @@
+.error-404 {
+
+    &__wrapper {
+        margin-top: 30px;    
+        width: fit-content;
+        margin: 50px auto;
+        padding: 50px;
+        background-color: $txt-color-light-1;
+        border: 1px solid $border-color-light;
+        border-radius: 5px;
+
+        h1 {
+            margin: 0;
+        }
+
+        a {
+            font-family: $base-font-reg;        
+        }
+    }
+}

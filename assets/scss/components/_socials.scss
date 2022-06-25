@@ -1,0 +1,160 @@
+.single__social-links .social-links {
+  margin: 50px 0;
+}
+
+.social-links {
+    
+  &__header {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    column-gap: 5px;
+    flex-wrap: wrap;
+  }
+
+  ul li p {
+    display: none;
+  }
+
+  .social-btn {
+    padding: 10px;
+    width: 50px;
+    height: auto;
+  }
+
+  &__icons {
+    cursor: default;
+	  list-style: none;
+	  padding-left: 0;
+  }
+}
+
+// .social-links__header {
+//     font-size: 1.5rem;
+// }
+ 
+// .social-links ul {
+// 	display: flex;
+//     column-gap: 5px;
+//     flex-wrap: wrap;
+// }
+ 
+// .social-links ul li p {
+// 	display: none;
+// }
+ 
+// .social-links .social-btn {
+// 	padding: 10px;
+// 	width: 50px;
+//     height: auto;
+// }
+
+// .social-links__icons {
+// 	cursor: default;
+// 	list-style: none;
+// 	padding-left: 0;
+// }
+ 
+.social-btn {
+	display: inline-block;
+	border: none;
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+	text-align: center;
+  margin-top: 5px;
+
+  &.twitter          { background: #55acee; }
+  &.facebook         { background: #3B5998; }
+  &.linkedin         { background: #4875B4; }
+  &.reddit           { background: #ff5700; }
+  &.email            { background: #444444; }
+  &.github           { background: #f5f5f5; }
+  &.stack-overflow   { background: #bcbbbb; }
+
+  &.twitter:hover           { background: #4c9ad6; }
+  &.facebook:hover          { background: #2f4779; }
+  &.linkedin:hover          { background: #4069a2; }
+  &.reddit:hover            { background: #e54e00; }
+  &.email:hover             { background: #363636; }
+  &.github:hover            { background: #cfcfcf; }
+  &.stack-overflow:hover    { background: #f48024; }
+}
+ 
+// .social-btn.twitter     { background: #55acee; }
+// .social-btn.facebook    { background: #3B5998; }
+// .social-btn.linkedin    { background: #4875B4; }
+// .social-btn.reddit      { background: #ff5700; }
+// .social-btn.email       { background: #444444; }
+// .social-btn.github      { background: #f5f5f5; }
+// .social-btn.stack-overflow      { background: #bcbbbb; }
+
+// .social-btn.twitter:hover     { background: #4c9ad6; }
+// .social-btn.facebook:hover    { background: #2f4779; }
+// .social-btn.linkedin:hover    { background: #4069a2; }
+// .social-btn.reddit:hover      { background: #e54e00; }
+// .social-btn.email:hover       { background: #363636; }
+// .social-btn.github:hover      { background: #cfcfcf; }
+// .social-btn.stack-overflow:hover      { background: #f48024; }
+
+/* Make svg fill white for contrast */
+.icon { filter: invert(100%) sepia(0%) saturate(455%) hue-rotate(92deg) brightness(117%) contrast(94%); }
+
+
+/* Non-share icons only styles */
+
+.social-links {
+
+  &--no-share {
+    display: inline-block;
+    padding: 0;
+
+    .social-links__icons {
+      margin: 0;
+    }
+
+    .social-btn {
+      padding: 10px;
+      border-radius: 30px;
+      width: 30px;
+      box-shadow: none;
+      background: none;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    .icon {
+      filter: invert(34%) sepia(94%) saturate(427%) hue-rotate(350deg) brightness(93%) contrast(91%);
+
+      &:hover {
+        filter: invert(48%) sepia(80%) saturate(459%) hue-rotate(351deg) brightness(86%) contrast(93%);
+      }
+    }
+  }
+}
+
+// .social-links--no-share {
+//     display: inline-block;
+//     padding: 0;
+// }
+// .social-links--no-share .social-links__icons {
+//     margin: 0;
+// }
+// .social-links--no-share .social-btn {
+// 	padding: 10px;
+//     border-radius: 30px;
+// 	width: 30px;
+// 	box-shadow: none;
+//     background: none;
+// }
+// .social-links--no-share .social-btn:hover {
+//     background: none;
+// }
+// .social-links--no-share .icon {
+//     filter: invert(34%) sepia(94%) saturate(427%) hue-rotate(350deg) brightness(93%) contrast(91%);
+// }
+// .social-links--no-share .icon:hover {
+//     filter: invert(48%) sepia(80%) saturate(459%) hue-rotate(351deg) brightness(86%) contrast(93%);
+// }

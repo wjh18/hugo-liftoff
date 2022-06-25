@@ -1,0 +1,31 @@
+.toc {    
+  margin-bottom: 30px;
+
+  &__header {
+    font-size: 1rem;
+  }
+
+  &__contents {
+    display: none;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: $txt-color-dark-2;    
+    font-family: $base-font-light;
+
+    &--active {      
+      display: block;      
+    }
+  }
+}
+
+#js-toc__toggle {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+  background-color: $bg-color-light-2;
+  padding: 0 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,32 @@
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 10px;
+  margin: 60px 0;
+  padding: 0;
+  font-size: 1.2em;
+  font-family: $base-font-light;
+}
+
+.page-link {
+  color: $txt-color-dark-3;
+  padding: 10px;
+  background-color: $bg-color-light-2;
+
+  &:hover {
+    color: $link-color-light;
+  }
+}
+
+.page-item {
+  
+  &.disabled > a {
+    color: $txt-color-light-5;
+    cursor:unset;
+  }
+
+  &.active > a {
+    color: $link-color-light;
+  }
+}
