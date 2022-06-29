@@ -78,18 +78,17 @@
   &__subtitle {
     color: $txt-color-light-4;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
     margin-top: 0;
     margin-bottom: 30px;
 
     @include respond-to('small') {
       font-size: 1.1rem;
-      line-height: 1.5rem;
     }
 
     @include respond-to('large') {
       font-size: 1.3rem;
-      line-height: 1.7rem;
+      line-height: 1.9rem;
     }
   }
 
