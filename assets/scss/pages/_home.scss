@@ -32,9 +32,9 @@
 .triangle-divider {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0%);
-  border-left: 80px solid transparent;
-  border-right: 80px solid transparent;
+  transform: translate(-50%, -10%);  
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
   border-top: 50px solid $bg-color-dark;
 }
 
@@ -169,7 +169,9 @@
 
   &__posts {
     background-color: $bg-color-dark;
-    padding: 30px 0;
+    padding: 35px 0;
+    border-bottom: 5px solid $alt-color-dark;
+    box-sizing: border-box;
 
     p a {
       color: $link-color-light;
@@ -179,6 +181,6 @@
   &__projects {
     background-color: $bg-color-light;
     flex-direction: row-reverse;
-    padding: 60px 0 20px 0;
+    padding: 60px 0 30px 0;
   }
 }
