@@ -5,7 +5,7 @@
   border-top: 5px solid $alt-color-dark;
 
   &__contents {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
   }
 
@@ -14,11 +14,11 @@
     margin-bottom: 0;
     color: $txt-color-light-3;
     font-size: 1.5rem;
-    line-height: 2.1rem;
+    line-height: 2.3rem;
 
     @include respond-to('small') {
       font-size: 1.8rem;
-      line-height: 2.4rem;
+      line-height: 2.6rem;
     }
   }
 
