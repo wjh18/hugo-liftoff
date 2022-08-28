@@ -48,7 +48,7 @@
   }
 
   @include respond-to('medium') {
-    padding: 80px 30px;
+    padding: 100px 30px;
   }
 
   &__wrapper {
@@ -133,6 +133,7 @@
   flex-wrap: wrap;
   padding: 50px 0;
   column-gap: 5%;
+  row-gap: 40px;
 
   &__sections {
     background-color: $bg-color-light;
@@ -145,7 +146,7 @@
     padding: 50px 20px;
 
     @include respond-to('large') {
-      padding: 80px 20px;
+      padding: 100px 20px;
     }
   }
 
@@ -168,9 +169,13 @@
 
   &__posts {
     background-color: $bg-color-dark;
-    padding: 35px 0;
+    padding: 40px 0;
     border-bottom: 5px solid $alt-color-dark;
     box-sizing: border-box;
+
+    @include respond-to('large') {
+      padding: 60px 0;
+    }
 
     p a {
       color: $link-color-light;
