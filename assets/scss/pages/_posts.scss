@@ -1,5 +1,5 @@
 .posts {
-  width: 600px;
+  max-width: 700px;
   padding: 0 30px 30px 30px;
 
   &--center {
@@ -39,7 +39,7 @@
     margin-bottom: 10px;
     font-size: 1.4rem;
     font-family: $serif-font-light;
-    line-height: 2rem;
+    line-height: 2.2rem;
 
     a {
       text-decoration: none;
