@@ -138,8 +138,8 @@
   &__sections {
     background-color: $bg-color-light;
     column-gap: 0;
-    border-top: 5px solid $link-color-dark;
-    border-bottom: 5px solid $link-color-dark;
+    // border-top: 5px solid $link-color-dark;
+    border-bottom: 5px solid $alt-color-dark;
     display: flex;
     column-gap: 30px;
     row-gap: 30px;
