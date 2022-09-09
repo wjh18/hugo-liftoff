@@ -58,37 +58,41 @@
 
   &__title {
     color: $txt-color-light-2;
-    line-height: 1.3em;
+    line-height: 2.6rem;
     margin: 0 0 15px 0;
     font-size: 1.7rem;
 
     @include respond-to('small') {
       font-size: 1.9rem;
+      line-height: 2.8rem;
     }
 
     @include respond-to('medium') {
       font-size: 2.1rem;
+      line-height: 3rem;
     }
 
     @include respond-to('large') {
       font-size: 2.3rem;
+      line-height: 3.2rem;
     }
   }
 
   &__subtitle {
     color: $txt-color-light-4;
     font-size: 1rem;
-    line-height: 1.7rem;
+    line-height: 1.6rem;
     margin-top: 0;
     margin-bottom: 30px;
 
     @include respond-to('small') {
       font-size: 1.1rem;
+      line-height: 1.8rem;
     }
 
     @include respond-to('large') {
       font-size: 1.3rem;
-      line-height: 1.9rem;
+      line-height: 2rem;
     }
   }
 
