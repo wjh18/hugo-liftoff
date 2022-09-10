@@ -130,7 +130,15 @@
   }
 
   &__post-image {
-    margin: 20px 0;
+    margin: 5px 0;
+
+    @include respond-to('small') {
+      margin: 10px 0;
+    }
+
+    @include respond-to('medium') {
+      margin: 20px 0;
+    }
   }
 
   &__post-content {
@@ -138,6 +146,16 @@
     font-family: $base-font-light;
     font-size: 1.1rem;
     line-height: 1.9rem;
+
+    p > img, figure > img {      
+      max-width: 100%;
+      height: auto;
+    }
+
+    figure {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   &__next-previous-container {
