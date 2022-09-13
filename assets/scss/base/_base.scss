@@ -120,8 +120,9 @@ code {
   overflow-x: scroll;
 }
 
-p > code {
+p > code, li > code {
   background-color: $bg-color-light-2;
   padding: 2px 5px;
   border-radius: 5px;
 }
+ 
