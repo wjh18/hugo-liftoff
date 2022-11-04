@@ -25,7 +25,7 @@ enable_postcss = false # Enable if you're using npm and want to utilize PostCSS 
 
 ### Web schemas
 # Open Graph
-images = ['images/rocket.png'] # Fallback for Open Graph and Twitter Cards images if none are present in front matter. Enter path to the image.
+images = ['images/default.png'] # Fallback for Open Graph and Twitter Cards images if none are present in front matter. Enter path to the image.
 ogLocale = "en_US" # Open graph locale
 
 # Twitter Cards
@@ -35,7 +35,7 @@ twitterCreator = "" # Enter your twitter handle without the @
 # JSON-LD structured data schemas
 schemaName = "" # Enter your name
 schemaLocale = "en-US" # Structured data locale
-schemaImage = "images/rocket.png" # Image for Person structured data schema. Enter path to the image.
+schemaImage = "images/default.png" # Image for Person structured data schema. Enter path to the image.
 schemaImageWidth = 453 # Width of the above image
 schemaImageHeight = 455 # Height of the above image
 

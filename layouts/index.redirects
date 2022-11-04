@@ -4,3 +4,4 @@
 {{ . }} {{ $p.RelPermalink -}}
 {{- end }}
 {{- end -}}
+# Add custom redirects here
