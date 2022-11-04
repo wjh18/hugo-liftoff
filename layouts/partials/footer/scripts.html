@@ -1,4 +1,4 @@
-{{ $script := resources.Get "js/app.js" }}
+{{ $script := resources.Get "js/app.js" | js.Build "main.js" }}
 {{ $custom := nil }}
 {{ with .Site.Params.custom_js }}
   {{ $custom = resources.Get . }}
