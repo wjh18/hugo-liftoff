@@ -1,12 +1,14 @@
 {{ define "main" }}
-<section class="banner">
-  <h1 class="banner__header">{{ .Title }}</h1>
-</section>
+<div class="container">
+  <section class="page-header--c">
+    <h1 class="page-header-title">{{ .Title }}</h1>
+  </section>
+</div>
 <div class="about">
-  <article class="about__content">
-    {{ if eq .Site.Params.about_page_socials true }}
-      <div class="about__social-links">{{ partial "general/social-links.html" . }}</div>
-    {{ end }}
+  {{ if eq .Site.Params.about_page_socials true }}
+    <div class="container--sm">{{ partial "general/social-links.html" . }}</div>
+  {{ end }}
+  <article class="single-container markdown">
     {{ .Content }}
   </article>
 </div>
