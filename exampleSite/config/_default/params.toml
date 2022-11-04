@@ -1,12 +1,12 @@
 ### SEO, Analytics & 3rd-party
 googleAnalyticsv4 = false # false for Universal Analytics, true for GA v4
-netlify_cms = false # true adds Netlify Identity JS to head for NetlifyCMS auth using git-gateway
 netlify_forms = true # add data-netlify attribute to contact and newsletter forms, false to disable Netlify forms
 # gtm_id = '' # GTM tracking (leave blank to use GA)
 # disallow_search_engines = false # Disallow search engine crawling in robots.txt
 
 ### Content
 favicon = true # Enable favicon, add your favicon files to /static/ directory
+# avatar = 'avatar.png' # Custom avatar image in /assets/
 author = 'John Doe' # Default author for <head> meta
 description = "Personal blog and portfolio site of John Joe." # Add a global meta description to <head>
 footer_text = "Built with [Hugo Liftoff](https://github.com/wjh18/hugo-liftoff) theme." # Customize footer text
@@ -22,10 +22,6 @@ global_newsletter = true # Enable newsletter site-wide
 enable_postcss = false # Enable if you're using npm and want to utilize PostCSS processing
 # custom_css = 'custom.css' # Add the specified file to assets before setting this param to avoid errors
 # custom_js = 'custom.js' # Add the specified file to assets before setting this param to avoid errors
-
-# Show a custom featured project on homepage instead of latest project
-# featured_project = 'this-is-my-project' # Enter the filename for .md file or directory name for page bundles
-# avatar = 'avatar.png' # Custom avatar image, add file to assets directory
 
 ### Web schemas
 # Open Graph
