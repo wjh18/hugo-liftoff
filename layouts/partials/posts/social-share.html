@@ -4,58 +4,41 @@
   {{ $url := printf "%s" .Permalink }}
   {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
 
-  <section class="social-links">
-    <h2 class="social-links__header">Share</h2>
-    <ul class="social-links__icons">
-      <!-- Twitter -->
-      {{ if .Site.Params.social.share.twitter }}
-      <li>
+  <section>
+    <h2>Share</h2>
+    <div class="social-links">
+      <ul class="social-icons--share">
+        <!-- Twitter -->
+        {{ if .Site.Params.social.share.twitter }}
         <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Twitter" class="social-btn twitter">
-          {{ partial "svg/twitter.svg" (dict "class" "widget-social__link-icon") }}
-          <p>Twitter</p>
-          </a>
-      </li>
-      {{ end }}
-
-      <!-- Reddit -->
-      {{ if .Site.Params.social.share.reddit }}
-      <li>
-        <a href="https://www.reddit.com/submit?url={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on Reddit" class="social-btn reddit">
-          {{ partial "svg/reddit.svg" (dict "class" "widget-social__link-icon") }}
-          <p>Reddit</p>
-          </a>
-      </li>
-      {{ end }}
-
-      <!-- Facebook -->
-      {{ if .Site.Params.social.share.facebook }}
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u={{ $url }}" target="_blank" rel="noopener" aria-label="Share on Facebook" class="social-btn facebook">
-          {{ partial "svg/facebook.svg" (dict "class" "widget-social__link-icon") }}
-          <p>Facebook</p>
-          </a>
-      </li>
-      {{ end }}
-
-      <!-- LinkedIn -->
-      {{ if .Site.Params.social.share.linkedin }}
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ $url }}&amp;title={{ $title }}&amp;summary={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="social-btn linkedin">
-          {{ partial "svg/linkedin.svg" (dict "class" "widget-social__link-icon") }}
-            <p>LinkedIn</p>
-          </a>
-      </li>
-      {{ end }}
-
-      <!-- Email -->
-      {{ if .Site.Params.social.share.email }}
-      <li>
-        <a href="mailto:?subject={{ .Site.Title }}%20-%20{{ $title }}.&amp;body={{ $body }}" target="_blank" class="social-btn email">
-          {{ partial "svg/email.svg" (dict "class" "widget-social__link-icon") }}
-          <p>Email</p>
+          <li>{{ partial "svg/twitter.svg" }}</li>
         </a>
-      </li>
-    </ul>
+        {{ end }}
+        <!-- Reddit -->
+        {{ if .Site.Params.social.share.reddit }}
+        <a href="https://www.reddit.com/submit?url={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on Reddit" class="social-btn reddit">
+          <li>{{ partial "svg/reddit.svg" }}</li>
+        </a>
+        {{ end }}
+        <!-- Facebook -->
+        {{ if .Site.Params.social.share.facebook }}        
+        <a href="https://www.facebook.com/sharer.php?u={{ $url }}" target="_blank" rel="noopener" aria-label="Share on Facebook" class="social-btn facebook">
+          <li>{{ partial "svg/facebook.svg" }}</li>
+        </a>
+        {{ end }}
+        <!-- LinkedIn -->
+        {{ if .Site.Params.social.share.linkedin }}
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ $url }}&amp;title={{ $title }}&amp;summary={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="social-btn linkedin">
+          <li>{{ partial "svg/linkedin.svg" }}</li>
+        </a>
+        {{ end }}
+        <!-- Email -->
+        {{ if .Site.Params.social.share.email }}
+        <a href="mailto:?subject={{ .Site.Title }}%20-%20{{ $title }}.&amp;body={{ $body }}" target="_blank" class="social-btn email">
+          <li>{{ partial "svg/email.svg" }}</li>
+        </a>
+      </ul>
+    </div>
   </section>
   {{ end }}
 {{- end }}

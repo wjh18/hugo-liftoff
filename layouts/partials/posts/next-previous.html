@@ -1,7 +1,7 @@
 {{ if or (.PrevInSection) (.NextInSection) }}
-  <section class="single__next-previous-container">
-    <h2 class="next-previous__header">Read Next</h2>
-    <div class="single__next-previous">
+  <section>
+    <h2>Read Next</h2>
+    <div>
       {{ with .PrevInSection }}
         <a class="previous" href="{{.Permalink}}">
           &laquo;
