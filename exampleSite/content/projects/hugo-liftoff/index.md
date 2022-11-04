@@ -15,7 +15,8 @@ publishDate:
 feature_image: hugo-liftoff.png
 feature_image_alt: Homepage hero section of Hugo Liftoff theme
 
-project types: 
+project types:
+    - Personal
 
 techstack:
     - Hugo
