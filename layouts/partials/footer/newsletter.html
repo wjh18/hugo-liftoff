@@ -1,23 +1,23 @@
 <!-- Reusable template for a newsletter opt-in -->
-<section class="newsletter">
-  <div class="newsletter__contents">
-    <h2 class="newsletter__header">
+<section class="section">
+  <div class="container--sm">
+    <h2 class="newsletter-header">
       {{ with .Site.Params.newsletter_header }}
         {{ . }}
       {{ else }}
         Subscribe for Post Updates
       {{ end }}
     </h2>
-    <p class="newsletter__description">
+    <p class="newsletter-desc">
       {{ with .Site.Params.newsletter_description }}
         {{ . }}
       {{ else }}
         Enter your email below to get notified of new posts.
       {{ end }}
     </p>
-    <form id="newsletter__form" name="newsletter" method="POST" {{ with .Site.Params.netlify_forms }}data-netlify="{{ . }}"{{ end }}>
-      <input type="email" id="newsletter__form--input" name="email" placeholder="Your best email..." title="Enter your best email">
-      <button type="submit" id="newsletter__form--submit" class="cta-btn">
+    <form id="newsletter-form" name="newsletter" method="POST" {{ with .Site.Params.netlify_forms }}data-netlify="{{ . }}"{{ end }}>
+      <input type="email" id="newsletter-form--input" name="email" placeholder="Your best email..." title="Enter your best email" required>
+      <button type="submit" id="newsletter-form--submit" class="btn-primary">
         {{ with .Site.Params.newsletter_submit }}
           {{ . }}
         {{ else }}
