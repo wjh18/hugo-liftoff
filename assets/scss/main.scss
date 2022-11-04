@@ -20,32 +20,28 @@
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer',
-  'layout/forms';
+  'layout/footer';
 
 // 5. Components
 @import
-  'components/clipboard',
-  'components/cta-btn',
-  'components/draft-label',
-  'components/toc',
-  'components/related',
-  'components/pagination',
+  'components/switch-theme',
   'components/socials',
-  'components/code-highlight',
-  'components/comments',
+  'components/buttons',
   'components/newsletter',
-  'components/top-banner';
+  'components/pagination',
+  'components/draft-label',
+  'components/clipboard',
+  'components/code-highlight',
+  'components/markdown',
+  'components/toc',
+  'components/page-header';
 
 // 6. Page-specific styles
 @import
   'pages/home',
-  'pages/errors',
-  'pages/about',
-  'pages/generic-single',
   'pages/contact',
-  'pages/lists',
-  'pages/singles',
+  'pages/single',
   'pages/terms',
-  'pages/posts',
-  'pages/projects';
+  'pages/errors',
+  'pages/post-list',
+  'pages/project-list';

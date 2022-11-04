@@ -2,8 +2,26 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
+/**
+ * Set up a decent box model on the root element
+ */
+ html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html, body {
-  font-family: $base-font-reg;
   height: 100%;
 }
 
@@ -12,7 +30,6 @@ body {
   to bottom of page if main content doesn't fill viewport vertically */
   display: flex;
   flex-direction: column;
-  background-color: $bg-color-light;
 }
 
 main {   
@@ -23,38 +40,14 @@ footer {
   flex-shrink: 0;    
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $serif-font-reg;
-}
-
-h1 {
-  font-size: 2.3rem;
-  line-height: 3.2rem;
-}
-
-h2 {
-  font-size: 1.7rem;
-  line-height: 2.2rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  line-height: 2rem;
-}
-
-p {
-  font-family: $base-font-light;
-  color: $txt-color-dark-2;
-  font-size: 1.1rem;
-  line-height: 1.7rem;
-}
-
 a {
+  color: var(--color-primary);
   text-decoration: none;
-}
 
-strong {
-  font-family: $base-font-med;
+  @include on-event {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
 }
 
 table {
@@ -64,14 +57,14 @@ table {
 }
 
 td, th {
-  border: 1px solid $border-color-light;
+  border: 1px solid var(--color-contrast-low);
   padding: 10px 20px;
   font-size: 0.9rem;
 }
 
 th {
-  background-color: $bg-color-dark;
-  color: $txt-color-light-2;
+  background-color: var(--color-contrast-low);
+  color: var(--color-contrast-high);
   font-size: 1rem;
 }
 
@@ -80,16 +73,18 @@ td {
 }
 
 tr:nth-child(even) td {
-  background-color: $bg-color-light;
+  background-color: var(--color-contrast-high);
+  color: var(--color-contrast-lower);
 }
 
 tr:nth-child(odd) td {
-  background-color: $bg-color-light-2;
+  background-color: var(--color-contrast-higher);
+  color: var(--color-contrast-low);
 }
 
 blockquote {
-  background: $bg-color-light;
-  border-left: 10px solid $border-color-light;
+  background: var(--color-contrast-lower);
+  border-left: 10px solid var(--color-contrast-low);
   margin: 1.5em 10px;
   padding: 0.7em 10px;
   quotes: "\201C" "\201D";
@@ -100,7 +95,7 @@ blockquote {
   }
 
   &::before {
-    color: $border-color-light;
+    color: var(--color-contrast-low);
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
@@ -120,8 +115,33 @@ code {
   overflow-x: scroll;
 }
 
-p > code {
-  background-color: $bg-color-light-2;
+p > code, li > code {
+  background-color: var(--color-contrast-lower);
+  font-size: 1rem;
+  color: var(--color-inline-code);
   padding: 2px 5px;
   border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+
+  input, textarea {
+    border: 1px solid var(--color-contrast-medium-low);
+    padding: 10px 12px;
+    font-size: 1rem;
+    background-color: var(--color-contrast-lower);
+    color: var(--color-contrast-high);
+
+    @include respond-to('small') {
+      padding: 15px 12px;
+      min-width: 250px;
+    }
+  }
+  
+  button {
+    cursor: pointer;
+  }
 }

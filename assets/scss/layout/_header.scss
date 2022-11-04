@@ -3,34 +3,16 @@
 // -----------------------------------------------------------------------------
 
 .main-nav {
-  background-color: $bg-color-dark;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 20px;
+  justify-content: space-between;
+  padding: 15px 0;
   row-gap: 20px;
-  border-bottom: 2px solid $border-color-dark;
 
-  &:hover {
-    border-color: $border-color-med;
-
-    .main-nav__logo {
-      color: $txt-color-light-4;
-    }
-  }
-
-  &__logo {
-    color: $txt-color-light-5;
-    font-family: $serif-font-bold;
-    font-size: 1.8rem;
-    text-decoration: none;
-    width: fit-content;
-  }
-
-  &__toggle {
+  .nav-toggle {
     position: absolute;
-    top: 22px;
-    right: 30px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
   }
 
@@ -39,9 +21,28 @@
     align-items: center;
     padding: 0;
 
-    &__toggle {
+    .nav-toggle {
       display: none; /* Hide nav toggle on desktop */
     }
+  }
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.menu-link {
+  color: var(--color-text);
+
+  &:hover {
+    color: var(--color-contrast-lower);
   }
 }
 
@@ -50,42 +51,51 @@
   flex-direction: column;
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid var(--color-contrast-low);
+  border-top: 1px solid var(--color-contrast-low);
 
   &--active {
     display: flex; /* Display mobile menu on click */
   }
 
-  &__item {
+  .menu-item {
     display: block;
     list-style-type: none;
   }
 
-  &__link {
+  .menu-item--align {
+    @extend .menu-item;
+    align-self: center;
+    margin-left: 20px;
+  }
+
+  .menu-link {
     display: flex;
-    color: $txt-color-light-5;
     font-size: 1rem;
+    font-weight: 500;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    padding: 2rem 1.6rem;
+    padding: 1.4rem 1rem;
 
     &:hover {
-      background-color: $link-color-dark;
-      color: $txt-color-light-1;
+      background-color: var(--color-primary);
+      color: var(--color-contrast-lower);
     }
   }
 
-  &__drop-icon {
+  .drop-icon {
     margin-left: 10px;
   }
 
   @include respond-to('m-large') {
     display: flex;
     flex-direction: row;
+    border: none;
 
-    &__item:hover {
+    .menu-item:hover {
       .sub-menu {        
-        background-color: $bg-color-light;
+        background-color: var(--color-contrast-lower);
         padding-left: 0;
         display: block;
         z-index: 1;        
@@ -96,28 +106,23 @@
 
 .sub-menu {
   display: none;
-  transition: $trans-ease-short;
 
   &--active {
     display: block;
     z-index: 1;
   }
 
+  .menu-link {
+    font-weight: initial;
+  }
+
   @include respond-to('m-large') {
     display: none;
     position: absolute;
-    box-shadow: rgba(66, 39, 9, 0.25) 0px 4px 8px -2px, rgba(66, 45, 9, 0.08) 0px 0px 0px 1px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 
     &--active {
       display: none;
-    }
-
-    .menu__link {
-      color: $txt-color-dark-2;
-
-      &:hover {
-        color: $txt-color-light-1;
-      }
     }
   }
 }

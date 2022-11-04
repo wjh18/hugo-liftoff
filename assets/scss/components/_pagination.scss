@@ -1,32 +1,37 @@
 .pagination {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  column-gap: 10px;
-  margin: 60px 0;
+  gap: 15px 10px;
+  margin-top: 30px;
   padding: 0;
-  font-size: 1.2em;
-  font-family: $base-font-light;
+  font-size: 1rem;
 }
 
 .page-link {
-  color: $txt-color-dark-3;
-  padding: 10px;
-  background-color: $bg-color-light-2;
+  color: var(--color-contrast-medium-high);
+  padding: 8px 15px;
+  background-color: var(--color-contrast-lower);
 
   &:hover {
-    color: $link-color-light;
+    color: var(--color-primary);
+  }
+
+  @include on-event {
+    text-decoration: none;
   }
 }
 
 .page-item {
   
   &.disabled > a {
-    color: $txt-color-light-5;
+    color: var(--color-contrast-low);
     cursor:unset;
   }
 
   &.active > a {
-    color: $link-color-light;
+    background-color: var(--color-primary);
+    color: var(--color-contrast-lower);
   }
 }

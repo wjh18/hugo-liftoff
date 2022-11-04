@@ -1,12 +1,10 @@
-.contact {
+#contact-form {
+  flex-direction: column;
+  row-gap: 15px;
   max-width: 500px;
-  margin: 0 auto;
-  padding: 40px 20px 80px 20px;
-  font-family: $base-font-light;
-  font-size: 1.1rem;
-  line-height: 1.9rem;
-
-  &__description {
-    margin: 0;
+  margin-top: 30px;
+  
+  button {
+    align-self: flex-start;
   }
 }

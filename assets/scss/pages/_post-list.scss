@@ -1,0 +1,51 @@
+.post-entry {
+  margin: 20px 0;
+  max-width: 750px;
+}
+
+.post-entry-divider {
+  background-color: var(--color-contrast-low);
+  content: "";
+  display: block;
+  height: 1px;
+  position: relative;
+  max-width: 750px;
+}
+
+.post-list-title {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0;
+
+  @include respond-to('small') {
+    font-size: 1.4rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-contrast-high);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.post-list-summary {
+  @extend .summary-text;
+  margin: 10px 0 0 0;
+}
+
+.post-list-meta {
+  @extend .meta-text;
+  margin-top: 10px;
+}
+
+.post-list-dates {
+  font-weight: 400;
+}
+
+.post-list-categories {
+  display: inline-flex;
+  column-gap: 10px;
+}

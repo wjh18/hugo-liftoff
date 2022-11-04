@@ -1,0 +1,38 @@
+.page-header {
+  background-color: var(--color-contrast-lower);
+  padding: 30px;
+  margin: 50px 0;
+  border-radius: 20px;
+}
+
+.page-header--c {
+  @extend .page-header;
+  text-align: center;
+}
+
+.page-header-title {
+  margin: 0;
+  color: var(--color-contrast-high);
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+
+  @include respond-to('medium') {
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+  }
+}
+
+.page-header-desc {
+  margin: 0;
+  margin-top: 15px;
+  color: var(--color-contrast-medium);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6rem;
+
+  @include respond-to('medium') {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}

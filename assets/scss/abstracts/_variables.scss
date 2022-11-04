@@ -2,56 +2,83 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-/* Background colors */
-$bg-color-dark: #151515;
-$bg-color-light: #f7f7f7;
-$bg-color-light-2: #e3e3e3;
-$bg-color-blue: #18191c;
-$bg-color-grad: linear-gradient(180deg, $bg-color-dark 25%, $bg-color-blue 100%);
+:root, [data-theme="default"] {
+  --color-primary: rgb(18, 120, 175);
+  --color-inline-code: hsl(0, 81%, 35%);
+  
+  /* color contrasts */
+  --color-bg: rgb(248, 248, 248);
+  --color-contrast-lower: hsl(0, 0%, 95%);
+  --color-contrast-low: hsl(240, 1%, 83%);
+  --color-contrast-medium-low: hsl(240, 1%, 65%);
+  --color-contrast-medium: hsl(240, 1%, 48%);
+  --color-contrast-medium-high: hsl(240, 2%, 34%);
+  --color-contrast-high: hsl(240, 4%, 20%);
+  --color-contrast-higher: black;
 
-/* Links and alt colors */
-$link-color-light: #bd7221;
-$link-color-dark: #9a5c1a;
-$alt-color-light: #32d1dc;
-$alt-color-dark: #24959d;
+  --color-text: var(--color-contrast-high);
+}
 
-/* Contrasting text colors */
-$txt-color-dark-1: black;
-$txt-color-dark-2: #353535;
-$txt-color-dark-3: #555555;
-$txt-color-light-1: white;
-$txt-color-light-2: #eeeeee;
-$txt-color-light-3: #e3e3e3;
-$txt-color-light-4: #cfcfcf;
-$txt-color-light-5: #a4a4a4;
+[data-theme] {
+  background-color: var(--color-bg);
+  color: var(--color-contrast-high);
+}
 
-/* Border colors and trasitions */
-$border-color-very-light: #c4c4c4;
-$border-color-light: #a9a9a9;
-$border-color-med: #808080;
-$border-color-dark: #333333;
-$trans-ease-short: all 0.2s ease-in-out;
-$trans-ease-med: all 0.6s ease-in-out;
+[data-theme="dark"] {
+  --color-primary: rgb(86, 184, 237);
+  --color-inline-code: hsl(0, 81%, 70%);
+  
+  /* color contrasts */
+  --color-bg: rgb(18, 18, 18);
+  --color-contrast-lower: hsl(240, 6%, 15%);
+  --color-contrast-low: hsl(252, 4%, 25%);
+  --color-contrast-medium-low: hsl(240, 2%, 34%);
+  --color-contrast-medium: hsl(240, 1%, 57%);
+  --color-contrast-medium-high: hsl(240, 1%, 65%);
+  --color-contrast-high: hsl(0, 0%, 89%);
+  --color-contrast-higher: white;
 
-/* Font families */
-$base-font-light: 'Ubuntu Light', Helvetica, Arial, sans-serif;
-$base-font-reg: 'Ubuntu Regular', Helvetica, Arial, sans-serif;
-$base-font-med: 'Ubuntu Medium', Helvetica, Arial, sans-serif;
-$base-font-bold: 'Ubuntu Bold', Helvetica, Arial, sans-serif;
-$serif-font-light: 'Merriweather Light', Georgia, 'Times New Roman', serif;
-$serif-font-reg: 'Merriweather Regular', Georgia, 'Times New Roman', serif;
-$serif-font-bold: 'Merriweather Bold', Georgia, 'Times New Roman', serif;
+  --color-text: var(--color-contrast-high);
+}
 
 
+// Fonts
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Roboto', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
+
+
+// Containers
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px;
+
+
+// Responsiveness
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
   'x-small': 320px,
-  'small': 480px,
+  'small': 576px,
   'medium': 768px,
   'm-large': 900px,
   'large': 1024px,
   'x-large': 1200px,
-) !default;
+);
+
+
+// Assets
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'https://cdn.example.com/assets/';
+$base-url: '/assets/';
