@@ -1,10 +1,8 @@
 {{ define "main" -}}
-<section class="banner">
-  <h1 class="banner__header">{{ .Title }}</h1>  
-</section>
-<section class="list__wrapper">
-  <div class="posts posts--center">
-    <p class="list__description">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">{{ .Title }}</h1>
+    <p class="page-header-desc">
       {{ with .Params.Summary }}
         {{ . }}
       {{ else }}
@@ -19,45 +17,13 @@
         {{ end }}
       {{ end }}
     </p>
+  </section>
+  <section>
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
-    <div class="post post--light">                                  
-      <ul class="single__banner-categories">
-        {{ with .Params.categories }}
-        {{ range . }}
-          <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
-        {{ end }}
-        {{ end }}
-      </ul>
-      <h2 class="post__title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </h2>  
-      <p class="post__date post__date--dark">
-        {{ if not (eq .Lastmod .Date) }}
-          Posted:
-        {{ end }}
-        {{ if not .PublishDate.IsZero -}}
-          {{ .PublishDate.Format "Jan 2, 2006" }}
-        {{ else }}
-          {{ .Date.Format "Jan 2, 2006" }}
-        {{ end }}
-        {{ if not (eq .Lastmod .Date) }}
-          &nbsp;&middot;&nbsp;
-          Updated: {{ .Lastmod.Format "Jan 2, 2006" }}
-        {{ end }}
-        &nbsp;&middot;&nbsp;
-        {{ .ReadingTime }} min.
-        {{ partial "general/label-drafts.html" . }}
-      </p>      
-      <p class="post__description">
-        {{ with .Params.Summary }}
-          {{ . }}
-        {{ else }}
-          {{ .Description }}
-        {{ end }}
-      </p>            
-    </div>
+      {{ partial "posts/post-entry.html" . }}
+      <div class="post-entry-divider"></div>
     {{ end }}
     {{ template "_internal/pagination.html" . }}
-  </div>
-</section>
+  </section>
+</div>
 {{ end }}
