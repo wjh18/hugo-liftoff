@@ -1,26 +1,44 @@
 // Show or hide nav on click of menu burger
-export function toggleNav() {
+function toggleNav() {
   let mainMenu = document.getElementById('js-menu');
-  let navBarToggle = document.getElementById('js-navbar__toggle');
+  let navBarToggle = document.getElementById('js-navbar-toggle');
 
-  navBarToggle.addEventListener('click', function () {
+  navBarToggle.addEventListener('click', () => {
     mainMenu.classList.toggle('menu--active');
+    removeSubMenus();
   });
 }
 
 // Show or hide menu items on mobile
-export function toggleMobileMenu() {
-  let menuItems = document.querySelectorAll('.menu__item');
+function toggleMobileMenu() {
+  let menuItems = document.querySelectorAll('.menu-item');
 
   menuItems.forEach(function(item) {
-    item.addEventListener('click', function () {
+    item.addEventListener('click', () => {
       let subMenu = item.querySelector('.sub-menu');
-      subMenu.classList.toggle('sub-menu--active');
+      if (subMenu.classList.contains('sub-menu--active')) {
+        subMenu.classList.remove('sub-menu--active');
+      } else {
+        removeSubMenus();
+        subMenu.classList.add('sub-menu--active');
+      }
     });
   });
 }
 
-export const Header = {
-  toggleNav,
-  toggleMobileMenu
-};
+// Collapse submenus
+function removeSubMenus() {
+  let subMenus = document.querySelectorAll('.sub-menu');
+  subMenus.forEach(function(sub) {
+    if (sub.classList.contains('sub-menu--active')) {
+      sub.classList.remove('sub-menu--active');
+    }
+  });
+}
+
+const header = (() => {
+  toggleNav();
+  toggleMobileMenu();
+})();
+
+export { header };

@@ -1,12 +1,3 @@
-import toggleToc from './components/toc';
-import { addCopyButtons } from './components/clipboard';
-import { Header } from './layouts/header';
-
-// Codeblock copy button
-if (navigator && navigator.clipboard) {
-  addCopyButtons(navigator.clipboard);
-}
-
-// Activate toggles for nav/menu
-Header.toggleNav();
-Header.toggleMobileMenu();
+import { switcher, clipboard, toggleToc } from './components/components';
+import { header } from './layouts/header';
+import { home } from './pages/home';
