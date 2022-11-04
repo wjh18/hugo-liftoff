@@ -1,12 +1,12 @@
 {{ $sass := resources.Get "scss/main.scss" }}
 {{ $style := $sass | resources.ToCSS }}
-{{ $custom := nil }}
+{{ $custom := "" }}
 {{ with .Site.Params.custom_css }}
   {{ $custom = resources.Get . }}
   {{ $bundle := slice $style $custom | resources.Concat "main.css" }}
   {{ $style = $bundle }}
 {{ end }}
-{{ $final := nil }}
+{{ $final := "" }}
 {{ if eq $.Site.Params.enable_postcss true }}
   {{ $final = $style | postCSS (dict "config" "postcss.config.js") | minify }}
 {{ else }}

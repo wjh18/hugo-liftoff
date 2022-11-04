@@ -14,7 +14,7 @@
     <div class="hero-owner">
       {{ $avatar := .Site.Params.avatar }}
       {{ $default_image := "images/default.png" }}
-      {{ $image := nil }}
+      {{ $image := "" }}
       {{ with $avatar }}
         {{ $image = resources.Get $avatar }}
       {{ else }}

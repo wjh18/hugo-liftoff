@@ -1,5 +1,5 @@
 {{ $script := resources.Get "js/app.js" | js.Build "main.js" }}
-{{ $custom := nil }}
+{{ $custom := "" }}
 {{ with .Site.Params.custom_js }}
   {{ $custom = resources.Get . }}
   {{ $bundle := slice $script $custom | resources.Concat "main.js" }}

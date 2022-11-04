@@ -2,7 +2,7 @@
 {{ $custom_file := .Params.feature_image }}
 {{ $custom_image := $images.GetMatch $custom_file }}
 {{ $feature_image := $images.GetMatch "*feature*" -}}
-{{ $img_src := nil }}
+{{ $img_src := "" }}
 {{ with $custom_image }}
   {{ $img_src = .RelPermalink }}
 {{ else }}
