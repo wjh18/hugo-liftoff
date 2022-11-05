@@ -10,8 +10,10 @@
     {{ $img_src = .RelPermalink }}
   {{ end }}
 {{ end }}
+{{ if $img_src }}
 <img class="feature-image" 
      srcset="{{ $img_src }} 480w, {{ $img_src }} 800w"
      sizes="(max-width: 600px) 480px, 800px"
      src="{{ $img_src }}"
      {{ with $.Params.feature_image_alt }}alt="{{ . }}"{{ else }}alt="Feature image"{{ end }}>
+{{ end }}
