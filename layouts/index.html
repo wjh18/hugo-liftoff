@@ -43,13 +43,13 @@
         {{ range (where .Sections "Section" "posts") }}
         <option value="all-{{ .Name | lower }}" selected>All {{ .Name | lower }}</option>
         {{ range .Sections }}
-        <option value="{{ .CurrentSection.Name | lower }}">{{ .CurrentSection.Name }}</option>
+        <option value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">{{ .CurrentSection.Name }}</option>
         {{ end }}
         {{ end }}
       </select>
     </div>
     {{- range ( where site.RegularPages "Section" "posts" | first 10 ) }}
-      <div class="post-entry-filter entry--{{ .CurrentSection.Name | lower }}">
+      <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">
         {{ partial "posts/post-entry.html" . }}
         <div class="post-entry-divider"></div>
       </div>
