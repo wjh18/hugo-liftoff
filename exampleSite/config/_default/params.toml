@@ -2,7 +2,7 @@
 googleAnalyticsv4 = false # false for Universal Analytics, true for GA v4
 netlify_forms = true # add data-netlify attribute to contact and newsletter forms, false to disable Netlify forms
 # gtm_id = '' # GTM tracking (leave blank to use GA)
-# disallow_search_engines = false # Disallow search engine crawling in robots.txt
+disallow_search_engines = false # Disallow search engine crawling in robots.txt
 
 ### Content
 favicon = true # Enable favicon, add your favicon files to /static/ directory
@@ -20,8 +20,8 @@ global_newsletter = true # Enable newsletter site-wide
 
 # CSS / JavaScript
 enable_postcss = false # Enable if you're using npm and want to utilize PostCSS processing
-# custom_css = 'custom.css' # Add the specified file to assets before setting this param to avoid errors
-# custom_js = 'custom.js' # Add the specified file to assets before setting this param to avoid errors
+custom_css = 'custom.css' # Add the specified file to assets before setting this param to avoid errors
+custom_js = 'custom.js' # Add the specified file to assets before setting this param to avoid errors
 
 ### Web schemas
 # Open Graph

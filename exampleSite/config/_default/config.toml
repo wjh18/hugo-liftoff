@@ -35,7 +35,7 @@ titleCaseStyle = 'AP' # Default, other options: Chicago (slightly different) or 
 
 ### Other
 archetypeDir = 'archetypes' # Default
-# assetDir = 'assets' # Default
+assetDir = 'assets' # Default
 contentDir = 'content' # Default
 dataDir = 'data' # Default
 disableHugoGeneratorInject = false # Default
