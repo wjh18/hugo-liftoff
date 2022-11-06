@@ -22,6 +22,14 @@
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
       {{ partial "posts/post-entry.html" . }}
       <div class="post-entry-divider"></div>
+    {{ else }}
+      <p class="fallback-text">
+        {{ with .Site.Params.fallback_text }}
+        {{ . }}
+        {{ else }}
+        No content available yet. Coming soon.
+        {{ end }}
+      </p>
     {{ end }}
     {{ template "_internal/pagination.html" . }}
   </section>

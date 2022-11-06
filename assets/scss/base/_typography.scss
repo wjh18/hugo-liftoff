@@ -25,3 +25,8 @@
   flex-wrap: wrap;
   gap: 10px 20px;
 }
+
+.fallback-text {
+  color: var(--color-contrast-medium);
+  font-size: 1.2rem;
+}

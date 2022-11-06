@@ -43,16 +43,26 @@
         {{ range (where .Sections "Section" "posts") }}
         <option value="all-{{ .Name | lower }}" selected>All {{ .Name | lower }}</option>
         {{ range .Sections }}
+        {{ if .CurrentSection.Pages }}
         <option value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">{{ .CurrentSection.Name }}</option>
+        {{ end }}
         {{ end }}
         {{ end }}
       </select>
     </div>
-    {{- range ( where site.RegularPages "Section" "posts" | first 10 ) }}
+    {{ range (where site.RegularPages "Section" "posts" | first 10) }}
       <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">
         {{ partial "posts/post-entry.html" . }}
         <div class="post-entry-divider"></div>
       </div>
+    {{ else }}
+    <p class="fallback-text">
+      {{ with .Site.Params.fallback_text }}
+      {{ . }}
+      {{ else }}
+      No content available yet. Coming soon.
+      {{ end }}
+    </p>
     {{ end }}
     <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}">More Posts</a>
   </section>
@@ -64,11 +74,22 @@
         My Projects
       {{ end }}
     </h2>
-    <div class="project-list">
-      {{- range ( where site.RegularPages "Section" "projects" | first 6 ) }}
-        {{ partial "projects/project-entry.html" . }}
-      {{ end }}
-    </div>
+    {{ $projects := where site.RegularPages "Section" "projects" | first 6 }}
+    {{ with $projects }}
+      <div class="project-list">
+        {{- range . }}
+          {{ partial "projects/project-entry.html" . }}
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="fallback-text">
+        {{ with .Site.Params.fallback_text }}
+        {{ . }}
+        {{ else }}
+        No content available yet. Coming soon.
+        {{ end }}
+      </p>
+    {{ end }}
   </section>
 </div>
 {{ end }}
