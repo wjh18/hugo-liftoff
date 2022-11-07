@@ -56,13 +56,7 @@
         <div class="post-entry-divider"></div>
       </div>
     {{ else }}
-    <p class="fallback-text">
-      {{- with .Site.Params.fallback_text -}}
-      {{- . -}}
-      {{- else -}}
-      No content available yet. Coming soon.
-      {{- end -}}
-    </p>
+      {{ partial "general/fallback-text.html" . }}
     {{ end }}
     <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}">More Posts</a>
   </section>
@@ -82,13 +76,7 @@
         {{ end }}
       </div>
     {{ else }}
-      <p class="fallback-text">
-        {{- with .Site.Params.fallback_text -}}
-        {{- . -}}
-        {{- else -}}
-        No content available yet. Coming soon.
-        {{- end -}}
-      </p>
+      {{ partial "general/fallback-text.html" . }}
     {{ end }}
   </section>
 </div>

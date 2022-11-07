@@ -4,9 +4,9 @@
   {{ end }}
   <div class="section footer">
     <p class="footer-copyright">&copy; {{ now.Format "2006" }} &middot; 
-      <a class="footer__site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       {{ with .Site.Params.footer_text | markdownify }}
-        <span class="footer__extra">&middot; {{ . }}</span>
+        <span>&middot; {{ . }}</span>
       {{ end }}
     </p>
     {{ if eq .Site.Params.footer_socials true }}

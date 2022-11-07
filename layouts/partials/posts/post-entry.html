@@ -3,21 +3,7 @@
     <a href="{{ .Permalink }}">{{ .Title }}</a>
   </h3>  
   <div class="post-list-meta">
-    <div class="post-list-dates">
-      {{- if not (eq .Lastmod .Date) -}}
-        Posted:
-      {{ end -}}
-      {{- if not .PublishDate.IsZero -}}
-        {{- .PublishDate.Format "Jan 2, 2006" -}}
-      {{- else -}}
-        {{ .Date.Format "Jan 2, 2006" -}}
-      {{- end -}}
-      {{- if not (eq .Lastmod .Date) -}}
-        &nbsp;&middot;&nbsp;
-        Updated: {{ .Lastmod.Format "Jan 2, 2006" -}}
-      {{- end -}}
-      &nbsp;&middot;&nbsp;
-      {{- .ReadingTime }} min.</div>
+    {{ partial "posts/post-meta.html" . }}
     {{ with .Params.categories }}
     <div class="post-list-categories">
       {{ range . }}

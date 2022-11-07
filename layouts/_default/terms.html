@@ -9,13 +9,7 @@
         <a class="term" href="{{ .Page.Permalink }}">{{ .Page.Title }} <sup class="term-count">{{ .Count }}</sup></a>
       {{ end }}
     {{ else }}
-      <p class="fallback-text">
-        {{- with .Site.Params.fallback_text -}}
-        {{- . -}}
-        {{- else -}}
-        No content available yet. Coming soon.
-        {{- end -}}
-      </p>
+      {{ partial "general/fallback-text.html" . }}
     {{ end }}
   </div>
 </div>

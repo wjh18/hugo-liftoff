@@ -5,21 +5,7 @@
       {{- .Title -}}
     </h1>
     <div class="post-list-meta">
-      <div class="post-list-dates">
-        {{- if not (eq .Lastmod .Date) -}}
-          Posted:
-        {{ end -}}
-        {{- if not .PublishDate.IsZero -}}
-          {{- .PublishDate.Format "Jan 2, 2006" -}}
-        {{- else -}}
-          {{ .Date.Format "Jan 2, 2006" -}}
-        {{- end -}}
-        {{- if not (eq .Lastmod .Date) -}}
-          &nbsp;&middot;&nbsp;
-          Updated: {{ .Lastmod.Format "Jan 2, 2006" -}}
-        {{- end -}}
-        &nbsp;&middot;&nbsp;
-        {{- .ReadingTime }} min.</div>
+      {{ partial "posts/post-meta.html" . }}
       {{ with .Params.categories }}
       <div class="post-list-categories">
         {{ range . }}
@@ -81,9 +67,7 @@
           {{ end }}
         {{ end }}
       </div>
-      <div class="single__social-links">
-        {{ partial "posts/social-share.html" . }}
-      </div>
+      {{ partial "posts/social-share.html" . }}
       {{- if .Params.series }}
         <div class="series">
           {{- $name := index .Params.series 0 }}
@@ -91,7 +75,7 @@
           {{- $name := $name | urlize }}
           {{- $series := index .Site.Taxonomies.series $name }}
           {{ $curtitle := .Title }}
-          <ol class="series__list">
+          <ol>
             {{- range $series.Pages.Reverse }}
               <li>
                 {{- if eq .Title $curtitle -}}
