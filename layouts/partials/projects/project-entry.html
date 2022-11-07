@@ -22,11 +22,11 @@
       {{ end }}
     </div>
     <p class="project-list-summary">
-      {{ with .Params.Summary }}
+      {{- with .Params.Summary -}}
         {{ . }}
-      {{ else }}
-        {{ .Description }}
-      {{ end }}
+      {{- else -}}
+        {{- .Description -}}
+      {{- end -}}
     </p>
     {{ if or (.Params.live_url) (.Params.source_url) }}
       <div class="btn-group">

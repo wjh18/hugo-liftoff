@@ -4,21 +4,20 @@
   </h3>  
   <div class="post-list-meta">
     <div class="post-list-dates">
-      {{ if not (eq .Lastmod .Date) }}
+      {{- if not (eq .Lastmod .Date) -}}
         Posted:
-      {{ end }}
-      {{ if not .PublishDate.IsZero -}}
-        {{ .PublishDate.Format "Jan 2, 2006" }}
-      {{ else }}
-        {{ .Date.Format "Jan 2, 2006" }}
-      {{ end }}
-      {{ if not (eq .Lastmod .Date) }}
+      {{ end -}}
+      {{- if not .PublishDate.IsZero -}}
+        {{- .PublishDate.Format "Jan 2, 2006" -}}
+      {{- else -}}
+        {{ .Date.Format "Jan 2, 2006" -}}
+      {{- end -}}
+      {{- if not (eq .Lastmod .Date) -}}
         &nbsp;&middot;&nbsp;
-        Updated: {{ .Lastmod.Format "Jan 2, 2006" }}
-      {{ end }}
+        Updated: {{ .Lastmod.Format "Jan 2, 2006" -}}
+      {{- end -}}
       &nbsp;&middot;&nbsp;
-      {{ .ReadingTime }} min.
-    </div>
+      {{- .ReadingTime }} min.</div>
     {{ with .Params.categories }}
     <div class="post-list-categories">
       {{ range . }}
@@ -29,10 +28,10 @@
     {{ partial "general/label-drafts.html" . }}
   </div>
   <p class="post-list-summary">
-    {{ with .Params.Summary }}
-      {{ . }}
-    {{ else }}
-      {{ .Description }}
-    {{ end }}
+    {{- with .Params.Summary -}}
+      {{- . -}}
+    {{- else -}}
+      {{- .Description -}}
+    {{- end -}}
   </p>
 </div>

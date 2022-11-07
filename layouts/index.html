@@ -33,11 +33,11 @@
   <section class="section">
     <div class="home-title-dropdown">
       <h2 class="home-section-posts-title">
-        {{ with .Params.posts_section_heading }}
-          {{ . }}
-        {{ else }}
+        {{- with .Params.posts_section_heading -}}
+          {{- . -}}
+        {{- else -}}
           Recent Posts
-        {{ end }}
+        {{- end -}}
       </h2>
       <select name="choice" id="select-posts">
         {{ range (where .Sections "Section" "posts") }}
@@ -57,22 +57,22 @@
       </div>
     {{ else }}
     <p class="fallback-text">
-      {{ with .Site.Params.fallback_text }}
-      {{ . }}
-      {{ else }}
+      {{- with .Site.Params.fallback_text -}}
+      {{- . -}}
+      {{- else -}}
       No content available yet. Coming soon.
-      {{ end }}
+      {{- end -}}
     </p>
     {{ end }}
     <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}">More Posts</a>
   </section>
   <section class="section">
     <h2 class="home-section-title">
-      {{ with .Params.projects_section_heading }}
-        {{ . }}
-      {{ else }}
+      {{- with .Params.projects_section_heading -}}
+        {{- . -}}
+      {{- else -}}
         My Projects
-      {{ end }}
+      {{- end -}}
     </h2>
     {{ $projects := where site.RegularPages "Section" "projects" | first 6 }}
     {{ with $projects }}
@@ -83,11 +83,11 @@
       </div>
     {{ else }}
       <p class="fallback-text">
-        {{ with .Site.Params.fallback_text }}
-        {{ . }}
-        {{ else }}
+        {{- with .Site.Params.fallback_text -}}
+        {{- . -}}
+        {{- else -}}
         No content available yet. Coming soon.
-        {{ end }}
+        {{- end -}}
       </p>
     {{ end }}
   </section>

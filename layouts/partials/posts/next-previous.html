@@ -3,16 +3,10 @@
     <h2>Read Next</h2>
     <div class="single-next-previous">
       {{ with .PrevInSection }}
-        <a class="previous" href="{{.Permalink}}">
-          &laquo;
-          {{ .Title }}
-        </a>
+        <a class="previous" href="{{.Permalink}}">&laquo; {{ .Title }}</a>
       {{ end }}
       {{ with .NextInSection }}
-        <a class="next" href="{{.Permalink}}">
-          {{ .Title }}
-          &raquo;
-        </a>
+        <a class="next" href="{{.Permalink}}">{{ .Title }} &raquo;</a>
       {{ end }}
     </div>
   </section>

@@ -10,11 +10,11 @@
       {{ end }}
     {{ else }}
       <p class="fallback-text">
-        {{ with .Site.Params.fallback_text }}
-        {{ . }}
-        {{ else }}
+        {{- with .Site.Params.fallback_text -}}
+        {{- . -}}
+        {{- else -}}
         No content available yet. Coming soon.
-        {{ end }}
+        {{- end -}}
       </p>
     {{ end }}
   </div>

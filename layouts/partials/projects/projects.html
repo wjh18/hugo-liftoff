@@ -1,27 +1,27 @@
 <div class="container">
   <section class="page-header">
     <h1 class="page-header-title">
-      {{ if eq .Kind "term" }}
-        {{ .Title }} Projects
-      {{ else }}
-        {{ .Title }}
-      {{ end }}
+      {{- if eq .Kind "term" -}}
+        {{- .Title }} Projects
+      {{- else -}}
+        {{- .Title -}}
+      {{- end -}}
     </h1>
     <p class="page-header-desc">
-      {{ with .Params.Summary }}
-        {{ . }}
-      {{ else }}
-        {{ with .Description }}
-          {{ . }}
-        {{ else }}
-          {{ if eq .Kind "term" }}
-            {{ .Title }} projects
-          {{ else }}
-            {{ .Title }}
-          {{ end }}
+      {{- with .Params.Summary -}}
+        {{- . -}}
+      {{- else -}}
+        {{- with .Description -}}
+          {{- . -}}
+        {{- else -}}
+          {{- if eq .Kind "term" -}}
+            {{- .Title }} projects
+          {{- else -}}
+            {{- .Title -}}
+          {{- end }}
             I've worked on.
-        {{ end }}
-      {{ end }}
+        {{- end -}}
+      {{- end -}}
     </p>
   </section>
   <section>
@@ -33,11 +33,11 @@
       </div>
     {{ else }}
       <p class="fallback-text">
-        {{ with .Site.Params.fallback_text }}
-        {{ . }}
-        {{ else }}
+        {{- with .Site.Params.fallback_text -}}
+        {{- . -}}
+        {{- else -}}
         No content available yet. Coming soon.
-        {{ end }}
+        {{- end -}}
       </p>
     {{ end }}
   </section>

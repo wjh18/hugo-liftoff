@@ -2,27 +2,27 @@
 <section class="section">
   <div class="container--sm">
     <h2 class="newsletter-header">
-      {{ with .Site.Params.newsletter_header }}
-        {{ . }}
-      {{ else }}
+      {{- with .Site.Params.newsletter_header -}}
+        {{- . -}}
+      {{- else -}}
         Subscribe for Post Updates
-      {{ end }}
+      {{- end -}}
     </h2>
     <p class="newsletter-desc">
-      {{ with .Site.Params.newsletter_description }}
-        {{ . }}
-      {{ else }}
+      {{- with .Site.Params.newsletter_description -}}
+        {{- . -}}
+      {{- else -}}
         Enter your email below to get notified of new posts.
-      {{ end }}
+      {{- end -}}
     </p>
     <form id="newsletter-form" name="newsletter" method="POST" {{ with .Site.Params.netlify_forms }}data-netlify="{{ . }}"{{ end }}>
       <input type="email" id="newsletter-form--input" name="email" placeholder="Your best email..." title="Enter your best email" required>
       <button type="submit" id="newsletter-form--submit" class="btn-primary">
-        {{ with .Site.Params.newsletter_submit }}
-          {{ . }}
-        {{ else }}
+        {{- with .Site.Params.newsletter_submit -}}
+          {{- . -}}
+        {{- else -}}
           Subscribe
-        {{ end }}
+        {{- end -}}
       </button>
     </form>
   </div>

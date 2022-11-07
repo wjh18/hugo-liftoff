@@ -3,19 +3,19 @@
   <section class="page-header">
     <h1 class="page-header-title">{{ .Title }}</h1>
     <p class="page-header-desc">
-      {{ with .Params.Summary }}
-        {{ . }}
-      {{ else }}
-        {{ with .Description }}
-          {{ . }}
-        {{ else }}
-          {{ if eq .Data.Plural "series" }}
+      {{- with .Params.Summary -}}
+        {{- . -}}
+      {{- else -}}
+        {{- with .Description -}}
+          {{- . -}}
+        {{- else -}}
+          {{- if eq .Data.Plural "series" -}}
             Posts in the {{ .Title }} series.
-          {{ else }}
+          {{- else -}}
             Posts about {{ .Title }}.
-          {{ end }}
-        {{ end }}
-      {{ end }}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
     </p>
   </section>
   <section>
@@ -24,11 +24,11 @@
       <div class="post-entry-divider"></div>
     {{ else }}
       <p class="fallback-text">
-        {{ with .Site.Params.fallback_text }}
-        {{ . }}
-        {{ else }}
+        {{- with .Site.Params.fallback_text -}}
+        {{- . -}}
+        {{- else -}}
         No content available yet. Coming soon.
-        {{ end }}
+        {{- end -}}
       </p>
     {{ end }}
     {{ template "_internal/pagination.html" . }}

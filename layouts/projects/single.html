@@ -3,7 +3,7 @@
   <section class="page-header">
     <div class="">
       <h1 class="page-header-title">
-        {{ .Title }}
+        {{- .Title -}}
         <sup>{{ partial "general/label-drafts.html" . }}</sup>
       </h1>
       <div class="project-list-meta">
@@ -19,11 +19,11 @@
         {{ end }}
       </div>
       <p class="page-header-desc">
-        {{ with .Params.Summary }}
-          {{ . }}
-        {{ else }}
-          {{ .Description }}
-        {{ end }}
+        {{- with .Params.Summary -}}
+          {{- . -}}
+        {{- else -}}
+          {{- .Description -}}
+        {{- end -}}
       </p>
       {{ if or (.Params.live_url) (.Params.source_url) }}
         <div class="btn-group project-single-btns">

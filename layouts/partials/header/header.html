@@ -6,10 +6,7 @@
       {{ range .Site.Menus.main }}
       {{ if .HasChildren }}
       <li class="menu-item">
-        <span class="menu-link">
-          {{ .Name }}
-          <span class="drop-icon">▾</span>
-        </span>
+        <span class="menu-link">{{ .Name }}<span class="drop-icon">▾</span></span>
         <ul class="sub-menu">
           {{ range .Children }}
             <li class="menu-item">
@@ -20,9 +17,7 @@
       </li>
       {{ else }}
         <li class="menu-item">
-          <a href="{{ .URL }}" class="menu-link">
-            {{ .Name }}              
-          </a>
+          <a href="{{ .URL }}" class="menu-link">{{ .Name }}</a>
         </li>
       {{ end }}
       {{ end }}
