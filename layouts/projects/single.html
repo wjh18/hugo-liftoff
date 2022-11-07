@@ -1,48 +1,46 @@
 {{ define "main" }}
-<section class="banner">
-  <div class="single__container single__banner-wrapper">
-    <span class="project__type project__type--light">
-      {{ with .Param "project types" }}
-        {{ range first 1 . }}
-          <a href="{{ "project-types" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+<div class="container">
+  <section class="page-header">
+    <div class="">
+      <h1 class="page-header-title">
+        {{- .Title -}}
+        <sup>{{ partial "general/label-drafts.html" . }}</sup>
+      </h1>
+      <div class="project-list-meta">
+        {{ with .Params.techstack }}
+        {{ range . }}
+          <span>{{ . }}</span>
         {{ end }}
-      {{ end }}
-    </span>
-    <ul class="single__banner-categories">
-      {{ with .Params.techstack }}
-      {{ range . }}
-        <li>{{ . }}</li>
-      {{ end }}
-      {{ end }}
-    </ul>
-    <h1 class="banner__header single__post-header">
-      {{ .Title }}
-      <sup>{{ partial "general/label-drafts.html" . }}</sup>
-    </h1>
-    {{ if or (.Params.live_url) (.Params.source_url) }}
-      <div class="single__post-meta">
-        <div class="project__links project__links--single">
+        {{ end }}
+        {{ with .Param "project types" }}
+          {{ range first 1 . }}
+            <a href="{{ "project-types" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+          {{ end }}
+        {{ end }}
+      </div>
+      <p class="page-header-desc">
+        {{- with .Params.Summary -}}
+          {{- . -}}
+        {{- else -}}
+          {{- .Description -}}
+        {{- end -}}
+      </p>
+      {{ if or (.Params.live_url) (.Params.source_url) }}
+        <div class="btn-group project-single-btns">
           {{ with .Params.live_url }}
-            <a class="project__live-url cta-btn cta-btn--very-light" href="{{ . }}">Live</a>
+            <a class="btn-primary" href="{{ . }}">Live</a>
           {{ end }}
           {{ with .Params.source_url }}
-            <a class="project__source-url cta-btn cta-btn--very-light" href="{{ . }}">Source Code</a>
+            <a class="btn-secondary" href="{{ . }}">Source</a>
           {{ end }}
         </div>
-      </div>
-    {{ end }}
-    <p class="single__post-description">
-      {{ with .Params.Summary }}
-        {{ . }}
-      {{ else }}
-        {{ .Description }}
       {{ end }}
-    </p>
-  </div>
-</section>
-<div class="single__container single__container-bg">
-  <div class="project__image">{{ partial "general/feature-image.html" . }}</div>
-  <article class="single__post-content">
+    </div>
+  </section>
+</div>
+<div class="single-container">
+  <div class="single-feature-img">{{ partial "general/feature-image.html" . }}</div>
+  <article class="markdown">
     {{ .Content }}
   </article>
 </div>

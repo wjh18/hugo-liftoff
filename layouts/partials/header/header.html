@@ -1,38 +1,36 @@
-<header>
+<header class="container">
   <nav class="main-nav" id="js-navbar">
-    <span class="main-nav__toggle" id="js-navbar__toggle">
-      {{ $icon := resources.Get "icons/menu-burger.svg" }}
-      <img src="{{ $icon.RelPermalink }}"
-           alt="Hamburger icon for mobile menu toggle"
-           height="30"
-           width="30"/>
-    </span>
-    <a class="main-nav__logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    <a class="logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     <ul class="menu" id="js-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
       {{ if .HasChildren }}
-      <li class="menu__item">
-        <span class="menu__link">
-          {{ .Name }}
-          <span class="menu__drop-icon">▾</span>
-        </span>
+      <li class="menu-item">
+        <span class="menu-link">{{ .Name }}<span class="drop-icon">▾</span></span>
         <ul class="sub-menu">
           {{ range .Children }}
-            <li class="menu__item">
-              <a href="{{ .URL }}" class="menu__link">{{ .Name }}</a>                  
+            <li class="menu-item">
+              <a href="{{ .URL }}" class="menu-link">{{ .Name }}</a>                  
             </li>
           {{ end }}
         </ul>
       </li>
-    {{ else }}
-      <li class="menu__item">
-        <a href="{{ .URL }}" class="menu__link">
-          {{ .Name }}              
-        </a>
-      </li>
-    {{ end }}
+      {{ else }}
+        <li class="menu-item">
+          <a href="{{ .URL }}" class="menu-link">{{ .Name }}</a>
+        </li>
       {{ end }}
+      {{ end }}
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
     </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
   </nav>
 </header>

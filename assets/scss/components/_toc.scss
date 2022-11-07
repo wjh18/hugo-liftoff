@@ -1,31 +1,53 @@
-.toc {    
-  margin-bottom: 30px;
+.toc {
 
-  &__header {
-    font-size: 1rem;
+  @include respond-to('x-large') {
+    position: sticky;
+	  top: 2rem;
+	  align-self: start;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    overflow-y: scroll;
+  }
+}
+
+.toc-header, .toc-drop-icon {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+.toc-contents {
+  display: none;
+  font-size: 1rem;
+  line-height: 1.6rem;
+
+  &--active {      
+    display: block;
   }
 
-  &__contents {
-    display: none;
-    font-size: 1rem;
-    line-height: 1.6rem;
-    color: $txt-color-dark-2;    
-    font-family: $base-font-light;
+  @include respond-to('x-large') {
+    display: block;
 
     &--active {      
-      display: block;      
+      display: none;
     }
   }
 }
 
-#js-toc__toggle {
+#js-toc-toggle {
   display: inline-flex;
   align-items: center;
   column-gap: 10px;
-  background-color: $bg-color-light-2;
-  padding: 0 20px;
+  padding: 10px 20px;
+  background-color: var(--color-contrast-lower);
+  border-radius: 20px;
 
   &:hover {
     cursor: pointer;
+    color: var(--color-primary);
   }
 }

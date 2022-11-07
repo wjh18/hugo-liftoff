@@ -25,9 +25,7 @@
         | Page {{ $paginator.PageNumber }}
     {{- end -}}
   {{- end -}}
-  {{ if (or (and (ne .Type "posts") (ne .Type "projects") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }}
-    | {{ .Site.Title -}}
-  {{ end -}}
+  {{ if (or (and (ne .Type "posts") (ne .Type "projects") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }} | {{ .Site.Title -}}{{ end -}}
 </title>
 
 <!-- Author from config -->

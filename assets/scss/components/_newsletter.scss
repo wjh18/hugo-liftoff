@@ -1,35 +1,30 @@
-.newsletter {
-  padding: 60px 30px;
-  background: $bg-color-dark;
-  background: $bg-color-grad;
-  border-top: 5px solid $alt-color-dark;
+.newsletter-header {
+  color: var(--color-contrast-high);
+  margin-bottom: 0;
 
-  &__contents {
-    max-width: 600px;
-    margin: 0 auto;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+
+  @include respond-to('small') {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
   }
+}
 
-  &__header {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: $txt-color-light-3;
-    font-size: 1.5rem;
-    line-height: 2.3rem;
+.newsletter-desc {
+  color: var(--color-contrast-medium-high);
+  font-size: 1rem;
+  line-height: 1.7rem;
 
-    @include respond-to('small') {
-      font-size: 1.8rem;
-      line-height: 2.6rem;
-    }
+  @include respond-to('small') {
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
+}
 
-  &__description {
-    color: $txt-color-light-5;
-    font-size: 1rem;
-    line-height: 1.5rem;
+#newsletter-form {
 
-    @include respond-to('small') {
-      font-size: 1.2rem;
-      line-height: 1.7rem;
-    }
+  input {
+    border-right: none;
   }
 }

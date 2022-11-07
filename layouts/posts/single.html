@@ -1,95 +1,39 @@
 {{ define "main" }}
-<section class="banner">
-  <div class="single__container single__banner-wrapper">
-    <ul class="single__banner-categories">
-      {{ with .Params.categories }}
-      {{ range . }}
-        <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
-      {{ end }}
-      {{ end }}
-    </ul>
-    <h1 class="banner__header single__post-header">
-      {{ .Title }}
-      <sup>{{ partial "general/label-drafts.html" . }}</sup>
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">
+      {{- .Title -}}
     </h1>
-    <div class="single__post-meta">
-      <div class="single__post-meta-stats">
-        <span>          
-          {{ if not (eq .Lastmod .Date) }}
-            Posted:
-          {{ end }}
-          {{ if not .PublishDate.IsZero -}}
-            {{ .PublishDate.Format "Jan 2, 2006" }}
-          {{ else }}
-            {{ .Date.Format "Jan 2, 2006" }}
-          {{ end }}
-          {{ if not (eq .Lastmod .Date) }}
-            &nbsp;&middot;&nbsp;
-            Updated: {{ .Lastmod.Format "Jan 2, 2006" }}
-          {{ end }}          
-        </span>&middot;
-        <span>{{ .ReadingTime }} min. read</span>&middot;
-        <span>{{ .WordCount }} words </span>        
-      </div>
-      <div class="single__banner-tags">
-        {{ with .Params.tags }}
-        <ul>
-          {{ range . }}
-          <li><a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
-          {{ end }}
-        </ul>
-        {{ end }}
-      </div>
-    </div>
-    <p class="single__post-description">
-      {{ with .Params.Summary }}
-        {{ . }}
-      {{ else }}
-        {{ .Description }}
-      {{ end }}
-    </p>
-  </div>
-</section>
-<div class="single__container single__container-bg">
-  {{ partial "posts/toc.html" . }}
-  {{- if .Params.series }}
-    <div class="series">
-      {{- $name := index .Params.series 0 }}
-      <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:</p>
-      {{- $name := $name | urlize }}
-      {{- $series := index .Site.Taxonomies.series $name }}
-      {{ $curtitle := .Title }}
-      <ol class="series__list">
-        {{- range $series.Pages.Reverse }}
-          <li>            
-            {{ if eq .Title $curtitle }}
-              {{ .Title }}
-              <span class="series__this-post">This post!</span>
-            {{ else }}
-              <a href="{{.Permalink}}">{{ .Title }}</a>
-            {{ end }}
-          </li>
-        {{- end }}
-      </ol>
-    </div>
-  {{ end }}
-  <div class="post__image">{{ partial "general/feature-image.html" . }}</div>
-  <article class="single__post-content">
-      {{ .Content }}
-  </article>
-  <aside>
-    <div class="single__banner-tags single__banner-tags--bottom">
-      {{ with .Params.tags }}
-      <ul>
+    <div class="post-list-meta">
+      {{ partial "posts/post-meta.html" . }}
+      {{ with .Params.categories }}
+      <div class="post-list-categories">
         {{ range . }}
-        <li><a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
+          <a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
         {{ end }}
-      </ul>
+      </div>
+      {{ end }}
+      {{ partial "general/label-drafts.html" . }}
+    </div>
+    <p class="page-header-desc">
+      {{- with .Params.Summary -}}
+        {{- . -}}
+      {{- else -}}
+        {{- .Description -}}
+      {{- end -}}
+    </p>
+    <div class="single-terms">
+      {{ with .Params.tags }}
+      {{ range . }}
+      <a class="term" href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
+      {{ end }}
       {{ end }}
     </div>
-    <div class="single__social-links">
-      {{ partial "posts/social-share.html" . }}
-    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  {{ partial "posts/toc.html" . }}
+  <div>
     {{- if .Params.series }}
       <div class="series">
         {{- $name := index .Params.series 0 }}
@@ -97,12 +41,12 @@
         {{- $name := $name | urlize }}
         {{- $series := index .Site.Taxonomies.series $name }}
         {{ $curtitle := .Title }}
-        <ol class="series__list">
+        <ol class="series-list">
           {{- range $series.Pages.Reverse }}
-            <li>            
-              {{ if eq .Title $curtitle }}
-                {{ .Title }}
-                <span class="series__this-post">This post!</span>
+            <li>
+              {{- if eq .Title $curtitle -}}
+                {{- .Title -}}
+                <span class="series-this-post">This post!</span>
               {{ else }}
                 <a href="{{.Permalink}}">{{ .Title }}</a>
               {{ end }}
@@ -110,15 +54,50 @@
           {{- end }}
         </ol>
       </div>
-    {{ else }}
-      {{ partial "posts/related.html" . }}
-      {{ partial "posts/next-previous.html" . }}
-    {{- end }}
-    {{ if and (.Site.DisqusShortname) (not .Site.IsServer) (ne .Params.disable_comments true) }}
-      <div class="comments">
-        {{ template "_internal/disqus.html" . }}
-      </div>
     {{ end }}
-  </aside>
+    <div class="single-feature-img">{{ partial "general/feature-image.html" . }}</div>
+    <article class="markdown">
+        {{ .Content }}
+    </article>
+    <aside>
+      <div class="single-terms">
+        {{ with .Params.tags }}
+          {{ range . }}
+          <a class="term" href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ partial "posts/social-share.html" . }}
+      {{- if .Params.series }}
+        <div class="series">
+          {{- $name := index .Params.series 0 }}
+          <p>Part of the <a href="{{ "series" | absURL }}/{{ $name | urlize }}/">{{$name}}</a> series:</p>
+          {{- $name := $name | urlize }}
+          {{- $series := index .Site.Taxonomies.series $name }}
+          {{ $curtitle := .Title }}
+          <ol>
+            {{- range $series.Pages.Reverse }}
+              <li>
+                {{- if eq .Title $curtitle -}}
+                {{- .Title -}}
+                  <span class="series-this-post">This post!</span>
+                {{ else }}
+                  <a href="{{.Permalink}}">{{ .Title }}</a>
+                {{ end }}
+              </li>
+            {{- end }}
+          </ol>
+        </div>
+      {{ else }}
+        {{ partial "posts/related.html" . }}
+        {{ partial "posts/next-previous.html" . }}
+      {{- end }}
+      {{ if and (.Site.DisqusShortname) (not .Site.IsServer) (ne .Params.disable_comments true) }}
+        <div class="section">
+          {{ template "_internal/disqus.html" . }}
+        </div>
+      {{ end }}
+    </aside>
+  </div>
 </div>
 {{ end }}

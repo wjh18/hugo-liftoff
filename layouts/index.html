@@ -1,209 +1,83 @@
 {{ define "main" }}
-  <section class="home-hero">    
-    <div class="home-hero__wrapper">
-      <div class="home-hero__flex">
-        {{ $avatar := .Site.Params.avatar }}
-        {{ with $avatar }}
-        {{ $image := resources.Get $avatar }}
-        <img class="home-hero__pic"
-             src="{{ $image.RelPermalink }}"
-             width="100" height="100"
-             alt="Headshot or avatar belonging to the website owner"/>
-        {{ else }}
-        {{ $image := resources.Get "images/rocket.png" }}
-        <img class="home-hero__pic"
-             src="{{ $image.RelPermalink }}"             
-             alt="Cartoon rocket blasting off to space"/>
-        {{ end }}
-        <div>
-          <h1 class="home-hero__title">{{.Title}}</h1>
-          {{ with .Params.subtitle }}
-          <p class="home-hero__subtitle">{{.}}</p>
-          {{ end }}
-          <div class="home-hero__links">
-            <a class="cta-btn" href="{{ .Site.BaseURL }}about/">About me</a>
-            {{ if eq .Site.Params.home_hero_socials true }}
-              {{ partial "general/social-links.html" . }}
-            {{ end }}
-          </div>
-        </div>
-      </div>      
-    </div>
-  </section>
-
-  <!-- Only show subsections under posts if there are at least 1 -->
-  {{ range (where .Sections "Section" "posts") }}
-    {{ if gt (len .Sections) 0 }}
-    {{ $.Scratch.Set "hasSubsections" true }}
-    {{ end }}
-  {{ end }}
-  {{ $hasSubsections := $.Scratch.Get "hasSubsections" }}
-
-  {{ if eq $hasSubsections true }}
-  <section class="home-section home-section__sections">    
-    {{ range (where .Sections "Section" "posts") }}
-      {{ range .Sections }}
-      <div class="home-section__info">
-        <h2 class="home-heading--md h-divider">{{ .Title }}</h2>
-        <p>
-          {{ with .Params.Summary }}
-            {{ . }}
-          {{ else }}
-            {{ .Description }}
-          {{ end }}
-        </p>
-        <p><a href="{{ .Site.BaseURL }}{{ .Section }}/{{ .Title | lower }}/">Read {{ .Title | lower }} &raquo;</a></p>
+<div class="container">
+  <section class="section hero">
+    <div class="hero-info">
+      <h1 class="hero-title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}
+        <p class="hero-subtitle">{{.}}</p>
+      {{ end }}
+      <div class="hero-btns">
+        <a class="btn-primary" href="{{ "about/" | relURL }}">About</a>
+        <a class="btn-secondary" href="{{ "projects/" | relURL }}">Projects</a>
       </div>
+    </div>
+    <div class="hero-owner">
+      {{ $avatar := .Site.Params.avatar }}
+      {{ $default_image := "images/default.png" }}
+      {{ $image := "" }}
+      {{ with $avatar }}
+        {{ $image = resources.Get $avatar }}
+      {{ else }}
+        {{ $image = resources.Get $default_image }}
       {{ end }}
-    {{ end }}
+      {{ $image = $image | images.Filter (images.Grayscale)  }}
+      <img class="hero-avatar"
+            src="{{ $image.RelPermalink }}"
+            width="300" height="300"
+            alt="Headshot or avatar belonging to the website owner"/>
+      {{ if eq .Site.Params.home_hero_socials true }}
+        {{ partial "general/social-links.html" . }}
+      {{ end }}
+    </div>
   </section>
-  {{- end -}}
-
-  <section class="home-section home-section__posts">
-    <div class="home-section__info">      
-      <h2 class="home-heading--light home-heading--lg h-divider">
-        {{ with .Params.posts_section_title }}
-          {{ . }}
-        {{ else }}
+  <section class="section">
+    <div class="home-title-dropdown">
+      <h2 class="home-section-posts-title">
+        {{- with .Params.posts_section_heading -}}
+          {{- . -}}
+        {{- else -}}
           Recent Posts
-        {{ end }}
+        {{- end -}}
       </h2>
-      <p class="home-subtext">
-        {{ with .Params.posts_section_description }}
-          {{ . }}
-        {{ else }}
-          Explore the 3 most recent posts or view a collection of all posts from newest to oldest.
-        {{ end }}        
-      </p>
-      <p><a href="{{ .Site.BaseURL }}posts/">See all posts &raquo;</a></p>
+      <select name="choice" id="select-posts">
+        {{ range (where .Sections "Section" "posts") }}
+        <option value="all-{{ .Name | lower }}" selected>All {{ .Name | lower }}</option>
+        {{ range .Sections }}
+        {{ if .CurrentSection.Pages }}
+        <option value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">{{ .CurrentSection.Name }}</option>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </select>
     </div>
-    <div class="posts">    
-      {{- range ( where site.RegularPages "Section" "posts" | first 3 ) }}
-        <div class="post">                                  
-          <ul class="single__banner-categories">
-            {{ with .Params.categories }}
-            {{ range . }}
-              <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a></li>
-            {{ end }}
-            {{ end }}
-          </ul>
-          <h3 class="post__title post__title--light">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h3>  
-          <p class="post__date">
-            {{ if not (eq .Lastmod .Date) }}
-              Posted:
-            {{ end }}
-            {{ if not .PublishDate.IsZero -}}
-              {{ .PublishDate.Format "Jan 2, 2006" }}
-            {{ else }}
-              {{ .Date.Format "Jan 2, 2006" }}
-            {{ end }}
-            {{ if not (eq .Lastmod .Date) }}
-              &nbsp;&middot;&nbsp;
-              Updated: {{ .Lastmod.Format "Jan 2, 2006" }}
-            {{ end }}
-            &nbsp;&middot;&nbsp;
-            {{ .ReadingTime }} min.
-            {{ partial "general/label-drafts.html" . }}
-          </p>
-          <p class="post__description home-subtext">
-            {{ with .Params.Summary }}
-              {{ . }}
-            {{ else }}
-              {{ .Description }}
-            {{ end }}
-          </p>            
-        </div>
-      {{ end }}      
-    </div> 
+    {{ range (where site.RegularPages "Section" "posts" | first 10) }}
+      <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">
+        {{ partial "posts/post-entry.html" . }}
+        <div class="post-entry-divider"></div>
+      </div>
+    {{ else }}
+      {{ partial "general/fallback-text.html" . }}
+    {{ end }}
+    <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}">More Posts</a>
   </section>
-  <div class="triangle-divider"></div>
-  <section class="home-section home-section__projects">
-    <div class="home-section__info">      
-      <h2 class="home-heading--lg h-divider">
-        {{ with .Params.projects_section_title }}
-          {{ . }}
-        {{ else }}
-          My Projects
+  <section class="section">
+    <h2 class="home-section-title">
+      {{- with .Params.projects_section_heading -}}
+        {{- . -}}
+      {{- else -}}
+        My Projects
+      {{- end -}}
+    </h2>
+    {{ $projects := where site.RegularPages "Section" "projects" | first 6 }}
+    {{ with $projects }}
+      <div class="project-list">
+        {{- range . }}
+          {{ partial "projects/project-entry.html" . }}
         {{ end }}
-      </h2>
-      <p>
-        {{ with .Params.projects_section_description }}
-          {{ . }}
-        {{ else }}
-          A collection of the projects I'm working on or have released in the past.
-        {{ end }}        
-      </p>
-      <p><a href="{{ .Site.BaseURL }}projects/">See all projects &raquo;</a></p>
-    </div>
-    {{ if .Site.Params.featured_project }}
-      {{ $featured := .Site.Params.featured_project }}
-      {{ with .Site.GetPage "/projects" }}
-        {{ with .GetPage $featured }}
-          <div class="project project--home">
-            <span class="project__type">Featured</span>
-            <ul class="single__banner-categories">
-              {{ with .Params.techstack }}
-              {{ range . }}
-                <li>{{ . }}</li>
-              {{ end }}
-              {{ end }}
-            </ul> 
-            <h3 class="project__title">
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-              <sup>{{ partial "general/label-drafts.html" . }}</sup>
-            </h3>            
-            <p class="project__description">
-              {{ with .Params.Summary }}
-                {{ . }}
-              {{ else }}
-                {{ .Description }}
-              {{ end }}
-            </p>    
-            <div class="project__links">
-              {{ with .Params.live_url }}
-                <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
-              {{ end }}
-              {{ with .Params.source_url }}
-                <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
-              {{ end }}              
-            </div>        
-          </div>
-        {{ end }}
-      {{ end }}
-    {{ else }}     
-      {{- range ( where site.RegularPages "Section" "projects" | last 1 ) }}
-        <div class="project project--home">
-          <span class="project__type">Latest</span>
-          <ul class="single__banner-categories">
-            {{ with .Params.techstack }}
-            {{ range . }}
-              <li>{{ . }}</li>
-            {{ end }}
-            {{ end }}
-          </ul> 
-          <h3 class="project__title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            <sup>{{ partial "general/label-drafts.html" . }}</sup>
-          </h3>            
-          <p class="project__description">
-            {{ with .Params.Summary }}
-              {{ . }}
-            {{ else }}
-              {{ .Description }}
-            {{ end }}
-          </p>    
-          <div class="project__links">
-            {{ with .Params.live_url }}
-              <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
-            {{ end }}
-            {{ with .Params.source_url }}
-              <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
-            {{ end }}            
-          </div>        
-        </div>
-      {{ end }}
+      </div>
+    {{ else }}
+      {{ partial "general/fallback-text.html" . }}
     {{ end }}
   </section>
+</div>
 {{ end }}

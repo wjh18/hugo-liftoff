@@ -1,0 +1,42 @@
+<div class="project-entry">
+  <div class="project-entry-img">
+    {{ partial "general/feature-image.html" . }}
+    {{ with .Param "project types" }}
+    <div class="project-entry-type">
+      {{ range first 1 . }}
+        <a href="{{ "project-types" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <div class="project-entry-info">
+    <h3 class="project-entry-title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <sup>{{ partial "general/label-drafts.html" . }}</sup>
+    </h3>
+    <div class="project-list-meta">
+      {{ with .Params.techstack }}
+      {{ range . }}
+        <span>{{ . }}</span>
+      {{ end }}
+      {{ end }}
+    </div>
+    <p class="project-list-summary">
+      {{- with .Params.Summary -}}
+        {{ . }}
+      {{- else -}}
+        {{- .Description -}}
+      {{- end -}}
+    </p>
+    {{ if or (.Params.live_url) (.Params.source_url) }}
+      <div class="btn-group">
+        {{ with .Params.live_url }}
+          <a class="btn-primary" href="{{ . }}" target="_blank">Live</a>
+        {{ end }}
+        {{ with .Params.source_url }}
+          <a class="btn-secondary" href="{{ . }}" target="_blank">Source</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</div>

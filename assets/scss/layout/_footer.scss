@@ -3,31 +3,16 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-  background-color: $bg-color-dark;
+  background-color: var(--color-contrast-lower);
+}
 
-  &__details {
-    padding: 10px 20px;
-  }
+.footer-socials {
+  max-width: 300px;
+  margin: 0 auto;
+}
 
-  &__social-links {
-    text-align: center;
-    padding: 30px 20px 10px 20px;
-  }
-
-  &__copyright {
-    text-align: center;
-    color: $txt-color-light-5;
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  &__site-title, &__extra a {
-    color: $link-color-light;
-    text-decoration: none;
-    font-family: $serif-font-light;
-  
-    &:hover {
-      color: $link-color-dark;
-    }
-  }
+.footer-copyright {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-contrast-medium-high);
 }

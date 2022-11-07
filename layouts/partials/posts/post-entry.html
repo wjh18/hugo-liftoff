@@ -1,0 +1,23 @@
+<div class="post-entry">                           
+  <h3 class="post-list-title">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h3>  
+  <div class="post-list-meta">
+    {{ partial "posts/post-meta.html" . }}
+    {{ with .Params.categories }}
+    <div class="post-list-categories">
+      {{ range . }}
+        <a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ partial "general/label-drafts.html" . }}
+  </div>
+  <p class="post-list-summary">
+    {{- with .Params.Summary -}}
+      {{- . -}}
+    {{- else -}}
+      {{- .Description -}}
+    {{- end -}}
+  </p>
+</div>

@@ -35,7 +35,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;"{{ end }}
 	alt="{{ $.Text }}" {{ with $.Title }} title="{{ . }}" {{ end }}
-	{{ with index ($fragments ) 1 }}class="{{ . }}" {{ else }}class="single__post-image" {{ end }}
+	{{ with index ($fragments ) 1 }}class="{{ . }}" {{ else }}class="single-post-image" {{ end }}
 	loading="lazy"
 	decoding="async"
 	>
@@ -43,7 +43,7 @@
 {{- else -}}
 	<img src="{{ .Destination | safeURL }}"
 	alt="{{ .Text }}" {{ with .Title }} title="{{ . }}" {{ end }}
-	{{ with index ($fragments ) 1 }}class="{{ . }}" {{ else }}class="single__post-image" {{ end }}
+	{{ with index ($fragments ) 1 }}class="{{ . }}" {{ else }}class="single-post-image" {{ end }}
 	loading="lazy"
 	decoding="async"
 	>

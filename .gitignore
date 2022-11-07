@@ -15,5 +15,8 @@ hugo.linux
 ### JS ###
 /node_modules
 
+### Netlify ###
+/netlify
+
 ### System
 .DS_Store

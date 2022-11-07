@@ -1,15 +1,16 @@
 ### SEO, Analytics & 3rd-party
 googleAnalyticsv4 = false # false for Universal Analytics, true for GA v4
-netlify_cms = false # true adds Netlify Identity JS to head for NetlifyCMS auth using git-gateway
 netlify_forms = true # add data-netlify attribute to contact and newsletter forms, false to disable Netlify forms
 # gtm_id = '' # GTM tracking (leave blank to use GA)
-# disallow_search_engines = false # Disallow search engine crawling in robots.txt
+disallow_search_engines = false # Disallow search engine crawling in robots.txt
 
 ### Content
 favicon = true # Enable favicon, add your favicon files to /static/ directory
+# avatar = 'avatar.png' # Custom avatar image in /assets/
 author = 'John Doe' # Default author for <head> meta
-description = "Personal blog and portfolio site of John Joe." # Add a global meta description to <head>
+description = "Personal blog and portfolio site of John Doe." # Add a global meta description to <head>
 footer_text = "Built with [Hugo Liftoff](https://github.com/wjh18/hugo-liftoff) theme." # Customize footer text
+fallback_text = "No content available yet. Coming soon." # Fallback text for empty content
 label_drafts = true # Add a label indicator next to the title of any built drafts (dev only)
 
 # Customize newsletter text
@@ -20,26 +21,22 @@ global_newsletter = true # Enable newsletter site-wide
 
 # CSS / JavaScript
 enable_postcss = false # Enable if you're using npm and want to utilize PostCSS processing
-# custom_css = 'custom.css' # Add the specified file to assets before setting this param to avoid errors
-# custom_js = 'custom.js' # Add the specified file to assets before setting this param to avoid errors
-
-# Show a custom featured project on homepage instead of latest project
-# featured_project = 'this-is-my-project' # Enter the filename for .md file or directory name for page bundles
-# avatar = 'avatar.png' # Custom avatar image, add file to assets directory
+custom_css = 'custom.css' # Add the specified file to assets before setting this param to avoid errors
+custom_js = 'custom.js' # Add the specified file to assets before setting this param to avoid errors
 
 ### Web schemas
 # Open Graph
-images = ['images/rocket.png'] # Fallback for Open Graph and Twitter Cards images if none are present in front matter. Enter path to the image.
+images = ['images/default.png'] # Fallback for Open Graph and Twitter Cards images if none are present in front matter. Enter path to the image.
 ogLocale = "en_US" # Open graph locale
 
 # Twitter Cards
-twitterSite = "" # Enter your twitter handle without the @
-twitterCreator = "" # Enter your twitter handle without the @
+twitterSite = "johndoestwitter" # Enter your twitter handle without the @
+twitterCreator = "johndoestwitter" # Enter your twitter handle without the @
 
 # JSON-LD structured data schemas
-schemaName = "" # Enter your name
+schemaName = "John Doe" # Enter your name
 schemaLocale = "en-US" # Structured data locale
-schemaImage = "images/rocket.png" # Image for Person structured data schema. Enter path to the image.
+schemaImage = "images/default.png" # Image for Person structured data schema. Enter path to the image.
 schemaImageWidth = 453 # Width of the above image
 schemaImageHeight = 455 # Height of the above image
 
@@ -55,7 +52,7 @@ about_page_socials = true
   github = "username"
   stack_overflow = "userid/username" # include user id
   email = "user@example.com"
-  # linkedin = "username"
+  # linkedin = "username" # Comment out to disable
 
 # Enable or disable individual social share icons in posts
 [social.share]

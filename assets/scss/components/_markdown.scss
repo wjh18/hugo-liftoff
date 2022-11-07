@@ -1,0 +1,19 @@
+.markdown {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+
+  @include respond-to('medium') {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+
+  p > img, figure > img {      
+    max-width: 100%;
+    height: auto;
+  }
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

@@ -1,13 +1,12 @@
-{{ $script := resources.Get "js/app.js" | js.Build "main.js"  }}
+{{ $script := resources.Get "js/app.js" | js.Build "main.js" }}
+{{ $custom := "" }}
 {{ with .Site.Params.custom_js }}
-  {{ $custom := resources.Get . }}
+  {{ $custom = resources.Get . }}
   {{ $bundle := slice $script $custom | resources.Concat "main.js" }}
-  {{ $final := $bundle | js.Build "main.js" | minify }}
-  <script src="{{ $final.Permalink }}"></script>
-{{ else }}
-  {{ $final := $script | js.Build "main.js" | minify }}
-  <script src="{{ $final.Permalink }}"></script>
+  {{ $script = $bundle }}
 {{ end }}
+{{ $final := $script | js.Build "main.js" | minify }}
+<script src="{{ $final.Permalink }}"></script>
 
 <!-- Add Universal Analytics or Google Analytics v4 based on config if not using GTM -->
 {{ if and (not .Site.IsServer) (not .Site.Params.gtm_id) }}

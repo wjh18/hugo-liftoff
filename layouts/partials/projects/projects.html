@@ -1,71 +1,38 @@
-<section class="banner">
-  <h1 class="banner__header">
-    {{ if eq .Kind "term" }}
-      {{ .Title }} Projects
-    {{ else }}
-      {{ .Title }}
-    {{ end }}
-  </h1>
-</section>
-<section>
-  <div class="list__description-wrapper">
-    <p class="list__description">
-      {{ with .Params.Summary }}
-        {{ . }}
-      {{ else }}
-        {{ with .Description }}
-          {{ . }}
-        {{ else }}
-          {{ if eq .Kind "term" }}
-            {{ .Title }} projects
-          {{ else }}
-            {{ .Title }}
-          {{ end }}
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">
+      {{- if eq .Kind "term" -}}
+        {{- .Title }} Projects
+      {{- else -}}
+        {{- .Title -}}
+      {{- end -}}
+    </h1>
+    <p class="page-header-desc">
+      {{- with .Params.Summary -}}
+        {{- . -}}
+      {{- else -}}
+        {{- with .Description -}}
+          {{- . -}}
+        {{- else -}}
+          {{- if eq .Kind "term" -}}
+            {{- .Title }} projects
+          {{- else -}}
+            {{- .Title -}}
+          {{- end }}
             I've worked on.
-        {{ end }}
-      {{ end }}
+        {{- end -}}
+      {{- end -}}
     </p>
-  </div>
-  <div class="projects">
-    {{ range .RegularPagesRecursive }}    
-    <div class="project">
-      <span class="project__type">
-        {{ with .Param "project types" }}
-          {{ range first 1 . }}
-            <a href="{{ "project-types" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
-          {{ end }}
-        {{ end }}
-      </span>
-      <ul class="single__banner-categories">
-        {{ with .Params.techstack }}
+  </section>
+  <section>
+    {{ with .RegularPagesRecursive }}
+      <div class="project-list">
         {{ range . }}
-          <li>{{ . }}</li>
+          {{ partial "projects/project-entry.html" . }}
         {{ end }}
-        {{ end }}
-      </ul>
-      <div class="project__image">{{ partial "general/feature-image.html" . }}</div>
-      <h2 class="project__title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <sup>{{ partial "general/label-drafts.html" . }}</sup>
-      </h2>
-      <p class="project__description">
-        {{ with .Params.Summary }}
-          {{ . }}
-        {{ else }}
-          {{ .Description }}
-        {{ end }}
-      </p>
-      {{ if or (.Params.live_url) (.Params.source_url) }}
-        <div class="project__links">
-          {{ with .Params.live_url }}
-            <a class="project__live-url cta-btn cta-btn--light" href="{{ . }}">Live</a>
-          {{ end }}
-          {{ with .Params.source_url }}
-            <a class="project__source-url cta-btn cta-btn--light" href="{{ . }}">Source Code</a>
-          {{ end }}
-        </div>
-      {{ end }}
-    </div>
+      </div>
+    {{ else }}
+      {{ partial "general/fallback-text.html" . }}
     {{ end }}
-  </div>
-</section>
+  </section>
+</div>

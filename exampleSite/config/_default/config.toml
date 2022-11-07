@@ -35,7 +35,7 @@ titleCaseStyle = 'AP' # Default, other options: Chicago (slightly different) or 
 
 ### Other
 archetypeDir = 'archetypes' # Default
-# assetDir = 'assets' # Default
+assetDir = 'assets' # Default
 contentDir = 'content' # Default
 dataDir = 'data' # Default
 disableHugoGeneratorInject = false # Default
@@ -50,8 +50,9 @@ disableLiveReload = false # Default
 
 [permalinks]    
     posts = '/:sections[last]/:slug/' # Removes 'posts' from the permalink structure for posts created under nested sub-sections
-    # e.g. /sub-section/example-post instead of /posts/sub-section/example-post
+    # e.g. /subsection/example-post instead of /posts/subsection/example-post
     # Currently only works for single posts, the section list page will remain at /posts/subsection/
+    # unless you override the 'url' frontmatter parameter with the section name only
 
 [markup]
   defaultMarkdownHandler = 'goldmark' # Default (everything under [markup] is unless otherwise specified)

@@ -1,16 +1,16 @@
 {{ define "main" }}
-<section class="banner">
-  <h1 class="banner__header">{{ .Title }}</h1>
-</section>
-<div class="terms">
-  <div class="terms__wrapper">
+<div class="container">
+  <section class="page-header--c">
+    <h1 class="page-header-title">{{ .Title }}</h1>
+  </section>
+  <div class="terms">
     {{ with .Data.Terms.ByCount }}
       {{ range . }}
-        <span class="terms__term"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></span>
-      {{ end }}    
+        <a class="term" href="{{ .Page.Permalink }}">{{ .Page.Title }} <sup class="term-count">{{ .Count }}</sup></a>
+      {{ end }}
     {{ else }}
-      <span class="terms__none">No content available yet. Coming soon.</span>
+      {{ partial "general/fallback-text.html" . }}
     {{ end }}
-  </div>  
+  </div>
 </div>
 {{ end }}
