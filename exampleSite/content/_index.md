@@ -1,6 +1,6 @@
 ---
 title: Welcome to Hugo Liftoff.
-subtitle: A customizable, SEO-optimized blog and portfolio theme for Hugo with a modern design. An ideal choice for technical users jump-starting a personal brand, portfolio, or dev blog.
+subtitle: Minimal blog/portfolio theme with a focus on content creation and SEO best practices. An ideal choice for technical users jump-starting a personal brand.
 seo_title: Hugo Liftoff | Hugo theme for creators
 
 posts_section_heading: Recent Posts

@@ -1,8 +1,8 @@
 ---
 title: Hugo Liftoff Theme
-seo_title: Customizable, SEO-optimized blog and portfolio theme for Hugo with a modern design.
-summary: Customizable, SEO-optimized blog and portfolio theme for Hugo with a modern design.
-description: Customizable, SEO-optimized blog and portfolio theme for Hugo with a modern design.
+seo_title: Minimal blog/portfolio theme with a focus on content creation and SEO best practices.
+summary: Minimal blog/portfolio theme with a focus on content creation and SEO best practices.
+description: Minimal blog/portfolio theme with a focus on content creation and SEO best practices.
 slug: hugo-liftoff
 author: John Doe
 
