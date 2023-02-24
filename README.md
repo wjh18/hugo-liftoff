@@ -23,7 +23,6 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 ### Netlify
 
 * Custom headers / redirects with Netlify (optional)
-* Netlify functions support (optional)
 * Netlify forms support for newsletter opt-in and contact page (optional)
 * Sample `netlify.toml` file for streamlined deployment
 
@@ -92,7 +91,7 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 * CSS and JS minification
 * Frontend build pipeline with ESBuild and ToCSS
 * PostCSS processing (optional)
-* `npm` completely optional unless using PostCSS / Autoprefixer or Netlify functions
+* `npm` completely optional unless using PostCSS / Autoprefixer
 
 ### Images
 

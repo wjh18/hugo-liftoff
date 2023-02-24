@@ -1,8 +1,6 @@
 [build]
-  # command = "hugo && npm run build:functions" # Enable if using Netlify functions
-  command = "hugo" # Disable if using the other command
+  command = "hugo"
   publish = "public"
-  functions = "netlify/functions"
 
 [build.environment]
   HUGO_VERSION = "0.99.0"
