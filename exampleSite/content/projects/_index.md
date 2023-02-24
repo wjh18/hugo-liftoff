@@ -1,5 +1,5 @@
 ---
 title: Projects
-summary: Projects I've worked on.
-description: Projects I've worked on.
+summary: Tell visitors about your projects by customizing this text.
+description: Explore some of the projects I've worked on.
 ---

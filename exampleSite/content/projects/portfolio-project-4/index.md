@@ -1,13 +1,13 @@
 ---
-title: Markdown Syntax Guide
-seo_title: Markdown Syntax Guide
-summary: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
-description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
-slug: markdown-syntax
+title: Portfolio Project 4
+seo_title: Portfolio Project 4
+summary: Portfolio Project 4 is my fourth portfolio project.
+description: Portfolio Project 4 is my fourth portfolio project.
+slug: portfolio-project-4
 author: John Doe
 
 draft: false
-date: 2020-11-17T21:21:46-05:00
+date: 2022-02-20T03:52:30-05:00
 lastmod: 
 expiryDate: 
 publishDate: 
@@ -15,28 +15,24 @@ publishDate:
 feature_image: 
 feature_image_alt: 
 
-categories:
-  - Web Development
-tags:
-  - Markdown
-  - HTML
-series: 
+project types: 
+    - Open Source
 
-toc: true
-related: true
-social_share: true
-newsletter: true
-disable_comments: false
+techstack:
+    - Hugo
+    - HTML/CSS
+    - JavaScript
+    - Netlify
+live_url: https://hugo-liftoff.netlify.app
+source_url: https://github.com/wjh18/hugo-liftoff
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
-<!--more-->
 
 ## Headings
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+The following HTML `<h2>`—`<h6>` elements represent five levels of section headings. `<h2>` is the highest section level you should use in markdown while `<h6>` is the lowest. `<h1>` should be reserved for the page title.
 
-# H1
 ## H2
 ### H3
 #### H4
@@ -53,12 +49,12 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 
-#### Blockquote without attribution
+### Blockquote without attribution
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use *Markdown syntax* within a blockquote.
 
-#### Blockquote with attribution
+### Blockquote with attribution
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
@@ -74,7 +70,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
     Bob | 27
   Alice | 23
 
-#### Inline Markdown within tables
+### Inline Markdown within tables
 
 | Italics   | Bold     | Code   |
 | --------  | -------- | ------ |
@@ -82,7 +78,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 ## Code Blocks
 
-#### Code block with backticks
+### Code block with backticks
 
 ```html
 <!doctype html>
@@ -97,7 +93,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 ```
 
-#### Code block indented with four spaces
+### Code block indented with four spaces
 
     <!doctype html>
     <html lang="en">
@@ -110,7 +106,8 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
     </body>
     </html>
 
-#### Code block with Hugo's internal highlight shortcode
+### Code block with Hugo's internal highlight shortcode
+
 {{< highlight html >}}
 <!doctype html>
 <html lang="en">
@@ -126,19 +123,19 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 ## List Types
 
-#### Ordered List
+### Ordered List
 
 1. First item
 2. Second item
 3. Third item
 
-#### Unordered List
+### Unordered List
 
 * List item
 * Another item
 * And another item
 
-#### Nested list
+### Nested list
 
 * Fruit
   * Apple
