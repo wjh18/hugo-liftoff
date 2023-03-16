@@ -57,13 +57,15 @@ table {
 }
 
 td, th {
-  border: 1px solid var(--color-contrast-low);
+  border: 1px solid var(--color-contrast-medium-low);
   padding: 10px 20px;
   font-size: 0.9rem;
+  line-height: 1.4rem;
 }
 
 th {
-  background-color: var(--color-contrast-low);
+  border: 1px solid var(--color-contrast-medium);
+  background-color: var(--color-contrast-medium-low);
   color: var(--color-contrast-high);
   font-size: 1rem;
 }
@@ -73,13 +75,13 @@ td {
 }
 
 tr:nth-child(even) td {
-  background-color: var(--color-contrast-high);
-  color: var(--color-contrast-lower);
+  background-color: var(--color-contrast-lower);
+  color: var(--color-contrast-high);
 }
 
 tr:nth-child(odd) td {
-  background-color: var(--color-contrast-higher);
-  color: var(--color-contrast-low);
+  background-color: var(--color-contrast-low);
+  color: var(--color-contrast-high);
 }
 
 blockquote {
