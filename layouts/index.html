@@ -20,7 +20,9 @@
       {{ else }}
         {{ $image = resources.Get $default_image }}
       {{ end }}
-      {{ $image = $image | images.Filter (images.Grayscale)  }}
+      {{ if eq .Site.Params.grayscale_avatar true }}
+        {{ $image = $image | images.Filter (images.Grayscale)  }}
+      {{ end }}
       <img class="hero-avatar"
             src="{{ $image.RelPermalink }}"
             width="300" height="300"
