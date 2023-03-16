@@ -24,7 +24,12 @@ function switchTheme() {
       } else {
         document.body.removeAttribute('data-theme');
         localStorage.removeItem('themeSwitch');
-      } 
+      }
+
+      // Reset Disqus to match new color scheme
+      if (typeof DISQUS !== "undefined") {
+          DISQUS.reset({ reload: true });
+      }
     }
   }
 }
