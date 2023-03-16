@@ -117,6 +117,13 @@ code {
   overflow-x: scroll;
 }
 
+pre:not([style]) {
+  // If no highlighting is applied already
+  background-color:#272822;
+  color:#f8f8f2;
+  padding: 20px;
+}
+
 p > code, li > code {
   background-color: var(--color-contrast-lower);
   font-size: 1rem;

@@ -1,10 +1,12 @@
 .code-language {
-  position: absolute;
-  padding: 5px 15px;    
+  position: relative;
+  padding: 6px 15px;    
   border-radius: 5px;
   background-color: #272822;
   color: #7f7f7f;
   z-index: 1000;
+  top: 25px;
+  font-size: 1rem;
 }
 
 .highlight > pre {
