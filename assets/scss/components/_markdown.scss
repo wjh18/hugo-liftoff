@@ -16,4 +16,11 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+  figcaption {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    color: var(--color-contrast-medium);
+    font-weight: 300;
+  }
 }
