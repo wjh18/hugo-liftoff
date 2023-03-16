@@ -1,7 +1,7 @@
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 2rem 1rem;
 
   & > * {
