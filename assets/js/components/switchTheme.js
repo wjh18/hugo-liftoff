@@ -11,10 +11,15 @@ function switchTheme() {
 
     function initTheme() {
       let lsItem = localStorage.getItem('themeSwitch');
-      let darkThemeSelected = (lsItem !== null && lsItem === 'dark');
+      let darkThemeSelected = false;
+      if (lsItem !== null) {
+        darkThemeSelected = lsItem === 'dark';
+      } else {
+        darkThemeSelected = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
 
       themeSwitch.checked = darkThemeSelected;
-      darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') : document.body.removeAttribute('data-theme');
+      resetTheme();
     }
 
     function resetTheme() {
@@ -23,7 +28,7 @@ function switchTheme() {
         localStorage.setItem('themeSwitch', 'dark');
       } else {
         document.body.removeAttribute('data-theme');
-        localStorage.removeItem('themeSwitch');
+        localStorage.setItem('themeSwitch', 'light');
       }
 
       // Reset Disqus to match new color scheme
