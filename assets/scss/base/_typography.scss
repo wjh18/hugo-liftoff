@@ -12,21 +12,20 @@
 
 .summary-text {
   font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.6rem;
+  @include font-size('base');
   color: var(--color-contrast-medium-high);
 }
 
 .meta-text {
   color: var(--color-contrast-medium);
-  font-size: 1rem;
+  @include font-size('sm');
   font-weight: 400;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 20px;
+  gap: 6px 15px;
 }
 
 .fallback-text {
   color: var(--color-contrast-medium);
-  font-size: 1.2rem;
+  @include font-size('md');
 }

@@ -33,7 +33,7 @@
 </div>
 <div class="single-container-post">
   {{ partial "posts/toc.html" . }}
-  <div>
+  <div class="single-post-contents">
     {{- if .Params.series }}
       <div class="series">
         {{- $name := index .Params.series 0 }}

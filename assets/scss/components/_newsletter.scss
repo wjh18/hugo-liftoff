@@ -1,25 +1,11 @@
 .newsletter-header {
   color: var(--color-contrast-high);
   margin-bottom: 0;
-
-  font-size: 1.5rem;
-  line-height: 2.2rem;
-
-  @include respond-to('small') {
-    font-size: 1.8rem;
-    line-height: 2.6rem;
-  }
 }
 
 .newsletter-desc {
   color: var(--color-contrast-medium-high);
-  font-size: 1rem;
-  line-height: 1.7rem;
-
-  @include respond-to('small') {
-    font-size: 1.2rem;
-    line-height: 2rem;
-  }
+  @include font-size('base');
 }
 
 #newsletter-form {

@@ -34,9 +34,12 @@
   }
 }
 
+.single-post-contents {
+  overflow: auto;
+}
+
 .series {
-  font-size: 1.1rem;
-  line-height: 1.8rem;
+  @include font-size('base');
   margin: 2rem 0;
 }
 
@@ -45,7 +48,7 @@
   border: 1px solid var(--color-primary);
   border-radius: 5px;
   padding: 0.3rem;
-  font-size: 0.8rem;
+  @include font-size('sm');
   font-weight: 500;
   margin-left: 10px;
 }
@@ -62,7 +65,7 @@
     border: 1px solid var(--color-contrast-medium-low);
     border-radius: 12px;
     padding: 10px;
-    font-size: 1.1rem;
+    @include font-size('base');
     max-width: 300px;
     
     &:hover {
@@ -73,9 +76,5 @@
 }
 
 .related-posts {
-  font-size: 1.1rem;
-}
-
-.project-single-btns {
-  margin-top: 20px;
+  @include font-size('base');
 }

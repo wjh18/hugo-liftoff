@@ -1,11 +1,5 @@
 .markdown {
-  font-size: 1.1rem;
-  line-height: 1.8rem;
-
-  @include respond-to('medium') {
-    font-size: 1.2rem;
-    line-height: 2rem;
-  }
+  @include font-size('base');
 
   p > img, figure > img {      
     max-width: 100%;
@@ -15,5 +9,11 @@
   figure {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  figcaption {
+    @include font-size('sm');
+    color: var(--color-contrast-medium);
+    font-weight: 300;
   }
 }

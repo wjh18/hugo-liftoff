@@ -14,13 +14,7 @@
   margin: 0;
   color: var(--color-contrast-high);
   font-weight: 500;
-  font-size: 1.8rem;
-  line-height: 2.2rem;
-
-  @include respond-to('medium') {
-    font-size: 2.3rem;
-    line-height: 2.8rem;
-  }
+  @include font-size('lg');
 }
 
 .page-header-desc {
@@ -28,11 +22,5 @@
   margin-top: 15px;
   color: var(--color-contrast-medium);
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.6rem;
-
-  @include respond-to('medium') {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-  }
+  @include font-size('base');
 }

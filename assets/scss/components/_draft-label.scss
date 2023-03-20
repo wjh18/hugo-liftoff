@@ -3,7 +3,7 @@
   color: rgb(201, 8, 8);
   border: 1px solid rgb(201, 8, 8);
   border-radius: 5px;
-  font-size: 0.9rem;
+  @include font-size('sm');
   padding: 2px 5px;
   font-weight: 300;
 }

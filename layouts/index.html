@@ -6,7 +6,7 @@
       {{ with .Params.subtitle }}
         <p class="hero-subtitle">{{.}}</p>
       {{ end }}
-      <div class="hero-btns">
+      <div class="btn-group">
         <a class="btn-primary" href="{{ "about/" | relURL }}">About</a>
         <a class="btn-secondary" href="{{ "projects/" | relURL }}">Projects</a>
       </div>
@@ -20,7 +20,9 @@
       {{ else }}
         {{ $image = resources.Get $default_image }}
       {{ end }}
-      {{ $image = $image | images.Filter (images.Grayscale)  }}
+      {{ if eq .Site.Params.grayscale_avatar true }}
+        {{ $image = $image | images.Filter (images.Grayscale)  }}
+      {{ end }}
       <img class="hero-avatar"
             src="{{ $image.RelPermalink }}"
             width="300" height="300"

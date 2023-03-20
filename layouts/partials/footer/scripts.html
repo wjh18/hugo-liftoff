@@ -1,11 +1,31 @@
-{{ $script := resources.Get "js/app.js" | js.Build "main.js" }}
+{{ $opts := "" }}
+{{ if hugo.IsProduction }}
+  {{ $opts = dict "targetPath" "main.js" }}
+{{ else }}  
+  {{ $opts = dict "targetPath" "main.js" "sourceMap" "inline" }}
+{{ end }}
+{{ $script := resources.Get "js/app.js" | js.Build $opts }}
+
 {{ $custom := "" }}
 {{ with .Site.Params.custom_js }}
   {{ $custom = resources.Get . }}
-  {{ $bundle := slice $script $custom | resources.Concat "main.js" }}
-  {{ $script = $bundle }}
+  {{/*  Only concatenate in production to allow source maps  */}}
+  {{ if hugo.IsProduction }}
+    {{ $bundle := slice $script $custom | resources.Concat "main.js" }}
+    {{ $script = $bundle }}
+  {{ else }}
+    <script src="{{ $custom.Permalink }}"></script>
+  {{ end }}
 {{ end }}
-{{ $final := $script | js.Build "main.js" | minify }}
+
+{{ $final := "" }}
+{{ if hugo.IsProduction }}
+  {{/*  Only rebuild concatenated files in production (in dev there is no concat)  */}}
+  {{/*  Only minify in production to allow source maps  */}}
+  {{ $final = $script | js.Build "main.js" | minify }}  
+{{ else }}
+  {{ $final = $script }}
+{{ end }}
 <script src="{{ $final.Permalink }}"></script>
 
 <!-- Add Universal Analytics or Google Analytics v4 based on config if not using GTM -->

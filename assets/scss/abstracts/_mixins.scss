@@ -53,3 +53,8 @@
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
+@mixin font-size($step) {
+  font-size: var(--font-size-#{$step});
+  line-height: calc(8px + 2ex);
+}

@@ -28,7 +28,7 @@
 }
 
 .logo {
-  font-size: 1.8rem;
+  @include font-size('md');
   font-weight: 700;
   text-decoration: none;
   width: fit-content;

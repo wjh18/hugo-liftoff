@@ -50,6 +50,30 @@ a {
   }
 }
 
+h1 {
+  @include font-size('xl');
+}
+
+h2 {
+  @include font-size('lg');
+}
+
+h3 {
+  @include font-size('md');
+}
+
+h4 {
+  @include font-size('base');
+}
+
+h5 {
+  @include font-size('sm');
+}
+
+h6 {
+  @include font-size('sm');
+}
+
 table {
   border-collapse: collapse;    
   display: block;
@@ -57,13 +81,15 @@ table {
 }
 
 td, th {
-  border: 1px solid var(--color-contrast-low);
+  border: 1px solid var(--color-contrast-medium-low);
   padding: 10px 20px;
   font-size: 0.9rem;
+  line-height: 1.4rem;
 }
 
 th {
-  background-color: var(--color-contrast-low);
+  border: 1px solid var(--color-contrast-medium);
+  background-color: var(--color-contrast-medium-low);
   color: var(--color-contrast-high);
   font-size: 1rem;
 }
@@ -73,13 +99,13 @@ td {
 }
 
 tr:nth-child(even) td {
-  background-color: var(--color-contrast-high);
-  color: var(--color-contrast-lower);
+  background-color: var(--color-contrast-lower);
+  color: var(--color-contrast-high);
 }
 
 tr:nth-child(odd) td {
-  background-color: var(--color-contrast-higher);
-  color: var(--color-contrast-low);
+  background-color: var(--color-contrast-low);
+  color: var(--color-contrast-high);
 }
 
 blockquote {
@@ -88,7 +114,6 @@ blockquote {
   margin: 1.5em 10px;
   padding: 0.7em 10px;
   quotes: "\201C" "\201D";
-  overflow-x: auto;
 
   p {
     display: inline;
@@ -105,7 +130,6 @@ blockquote {
 }
 
 pre {
-  // padding: 20px;
   font-size: 1rem;
   line-height: 1.6rem;
   overflow-x: auto;
@@ -113,6 +137,13 @@ pre {
 
 code {
   overflow-x: scroll;
+}
+
+pre:not([style]) {
+  // If no highlighting is applied already
+  background-color:#272822;
+  color:#f8f8f2;
+  padding: 20px;
 }
 
 p > code, li > code {
