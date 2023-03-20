@@ -6,7 +6,7 @@
   color: #7f7f7f;
   z-index: 1000;
   top: 25px;
-  font-size: 1rem;
+  @include font-size('base');
 }
 
 .highlight > pre {

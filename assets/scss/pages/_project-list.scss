@@ -45,7 +45,7 @@
   border-top-right-radius: 10px;
 
   a {
-    font-size: 0.9rem;
+    @include font-size('sm');
   }
 }
 

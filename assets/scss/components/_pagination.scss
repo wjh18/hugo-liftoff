@@ -6,7 +6,7 @@
   gap: 15px 10px;
   margin-top: 50px;
   padding: 0;
-  font-size: 1rem;
+  @include font-size('base');
 }
 
 .page-link {

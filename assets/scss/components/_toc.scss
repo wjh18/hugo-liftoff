@@ -14,7 +14,7 @@
 }
 
 .toc-header, .toc-drop-icon {
-  font-size: 1rem;
+  @include font-size('sm');
   font-weight: 500;
   margin: 0;
   text-align: center;
@@ -22,8 +22,7 @@
 
 .toc-contents {
   display: none;
-  font-size: 1rem;
-  line-height: 1.6rem;
+  @include font-size('sm');
 
   &--active {      
     display: block;

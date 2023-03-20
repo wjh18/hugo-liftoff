@@ -1,17 +1,17 @@
 .btn-group {
   display: flex;
   column-gap: 15px;
+  margin-top: 30px;
 }
 
 %btn {
   border: 1px solid var(--color-primary);
-  padding: 0.5rem 0.7rem;
-  font-size: 0.9rem;
+  padding: 0.4rem 0.7rem;
   display: inline-block;
+  @include font-size('base');
 
   @include respond-to('small') {
-    padding: 0.6rem 0.8rem;
-    font-size: 1.1rem;
+    padding: 0.5rem 0.8rem;
   }
 
   @include on-event() {

@@ -50,6 +50,30 @@ a {
   }
 }
 
+h1 {
+  @include font-size('xl');
+}
+
+h2 {
+  @include font-size('lg');
+}
+
+h3 {
+  @include font-size('md');
+}
+
+h4 {
+  @include font-size('base');
+}
+
+h5 {
+  @include font-size('sm');
+}
+
+h6 {
+  @include font-size('sm');
+}
+
 table {
   border-collapse: collapse;    
   display: block;
@@ -106,7 +130,6 @@ blockquote {
 }
 
 pre {
-  // padding: 20px;
   font-size: 1rem;
   line-height: 1.6rem;
   overflow-x: auto;
