@@ -28,11 +28,7 @@
 {{ end }}
 <script src="{{ $final.Permalink }}"></script>
 
-<!-- Add Universal Analytics or Google Analytics v4 based on config if not using GTM -->
+<!-- Add Google Analytics v4 tag if not using GTM -->
 {{ if and (not .Site.IsServer) (not .Site.Params.gtm_id) }}
-  {{ if eq .Site.Params.googleAnalyticsv4 true }}
-    {{ template "_internal/google_analytics.html" . }}
-  {{ else }}
-    {{ template "_internal/google_analytics_async.html" . }}
-  {{ end }}
+  {{ template "_internal/google_analytics.html" . }}
 {{ end }}

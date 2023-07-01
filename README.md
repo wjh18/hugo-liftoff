@@ -28,7 +28,7 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 
 ### 3rd Party
 
-* Google Analytics v4 or Universal Analytics (optional)
+* Google Analytics v4
 * Google Tag Manager as an alternative to GA (optional)
 * Disqus comments (optional)
 * Disable comments on a per-page basis (optional) (frontmatter)

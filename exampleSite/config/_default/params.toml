@@ -1,5 +1,4 @@
 ### SEO, Analytics & 3rd-party
-googleAnalyticsv4 = false # false for Universal Analytics, true for GA v4
 netlify_forms = true # add data-netlify attribute to contact and newsletter forms, false to disable Netlify forms
 # gtm_id = '' # GTM tracking (leave blank to use GA)
 disallow_search_engines = false # Disallow search engine crawling in robots.txt
