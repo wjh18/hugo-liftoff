@@ -4,8 +4,8 @@ licenselink = "https://github.com/wjh18/hugo-liftoff/blob/master/LICENSE"
 description = "Minimal blog/portfolio theme with a focus on content creation and SEO best practices. An ideal choice for technical users jump-starting a personal brand."
 homepage = "https://github.com/wjh18/hugo-liftoff"
 demosite = "https://hugo-liftoff.netlify.app"
-tags = ["blog", "portfolio", "personal", "responsive", "newsletter", "hero", "contact"]
-features = []
+tags = ["blog", "responsive", "minimal", "personal", "light", "dark", "portfolio", "dark-mode", "contact"]
+features = ["newsletter", "hero", "netlify", "seo", "schema", "rss", "comments", "google-tag-manager", "social-icons", "social-share", "subsections", "series", "submenu", "toc", "related-posts", "projects", "code-snippets", "custom-assets", "about-page"]
 [author]
     name = "Will J. Holmes"
     homepage = "https://www.wjholmes.com"
