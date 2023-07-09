@@ -66,7 +66,7 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 * Series posts taxonomy with single posts that list all posts in the current series (optional)
 * Next/prev links at the end of single posts for subsections or series posts (if enabled)
 * Subsection support for posts with custom permalinks for clean SEO URLs (optional)
-* Mobile-responsive, collapsable JS menu with automatic submenu support based on menu config
+* Mobile-responsive, collapsible JS menu with automatic submenu support based on menu config
 
 ### Posts & Projects
 

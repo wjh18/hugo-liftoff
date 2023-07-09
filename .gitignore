@@ -1,6 +1,6 @@
 ### Hugo ###
-/public/
-/resources/_gen/
+public/
+resources
 # Don't ignore themes folder in your actual project .gitignore if using submodules!
 /themes/
 .hugo_build.lock
