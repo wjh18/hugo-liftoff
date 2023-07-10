@@ -116,7 +116,7 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 
 ### Hugo Defaults
 
-* Example `config.toml` with the majority of Hugo defaults included for easy customization
+* Example `hugo.toml` with the majority of Hugo config defaults included for easy customization
 * Override config settings based on Hugo environment
 
 ## Planned Features
