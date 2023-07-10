@@ -48,11 +48,13 @@ disableLiveReload = false # Default
     series = 'series' # Allows you to create an organized series of posts (e.g. multi-part tutorial)
     project-type = 'project types' # Categorize projects by type (e.g. client work, personal, open source, etc.)
 
-[permalinks]    
-    posts = '/:sections[last]/:slug/' # Removes 'posts' from the permalink structure for posts created under nested sub-sections
-    # e.g. /subsection/example-post instead of /posts/subsection/example-post
-    # Currently only works for single posts, the section list page will remain at /posts/subsection/
-    # unless you override the 'url' frontmatter parameter with the section name only
+[permalinks]
+    [permalinks.page]
+        # e.g. /subsection/example-post instead of /posts/subsection/example-post
+        posts = '/:sections[last]/:slug/' # Removes 'posts' from the permalink structure for posts created under nested sub-sections
+    [permalinks.section]
+        # e.g. /subsection/ instead of /posts/subsection/
+        posts = '/:slug/'
 
 [markup]
   defaultMarkdownHandler = 'goldmark' # Default (everything under [markup] is unless otherwise specified)
