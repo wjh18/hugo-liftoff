@@ -6,13 +6,21 @@ Hugo Liftoff is a minimal blog/portfolio theme with a focus on content creation 
 
 The full documentation is hosted on this repo's [Github Wiki](https://github.com/wjh18/hugo-liftoff/wiki).
 
+Please open an issue if you find any mistakes in the docs or have suggestions for improvement.
+
+## Demo Site
+
+A working [demo of the theme](https://hugo-liftoff.netlify.app/) is available to the public for evaluation.
+
+The `exampleSite` content included with the theme, which you're free to copy into your own project, mirrors the content used in the demo. The idea behind this is to help you get started quickly and replicate any features you saw in the demo that you think could be useful in your own project.
+
 ## Notable Features
 
 * Content subsections with the ability to filter recent posts on homepage by subsection
 * Series posts taxonomy with single posts that list all posts in the current series
 * Next/prev links at the end of single posts for subsections or series posts (if enabled)
-* Light/dark mode toggle using css custom properties
-* Responsive main menu with submenu support and sample config
+* Light/dark mode toggle using CSS custom properties
+* Mobile-responsive, collapsible JS menu with automatic submenu support based on menu config
 * Customizable newsletter with Netlify Forms support and conditional visibility control
 * And much more...
 
@@ -43,7 +51,7 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 
 ### Social
 
-* Native Twitter, Github, Stack Overflow, LinkedIn and email social links with SVG (optional)
+* Native Twitter, Mastodon, Github, Stack Overflow, LinkedIn and email social links with SVG (optional)
 * Enable or disable social links in footer, homepage hero, and about page (optional)
 * Enable or disable individual social links (optional)
 * Facebook, LinkedIn, Twitter, Reddit and email social share icons with SVG for posts (optional)
@@ -68,6 +76,11 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 * Subsection support for posts with custom permalinks for clean SEO URLs (optional)
 * Mobile-responsive, collapsible JS menu with automatic submenu support based on menu config
 
+### Homepage
+
+* Customize hero title and subtitle on homepage (frontmatter)
+* Customize posts and projects section headings on homepage (frontmatter)
+
 ### Posts & Projects
 
 * Toggle-able sticky table of contents for posts (frontmatter)
@@ -76,6 +89,7 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 * Reading time and word count for posts
 * Last modified dates for posts (optional)
 * Customizable live URL, source URL and tech stack details for projects (frontmatter)
+* Tag and category taxonomies
 * Project type taxonomy for categorizing projects
 * Recent posts and projects on homepage
 
@@ -86,24 +100,34 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 
 ### CSS / JS
 
-* Light/dark mode toggle using css custom properties
+* Light/dark mode toggle using CSS custom properties
 * Add custom CSS / JS in `assets`
 * CSS and JS minification
 * Frontend build pipeline with ESBuild and ToCSS
-* PostCSS processing (optional)
+* PostCSS processing for autoprefixing (optional)
 * `npm` completely optional unless using PostCSS / Autoprefixer
+* Fluid typography scale with CSS `clamp()`
+* Sourcemaps for SCSS and JS in development
 
 ### Images
 
 * Image processing with Hugo resources
 * Feature images for posts and projects from `assets` or page bundle (frontmatter)
 * Custom homepage hero avatar image (optional)
+* Disable grayscale avatar filter (optional)
 * Enable/disable favicons (optional)
 
 ### Archetypes
 
 * Archetype templates for posts and projects
 * Page bundle support for archetype templates
+
+### Markdown Hooks
+
+* Markdown render hooks for codeblocks, images, headings and links
+* Language indicator for codeblocks
+* Add custom CSS class to markdown images via URL fragments
+* Heading anchor link SVG icon
 
 ### Other Content
 
@@ -113,11 +137,14 @@ Below are the current features of this theme. Features labeled *optional* or *fr
 * Responsive support for common markdown styles like tables
 * About page with social links (optional)
 * Contact page with Netlify Forms support (optional)
+* Customize fallback text for empty content (optional)
 
 ### Hugo Defaults
 
 * Example `hugo.toml` with the majority of Hugo config defaults included for easy customization
 * Override config settings based on Hugo environment
+* Built-in shortcodes
+* And much more...Hugo has a lot to offer!
 
 ## Planned Features
 
