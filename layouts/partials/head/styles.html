@@ -3,6 +3,7 @@
 {{ $style := $sass | resources.ToCSS $options }}
 
 {{ $custom := "" }}
+{{ $custom_no_bundle := false }}
 {{ with .Site.Params.custom_css }}
   {{ $custom = resources.Get . }}
   {{/*  Only concatenate in production to allow source maps  */}}
@@ -10,7 +11,7 @@
     {{ $bundle := slice $style $custom | resources.Concat "main.css" }}
     {{ $style = $bundle }}
   {{ else }}
-    <link rel="stylesheet" href="{{ $custom.Permalink }}" />
+    {{ $custom_no_bundle = true }}
   {{ end }}
 {{ end }}
 
@@ -27,3 +28,7 @@
   {{ $final = $final | minify }}
 {{ end }}
 <link rel="stylesheet" href="{{ $final.Permalink }}" />
+{{/*  Custom goes last to preserve cascade in development  */}}
+{{ if $custom_no_bundle }}
+<link rel="stylesheet" href="{{ $custom.Permalink }}" />
+{{ end }}
