@@ -61,9 +61,12 @@
 {{- /* If it is part of a series, link to related articles */}}
 {{- $permalink := .Permalink }}
 {{- $siteSeries := .Site.Taxonomies.series }}
-{{ with .Params.series }}{{- range $name := . }}
-  {{- $series := index $siteSeries ($name | urlize) }}
-  {{- range $page := first 6 $series.Pages }}
-    {{- if ne $page.Permalink $permalink }}<meta property="og:see_also" content="{{ $page.Permalink }}" />{{ end }}
-  {{- end }}
-{{ end }}{{ end }}
+{{/*  Only add property if taxonomy is enabled  */}}
+{{ if $siteSeries }}
+  {{ with .Params.series }}{{- range $name := . }}
+    {{- $series := index $siteSeries ($name | urlize) }}
+    {{- range $page := first 6 $series.Pages }}
+      {{- if ne $page.Permalink $permalink }}<meta property="og:see_also" content="{{ $page.Permalink }}" />{{ end }}
+    {{- end }}
+  {{ end }}{{ end }}
+{{ end }}
