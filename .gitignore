@@ -20,3 +20,6 @@ hugo.linux
 
 ### System
 .DS_Store
+
+### Editor
+*.code-workspace
