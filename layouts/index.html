@@ -7,8 +7,22 @@
         <p class="hero-subtitle">{{.}}</p>
       {{ end }}
       <div class="btn-group">
-        <a class="btn-primary" href="{{ "about/" | relURL }}">About</a>
-        <a class="btn-secondary" href="{{ "projects/" | relURL }}">Projects</a>
+        {{ $p_cta := "" }}
+        {{ with .Params.primary_cta_page }}
+          {{ $p_cta = . }}
+        {{ end }}
+        {{ $s_cta := "" }}
+        {{ with .Params.secondary_cta_page }}
+          {{ $s_cta = . }}
+        {{ end }}
+        <a class="btn-primary"
+           href="{{ with $p_cta }}{{ . | relURL }}{{ else }}{{ "about" | relURL }}{{ end }}">
+           {{ if $p_cta }}{{ with .Site.GetPage $p_cta }}{{ .LinkTitle }}{{ end }}{{ else }}About{{ end }}
+        </a>
+        <a class="btn-secondary"
+           href="{{ with $s_cta }}{{ . | relURL }}{{ else }}{{ "projects" | relURL }}{{ end }}">
+           {{ if $s_cta }}{{ with .Site.GetPage $s_cta }}{{ .LinkTitle }}{{ end }}{{ else }}Projects{{ end }}
+        </a>
       </div>
     </div>
     <div class="hero-owner">
