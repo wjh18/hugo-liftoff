@@ -4,7 +4,7 @@
     <div class="hero-info">
       <h1 class="hero-title">{{ .Title }}</h1>
       {{ with .Params.subtitle }}
-        <p class="hero-subtitle">{{.}}</p>
+        <p class="hero-subtitle">{{. | markdownify}}</p>
       {{ end }}
       <div class="btn-group">
         {{ $p_cta := "" }}
