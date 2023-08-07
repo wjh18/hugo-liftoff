@@ -19,6 +19,10 @@
 
 .hero-info {
 
+  @include respond-to('medium') {
+    flex: 0 1 65%;
+  }
+
   .hero-title {
     font-weight: 900;
     margin-top: 0;
@@ -37,6 +41,10 @@
   align-items: center;
   row-gap: 20px;
 
+  @include respond-to('medium') {
+    flex: 0 1 35%;
+  }
+
   .hero-avatar {
     max-width: 300px;
     width: 100%;
@@ -44,14 +52,13 @@
     border-radius: 20px;
     
     @include respond-to('medium') {
-      width: 100%;
-      max-width:unset;
+      max-width: 100%;
+      width: unset;
     }
   }
 }
 
 .home-section-title {
-  margin-bottom: 50px;
 
   &::after {
     background-color: var(--color-contrast-medium);
@@ -88,4 +95,10 @@
 
 .see-more {
   margin-top: 30px;
+}
+
+.see-more-projects {
+  color: var(--color-contrast-medium);
+  font-weight: 300;
+  font-size: var(--font-size-base);
 }

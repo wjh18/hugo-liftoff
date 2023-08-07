@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="home-title-dropdown">
+    <h2 class="home-section-title">
+      {{- with $.Page.Params.projects_section_heading -}}
+        {{- . -}}
+      {{- else -}}
+        My Projects
+      {{- end -}}
+    </h2>
+    <a class="see-more-projects" href="{{ "projects/" | relURL }}">View all &raquo;</a>
+  </div>
+  {{ $num := .Get 0 }}
+  {{ if not $num }}
+    {{ $num = 6 }}
+  {{ end }}
+  {{ $projects := where site.RegularPages "Section" "projects" | first $num }}
+  {{ with $projects }}
+    <div class="project-list">
+      {{- range . }}
+        {{ partial "projects/project-entry.html" . }}
+      {{ end }}
+    </div>
+  {{ else }}
+    {{ partial "general/fallback-text.html" . }}
+  {{ end }}
+</section>

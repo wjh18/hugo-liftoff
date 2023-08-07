@@ -4,11 +4,25 @@
     <div class="hero-info">
       <h1 class="hero-title">{{ .Title }}</h1>
       {{ with .Params.subtitle }}
-        <p class="hero-subtitle">{{.}}</p>
+        <p class="hero-subtitle">{{. | markdownify}}</p>
       {{ end }}
       <div class="btn-group">
-        <a class="btn-primary" href="{{ "about/" | relURL }}">About</a>
-        <a class="btn-secondary" href="{{ "projects/" | relURL }}">Projects</a>
+        {{ $p_cta := "" }}
+        {{ with .Params.primary_cta_page }}
+          {{ $p_cta = . }}
+        {{ end }}
+        {{ $s_cta := "" }}
+        {{ with .Params.secondary_cta_page }}
+          {{ $s_cta = . }}
+        {{ end }}
+        <a class="btn-primary"
+           href="{{ with $p_cta }}{{ . | relURL }}{{ else }}{{ "about" | relURL }}{{ end }}">
+           {{ if $p_cta }}{{ with .Site.GetPage $p_cta }}{{ .LinkTitle }}{{ end }}{{ else }}About{{ end }}
+        </a>
+        <a class="btn-secondary"
+           href="{{ with $s_cta }}{{ . | relURL }}{{ else }}{{ "projects" | relURL }}{{ end }}">
+           {{ if $s_cta }}{{ with .Site.GetPage $s_cta }}{{ .LinkTitle }}{{ end }}{{ else }}Projects{{ end }}
+        </a>
       </div>
     </div>
     <div class="hero-owner">
@@ -25,61 +39,14 @@
       {{ end }}
       <img class="hero-avatar"
             src="{{ $image.RelPermalink }}"
-            width="300" height="300"
+            width="{{- $image.Width -}}" height="{{- $image.Height -}}"
             alt="Headshot or avatar belonging to the website owner"/>
       {{ if eq .Site.Params.home_hero_socials true }}
         {{ partial "general/social-links.html" . }}
       {{ end }}
     </div>
   </section>
-  <section class="section">
-    <div class="home-title-dropdown">
-      <h2 class="home-section-posts-title">
-        {{- with .Params.posts_section_heading -}}
-          {{- . -}}
-        {{- else -}}
-          Recent Posts
-        {{- end -}}
-      </h2>
-      <select name="choice" id="select-posts">
-        {{ range (where .Sections "Section" "posts") }}
-        <option value="all-{{ .Name | lower }}" selected>All {{ .Name | lower }}</option>
-        {{ range .Sections }}
-        {{ if .CurrentSection.Pages }}
-        <option value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">{{ .CurrentSection.Name }}</option>
-        {{ end }}
-        {{ end }}
-        {{ end }}
-      </select>
-    </div>
-    {{ range (where site.RegularPages "Section" "posts" | first 10) }}
-      <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">
-        {{ partial "posts/post-entry.html" . }}
-        <div class="post-entry-divider"></div>
-      </div>
-    {{ else }}
-      {{ partial "general/fallback-text.html" . }}
-    {{ end }}
-    <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}">More Posts</a>
-  </section>
-  <section class="section">
-    <h2 class="home-section-title">
-      {{- with .Params.projects_section_heading -}}
-        {{- . -}}
-      {{- else -}}
-        My Projects
-      {{- end -}}
-    </h2>
-    {{ $projects := where site.RegularPages "Section" "projects" | first 6 }}
-    {{ with $projects }}
-      <div class="project-list">
-        {{- range . }}
-          {{ partial "projects/project-entry.html" . }}
-        {{ end }}
-      </div>
-    {{ else }}
-      {{ partial "general/fallback-text.html" . }}
-    {{ end }}
-  </section>
+  {{/*  Shortcodes from page content  */}}
+  {{ .Content }}
 </div>
 {{ end }}
