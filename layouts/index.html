@@ -46,54 +46,7 @@
       {{ end }}
     </div>
   </section>
-  <section class="section">
-    <div class="home-title-dropdown">
-      <h2 class="home-section-posts-title">
-        {{- with .Params.posts_section_heading -}}
-          {{- . -}}
-        {{- else -}}
-          Recent Posts
-        {{- end -}}
-      </h2>
-      <select name="choice" id="select-posts">
-        {{ range (where .Sections "Section" "posts") }}
-        <option value="all-{{ .Name | lower }}" selected>All {{ .Name | lower }}</option>
-        {{ range .Sections }}
-        {{ if .CurrentSection.Pages }}
-        <option value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">{{ .CurrentSection.Name }}</option>
-        {{ end }}
-        {{ end }}
-        {{ end }}
-      </select>
-    </div>
-    {{ range (where site.RegularPages "Section" "posts" | first 10) }}
-      <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">
-        {{ partial "posts/post-entry.html" . }}
-        <div class="post-entry-divider"></div>
-      </div>
-    {{ else }}
-      {{ partial "general/fallback-text.html" . }}
-    {{ end }}
-    <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}">More Posts</a>
-  </section>
-  <section class="section">
-    <h2 class="home-section-title">
-      {{- with .Params.projects_section_heading -}}
-        {{- . -}}
-      {{- else -}}
-        My Projects
-      {{- end -}}
-    </h2>
-    {{ $projects := where site.RegularPages "Section" "projects" | first 6 }}
-    {{ with $projects }}
-      <div class="project-list">
-        {{- range . }}
-          {{ partial "projects/project-entry.html" . }}
-        {{ end }}
-      </div>
-    {{ else }}
-      {{ partial "general/fallback-text.html" . }}
-    {{ end }}
-  </section>
+  {{/*  Shortcodes from page content  */}}
+  {{ .Content }}
 </div>
 {{ end }}
