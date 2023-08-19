@@ -13,7 +13,7 @@
     <!-- Mastodon -->
     {{ if .Site.Params.social.links.mastodon_user }}
     <li>
-      <a href="https://{{ with .Site.Params.social.links.mastodon_server }}{{ . }}{{ else }}mastodon.social{{ end }}/@{{ with .Site.Params.social.links.mastodon_user }}{{ . }}{{ end }}" target="_blank" rel="noopener" aria-label="Visit Mastodon profile" class="social-btn mastodon">
+      <a href="https://{{ with .Site.Params.social.links.mastodon_server }}{{ . }}{{ else }}mastodon.social{{ end }}/@{{ with .Site.Params.social.links.mastodon_user }}{{ . }}{{ end }}" target="_blank" rel="me noopener" aria-label="Visit Mastodon profile" class="social-btn mastodon">
         {{ partial "svg/mastodon.svg" }}
       </a>
     </li>
