@@ -8,7 +8,7 @@
 <!-- get actual filename -->
 {{- $src = path.Base $src -}}
 <!-- check if it exists as a page resource -->
-{{- with (.Page.Resources.ByType "image").GetMatch (printf "%s" $src) -}}
+{{- with (.Page.Resources.ByType "image").GetMatch (printf "**/%s" $src) -}}
 	{{ $resized := . }}
 	{{ if (gt .Width $imgwidth) }}
 		{{ if hugo.IsExtended }}
