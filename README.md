@@ -1,5 +1,9 @@
 # Hugo Liftoff
 
+**Warning: I no longer have time to work on this theme for various reasons. It's unlikely I'll get to your issue and no additional features are planned, although the theme will remain available to the public. Feel free to fork it if you need to make extensive changes. I will consider merging simple bugfix pull requests. Apologies for any inconvenience this may cause. Please see [v3.4.3 release notes](https://github.com/wjh18/hugo-liftoff/releases/tag/v3.4.3) for further details.**
+
+## About
+
 Hugo Liftoff is a minimal blog/portfolio theme with a focus on content creation and SEO best practices. It's an ideal choice for technical users jump-starting a personal brand.
 
 ## Documentation
